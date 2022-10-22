@@ -1,0 +1,30 @@
+<div class="toolbar">
+    <div class="color-toolbar">
+        <div class="title-toolbar">SISTEMA INTEGRADO DE GESTIÓN</div>
+        <div class="cont-log">
+            <button>Login</button>
+        </div>
+    </div>
+
+</div>
+<mat-drawer-container class="matdrawner-container" autosize>
+    <mat-drawer #drawer class="matdrawner-sidenav" mode="side" [opened]="true">
+        <!-- <p>Auto-resizing sidenav</p>
+        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+            Toggle extra text
+        </button> -->
+        <div class="title-sidenav">INFORMACIÓN DOCUMENTARIA</div>
+        <a mat-list-item routerLink="/generalDocuments" [queryParams]="{ section: 'menu' }">
+            Documentos Generales
+        </a>
+    </mat-drawer>
+
+    <div class="matdrawner-sidenav-content">
+        <router-outlet></router-outlet>
+        <!-- <button type="button" mat-button (click)="drawer.toggle()">
+            Toggle sidenav
+        </button> -->
+    </div>
+
+</mat-drawer-container>

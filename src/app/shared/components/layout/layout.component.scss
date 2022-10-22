@@ -1,0 +1,59 @@
+.toolbar {
+    width           : 100%;
+    background-color: #8cc434;
+
+    .color-toolbar {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+        padding        : 20px;
+
+        .title-toolbar {
+            color      : #ffffff;
+            font-weight: 700;
+            font-size  : 25px;
+        }
+
+        .cont-log {
+            button {
+                border          : none;
+                background-color: #e6a404;
+                color           : #31271e;
+                padding         : 5px 10px;
+                border-radius   : 5px;
+                font-weight     : 600;
+                cursor          : pointer;
+            }
+        }
+    }
+}
+
+.matdrawner-container {
+    width : 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.matdrawner-sidenav-content {
+    display   : flex;
+    height    : 100%;
+    padding   : 20px 10px 0 10px;
+    box-sizing: border-box;
+}
+
+.matdrawner-sidenav {
+    width    : 100%;
+    max-width: 350px;
+    padding  : 20px;
+
+    .title-sidenav {
+        color        : #5bbdbf;
+        font-weight  : 600;
+        margin-bottom: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        color          : #000000;
+    }
+}
