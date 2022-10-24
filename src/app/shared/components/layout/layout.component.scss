@@ -12,6 +12,7 @@
             color      : #ffffff;
             font-weight: 700;
             font-size  : 25px;
+            cursor     : pointer;
         }
 
         .cont-log {
@@ -49,11 +50,143 @@
     .title-sidenav {
         color        : #5bbdbf;
         font-weight  : 600;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+        margin-top   : 20px;
     }
 
     a {
         text-decoration: none;
         color          : #000000;
     }
+}
+
+::ng-deep .mdl-msg {
+    .mat-dialog-container {
+        padding      : 0;
+        border-radius: 10px;
+    }
+}
+
+::ng-deep .mdl-login {
+    .mat-dialog-container {
+        padding      : 0;
+        border-radius: 15px;
+    }
+}
+
+.cont-user-log {
+    background-color: #ffffff;
+    border-radius   : 5px;
+    color           : #58babb;
+    padding         : 10px 20px;
+
+    .cont-info {
+        width          : 100%;
+        display        : flex;
+        justify-content: space-between;
+        gap            : 10px;
+    }
+}
+
+.example-tree-invisible {
+    display: none;
+}
+
+.example-tree-invisible {
+    display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+    margin-top     : 0;
+    margin-bottom  : 0;
+    list-style-type: none;
+}
+
+/*
+   * This padding sets alignment of the nested nodes.
+   */
+.example-tree .mat-nested-tree-node div[role=group] {
+    padding-left: 40px;
+}
+
+/*
+   * Padding for leaf nodes.
+   * Leaf nodes need to have padding so as to align with other non-leaf nodes
+   * under the same parent.
+   */
+.example-tree div[role=group]>.mat-tree-node {
+    padding-left: 40px;
+}
+
+.example-tree ul,
+.example-tree li {
+    margin-top     : 0;
+    margin-bottom  : 0;
+    list-style-type: none;
+}
+
+/*
+   * This padding sets alignment of the nested nodes.
+   */
+.example-tree .mat-nested-tree-node div[role=group] {
+    padding-left: 40px;
+}
+
+/*
+   * Padding for leaf nodes.
+   * Leaf nodes need to have padding so as to align with other non-leaf nodes
+   * under the same parent.
+   */
+.example-tree div[role=group]>.mat-tree-node {
+    padding-left: 40px;
+}
+
+.container-nav-routes {
+    display  : flex;
+    flex-wrap: wrap;
+    gap      : 15px;
+
+    .title-option-nav {
+        font-size  : 16px;
+        font-weight: 600;
+    }
+
+    .routes-options {
+        padding-left: 27px;
+        display     : flex;
+        flex-wrap   : wrap;
+        gap         : 5px;
+        margin      : 10px 0;
+
+        .op-route {
+            cursor     : pointer;
+            width      : 100%;
+            display    : flex;
+            gap        : 5px;
+            align-items: center;
+
+            .circle {
+                background-color: #000000;
+                border-radius   : 50%;
+                width           : 7px;
+                height          : 7px;
+            }
+
+            .text-route {
+                padding    : 2px 40px 2px 7px;
+                line-height: initial;
+            }
+
+            .text-route:hover {
+                background-color: #3c9ca4;
+                color           : #ffffff;
+            }
+        }
+    }
+}
+
+.active-router {
+    background-color: #3c9ca4;
+    color           : #ffffff;
 }

@@ -11,12 +11,17 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () =>
-          import('./pages/home/home.module').then((m) => m.HomeModule),
+          import('./pages/home/home.module').then((m) => m.HomeModule)
       },
       {
         path: 'generalDocuments',
         loadChildren: () =>
-          import('./pages/general-documents/general-documents.module').then((m) => m.GeneralDocumentsModule),
+          import('./pages/general-documents/general-documents.module').then((m) => m.GeneralDocumentsModule)
+      },
+      {
+        path: 'administration',
+        loadChildren: () =>
+          import('./pages/administration/administration.module').then((m) => m.AdministrationModule),
       }
     ]
   }

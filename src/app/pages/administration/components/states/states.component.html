@@ -1,0 +1,47 @@
+<div class="container-title">Gestión de Estados</div>
+<div *ngIf="!showForm">
+    <div class="container-btn-right">
+        <button (click)="showForm = true;formState.reset();">Agregar</button>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="code">
+            <th mat-header-cell *matHeaderCellDef> Código </th>
+            <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <button mat-icon-button (click)="edit(element,i)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+
+<form [formGroup]="formState" *ngIf="showForm" class="form-standart">
+    <mat-form-field appearance="outline">
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="code">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="name">
+    </mat-form-field>
+
+    <div class="container-btn-save">
+        <button (click)="save()" type="button" [disabled]="!formState.valid">Guardar</button>
+        <button (click)="showForm = false" type="button">Atras</button>
+    </div>
+</form>

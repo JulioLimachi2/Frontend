@@ -1,0 +1,78 @@
+[
+    {
+        "id": "1001",
+        "data": [
+            {
+                "title": "Administracion",
+                "routes": [
+                    {
+                        "name": "Estados",
+                        "url": "/administration/states"
+                    },
+                    {
+                        "name": "Fuentes",
+                        "url": "/administration/source"
+                    },
+                    {
+                        "name": "Facilitadores",
+                        "url": "/administration/facilitators"
+                    },
+                    {
+                        "name": "Dueño / Representante del Proceso",
+                        "url": "/administration/process-representative"
+                    },
+                    {
+                        "name": "Oficiales",
+                        "url": "/administration/officers"
+                    },
+                    {
+                        "name": "Auditores",
+                        "url": "/administration/auditors"
+                    },
+                    {
+                        "name": "Tipos",
+                        "url": "/administration/types"
+                    }
+                ]
+            },
+            {
+                "title": "PROCESOS",
+                "routes": [
+                    {
+                        "name": "Regístro de Hallazgos",
+                        "url": "/process"
+                    },
+                    {
+                        "name": "Regístro de Autorizaciones",
+                        "url": "/process"
+                    },
+                    {
+                        "name": "Regístro de Acciones",
+                        "url": "/process"
+                    }
+                ]
+            },
+            {
+                "title": "REPORTES",
+                "routes": [
+                    {
+                        "name": "Reporte General",
+                        "url": "/reporters"
+                    },
+                    {
+                        "name": "Reporte Seguimiento",
+                        "url": "/reporters"
+                    },
+                    {
+                        "name": "Reporte Por Estados",
+                        "url": "/reporters"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "1002",
+        "data": []
+    }
+]

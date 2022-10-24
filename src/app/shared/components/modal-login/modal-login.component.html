@@ -1,0 +1,19 @@
+<div class="modal-login">
+    <div class="layer-1">
+        <div class="layer-2">
+            <div class="title">LOGIN</div>
+            <form class="cont-mff" autocomplete="off" [formGroup]="formLogin">
+                <mat-form-field appearance="fill">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput placeholder="Usuario" formControlName="user">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Clave</mat-label>
+                    <input matInput placeholder="Clave" type="password" formControlName="pass">
+                </mat-form-field>
+            </form>
+            <button class="btn-ingresar" (click)="ingresar()" [disabled]="!formLogin.valid">Ingresar</button>
+            <div class="forgot-password-text">¿Olvido su contraseña?</div>
+        </div>
+    </div>
+</div>
