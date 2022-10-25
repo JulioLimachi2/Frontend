@@ -79,12 +79,24 @@
     border-radius   : 5px;
     color           : #58babb;
     padding         : 10px 20px;
+    position        : relative;
+    cursor          : pointer;
 
     .cont-info {
         width          : 100%;
         display        : flex;
         justify-content: space-between;
         gap            : 10px;
+    }
+}
+
+.cont-init-session {
+    display    : flex;
+    align-items: center;
+    gap        : 5px;
+
+    mat-icon {
+        cursor: pointer;
     }
 }
 

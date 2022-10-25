@@ -11,7 +11,7 @@ export class SourcesComponent implements OnInit {
   displayedColumns: string[] = ['code', 'description', 'corrective','upgrade','actions'];
   showForm: boolean;
   formSource: FormGroup;
-  indexState:number;
+  indexSource:number;
 
   dataSource = [
     {
@@ -59,8 +59,8 @@ export class SourcesComponent implements OnInit {
   }
 
   save(){
-    if(this.indexState !==undefined){
-      this.dataSource[this.indexState] = this.formSource.value;
+    if(this.indexSource !==undefined){
+      this.dataSource[this.indexSource] = this.formSource.value;
     }else{
       this.dataSource.push(this.formSource.value);
     }
@@ -68,7 +68,7 @@ export class SourcesComponent implements OnInit {
   }
 
   edit(element,index){
-    this.indexState = index;
+    this.indexSource = index;
     this.showForm = true;
     this.formSource.patchValue({
       code: element.code,

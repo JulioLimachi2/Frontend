@@ -78,6 +78,7 @@ export class LayoutComponent implements OnInit {
   userLog;
   showOptions: boolean;
   openedDrawner: boolean = true;
+  showSubmenuLog: boolean;
 
   datanav = [];
 
@@ -152,8 +153,21 @@ export class LayoutComponent implements OnInit {
   }
 
   goInicio() {
+    if(this.userLog){
+      this.router.navigateByUrl("");
+      this.openedDrawner = false;
+      this.showOptions = true;
+    }else{
+      this.openedDrawner = true;
+    }
+  }
+
+  logout(){
+    localStorage.removeItem('userlog');
+    this.userLog = null;
+    this.showOptions = false;
+    this.openedDrawner = true;
+    this.datanav = [];
     this.router.navigateByUrl("");
-    this.openedDrawner = false;
-    this.showOptions = true;
   }
 }

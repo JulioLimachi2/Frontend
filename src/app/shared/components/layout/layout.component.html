@@ -4,16 +4,26 @@
         <div class="cont-log" *ngIf="!userLog">
             <button (click)="openLogin()">Login</button>
         </div>
-        <div *ngIf="userLog" class="cont-user-log">
-            <div class="cont-info">
-                <div>Usuario:</div>
-                <div>{{userLog.user}}</div>
+        <div class="cont-init-session" *ngIf="userLog">
+            <div class="cont-user-log" (click)="showSubmenuLog = true">
+                <div class="cont-info">
+                    <div>Usuario:</div>
+                    <div>{{userLog.user}}</div>
+                </div>
+                <div class="cont-info">
+                    <div>Rol:</div>
+                    <div>{{userLog.rol}}</div>
+                </div>
+                <!-- <div class="sub-options-log" *ngIf="showSubmenuLog" (click)="logout()">
+                    <div>Cerrar Sesión</div>
+                </div> -->
             </div>
-            <div class="cont-info">
-                <div>Rol:</div>
-                <div>{{userLog.rol}}</div>
+            <div (click)="logout()">
+                <mat-icon>logout</mat-icon>
             </div>
         </div>
+
+
     </div>
 
 </div>
@@ -34,11 +44,8 @@
                 <div class="routes-options">
                     <div *ngFor="let route of nav.routes" class="op-route">
                         <div class="circle"></div>
-                        <div class="text-route" [routerLink]="route.url" routerLinkActive="active-router">{{route.name}}</div>
-                    </div>
-                    <div class="op-route">
-                        <div class="circle"></div>
-                        <div class="text-route">Salir</div>
+                        <div class="text-route" [routerLink]="route.url" routerLinkActive="active-router">{{route.name}}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -32,6 +32,10 @@
                     {
                         "name": "Tipos",
                         "url": "/administration/types"
+                    },
+                    {
+                        "name": "Salir",
+                        "url": "/home"
                     }
                 ]
             },
