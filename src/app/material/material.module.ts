@@ -11,6 +11,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [],
@@ -26,7 +28,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatTableModule,
     MatCheckboxModule,
     MatSlideToggleModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTabsModule,
+    MatTooltipModule
   ],
   exports: [
     MatSidenavModule,
@@ -39,7 +43,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatTableModule,
     MatCheckboxModule,
     MatSlideToggleModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTabsModule,
+    MatTooltipModule
   ]
 })
 export class MaterialModule { }

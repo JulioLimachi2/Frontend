@@ -44,15 +44,15 @@
                 "routes": [
                     {
                         "name": "Regístro de Hallazgos",
-                        "url": "/process"
+                        "url": "/processes/findings"
                     },
                     {
                         "name": "Regístro de Autorizaciones",
-                        "url": "/process"
+                        "url": "/processes/authorization"
                     },
                     {
                         "name": "Regístro de Acciones",
-                        "url": "/process"
+                        "url": "/processes/actions"
                     }
                 ]
             },
@@ -61,15 +61,15 @@
                 "routes": [
                     {
                         "name": "Reporte General",
-                        "url": "/reporters"
+                        "url": "/reports/general"
                     },
                     {
                         "name": "Reporte Seguimiento",
-                        "url": "/reporters"
+                        "url": "/reports/followUp"
                     },
                     {
                         "name": "Reporte Por Estados",
-                        "url": "/reporters"
+                        "url": "/reports/bystate"
                     }
                 ]
             }

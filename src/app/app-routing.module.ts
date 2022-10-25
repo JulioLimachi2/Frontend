@@ -22,6 +22,16 @@ const routes: Routes = [
         path: 'administration',
         loadChildren: () =>
           import('./pages/administration/administration.module').then((m) => m.AdministrationModule),
+      },
+      {
+        path: 'processes',
+        loadChildren: () =>
+          import('./pages/processes/processes.module').then((m) => m.ProcessesModule),
+      },
+      {
+        path: 'reports',
+        loadChildren: () =>
+          import('./pages/reports/reports.module').then((m) => m.ReportsModule),
       }
     ]
   }
