@@ -1,8 +1,12 @@
-<div class="modal-msg">
-    <button class="btn-close" mat-dialog-close>X</button>
-   <div class="layer-1">
-    <div class="layer-2">
-        PARA PODER VISUALIZAR EL DOCUMENTO INGRESE CON USUARIO Y CLAVE
+<div class="modal-msg" [class]="getClasses()">
+    <div class="text-icon">
+        <mat-icon *ngIf="type === 'success' || type === 'info'">check_circle</mat-icon>
+        <mat-icon *ngIf="type === 'danger'">cancel</mat-icon>
+        <mat-icon *ngIf="type === 'warning' || type === 'dark'">error</mat-icon>
+        <div>{{data.message}}</div>
     </div>
-   </div>
+ 
+    <div class="ic-close-md" mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </div>
 </div>

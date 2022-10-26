@@ -106,7 +106,10 @@ export class LayoutComponent implements OnInit {
       const dialogRef = this.dialog.open(ModalMsgComponent, {
         width: '550px',
         panelClass: 'mdl-msg',
-        data: { message: '' },
+        data: { 
+          message: 'PARA PODER VISUALIZAR EL DOCUMENTO INGRESE CON USUARIO Y CLAVE',
+          type: 'warning'
+        }
       });
 
       dialogRef.afterClosed().subscribe(result => {

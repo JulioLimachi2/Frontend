@@ -29,10 +29,15 @@
     }
 }
 
-.matdrawner-container {
+::ng-deep .matdrawner-container-ly {
     width : 100%;
     height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.5);
+
+    .mat-drawer-content {
+        height: 100%;
+        margin-bottom: 150px;
+    }
 }
 
 .matdrawner-sidenav-content {
@@ -63,7 +68,8 @@
 ::ng-deep .mdl-msg {
     .mat-dialog-container {
         padding      : 0;
-        border-radius: 10px;
+        border-radius: 4px;
+        margin-top   : 50px;
     }
 }
 

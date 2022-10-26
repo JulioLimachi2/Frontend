@@ -1,1 +1,28 @@
 <div class="container-title">Registro de Autorizaciones</div>
+<mat-tab-group class="mat-tab-sunarp">
+    <mat-tab label="Listado de Acciones">
+        <div class="cont-p">
+            <app-list-actions-authorization></app-list-actions-authorization>
+        </div>
+    </mat-tab>
+    <mat-tab label="Solicitud de Acción">
+        <div class="cont-p">
+            <app-action-request-authorization></app-action-request-authorization>
+        </div>
+    </mat-tab>
+    <mat-tab label="Registro del Plan de Acción">
+        <div class="cont-p">
+           <app-action-plan-register></app-action-plan-register>
+        </div>
+    </mat-tab>
+    <mat-tab label="Seguimiento de Acción">
+        <div class="cont-p">
+            <app-follow-up-action></app-follow-up-action>
+        </div>
+    </mat-tab>
+    <mat-tab label="Verificación de Eficacia">
+        <div class="cont-p">
+       <app-efficacy-verification></app-efficacy-verification>
+        </div>
+    </mat-tab>
+</mat-tab-group>

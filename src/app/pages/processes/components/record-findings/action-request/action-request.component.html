@@ -1,13 +1,14 @@
-<form [formGroup]="formActionRequest" class="form-standart">
-    <mat-form-field appearance="outline">
-        <mat-label>Correlativo</mat-label>
-        <input matInput placeholder="Correlativo" formControlName="correlative">
-    </mat-form-field>
+<form [formGroup]="formActionRequest" class="form-register">
 
-    <mat-form-field appearance="outline">
-        <mat-label>Año</mat-label>
-        <input matInput placeholder="Año" formControlName="year">
-    </mat-form-field>
+    <div class="inp-label">
+        <div class="label">Nro:</div>
+        <mat-form-field appearance="outline" style="width: 100px">
+            <input matInput formControlName="correlative" type="number">
+        </mat-form-field>
+
+        <app-datepicker-year (onGetValue)="getYear($event)" [width]="'100'"></app-datepicker-year>
+    </div>
+
 
     <mat-form-field appearance="outline">
         <mat-label>Fuente</mat-label>
@@ -38,14 +39,14 @@
         <mat-datepicker #pickerEmision></mat-datepicker>
     </mat-form-field>
 
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" style="max-width: 100%">
         <mat-label>Descripción de la NC</mat-label>
-        <textarea matInput placeholder="Descripción de la NC" formControlName="descriptionNC"></textarea>
+        <textarea matInput placeholder="Descripción de la NC" formControlName="descriptionNC" rows="5"></textarea>
     </mat-form-field>
 
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" style="max-width: 100%">
         <mat-label>Motivo de la no Aprobación</mat-label>
-        <textarea matInput placeholder="Motivo de la no Aprobación" formControlName="reasonNonApproval"></textarea>
+        <textarea matInput placeholder="Motivo de la no Aprobación" formControlName="reasonNonApproval" rows="5"></textarea>
     </mat-form-field>
 
     <mat-form-field appearance="outline">

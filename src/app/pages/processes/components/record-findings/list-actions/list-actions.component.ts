@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-list-actions',
@@ -9,6 +9,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class ListActionsComponent implements OnInit {
 
   displayedColumns: string[] = ['type', 'correlative', 'year', 'coordinator','area'];
+  yearFilter: string;
   dataSource = [
     {
       type:'Preventiva',
@@ -39,7 +40,13 @@ export class ListActionsComponent implements OnInit {
   }
 
   search(){
-
+    if(this.yearFilter){
+      console.log('yearFilter',this.yearFilter);
+    }
   }
+
+  getYear(year: string){
+    this.yearFilter = year;
+ }
 
 }

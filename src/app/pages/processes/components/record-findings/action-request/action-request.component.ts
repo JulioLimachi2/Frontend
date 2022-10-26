@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDatepicker } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-action-request',
@@ -34,18 +35,18 @@ export class ActionRequestComponent implements OnInit {
 
   constructor(private builder: FormBuilder) { 
     this.formActionRequest = this.builder.group({
-      correlative:[],
-      year: [],
-      font:[],
-      requirement: [],
-      state:[],
-      area:[],
-      date:[],
-      descriptionNC:[],
+      correlative:[,Validators.required],
+      year: [,Validators.required],
+      font:[,Validators.required],
+      requirement: [,Validators.required],
+      state:[,Validators.required],
+      area:[,Validators.required],
+      date:[,Validators.required],
+      descriptionNC:[,Validators.required],
       reasonNonApproval:[],
-      coordinator: [],
-      dateShipment: [],
-      responsibleUO :[]
+      coordinator: [,Validators.required],
+      dateShipment: [,Validators.required],
+      responsibleUO :[,Validators.required]
     });
   }
 
@@ -54,5 +55,9 @@ export class ActionRequestComponent implements OnInit {
 
   save(){
     console.log('formActionRequest',this.formActionRequest.value);
+  }
+
+  getYear(year: string){
+     this.formActionRequest.controls['year'].setValue(year);
   }
 }

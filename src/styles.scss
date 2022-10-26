@@ -116,3 +116,17 @@ body {
 .cont-p{
     padding: 15px;
 }
+
+.container-responsible-table{
+    width: 100%;
+    overflow: auto;
+}
+
+.table-standart{
+    width: 1090px;
+    @media (min-width: 1440px) {
+        &{
+            width: 100%;
+        }
+    }
+}
