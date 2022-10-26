@@ -78,3 +78,41 @@ body {
     display: flex;
     gap: 25px;
 }
+
+.mat-tab-sunarp{
+    margin-top: 25px;
+
+    .mat-tab-labels{
+        gap: 5px;
+    }
+    
+    .mat-tab-label{
+        border: 3px solid #44acab;
+        border-bottom: 0;
+        border-radius: 5px 5px 0 0;
+        height: 30px;
+        opacity: 1;
+    }
+
+    .mat-tab-label-active{
+        background-color: #44acab;
+        color: #ffffff;
+    }
+
+    .mat-ink-bar{
+        display: none;
+    }
+
+    .mat-tab-header {
+        border-bottom: 3px solid #44acab;
+    }
+
+    .mat-tab-body.mat-tab-body-active{
+        border: 3px solid #44acab;
+        border-top: 0;
+    }
+}
+
+.cont-p{
+    padding: 15px;
+}

@@ -4,6 +4,10 @@ import { RecordFindingsComponent } from './components/record-findings/record-fin
 import { AuthorizationRegisterComponent } from './components/authorization-register/authorization-register.component';
 import { ShareRegisterComponent } from './components/share-register/share-register.component';
 import { ProcessesRoutingModule } from './processes-routing.module';
+import { MaterialModule } from 'src/app/material/material.module';
+import { ListActionsComponent } from './components/record-findings/list-actions/list-actions.component';
+import { ActionRequestComponent } from './components/record-findings/action-request/action-request.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,11 +15,15 @@ import { ProcessesRoutingModule } from './processes-routing.module';
   declarations: [
     RecordFindingsComponent,
     AuthorizationRegisterComponent,
-    ShareRegisterComponent
+    ShareRegisterComponent,
+    ListActionsComponent,
+    ActionRequestComponent
   ],
   imports: [
     CommonModule,
-    ProcessesRoutingModule
+    ProcessesRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class ProcessesModule { }

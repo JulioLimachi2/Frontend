@@ -1,0 +1,78 @@
+<form [formGroup]="formActionRequest" class="form-standart">
+    <mat-form-field appearance="outline">
+        <mat-label>Correlativo</mat-label>
+        <input matInput placeholder="Correlativo" formControlName="correlative">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Año</mat-label>
+        <input matInput placeholder="Año" formControlName="year">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fuente</mat-label>
+        <mat-select formControlName="font">
+          <mat-option *ngFor="let font of fonts" [value]="font.id">{{font.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Requerimiento ISO 9001</mat-label>
+        <input matInput placeholder="Requerimiento" formControlName="requirement">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Estado</mat-label>
+        <input matInput placeholder="Estado" formControlName="state">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Unidad Operativa</mat-label>
+        <input matInput placeholder="Unidad operativa" formControlName="area">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fecha de Emisión</mat-label>
+        <input matInput [matDatepicker]="pickerEmision" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="pickerEmision"></mat-datepicker-toggle>
+        <mat-datepicker #pickerEmision></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Descripción de la NC</mat-label>
+        <textarea matInput placeholder="Descripción de la NC" formControlName="descriptionNC"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Motivo de la no Aprobación</mat-label>
+        <textarea matInput placeholder="Motivo de la no Aprobación" formControlName="reasonNonApproval"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>CCA</mat-label>
+        <input matInput placeholder="CCA" formControlName="coordinator">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fecha de Envio</mat-label>
+        <input matInput [matDatepicker]="pickerShipment" formControlName="dateShipment">
+        <mat-datepicker-toggle matSuffix [for]="pickerShipment"></mat-datepicker-toggle>
+        <mat-datepicker #pickerShipment></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Responsable UO</mat-label>
+        <input matInput placeholder="CCA" formControlName="responsibleUO">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Responsable UO</mat-label>
+        <mat-select formControlName="responsibleUO">
+          <mat-option *ngFor="let responsible of responsibles" [value]="responsible.id">{{responsible.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <div class="container-btn-save">
+        <button (click)="save()" type="button" [disabled]="!formActionRequest.valid">Grabar</button>
+    </div>
+</form>
