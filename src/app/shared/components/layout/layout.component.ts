@@ -11,7 +11,7 @@ const TREE_DATA = [
   {
     name: 'ISO 9001',
     children: [
-      { name: 'Jerarquía ISO 9001', children: [{ name: 'Documento' }] },
+      { name: 'Jerarquía ISO 9001', children: [{ name: 'Documento', url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf'  }] },
       { name: 'Jerarquía ISO 9001', children: [{ name: 'Documento', url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }] }
     ],
   },
@@ -20,11 +20,11 @@ const TREE_DATA = [
     children: [
       {
         name: 'Jerarquía ISO 22301',
-        children: [{ name: 'Documento' }],
+        children: [{ name: 'Documento' , url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }],
       },
       {
         name: 'Jerarquía ISO 22301',
-        children: [{ name: 'Documento' }],
+        children: [{ name: 'Documento' , url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }],
       },
     ],
   },
@@ -33,11 +33,11 @@ const TREE_DATA = [
     children: [
       {
         name: 'Jerarquía ISO 27001',
-        children: [{ name: 'Documento' }],
+        children: [{ name: 'Documento' , url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }],
       },
       {
         name: 'Jerarquía ISO 27001',
-        children: [{ name: 'Documento' }],
+        children: [{ name: 'Documento' , url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }],
       },
     ],
   },
@@ -46,11 +46,11 @@ const TREE_DATA = [
     children: [
       {
         name: 'Jerarquía ISO 37001',
-        children: [{ name: 'Documento' }],
+        children: [{ name: 'Documento', url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf'  }],
       },
       {
         name: 'Jerarquía ISO 37001',
-        children: [{ name: 'Documento' }],
+        children: [{ name: 'Documento', url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf'  }],
       },
     ],
   },
@@ -105,10 +105,11 @@ export class LayoutComponent implements OnInit {
     } else {
       const dialogRef = this.dialog.open(ModalMsgComponent, {
         width: '550px',
+        height: '90px',
         panelClass: 'mdl-msg',
         data: { 
           message: 'PARA PODER VISUALIZAR EL DOCUMENTO INGRESE CON USUARIO Y CLAVE',
-          type: 'warning'
+          type: 'success'
         }
       });
 
