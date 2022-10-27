@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OptionsGestionComponent } from './options-gestion.component';
+import { MainOptionsComponent } from './main-options.component';
 
-describe('OptionsGestionComponent', () => {
-  let component: OptionsGestionComponent;
-  let fixture: ComponentFixture<OptionsGestionComponent>;
+describe('MainOptionsComponent', () => {
+  let component: MainOptionsComponent;
+  let fixture: ComponentFixture<MainOptionsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OptionsGestionComponent ]
+      declarations: [ MainOptionsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OptionsGestionComponent);
+    fixture = TestBed.createComponent(MainOptionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

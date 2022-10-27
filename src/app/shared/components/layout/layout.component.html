@@ -55,10 +55,13 @@
             <div class="title-sidenav">INFORMACIÓN DOCUMENTARIA</div>
             <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
 
-                <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+                <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle [ngClass]="{'active-tree': idTreeNode === node.id}">
                     <div *ngIf="!node.url && !node.autorization">{{node.name}}dddd</div>
-                    <div *ngIf="node.autorization" (click)="callModal()">{{node.name}}</div>
-                    <a *ngIf="node.url" href="{{node.url}}" target="_blank">{{node.name}}</a>
+                    <div *ngIf="node.autorization" (click)="goToDocument(node)" class="op-tree-node">
+                        <div><img src="assets/images/ic-pdf-img.png" alt="icon-pdf"></div>
+                        {{node.name}}
+                    </div>
+                    <!-- <a *ngIf="node.url" href="{{node.url}}" target="_blank">{{node.name}}</a> -->
                 </mat-tree-node>
 
                 <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodeToggle style="cursor: pointer;">
@@ -79,11 +82,10 @@
     </mat-drawer>
 
     <div class="matdrawner-sidenav-content">
-        <router-outlet *ngIf="!showOptions"></router-outlet>
+        <router-outlet></router-outlet>
         <!-- <button type="button" mat-button (click)="drawer.toggle()">
             Toggle sidenav
         </button> -->
-        <app-options-gestion *ngIf="showOptions" (onSelectedOption)="SelectedOption($event)"></app-options-gestion>
     </div>
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-list-actions-authorization',
@@ -7,9 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListActionsAuthorizationComponent implements OnInit {
 
-  constructor() { }
+  formSearchActions: FormGroup;
+  areas = [
+    {
+      id: '01',
+      name: 'Gerencia de Informatica'
+    }
+  ];
+
+  constructor(private builder: FormBuilder) {
+    this.formSearchActions = this.builder.group({
+      year: [],
+      state: [],
+      area: []
+    });
+  }
 
   ngOnInit(): void {
+  }
+
+  getYear(year: string) {
+    console.log('year', year);
+  }
+
+  search(){
+    
   }
 
 }

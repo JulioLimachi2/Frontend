@@ -6,16 +6,16 @@ import { MaterialModule } from '../material/material.module';
 import { ModalMsgComponent } from './components/modal-msg/modal-msg.component';
 import { ModalLoginComponent } from './components/modal-login/modal-login.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { OptionsGestionComponent } from './components/options-gestion/options-gestion.component';
 import { DatepickerYearComponent } from './components/datepicker-year/datepicker-year.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
     LayoutComponent,
     ModalMsgComponent,
     ModalLoginComponent,
-    OptionsGestionComponent,
-    DatepickerYearComponent
+    DatepickerYearComponent,
+    SafePipe
   ],
   imports: [
     CommonModule,
@@ -24,7 +24,8 @@ import { DatepickerYearComponent } from './components/datepicker-year/datepicker
     ReactiveFormsModule
   ],
   exports:[
-    DatepickerYearComponent
+    DatepickerYearComponent,
+    SafePipe
   ]
 })
 export class SharedModule { }

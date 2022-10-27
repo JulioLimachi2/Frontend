@@ -4,7 +4,7 @@ import { GeneralDocumentsListComponent } from './components/general-documents-li
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':url',
     component: GeneralDocumentsListComponent,
   },
 ];
