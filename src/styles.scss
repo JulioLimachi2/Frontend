@@ -53,6 +53,7 @@ body {
 
     button:disabled {
         opacity: 0.5;
+        cursor: initial;
     }
 }
 
@@ -120,6 +121,14 @@ body {
 .container-responsible-table{
     width: 100%;
     overflow: auto;
+
+    table{
+        width: 100%;
+        .mat-row:hover {
+            background: whitesmoke;
+            cursor: pointer;
+        }
+    }
 }
 
 .table-standart{
@@ -128,5 +137,18 @@ body {
         &{
             width: 100%;
         }
+    }
+}
+
+.active-row-table{
+    background: whitesmoke;
+}
+
+.inpt-row{ 
+    input{
+        border: none;
+    }
+    input:focus{
+        outline: none;
     }
 }

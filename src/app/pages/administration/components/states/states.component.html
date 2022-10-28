@@ -4,30 +4,45 @@
         <button (click)="showForm = true;formState.reset();">Agregar</button>
     </div>
 
-    <div class="container-responsible-table">
-        <table mat-table [dataSource]="dataSource" class="table-standart">
+    <div class="container-responsible-table" [formGroup]="formState" #tbstate>
+        <table mat-table [dataSource]="dataSource" class="table-state" >
             <ng-container matColumnDef="code">
                 <th mat-header-cell *matHeaderCellDef> Código </th>
-                <td mat-cell *matCellDef="let element"> {{element.code}} </td>
-            </ng-container>
-    
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> Nombre </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-            </ng-container>
-    
-            <ng-container matColumnDef="actions">
-                <th mat-header-cell *matHeaderCellDef> Acciones </th>
                 <td mat-cell *matCellDef="let element;let i = index">
-                    <button mat-icon-button (click)="edit(element,i)">
-                        <mat-icon>edit</mat-icon>
-                    </button>
+                    <div *ngIf="indexSelectedRow !== i">{{element.code}} </div> 
+                    <div class="inpt-row" *ngIf="editActive && indexSelectedRow === i">
+                        <input type="text" formControlName="code">
+                    </div>
                 </td>
             </ng-container>
-    
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element;let i = index"> 
+                    <div *ngIf="indexSelectedRow !== i"> {{element.name}} </div> 
+                    <div class="inpt-row" *ngIf="editActive && indexSelectedRow === i">
+                        <input type="text" formControlName="name">
+                    </div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="noResults">
+                <td mat-footer-row *matFooterCellDef [colSpan]="displayedColumns.length">
+                    No se encontraron resultados.
+                </td>
+            </ng-container>
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index"
+                [ngClass]="{'active-row-table': indexSelectedRow == i}" (dblclick)="selectedRow(row,i)"></tr>
+            <tr mat-footer-row [hidden]="dataSource.data.length > 0 || emptyResult" *matFooterRowDef="['noResults']"></tr>
         </table>
+    </div>
+
+    <div class="container-btn-save">
+        <button>Añadir</button>
+        <button (click)="edit()" [disabled]="!editActive">Modificar</button>
+        <button>Grabar</button>
     </div>
 
 </div>

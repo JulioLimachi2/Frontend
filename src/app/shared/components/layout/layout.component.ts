@@ -95,6 +95,8 @@ export class LayoutComponent implements OnInit {
       if (url) {
         if (url.startsWith("/options")) {
           this.openedDrawner = false;
+        }else{
+          this.openedDrawner = true;
         }
       }
     });
@@ -107,6 +109,7 @@ export class LayoutComponent implements OnInit {
     /*si hay data del usuario en el localstorage setearla a la variable userLog*/
     if (localStorage.getItem('userlog')) {
       this.userLog = JSON.parse(localStorage.getItem('userlog'));
+      this.datanav = JSON.parse(localStorage.getItem('navuser'));
     }
     /*metodo de deteccion de opcion seleccionada*/
     this.detectSelectOption();
@@ -174,6 +177,7 @@ export class LayoutComponent implements OnInit {
         const navs = nav.filter(x => {
           return x.id === id
         });
+        localStorage.setItem('navuser',JSON.stringify(navs[0].data));
         navs.length && (this.datanav = navs[0].data);
       });
     }
@@ -200,6 +204,7 @@ export class LayoutComponent implements OnInit {
   /*metodo para desloguearse*/
   logout() {
     localStorage.removeItem('userlog');
+    localStorage.removeItem('navuser');
     this.userLog = null;
     this.openedDrawner = true;
     this.datanav = [];

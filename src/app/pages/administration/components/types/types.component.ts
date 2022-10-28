@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-types',
@@ -8,44 +9,59 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class TypesComponent implements OnInit {
 
-  displayedColumns: string[] = ['code', 'description', 'actions'];
+  @ViewChild('tbtypes', { static: false }) tbTypes: ElementRef;
+  indexSelectedRow: number;
+  editActive: boolean;
+  indexSource: number;
+  displayedColumns: string[] = ['code', 'description'];
   showForm: boolean;
   formType: FormGroup;
-  indexFacilitator: number;
 
-  dataSource = [
-    {
-      code: '1',
-      description: 'Correctiva'
-    },
-    {
-      code: '2',
-      description: 'Oportunidad de mejora'
-    }
-  ];
+  dataSource = new MatTableDataSource<any>([]);
 
-    constructor(private builder: FormBuilder) {
+  constructor(private builder: FormBuilder) {
     this.formType = this.builder.group({
       code: ['', Validators.required],
       description: ['', Validators.required]
     })
   }
 
-  ngOnInit(): void {
+  @HostListener('document:click', ['$event'])
+  clickout(event) {
+    if (!this.tbTypes?.nativeElement?.contains(event.target)) {
+      this.indexSelectedRow = null;
+      this.editActive = false;
+    }
   }
 
-  save(){
-    if(this.indexFacilitator !==undefined){
-      this.dataSource[this.indexFacilitator] = this.formType.value;
-    }else{
-      this.dataSource.push(this.formType.value);
-    }
+  ngOnInit(): void {
+    this.dataSource.data = [
+      {
+        code: '1',
+        description: 'Correctiva'
+      },
+      {
+        code: '2',
+        description: 'Oportunidad de mejora'
+      }
+    ];
+  }
+
+  save() {
+    this.dataSource.data.push(this.formType.value);
     this.showForm = false;
   }
 
-  edit(element,index){
-    this.indexFacilitator = index;
-    this.showForm = true;
+  edit() {
+    this.dataSource.data[this.indexSelectedRow] = this.formType.value;
+    this.dataSource = new MatTableDataSource(this.dataSource.data)
+    this.indexSelectedRow = null;
+    this.editActive = false;
+  }
+
+  selectedRow(element, index: number) {
+    this.indexSelectedRow = index;
+    this.editActive = true;
     this.formType.patchValue({
       code: element.code,
       description: element.description

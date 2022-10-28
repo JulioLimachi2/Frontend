@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-states',
@@ -8,32 +9,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class StatesComponent implements OnInit {
 
-  displayedColumns: string[] = ['code', 'name', 'actions'];
+  @ViewChild('tbstate', {static: false}) tbstate: ElementRef;
+
+  displayedColumns: string[] = ['code', 'name'];
+  indexSelectedRow: number;
   showForm: boolean;
   formState: FormGroup;
-  indexState:number;
-  dataSource = [
-    {
-      code:'01',
-      name:'generado'
-    },
-    {
-      code:'02',
-      name:'autorizado'
-    },
-    {
-      code:'03',
-      name:'devuelto'
-    },
-    {
-      code:'04',
-      name:'pendiente'
-    },
-    {
-      code:'05',
-      name:'implementado'
-    }
-  ];
+  editActive :boolean;
+  dataSource =  new MatTableDataSource<any>([]);
 
   constructor(private builder: FormBuilder) { 
     this.formState = this.builder.group({
@@ -42,25 +25,59 @@ export class StatesComponent implements OnInit {
     })
   }
 
+  @HostListener('document:click',['$event'])
+  clickout(event){
+    if(!this.tbstate?.nativeElement?.contains(event.target)){
+      this.indexSelectedRow = null;
+      this.editActive = false;
+    }
+  }
+
   ngOnInit(): void {
+    this.dataSource.data = [
+      {
+        code:'01',
+        name:'generado'
+      },
+      {
+        code:'02',
+        name:'autorizado'
+      },
+      {
+        code:'03',
+        name:'devuelto'
+      },
+      {
+        code:'04',
+        name:'pendiente'
+      },
+      {
+        code:'05',
+        name:'implementado'
+      }
+    ];
   }
 
   save(){
-    if(this.indexState !==undefined){
-      this.dataSource[this.indexState] = this.formState.value;
-    }else{
-      this.dataSource.push(this.formState.value);
-    }
+    this.dataSource.data.push(this.formState.value);
     this.showForm = false;
   }
 
-  edit(element,index){
-    this.indexState = index;
-    this.showForm = true;
+  edit(){
+    this.dataSource.data[this.indexSelectedRow] = this.formState.value;
+    this.dataSource= new MatTableDataSource(this.dataSource.data)
+    this.indexSelectedRow = null;
+    this.editActive = false;
+  }
+
+  selectedRow(row,index:number){
+    this.indexSelectedRow = index;
+    this.editActive = true;
     this.formState.patchValue({
-      code: element.code,
-      name: element.name
+      code: row.code,
+      name: row.name
     });
   }
+  
 
 }
