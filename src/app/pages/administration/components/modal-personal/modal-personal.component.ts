@@ -56,11 +56,11 @@ export class ModalPersonalComponent implements OnInit {
     console.log('campos no vacios',this.getrequestFil(this.formPersonal));
     const filt = this.dataFilterPersonal.filter(personal => {
       const code = this.formPersonal.value.code ? (personal.code === this.formPersonal.value.code) : null;
-      for(let i = 0 ; i < this.getrequestFil(this.formPersonal).length ; i++){
-            if(this.getrequestFil(this.formPersonal)[i] == 'code'){
-              consulta = code
-            }
-      }
+      // for(let i = 0 ; i < this.getrequestFil(this.formPersonal).length ; i++){
+      //       if(this.getrequestFil(this.formPersonal)[i] == 'code'){
+      //         consulta = code
+      //       }
+      // }
       //this.formPersonal.value.code && 
       
       const name = this.formPersonal.value.name ? personal.name === this.formPersonal.value.name : null;
