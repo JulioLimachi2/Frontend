@@ -1,0 +1,114 @@
+<div class="container-title" style="text-align: center">Personal</div>
+<div class="icon-close" mat-dialog-close>X</div>
+<div class="p-20">
+    <form [formGroup]="formPersonal" class="form-personal">
+        <div class="inpt-personal">
+            <mat-form-field appearance="outline">
+                <mat-label>Código</mat-label>
+                <input matInput placeholder="Código" formControlName="code">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Grupo</mat-label>
+                <mat-select formControlName="group">
+                    <mat-option *ngFor="let group of groups" [value]="group.id">{{group.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Apellido Paterno</mat-label>
+                <input matInput placeholder="Apellido Paterno" formControlName="firstName">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Situacion trab</mat-label>
+                <mat-select formControlName="situation">
+                    <mat-option [value]="true">Activo</mat-option>
+                    <mat-option [value]="false">No Activo</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>Apellido Materno</mat-label>
+                <input matInput placeholder="Apellido Materno" formControlName="lastName">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Nombres</mat-label>
+                <input matInput placeholder="Nombres" formControlName="name">
+            </mat-form-field>
+        </div>
+
+
+        <div class="container-btn-personal">
+            <button (click)="search()" type="button">Buscar</button>
+            <button (click)="clear()" type="button">Limpiar</button>
+        </div>
+    </form>
+
+    <div class="cont-table-personal">
+        <table mat-table [dataSource]="dataSourcePersonal" class="table-personal">
+            <ng-container matColumnDef="code">
+                <th mat-header-cell *matHeaderCellDef> Código </th>
+                <td mat-cell *matCellDef="let element;">
+                    <div>{{element.code}}</div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Fecha de Ingreso </th>
+                <td mat-cell *matCellDef="let element;">
+                    <div>{{element.date | date: 'dd/MM/yyyy'}}</div>
+                </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="situation">
+                <th mat-header-cell *matHeaderCellDef> Situación </th>
+                <td mat-cell *matCellDef="let element;">
+                    <div>{{element.situation ? 'ACTIVO' : 'NO ACTIVO'}}</div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="firstName">
+                <th mat-header-cell *matHeaderCellDef> Apellido Paterno </th>
+                <td mat-cell *matCellDef="let element;">
+                    <div>{{element.firstName}}</div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="lastName">
+                <th mat-header-cell *matHeaderCellDef> Apellido Materno </th>
+                <td mat-cell *matCellDef="let element;">
+                    <div>{{element.lastName}}</div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element;">
+                    <div>{{element.name}}</div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="group">
+                <th mat-header-cell *matHeaderCellDef> Grupo </th>
+                <td mat-cell *matCellDef="let element;">
+                    <div>{{element.group.name}}</div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="noResults">
+                <td mat-footer-row *matFooterCellDef [colSpan]="displayedColumns.length">
+                    No se encontraron resultados.
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index" (dblclick)="selectedRow(row)"
+                [ngClass]="{'active-row-table': indexSelectedRow == i}"></tr>
+            <tr mat-footer-row [hidden]="dataSourcePersonal.data.length > 0 || emptyResult" *matFooterRowDef="['noResults']">
+            </tr>
+        </table>
+    </div>
+</div>

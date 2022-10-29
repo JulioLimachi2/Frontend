@@ -10,9 +10,7 @@
                 <th mat-header-cell *matHeaderCellDef> Código </th>
                 <td mat-cell *matCellDef="let element;let i = index"> 
                     <div *ngIf="indexSelectedRow !== i">{{element.code}}</div>
-                    <div class="inpt-row" *ngIf="editActive && indexSelectedRow === i">
-                        <input type="text" formControlName="code">
-                    </div>
+                    <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="code">
                  </td>
             </ng-container>
     
@@ -20,29 +18,23 @@
                 <th mat-header-cell *matHeaderCellDef> Descripción </th>
                 <td mat-cell *matCellDef="let element; let i = index"> 
                     <div *ngIf="indexSelectedRow !== i">{{element.description}} </div>
-                    <div class="inpt-row" *ngIf="editActive && indexSelectedRow === i">
-                        <input type="text" formControlName="description">
-                    </div>
+                    <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="description">
                 </td>
             </ng-container>
     
             <ng-container matColumnDef="corrective">
-                <th mat-header-cell *matHeaderCellDef> Correctiva </th>
-                <td mat-cell *matCellDef="let element; let i = index">
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Correctiva </th>
+                <td mat-cell *matCellDef="let element; let i = index" style="text-align: center;">
                     <mat-checkbox *ngIf="indexSelectedRow !== i" [checked]="element.corrective" [color]="'primary'" disabled="disabled"></mat-checkbox>
-                    <div class="inpt-row" *ngIf="editActive && indexSelectedRow === i">
-                        <mat-checkbox [checked]="element.corrective" [color]="'primary'" formControlName="corrective"></mat-checkbox>
-                    </div>
+                    <mat-checkbox *ngIf="editActive && indexSelectedRow === i" [checked]="element.corrective" [color]="'primary'" formControlName="corrective"></mat-checkbox>
                 </td>
             </ng-container>
     
             <ng-container matColumnDef="upgrade">
-                <th mat-header-cell *matHeaderCellDef> Oportunidad de Mejora </th>
-                <td mat-cell *matCellDef="let element; let i = index">
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Oportunidad de Mejora </th>
+                <td mat-cell *matCellDef="let element; let i = index" style="text-align: center;">
                     <mat-checkbox *ngIf="indexSelectedRow !== i" [checked]="element.upgrade" [color]="'primary'" disabled="disabled"></mat-checkbox>
-                    <div class="inpt-row" *ngIf="editActive && indexSelectedRow === i">
-                        <mat-checkbox [checked]="element.upgrade" [color]="'primary'" formControlName="upgrade"></mat-checkbox>
-                    </div>
+                    <mat-checkbox *ngIf="editActive && indexSelectedRow === i" [checked]="element.upgrade" [color]="'primary'" formControlName="upgrade"></mat-checkbox>
                 </td>
             </ng-container>
     

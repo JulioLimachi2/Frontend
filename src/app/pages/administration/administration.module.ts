@@ -10,6 +10,7 @@ import { TypesComponent } from './components/types/types.component';
 import { AdministrationRoutingModule } from './administration-routing.module';
 import { MaterialModule } from 'src/app/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModalPersonalComponent } from './components/modal-personal/modal-personal.component';
 
 
 
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProcessRepresentativeComponent,
     OfficersComponent,
     AuditorsComponent,
-    TypesComponent
+    TypesComponent,
+    ModalPersonalComponent
   ],
   imports: [
     CommonModule,

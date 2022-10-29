@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { ModalPersonalComponent } from '../modal-personal/modal-personal.component';
 
 @Component({
   selector: 'app-process-representative',
@@ -20,7 +22,7 @@ export class ProcessRepresentativeComponent implements OnInit {
 
   dataSource = new MatTableDataSource<any>([]);
 
-  constructor(private builder: FormBuilder) {
+  constructor(private builder: FormBuilder,public dialog: MatDialog) {
     this.formProcess = this.builder.group({
       code: ['', Validators.required],
       name: ['', Validators.required],
@@ -85,6 +87,26 @@ export class ProcessRepresentativeComponent implements OnInit {
       code: element.code,
       name: element.name,
       state: element.state,
+    });
+  }
+
+  add(){
+    const dialogRef = this.dialog.open(ModalPersonalComponent, {
+      width: '1000px',
+      panelClass:'modal-personal',
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(personal => {
+      if(personal){
+        this.formProcess.patchValue({
+          code: personal.code,
+          name: `${personal.firstName} ${personal.lastName} ${personal.name}` ,
+          state: personal.situation,
+        });
+        this.dataSource.data.push(this.formProcess.value);
+        this.dataSource = new MatTableDataSource(this.dataSource.data)
+      }
     });
   }
 

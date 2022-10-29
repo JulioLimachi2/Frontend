@@ -121,7 +121,8 @@ body {
 .container-responsible-table{
     width: 100%;
     overflow: auto;
-
+    margin-top: 20px;
+    
     table{
         width: 100%;
         .mat-row:hover {
@@ -145,10 +146,7 @@ body {
 }
 
 .inpt-row{ 
-    input{
-        border: none;
-    }
-    input:focus{
+    &:focus{
         outline: none;
     }
 }

@@ -1,0 +1,108 @@
+.p-20 {
+    padding: 20px;
+}
+
+.icon-close{
+    background-color: red;
+    width: fit-content;
+    padding: 2px 12px;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    cursor: pointer;
+}
+
+.form-personal {
+    display  : flex;
+    flex-wrap: wrap;
+    gap      : 20px;
+
+    .inpt-personal {
+        display        : flex;
+        flex-wrap      : wrap;
+        column-gap     : 15px;
+        justify-content: center;
+    }
+
+    .container-btn-personal {
+        width          : 100%;
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: center;
+        gap            : 25px;
+
+        button {
+            padding         : 5px 30px;
+            border          : 1px solid #44acab;
+            background-color: #ffffff;
+            cursor          : pointer;
+
+            &:hover {
+                background: whitesmoke;
+            }
+        }
+    }
+}
+
+.cont-table-personal {
+    width     : 100%;
+    overflow  : auto;
+    height    : 300px;
+    margin-top: 25px;
+
+    .table-personal {
+        width: 1000px;
+
+        .mat-row:hover {
+            background: whitesmoke;
+            cursor    : pointer;
+        }
+    }
+}
+
+
+
+::ng-deep .modal-personal {
+    .mat-dialog-container {
+        padding      : 0;
+        border-radius: 0;
+        height       : 500px;
+        position: relative;
+    }
+}
+
+::ng-deep .cdk-overlay-pane {
+    overflow: auto;
+}
+
+@media (min-width: 768px) {
+    .form-personal {
+        flex-wrap: initial;
+
+        .container-btn-personal {
+            height: min-content;
+            width : auto;
+        }
+    }
+
+    .cont-table-personal {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    ::ng-deep .modal-personal {
+        .mat-dialog-container {
+            height: auto;
+        }
+    }
+
+    .form-personal {
+        .container-btn-personal {
+            button {
+                padding: 5px 35px;
+            }
+        }
+    }
+}

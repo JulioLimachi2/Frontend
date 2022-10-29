@@ -1,0 +1,182 @@
+[
+    {
+        "code": "99285",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "Arturo eduardo",
+        "firstName": "Camayo",
+        "lastName": "cordova",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99276",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "carlos alberto",
+        "firstName": "uribe",
+        "lastName": "albujar",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99277",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "alfredo",
+        "firstName": "vigo",
+        "lastName": "lazo",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99280",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "meliton jorge",
+        "firstName": "carbajal",
+        "lastName": "palomino",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99200",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "florinel",
+        "firstName": "moreno",
+        "lastName": "bardales",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99275",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "miguel antonio",
+        "firstName": "trujillo",
+        "lastName": "gonzales",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99266",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "wendy",
+        "firstName": "herrera",
+        "lastName": "lora",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99267",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "lady margot",
+        "firstName": "madrid",
+        "lastName": "arismendiz",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99269",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "guillermo davila",
+        "firstName": "mendoza",
+        "lastName": "aguilar",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99270",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "andres",
+        "firstName": "flores",
+        "lastName": "herrera",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99271",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "federico",
+        "firstName": "gonzales",
+        "lastName": "huaman",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99272",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "arturo",
+        "firstName": "barrios",
+        "lastName": "panduro",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99272",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "ana",
+        "firstName": "flores",
+        "lastName": "flores",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99273",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "alejandro",
+        "firstName": "ramirez",
+        "lastName": "olva",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    },
+    {
+        "code": "99274",
+        "date": "Wed Nov 03 1999 18:13:38 GMT-0500 (hora estándar de Perú)",
+        "situation": true,
+        "name": "rodrigo",
+        "firstName": "flores",
+        "lastName": "lozano",
+        "group": {
+            "id":1,
+            "name":"planilla de empleados"
+        }
+    }
+]
