@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-general-report',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneralReportComponent implements OnInit {
 
-  constructor() { }
+
+  urlDoc: string;
+  constructor(private router: ActivatedRoute) { }
 
   ngOnInit(): void {
+     this.urlDoc = this.router.snapshot.paramMap.get('https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf');
   }
+
 
 }
