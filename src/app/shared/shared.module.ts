@@ -8,6 +8,7 @@ import { ModalLoginComponent } from './components/modal-login/modal-login.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { DatepickerYearComponent } from './components/datepicker-year/datepicker-year.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { CardItemComponent } from './components/card-item/card-item.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SafePipe } from './pipes/safe.pipe';
     ModalMsgComponent,
     ModalLoginComponent,
     DatepickerYearComponent,
-    SafePipe
+    SafePipe,
+    CardItemComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { SafePipe } from './pipes/safe.pipe';
   ],
   exports:[
     DatepickerYearComponent,
-    SafePipe
+    SafePipe,
+    CardItemComponent
   ]
 })
 export class SharedModule { }
