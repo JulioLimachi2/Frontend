@@ -14,6 +14,11 @@ import { ActionRequestAuthorizationComponent } from './components/authorization-
 import { ActionPlanRegisterComponent } from './components/authorization-register/action-plan-register/action-plan-register.component';
 import { FollowUpActionComponent } from './components/authorization-register/follow-up-action/follow-up-action.component';
 import { EfficacyVerificationComponent } from './components/authorization-register/efficacy-verification/efficacy-verification.component';
+import { ListActionsShareComponent } from './components/share-register/list-actions-share/list-actions-share.component';
+import { ActionRequestShareComponent } from './components/share-register/action-request-share/action-request-share.component';
+import { ActionPlanShareComponent } from './components/share-register/action-plan-share/action-plan-share.component';
+import { FollowUpShareComponent } from './components/share-register/follow-up-share/follow-up-share.component';
+import { EfficacyVerificationShareComponent } from './components/share-register/efficacy-verification-share/efficacy-verification-share.component';
 
 
 
@@ -28,7 +33,12 @@ import { EfficacyVerificationComponent } from './components/authorization-regist
     ActionRequestAuthorizationComponent,
     ActionPlanRegisterComponent,
     FollowUpActionComponent,
-    EfficacyVerificationComponent
+    EfficacyVerificationComponent,
+    ListActionsShareComponent,
+    ActionRequestShareComponent,
+    ActionPlanShareComponent,
+    FollowUpShareComponent,
+    EfficacyVerificationShareComponent
   ],
   imports: [
     CommonModule,

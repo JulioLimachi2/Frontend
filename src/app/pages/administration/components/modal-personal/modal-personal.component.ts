@@ -56,9 +56,9 @@ export class ModalPersonalComponent implements OnInit {
     console.log('campos no vacios',this.getrequestFil(this.formPersonal));
     const filt = this.dataFilterPersonal.filter(personal => {
       const code = this.formPersonal.value.code ? (personal.code === this.formPersonal.value.code) : null;
-      // for(let i = 0 ; i < this.getrequestFil(this.formPersonal).length ; i++){
-      //       if(this.getrequestFil(this.formPersonal)[i] == 'code'){
-      //         consulta = code
+      // for(let i = 0 ; i < this.stringRequest.length ; i++){
+      //       if(this.stringRequest[i] == 'code'){
+      //         consulta = personal.code === this.formPersonal.value.code
       //       }
       // }
       //this.formPersonal.value.code && 

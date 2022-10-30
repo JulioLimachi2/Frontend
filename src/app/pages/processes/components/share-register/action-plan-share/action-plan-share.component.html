@@ -1,5 +1,3 @@
-
-
 <div class="container-responsible-table">
     <table mat-table [dataSource]="dataSource" class="table-standart">
         <ng-container matColumnDef="nro">
@@ -39,9 +37,9 @@
     <div class="contpicker-presentacion">
         <mat-form-field appearance="outline">
             <mat-label>Fecha de Presentación</mat-label>
-            <input matInput [matDatepicker]="pickerEmision">
-            <mat-datepicker-toggle matSuffix [for]="pickerEmision"></mat-datepicker-toggle>
-            <mat-datepicker #pickerEmision></mat-datepicker>
+            <input matInput [matDatepicker]="pickerPresentation">
+            <mat-datepicker-toggle matSuffix [for]="pickerPresentation"></mat-datepicker-toggle>
+            <mat-datepicker #pickerPresentation></mat-datepicker>
         </mat-form-field>
     </div>
 </div>

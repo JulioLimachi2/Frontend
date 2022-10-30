@@ -2,17 +2,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-follow-up-action',
-  templateUrl: './follow-up-action.component.html',
-  styleUrls: ['./follow-up-action.component.scss']
+  selector: 'app-follow-up-share',
+  templateUrl: './follow-up-share.component.html',
+  styleUrls: ['./follow-up-share.component.scss']
 })
-export class FollowUpActionComponent implements OnInit {
+export class FollowUpShareComponent implements OnInit {
 
-  formUpAction: FormGroup;
+  formUpShare: FormGroup;
   @Output() onNext: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private builder: FormBuilder) {
-    this.formUpAction = this.builder.group({
+    constructor(private builder: FormBuilder) {
+    this.formUpShare = this.builder.group({
       correlative: [, Validators.required],
       year: [, Validators.required],
       type: [, Validators.required],
@@ -28,11 +28,11 @@ export class FollowUpActionComponent implements OnInit {
   }
 
   getYear(year: string) {
-    this.formUpAction.controls['year'].setValue(year);
+    this.formUpShare.controls['year'].setValue(year);
   }
 
   next(){
-     this.onNext.emit(true);
+    this.onNext.emit(true);
   }
 
 }

@@ -1,1 +1,50 @@
-<p>efficacy-verification works!</p>
+<form [formGroup]="formEfficacyVerification" class="form-register">
+
+    <div class="inp-label">
+        <div class="label">Nro:</div>
+        <mat-form-field appearance="outline" style="width: 100px">
+            <input matInput formControlName="correlative" type="number">
+        </mat-form-field>
+
+        <app-datepicker-year (onGetValue)="getYear($event)" [width]="'100'"></app-datepicker-year>
+    </div>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Tipo</mat-label>
+        <input matInput placeholder="type" formControlName="type">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Estado</mat-label>
+        <input matInput placeholder="Estado" formControlName="state">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" style="max-width: 100%">
+        <mat-label>Verificación de Eficacia</mat-label>
+        <textarea matInput placeholder="Descripción" formControlName="efficacyVerification" rows="5"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fecha de Verificación</mat-label>
+        <input matInput [matDatepicker]="pickerverification" formControlName="verificationDate">
+        <mat-datepicker-toggle matSuffix [for]="pickerverification"></mat-datepicker-toggle>
+        <mat-datepicker #pickerverification></mat-datepicker>
+    </mat-form-field>
+
+    <div class="cont-radios">
+        <mat-radio-group aria-labelledby="radios tipo cerrado"
+        formControlName="closed">
+            <mat-radio-button [value]="'Cerrado'" [color]="'primary'">
+                Cerrado
+            </mat-radio-button>
+            <mat-radio-button [value]="'Cerrado por Ineficaz'" [color]="'primary'">
+                Cerrado por Ineficaz
+            </mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+    <div class="container-btn-save">
+        <button (click)="save()" type="button" [disabled]="!formEfficacyVerification.valid">Guardar</button>
+    </div>
+</form>
