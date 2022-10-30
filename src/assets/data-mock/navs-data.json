@@ -73,6 +73,44 @@
     },
     {
         "id": "1002",
-        "data": []
+        "data": [
+            {
+                "title": "Procesos",
+                "routes": [
+                    {
+                        "name": "Ficha de formulación",
+                        "url": "/process/file"
+                    },
+                    {
+                        "name": "Ficha de revisión",
+                        "url": "/process/revision"
+                    }
+
+                ]
+            },
+            {
+                "title": "EDICIÓN",
+                "routes": [
+                    {
+                        "name": "Ficha de revisión",
+                        "url": "/processes/findings"
+                    }
+
+                ]
+            },
+            {
+                "title": "REPORTES",
+                "routes": [
+                    {
+                        "name": "Reporte de Indicadores",
+                        "url": "/reports/indicadores"
+                    },
+                    {
+                        "name": "Formulación y revisión",
+                        "url": "/reports/revision"
+                    }
+                ]
+            }
+        ]
     }
 ]
