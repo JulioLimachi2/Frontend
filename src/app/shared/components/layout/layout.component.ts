@@ -135,9 +135,10 @@ export class LayoutComponent implements OnInit {
         });
   
         dialogRef.afterClosed().subscribe(result => {
+          this.router.navigate(['/']);
         });
       }
-      
+     
     } else {
       this.idTreeNode = node.id;
       this.router.navigate(['/generalDocuments', node.url]);

@@ -24,7 +24,7 @@ export class ListActionsShareComponent implements OnInit {
         area: 'Gerencia de Informática'
       },
       {
-        type:'Preventiva',
+        type:'Oportunidad de mejora',
         correlative: '0002',
         year: '2015',
         coordinator: 'Llanos Barrios Patricia',
@@ -38,7 +38,7 @@ export class ListActionsShareComponent implements OnInit {
         area: 'Gerencia de Informática'
       },
       {
-        type:'Preventiva',
+        type:'Oportunidad de mejora',
         correlative: '0004',
         year: '2015',
         coordinator: 'Llanos Barrios Patricia',
