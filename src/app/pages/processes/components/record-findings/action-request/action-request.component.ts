@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDatepicker } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-action-request',
@@ -31,13 +30,21 @@ export class ActionRequestComponent implements OnInit {
       id: 2,
       name: 'Carlos Andres'
     }
-  ]
+  ];
+
+  types = [
+    {
+      id: 1,
+      name: 'Correctiva'
+    }
+  ];
 
   constructor(private builder: FormBuilder) { 
     this.formActionRequest = this.builder.group({
       correlative:[,Validators.required],
       year: [,Validators.required],
       font:[,Validators.required],
+      type:[,Validators.required],
       requirement: [,Validators.required],
       state:[,Validators.required],
       area:[,Validators.required],

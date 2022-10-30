@@ -1,4 +1,4 @@
-<form [formGroup]="formUpAction" class="form-register">
+<form [formGroup]="formEfficacyShare" class="form-register">
 
     <div class="inp-label">
         <div class="label">Nro:</div>
@@ -21,8 +21,8 @@
 
 
     <mat-form-field appearance="outline" style="max-width: 100%">
-        <mat-label>Seguimiento del caso</mat-label>
-        <textarea matInput placeholder="Seguimiento del caso" formControlName="followUp" rows="5"></textarea>
+        <mat-label>Verificación de Eficacia</mat-label>
+        <textarea matInput placeholder="Descripción" formControlName="efficacyVerification" rows="5"></textarea>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
@@ -32,18 +32,19 @@
         <mat-datepicker #pickerverification></mat-datepicker>
     </mat-form-field>
 
-    <div class="cont-check">
-        <mat-checkbox [color]="'primary'" formControlName="implemented" [labelPosition]="'before'">Implementado</mat-checkbox>
+    <div class="cont-radios">
+        <mat-radio-group aria-labelledby="radios tipo cerrado"
+        formControlName="closed">
+            <mat-radio-button [value]="'Cerrado'" [color]="'primary'">
+                Cerrado
+            </mat-radio-button>
+            <mat-radio-button [value]="'Cerrado por Ineficaz'" [color]="'primary'">
+                Cerrado por Ineficaz
+            </mat-radio-button>
+        </mat-radio-group>
     </div>
 
-    <mat-form-field appearance="outline">
-        <mat-label>Fecha de Medición de la Eficacia</mat-label>
-        <input matInput [matDatepicker]="pickerEfficacy" formControlName="dateEfficacy">
-        <mat-datepicker-toggle matSuffix [for]="pickerEfficacy"></mat-datepicker-toggle>
-        <mat-datepicker #pickerEfficacy></mat-datepicker>
-    </mat-form-field>
-
     <div class="container-btn-save">
-        <button (click)="next()" type="button" [disabled]="!formUpAction.valid">Siguiente</button>
+        <button (click)="save()" type="button" [disabled]="!formEfficacyShare.valid">Guardar</button>
     </div>
 </form>

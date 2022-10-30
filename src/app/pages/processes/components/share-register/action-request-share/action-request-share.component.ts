@@ -2,15 +2,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-action-request-authorization',
-  templateUrl: './action-request-authorization.component.html',
-  styleUrls: ['./action-request-authorization.component.scss']
+  selector: 'app-action-request-share',
+  templateUrl: './action-request-share.component.html',
+  styleUrls: ['./action-request-share.component.scss']
 })
-export class ActionRequestAuthorizationComponent implements OnInit {
+export class ActionRequestShareComponent implements OnInit {
 
-  formActionRequestAuthorization: FormGroup;
+  formActionRequestShare: FormGroup;
   @Output() onNext: EventEmitter<boolean> = new EventEmitter();
-
   fonts = [
     {
       id: 1,
@@ -41,7 +40,7 @@ export class ActionRequestAuthorizationComponent implements OnInit {
   ];
 
   constructor(private builder: FormBuilder) { 
-    this.formActionRequestAuthorization = this.builder.group({
+    this.formActionRequestShare = this.builder.group({
       correlative:[,Validators.required],
       year: [,Validators.required],
       font:[,Validators.required],
@@ -63,11 +62,11 @@ export class ActionRequestAuthorizationComponent implements OnInit {
   }
 
   save(){
-    console.log('formActionRequestAuthorization',this.formActionRequestAuthorization.value);
+    console.log('formActionRequest',this.formActionRequestShare.value);
   }
 
   getYear(year: string){
-     this.formActionRequestAuthorization.controls['year'].setValue(year);
+     this.formActionRequestShare.controls['year'].setValue(year);
   }
 
   next(){

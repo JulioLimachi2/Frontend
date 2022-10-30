@@ -18,6 +18,13 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="type">
+          <mat-option *ngFor="let type of types" [value]="type.id">{{type.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
         <mat-label>Requerimiento ISO 9001</mat-label>
         <input matInput placeholder="Requerimiento" formControlName="requirement">
     </mat-form-field>
@@ -59,11 +66,6 @@
         <input matInput [matDatepicker]="pickerShipment" formControlName="dateShipment">
         <mat-datepicker-toggle matSuffix [for]="pickerShipment"></mat-datepicker-toggle>
         <mat-datepicker #pickerShipment></mat-datepicker>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Responsable UO</mat-label>
-        <input matInput placeholder="CCA" formControlName="responsibleUO">
     </mat-form-field>
 
     <mat-form-field appearance="outline">

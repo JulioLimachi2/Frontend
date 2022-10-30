@@ -1,33 +1,18 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-list-actions-authorization',
-  templateUrl: './list-actions-authorization.component.html',
-  styleUrls: ['./list-actions-authorization.component.scss']
+  selector: 'app-list-actions-share',
+  templateUrl: './list-actions-share.component.html',
+  styleUrls: ['./list-actions-share.component.scss']
 })
-export class ListActionsAuthorizationComponent implements OnInit {
+export class ListActionsShareComponent implements OnInit {
 
-  formSearchActions: FormGroup;
-  @Output() onNext: EventEmitter<boolean> = new EventEmitter();
   displayedColumns: string[] = ['type', 'correlative', 'year', 'coordinator','area'];
-  areas = [
-    {
-      id: '01',
-      name: 'Gerencia de Informatica'
-    }
-  ];
-
+  @Output() onNext: EventEmitter<boolean> = new EventEmitter();
   dataSource = new MatTableDataSource<any>([]);
 
-  constructor(private builder: FormBuilder) {
-    this.formSearchActions = this.builder.group({
-      year: [],
-      state: [],
-      area: []
-    });
-  }
+  constructor() { }
 
   ngOnInit(): void {
     this.dataSource.data = [
@@ -87,12 +72,12 @@ export class ListActionsAuthorizationComponent implements OnInit {
     console.log('year', year);
   }
 
-  search(){
-    
-  }
-
   next(){
     this.onNext.emit(true);
+  }
+
+  search(){
+    
   }
 
 }

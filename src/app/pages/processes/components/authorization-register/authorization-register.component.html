@@ -1,26 +1,26 @@
 <div class="container-title">Registro de Autorizaciones</div>
-<mat-tab-group class="mat-tab-sunarp">
+<mat-tab-group class="mat-tab-sunarp" [(selectedIndex)]="indexTab">
     <mat-tab label="Listado de Acciones">
         <div class="cont-p">
-            <app-list-actions-authorization></app-list-actions-authorization>
+            <app-list-actions-authorization (onNext)="changeTab($event)"></app-list-actions-authorization>
         </div>
     </mat-tab>
-    <mat-tab label="Solicitud de Acción">
+    <mat-tab label="Solicitud de Acción" [disabled]="false">
         <div class="cont-p">
-            <app-action-request-authorization></app-action-request-authorization>
+            <app-action-request-authorization (onNext)="changeTab($event)"></app-action-request-authorization>
         </div>
     </mat-tab>
-    <mat-tab label="Registro del Plan de Acción">
+    <mat-tab label="Registro del Plan de Acción" [disabled]="!totalTabs.includes(2)">
         <div class="cont-p">
-           <app-action-plan-register></app-action-plan-register>
+           <app-action-plan-register (onNext)="changeTab($event)"></app-action-plan-register>
         </div>
     </mat-tab>
-    <mat-tab label="Seguimiento de Acción">
+    <mat-tab label="Seguimiento de Acción" [disabled]="!totalTabs.includes(3)">
         <div class="cont-p">
-            <app-follow-up-action></app-follow-up-action>
+            <app-follow-up-action (onNext)="changeTab($event)"></app-follow-up-action>
         </div>
     </mat-tab>
-    <mat-tab label="Verificación de Eficacia">
+    <mat-tab label="Verificación de Eficacia" [disabled]="!totalTabs.includes(4)">
         <div class="cont-p">
        <app-efficacy-verification></app-efficacy-verification>
         </div>

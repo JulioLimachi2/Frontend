@@ -1,4 +1,4 @@
-<form [formGroup]="formActionRequestAuthorization" class="form-register">
+<form [formGroup]="formActionRequestShare" class="form-register">
 
     <div class="inp-label">
         <div class="label">Nro:</div>
@@ -76,10 +76,12 @@
       </mat-form-field>
 
     <div class="container-btn-save ac-request-actions">
-        <button (click)="save()" type="button" [disabled]="!formActionRequestAuthorization.valid">Enviar</button>
-        <mat-checkbox  formControlName="return" [color]="'primary'" [labelPosition]="'before'">Devolver</mat-checkbox>
+        <button (click)="save()" type="button" [disabled]="!formActionRequestShare.valid">Enviar</button>
+        <mat-checkbox  formControlName="return" [labelPosition]="'before'" [color]="'primary'">Devolver</mat-checkbox>
     </div>
+
     <div class="container-btn-save">
-        <button (click)="next()" type="button" [disabled]="!formActionRequestAuthorization.valid">Siguiente</button>
+        <button (click)="next()" type="button" [disabled]="!formActionRequestShare.valid">Siguiente</button>
     </div>
 </form>
+
