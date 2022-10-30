@@ -75,7 +75,7 @@
         "id": "1002",
         "data": [
             {
-                "title": "Procesos",
+                "title": "PROCESOS",
                 "routes": [
                     {
                         "name": "Ficha de formulación",
@@ -93,7 +93,7 @@
                 "routes": [
                     {
                         "name": "Ficha de revisión",
-                        "url": "/processes/findings"
+                        "url": "/edition-indicators/findings"
                     }
 
                 ]
@@ -103,11 +103,11 @@
                 "routes": [
                     {
                         "name": "Reporte de Indicadores",
-                        "url": "/reports/indicadores"
+                        "url": "/reports-indicators/indicadores"
                     },
                     {
                         "name": "Formulación y revisión",
-                        "url": "/reports/revision"
+                        "url": "/reports-indicators/revision"
                     }
                 ]
             }

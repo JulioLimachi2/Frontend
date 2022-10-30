@@ -37,7 +37,27 @@ const routes: Routes = [
         path: 'options',
         loadChildren: () =>
           import('./pages/options/options.module').then((m) => m.OptionsModule),
-      }
+      },
+      {
+        path: 'edition-indicators',
+        loadChildren: () =>
+          import('./pages/edition-indicators/edition-indicators.module').then((m) => m.EditionIndicatorsModule),
+      },
+      {
+        path: 'process',
+        loadChildren: () =>
+          import('./pages/process-indicators/process-indicators.module').then((m) => m.ProcessIndicatorsModule),
+      },
+      {
+        path: 'edition-indicators',
+        loadChildren: () =>
+          import('./pages/edition-indicators/edition-indicators.module').then((m) => m.EditionIndicatorsModule),
+      },
+      {
+        path: 'reports-indicators',
+        loadChildren: () =>
+          import('./pages/reports-indicators/reports-indicators.module').then((m) => m.ReportsIndicatorsModule),
+      },
     ]
   }
 ];

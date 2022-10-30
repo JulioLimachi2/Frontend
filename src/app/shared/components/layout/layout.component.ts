@@ -169,7 +169,7 @@ export class LayoutComponent implements OnInit {
       this.router.navigateByUrl("");
       this.datanav = [];
     }
-    if (id === '1001') {
+    if (id === '1001' || id === '1002') {
       this.openedDrawner = true;
       this.router.navigateByUrl("");
       this.navservice.getNav().subscribe((nav: any) => {
