@@ -26,7 +26,6 @@ export class ModalPersonalComponent implements OnInit {
     }
   ];
 
-  stringRequest = [];
 
   constructor(public dialogRef: MatDialogRef<ModalPersonalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -51,58 +50,21 @@ export class ModalPersonalComponent implements OnInit {
   }
 
   search(){
-    this.stringRequest = [];
-    let consulta;
-    console.log('campos no vacios',this.getrequestFil(this.formPersonal));
-    const filt = this.dataFilterPersonal.filter(personal => {
-      const code = this.formPersonal.value.code ? (personal.code === this.formPersonal.value.code) : null;
-      // for(let i = 0 ; i < this.stringRequest.length ; i++){
-      //       if(this.stringRequest[i] == 'code'){
-      //         consulta = personal.code === this.formPersonal.value.code
-      //       }
-      // }
-      //this.formPersonal.value.code && 
-      
-      const name = this.formPersonal.value.name ? personal.name === this.formPersonal.value.name : null;
-     // name && (name)
-      const lastName = this.formPersonal.value.lastName ? personal.lastName === this.formPersonal.value.lastName : null;
-      const firstName = this.formPersonal.value.firstName ? personal.firstName === this.formPersonal.value.firstName : null;
-      const group = this.formPersonal.value.group ? personal.group.id === this.formPersonal.value.group : null;
-      const situation = this.formPersonal.value.situation ? personal.situation === this.formPersonal.value.situation : null;
-      //this.stringRequest.push(code,name);
-      console.log('consulta', code);
-      return  personal.code === this.formPersonal.value.code || personal.name === this.formPersonal.value.name;
-    });
-
-    console.log('filt',filt);
-    //console.log('frormrm',this.getrequestFil(opserve,this.formPersonal))
-    // for(let i = 0 ; i < Object.entries(this.formPersonal.value).length ; i++){
-    //   //console.log('objeto',Object.entries(this.formPersonal.value)[i]);
-    //   if(!this.emptyData(Object.entries(this.formPersonal.value)[i][1])){
-    //     console.log('objeto',Object.entries(this.formPersonal.value)[i]);
-    //     const name = Object.entries(this.formPersonal.value)[i][0];
-    //     console.log(`personal.${name} === ${this.formPersonal.value[name]}`);
-    //     this.stringRequest.push(`personal.${name} === ${this.formPersonal.value[name]}`);
-    //   }
-    // }
-      
-      console.log('stringRequest',this.stringRequest);
-      console.log('stringRequest separado',this.stringRequest.toString().replace(/,/gi,` && `));
-  }
-
-  getrequestFil(formgroup: FormGroup){
-    for(let i = 0 ; i < Object.entries(formgroup.value).length ; i++){
-      //console.log('objeto',Object.entries(this.formPersonal.value)[i]);
-      if(!this.emptyData(Object.entries(formgroup.value)[i][1])){
-        console.log('objeto',Object.entries(formgroup.value)[i]);
-        const name = Object.entries(formgroup.value)[i][0];
-        console.log(`personal.${name} === ${formgroup.value[name]}`);
-        this.stringRequest.push(name);
-        
+    const resultFiltros = this.dataFilterPersonal.filter(personal => {
+      const code = this.formPersonal.value.code ? personal.code === this.formPersonal.value.code : 1;
+      const name = this.formPersonal.value.name ? personal.name.toLowerCase() === this.formPersonal.value.name.toLowerCase() : 1;
+      const lastName = this.formPersonal.value.lastName ? personal.lastName.toLowerCase() === this.formPersonal.value.lastName.toLowerCase() : 1;
+      const firstName = this.formPersonal.value.firstName ? personal.firstName.toLowerCase() === this.formPersonal.value.firstName.toLowerCase() : 1;
+      const group = this.formPersonal.value.group ? personal.group.id === this.formPersonal.value.group : 1;
+      const situation = this.formPersonal.value.situation === true || this.formPersonal.value.situation === false ? personal.situation === this.formPersonal.value.situation : 1;
+      if(code === 1 && name === 1 && lastName === 1 && firstName === 1 && group === 1 && situation === 1){
+        return false;
       }
-    }
-    return this.stringRequest;
+      return  code && name && lastName && firstName && group && situation;
+    });
+    this.dataSourcePersonal.data = resultFiltros;
   }
+
 
   getPersonal(){
     this.servicepersonal.getAllPersonal().subscribe(personal=>{

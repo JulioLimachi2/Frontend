@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-list-actions',
@@ -8,25 +9,26 @@ import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@an
 })
 export class ListActionsComponent implements OnInit {
 
-  displayedColumns: string[] = ['type', 'correlative', 'year', 'coordinator','area'];
+  displayedColumns: string[] = ['type', 'correlative', 'year', 'coordinator', 'area'];
   yearFilter: string;
-  dataSource = [
+  dataSource = new MatTableDataSource();
+  dataHallazgos = [
     {
-      type:'Preventiva',
+      type: 'Preventiva',
       correlative: '0007',
       year: '2015',
       coordinator: 'Llanos Barrios Patricia',
       area: 'Gerencia de Informática'
     },
     {
-      type:'Preventiva',
+      type: 'Preventiva',
       correlative: '0008',
       year: '2015',
       coordinator: 'Llanos Barrios Patricia',
       area: 'Jefatura'
     },
     {
-      type:'Preventiva',
+      type: 'Preventiva',
       correlative: '0009',
       year: '2015',
       coordinator: 'Llanos Barrios Patricia',
@@ -37,16 +39,21 @@ export class ListActionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.dataSource.data = this.dataHallazgos;
   }
 
-  search(){
-    if(this.yearFilter){
-      console.log('yearFilter',this.yearFilter);
+  search() {
+    console.log('rar00');
+    if (this.yearFilter) {
+      const resultSearch = this.dataHallazgos.filter(hallazgo => {
+        return hallazgo.year === this.yearFilter
+      });
+      this.dataSource.data = resultSearch;
     }
   }
 
-  getYear(year: string){
+  getYear(year: string) {
     this.yearFilter = year;
- }
+  }
 
 }
