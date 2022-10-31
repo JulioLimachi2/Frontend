@@ -1,1 +1,57 @@
-<div class="container-title">Ficha de formulación</div>
+<div *ngIf ="!showForm">
+    <div class="container-title">INDICADORES</div>
+    <div class="container-items">
+        <app-card-item *ngFor="let item of data" title="{{item.title}}" (click)="getModule()">
+        </app-card-item>
+    </div>
+</div>
+
+
+
+<div class="container-formulario" *ngIf ="showForm" >
+ <div class="container-title">FICHA DE FORMULACIÓN</div>
+
+ <form [formGroup]="formIndicador" *ngIf="showForm" class="form-standart">
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre del Indicador</mat-label>
+        <input matInput placeholder="Nombre del Indicador" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Código y versión del Indicador</mat-label>
+        <input matInput placeholder="Código" formControlName="code">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Finalidad del Indicador</mat-label>
+        <input matInput placeholder="Finalidad" formControlName="finalidad">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Proceso</mat-label>
+        <input matInput placeholder="Proceso" formControlName="proceso">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Objetivo del Proceso u otro objeto del SIG</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="objetivo">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fórmula</mat-label>
+        <input matInput placeholder="Fórmula" formControlName="formula">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Unidad de medida</mat-label>
+        <input matInput placeholder="Unidad" formControlName="unidad">
+    </mat-form-field>
+
+
+
+    <div class="container-btn-save">
+        <button (click)="save()" type="button" >Guardar</button>
+        <button (click)="goBack()" type="button">Atras</button>
+    </div>
+</form>
+</div>

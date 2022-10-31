@@ -1,8 +1,8 @@
 <div class="container-title">Gestión de Estados</div>
 <div *ngIf="!showForm">
-    <div class="container-btn-right">
+    <!-- <div class="container-btn-right">
         <button (click)="showForm = true;formState.reset();">Agregar</button>
-    </div>
+    </div> -->
 
     <div class="container-responsible-table" [formGroup]="formState" #tbstate>
         <table mat-table [dataSource]="dataSource" class="table-state" >
