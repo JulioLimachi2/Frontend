@@ -1,3 +1,11 @@
 :host{
     width: 100%;
 }
+.container-formulario{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-items{
+    display: flex;
+}

@@ -7,10 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { DatanavService } from './core/services/datanav.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DynFormsMaterialModule } from '@myndpm/dyn-forms/ui-material';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

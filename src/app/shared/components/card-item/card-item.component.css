@@ -7,6 +7,11 @@
     overflow: hidden;
     background: #8cc434;
   }
+
+  .card:hover{
+    background: #3D4B49;
+  }
+
   
   .card .title {
     padding-top: 150px;

@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
 export class CardItemComponent {
 
   @Input() title: string;
-
+  @Input() link: string;
 }
