@@ -1,0 +1,48 @@
+<form [formGroup]="formIndicador" class="form-standart sheet">
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre del Indicador</mat-label>
+        <input matInput placeholder="Nombre del Indicador" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Código y versión del Indicador</mat-label>
+        <input matInput placeholder="Código" formControlName="code">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Finalidad del Indicador</mat-label>
+        <input matInput placeholder="Finalidad" formControlName="finalidad">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Proceso</mat-label>
+        <input matInput placeholder="Proceso" formControlName="proceso">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Objetivo del Proceso u otro objeto del SIG</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="objetivo">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fórmula</mat-label>
+        <input matInput placeholder="Fórmula" formControlName="formula">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Unidad de medida</mat-label>
+        <input matInput placeholder="Unidad" formControlName="unidad">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fuente de datos</mat-label>
+        <input matInput placeholder="Unidad" formControlName="fuente">
+    </mat-form-field>
+
+
+
+    <div class="container-btn-save">
+        <button (click)="save()" type="button" [disabled]="!formIndicador.valid">Guardar</button>
+        <button (click)="next()" type="button">Siguiente</button>
+    </div>
+</form>

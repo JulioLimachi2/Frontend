@@ -8,9 +8,8 @@
         <table mat-table [dataSource]="dataSource" class="table-standart">
             <ng-container matColumnDef="code">
                 <th mat-header-cell *matHeaderCellDef> Código </th>
-                <td mat-cell *matCellDef="let element;let i = index"> 
-                    <div *ngIf="indexSelectedRow !== i">{{element.code}}</div> 
-                    <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="code">
+                <td mat-cell *matCellDef="let element;"> 
+                    <div>{{element.code}}</div> 
                 </td>
             </ng-container>
     

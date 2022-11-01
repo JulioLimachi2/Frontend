@@ -11,6 +11,13 @@ import { Router } from '@angular/router';
 
 export class FormulationSheetComponent implements OnInit {
 
+  indexTab = 0;
+  selectedIdOption: string = '01';
+  tabsCompleteds = [];
+  formIndicator;
+  formMedition;
+  formMeta;
+  setTabs = new Set();
   data = [
     {
       id: 1,
@@ -32,7 +39,36 @@ export class FormulationSheetComponent implements OnInit {
       id: 5,
       title: "ESPERA DE USUARIO EN COLA",
     },
-  ]
+  ];
+
+  menuFicha = [
+   {
+    id: '01',
+    name:'DATOS DEL INDICADOR',
+    index: 0
+   },
+   {
+    id: '02',
+    name:'MEDICIÓN Y CONTROL',
+    index: 1
+   },
+   {
+    id: '03',
+    name:'META DEL INDICADOR',
+    index: 2
+   },
+   {
+    id: '04',
+    name:'REPORTE DE RESULTADOS',
+    index: 3
+   },
+   {
+    id: '05',
+    name:'REVISIÓN Y APROBACIÓN DEL INDICADOR',
+    index: 4
+   }
+  ];
+
   formIndicador: FormGroup;
   showForm: boolean = false;
   constructor(private router: Router, private builder: FormBuilder) {
@@ -66,5 +102,32 @@ export class FormulationSheetComponent implements OnInit {
     this.showForm = !this.showForm;
   }
 
+  selectOption(option){
+    this.selectedIdOption = option.id;
+    this.setTabs.add(option.id);
+    this.tabsCompleteds = [...this.setTabs];
+    this.indexTab = option.index;
+  }
+
+  setIndicator(form){
+    this.formIndicator = form;
+  }
+
+  setMedition(form){
+    this.formMedition = form;
+  }
+
+  setMeta(form){
+    this.formMeta = form;
+  }
+
+  nextTab(){
+    this.indexTab++;
+    const menu = this.menuFicha.find(x =>  x.index === this.indexTab);
+    this.setTabs.add(menu.id);
+    this.tabsCompleteds = [...this.setTabs];
+    this.indexTab = menu.index;
+    this.selectedIdOption = menu.id;
+  }
 
 }

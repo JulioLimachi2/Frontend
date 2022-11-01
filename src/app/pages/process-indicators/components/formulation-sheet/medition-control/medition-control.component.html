@@ -1,0 +1,27 @@
+<form [formGroup]="formMedition" class="form-standart medition">
+    <mat-form-field appearance="outline">
+        <mat-label>Responsable de la medición</mat-label>
+        <input matInput placeholder="Responsable de la medición" formControlName="responsibleMedition">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Responsable del control</mat-label>
+        <input matInput placeholder="Responsable del control" formControlName="responsibleControl">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Frecuencia de la medición</mat-label>
+        <input matInput placeholder="Frecuencia de la medición" formControlName="frequencyMedition">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Frecuencia de control</mat-label>
+        <input matInput placeholder="Frecuencia de control" formControlName="frequencyControl">
+    </mat-form-field>
+
+
+    <div class="container-btn-save">
+        <button (click)="save()" type="button" [disabled]="!formMedition.valid">Guardar</button>
+        <button (click)="next()" type="button">Siguiente</button>
+    </div>
+</form>

@@ -1,0 +1,22 @@
+<form [formGroup]="formRevision" class="form-standart meta">
+    <mat-form-field appearance="outline">
+        <mat-label>Elaborado / Modificado por:</mat-label>
+        <input matInput placeholder="Elaborado / Modificado" formControlName="elaborated">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Revisión por:</mat-label>
+        <input matInput placeholder="Revisión por" formControlName="revision">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Aprovado por:</mat-label>
+        <input matInput placeholder="Aprovado por" formControlName="approved">
+    </mat-form-field>
+
+
+    <div class="container-btn-save">
+        <button (click)="save()" type="button" >Guardar</button>
+        <button (click)="next()" type="button">Siguiente</button>
+    </div>
+</form>
