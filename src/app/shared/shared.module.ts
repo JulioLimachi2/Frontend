@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DatepickerYearComponent } from './components/datepicker-year/datepicker-year.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { CardItemComponent } from './components/card-item/card-item.component';
+import { TableEditComponent } from './components/table-edit/table-edit.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CardItemComponent } from './components/card-item/card-item.component';
     ModalLoginComponent,
     DatepickerYearComponent,
     SafePipe,
-    CardItemComponent
+    CardItemComponent,
+    TableEditComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { CardItemComponent } from './components/card-item/card-item.component';
   exports:[
     DatepickerYearComponent,
     SafePipe,
-    CardItemComponent
+    CardItemComponent,
+    TableEditComponent
   ]
 })
 export class SharedModule { }
