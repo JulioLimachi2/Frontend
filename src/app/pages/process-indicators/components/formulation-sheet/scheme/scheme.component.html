@@ -1,0 +1,135 @@
+<div class="sheme-form">
+
+    <div class="indicators" *ngIf="indicators?.code">
+        <div class="col1-indicator">
+            <div class="cont-gray header"></div>
+            <div class="cont-gray">Nombre del indicador</div>
+            <div class="cont-gray">Finalidad del indicador</div>
+            <div class="cont-gray">Proceso</div>
+            <div class="cont-gray">Objetivo del proceso u Objeto del SIG</div>
+            <div class="cont-gray">Formula</div>
+            <div class="cont-gray">Fuente de datos</div>
+        </div>
+        <div class="col2-indicator">
+            <div class="cont-gray header">FICHA DE INDICADOR</div>
+            <div class="cont-double">
+                <div class="cont-blue">{{indicators.name}}</div>
+                <div class="cont-gray">Código y versión del indicador</div>
+            </div>
+            <div class="cont-blue">{{indicators.finalidad}}</div>
+            <div class="cont-blue">{{indicators.proceso}}</div>
+            <div class="cont-blue">{{indicators.objetivo}}</div>
+            <div class="cont-double">
+                <div class="cont-blue">{{indicators.formula}}</div>
+                <div class="cont-gray">Unidad de medida</div>
+            </div>
+            <div class="cont-blue">{{indicators.fuente}}</div>
+        </div>
+        <div class="col3-indicator">
+            <div class="cont-gray header">
+                <div>Código: <strong>F-005-UPP-ZRIX</strong></div>
+                <div>Versión: <strong>V.01</strong></div>
+            </div>
+            <div class="cont-blue">{{indicators.code}}</div>
+            <div class="row-30"></div>
+            <div class="row-30"></div>
+            <div class="row-30"></div>
+            <div class="cont-blue">{{indicators.unidad}}</div>
+        </div>
+    </div>
+
+    <div class="medition" *ngIf="medition?.frequencyControl">
+        <div class="cont-gray div-100">MEDICIÓN Y CONTROL</div>
+        <div class="col01-medition">
+            <div>
+                <div class="cont-gray">Responsable de la medición</div>
+                <div class="cont-gray">Responsable del control</div>
+            </div>
+            <div>
+                <div class="cont-blue">{{medition.responsibleMedition}}</div>
+                <div class="cont-blue">{{medition.responsibleControl}}</div>
+            </div>
+        </div>
+        <div class="col02-medition">
+            <div>
+                <div class="cont-gray">Frecuencia de medición</div>
+                <div class="cont-gray">Frecuencia de control</div>
+            </div>
+            <div>
+                <div class="cont-blue">{{medition.frequencyMedition}}</div>
+                <div class="cont-blue">{{medition.frequencyControl}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="metas" *ngIf="metas?.baseLine">
+        <div class="cont-gray div-100">METAS</div>
+        <div style="display: flex;">
+            <div class="meta-state">
+                <div class="cont-gray header-meta">
+                    <div>Línea Base</div>
+                    <div class="circle white"></div>
+                </div>
+                <div class="body-state"></div>
+            </div>
+            <div class="meta-state">
+                <div class="cont-gray header-meta">
+                    <div>Óptimo</div>
+                    <div class="circle green"></div>
+                </div>
+                <div class="body-state"></div>
+            </div>
+            <div class="meta-state">
+                <div class="cont-gray header-meta">
+                    <div>Tolerante</div>
+                    <div class="circle yellow"></div>
+                </div>
+                <div class="body-state"></div>
+            </div>
+            <div class="meta-state">
+                <div class="cont-gray header-meta">
+                    <div>Deficiente</div>
+                    <div class="circle red"></div>
+                </div>
+                <div class="body-state"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="organization" *ngIf="metas?.baseLine">
+        <div class="col01-organization">
+            <div class="cont-gray header-medium"></div>
+            <div class="cont-gray">Unidad de organización</div>
+            <div class="cont-gray div-firma">Firma</div>
+        </div>
+
+        <div class="col02-organization">
+            <div class="cont-gray header-medium">Elaborado por</div>
+            <div class="cont-blue">Nombre de la Unidad de Organización</div>
+            <div class="cont-blue row-firma">
+                <div>Nombres y Apellidos</div>
+                <div>FIRMA MANUAL O DIGITAL</div>
+            </div>
+        </div>
+
+        <div class="col03-organization">
+            <div class="cont-gray header-medium">Revisado por</div>
+            <div class="cont-blue">Nombre de la Unidad de Organización</div>
+            <div class="cont-blue row-firma">
+                <div>Nombres y Apellidos</div>
+                <div>FIRMA MANUAL O DIGITAL</div>
+            </div>
+        </div>
+
+        <div class="col04-organization">
+            <div class="cont-gray header-medium">Aprobado por</div>
+            <div class="cont-blue">Nombre de la Unidad de Organización</div>
+            <div class="cont-blue row-firma">
+                <div>Nombres y Apellidos</div>
+                <div>FIRMA MANUAL O DIGITAL</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

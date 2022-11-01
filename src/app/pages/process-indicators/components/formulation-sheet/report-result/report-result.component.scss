@@ -1,0 +1,13 @@
+.container-inp-result {
+    display        : flex;
+    justify-content: center;
+    margin-top     : 25px;
+
+    .report-result-inputs {
+        width        : 100%;
+        max-width    : 200px;
+        border       : 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 10px;
+        padding      : 10px 20px;
+    }
+}

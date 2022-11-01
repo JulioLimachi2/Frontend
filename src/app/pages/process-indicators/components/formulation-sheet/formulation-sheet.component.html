@@ -11,47 +11,47 @@
 <div class="container-formulario" *ngIf ="showForm" >
  <div class="container-title">FICHA DE FORMULACIÓN</div>
 
- <form [formGroup]="formIndicador" *ngIf="showForm" class="form-standart">
-    <mat-form-field appearance="outline">
-        <mat-label>Nombre del Indicador</mat-label>
-        <input matInput placeholder="Nombre del Indicador" formControlName="name">
-    </mat-form-field>
+ <div class="container-ficha">
+    <div class="menu-process">
+        <div class="title-menu">INICIO DEL PROCESO</div>
+        <div *ngFor="let menu of menuFicha" class="menu"
+             (click)="selectOption(menu)"
+             [ngClass]="{'menu-active':selectedIdOption === menu.id}">{{menu.name}}</div>
+     </div>
+     <mat-tab-group class="mat-tab-sunarp" [(selectedIndex)]="indexTab">
+        <mat-tab label="DATOS DEL INDICADOR">
+            <div class="cont-display">
+                <app-dates-indicator class="form-tab" (onSave)="setIndicator($event)" (onNext)="nextTab()"></app-dates-indicator>
+                
+            </div>
+        </mat-tab>
+        <mat-tab label="MEDICIÓN Y CONTROL" *ngIf="tabsCompleteds.includes('02')">
+            <div class="cont-display">
+                <app-medition-control class="form-tab" (onSave)="setMedition($event)" (onNext)="nextTab()"></app-medition-control>
+                
+            </div>
+        </mat-tab>
+        <mat-tab label="META DEL INDICADOR" *ngIf="tabsCompleteds.includes('03')">
+            <div class="cont-display">
+                <app-meta-indicator class="form-tab" (onSave)="setMeta($event)" (onNext)="nextTab()"></app-meta-indicator>
+                
+            </div>
+        </mat-tab>
+        <mat-tab label="REPORTE DE RESULTADOS" *ngIf="tabsCompleteds.includes('04')">
+            <div class="cont-display">
+                <app-report-result class="form-tab" (onNext)="nextTab()"></app-report-result>
+            </div>
+        </mat-tab>
+        <mat-tab label="REVISIÓN Y APROBACIÓN DEL INDICADOR" *ngIf="tabsCompleteds.includes('05')">
+            <div class="cont-display">
+                <app-revision-approval class="form-tab"></app-revision-approval>
+                
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+ </div>
 
-    <mat-form-field appearance="outline">
-        <mat-label>Código y versión del Indicador</mat-label>
-        <input matInput placeholder="Código" formControlName="code">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Finalidad del Indicador</mat-label>
-        <input matInput placeholder="Finalidad" formControlName="finalidad">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Proceso</mat-label>
-        <input matInput placeholder="Proceso" formControlName="proceso">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Objetivo del Proceso u otro objeto del SIG</mat-label>
-        <input matInput placeholder="Placeholder" formControlName="objetivo">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Fórmula</mat-label>
-        <input matInput placeholder="Fórmula" formControlName="formula">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Unidad de medida</mat-label>
-        <input matInput placeholder="Unidad" formControlName="unidad">
-    </mat-form-field>
-
-
-
-    <div class="container-btn-save">
-        <button (click)="save()" type="button" >Guardar</button>
-        <button (click)="goBack()" type="button">Atras</button>
-    </div>
-</form>
+ <div class="container-scheme">
+    <app-scheme [indicators]="formIndicator" [medition]="formMedition" [metas]="formMeta"></app-scheme>
+ </div>
 </div>

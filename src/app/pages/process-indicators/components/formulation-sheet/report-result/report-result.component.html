@@ -1,0 +1,14 @@
+
+<div class="container-inp-result">
+    <div class="report-result-inputs">
+        <div>Escoja el mes</div>
+        <app-datepicker-month (onGetValue)="getMonth($event)" [width]="'200'"></app-datepicker-month>
+        <div>Escoja el año</div>
+        <app-datepicker-year (onGetValue)="getYear($event)" [width]="'200'"></app-datepicker-year>
+     </div>
+</div>
+
+<div class="container-btn-save">
+    <button (click)="save()" type="button" >Guardar</button>
+    <button (click)="next()" type="button">Siguiente</button>
+</div>

@@ -1,0 +1,154 @@
+* {
+    font-size: 10px;
+}
+
+.sheme-form {
+    width: 100%;
+    max-width: 850px;
+    background-color: #ffffff;
+}
+
+.cont-gray {
+    background-color: #dcdcdc;
+    padding         : 5px;
+}
+
+.cont-blue {
+    background-color: #ffffff;
+    color           : #2b7cc4;
+    padding         : 5px;
+}
+
+.cont-double {
+    display        : flex;
+    justify-content: space-between;
+}
+
+.indicators {
+    display: flex;
+
+    .header {
+        display        : flex;
+        flex-wrap      : wrap;
+        align-items    : center;
+        height         : 40px;
+        justify-content: center;
+        padding        : 10px 5px;
+
+        div {
+            width: 100%;
+        }
+    }
+
+    .col1-indicator{
+        width: 100%;
+    }
+    .col2-indicator{
+        width: 100%;
+    }
+    .col3-indicator{
+        width: 100%;
+    }
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.div-100 {
+    width          : 100%;
+    display        : flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.medition {
+    display  : flex;
+    flex-wrap: wrap;
+
+    .col01-medition {
+        display: flex;
+    }
+
+    .col02-medition {
+        display: flex;
+    }
+}
+
+.circle {
+    width        : 10px;
+    height       : 10px;
+    border-radius: 50%;
+}
+
+.white {
+    background-color: #ffffff;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background-color: red;
+}
+
+.header-meta {
+    display    : flex;
+    align-items: center;
+    gap        : 25px;
+    padding    : 0 25px;
+    justify-content: center;
+    border-bottom: 1px solid #000000;
+    color: #000000;
+}
+
+.header-medium{
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.meta-state {
+    width: 100%;
+    border: 1px solid #000000;
+
+    .body-state {
+        height: 30px;
+    }
+}
+
+.organization{
+    display: flex;
+    .col01-organization{
+        width: 100%;
+    }
+    .col02-organization{
+        width: 100%;
+    }
+    .col03-organization{
+        width: 100%;
+    }
+    .col04-organization{
+        width: 100%;
+    }
+}
+
+.div-firma{
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.row-firma{
+    padding: 20px 30px;
+}
+
+.row-30{
+    height: 30px;
+}

@@ -1,0 +1,28 @@
+<form [formGroup]="formMeta" class="form-standart meta">
+    <mat-form-field appearance="outline">
+        <mat-label>Línea Base</mat-label>
+        <input matInput placeholder="Línea Base" formControlName="baseLine">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Óptimo</mat-label>
+        <input matInput placeholder="Óptimo" formControlName="optimo">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Tolerante</mat-label>
+        <input matInput placeholder="Tolerante" formControlName="tolerant">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Deficiente</mat-label>
+        <input matInput placeholder="Deficiente" formControlName="deficient">
+    </mat-form-field>
+
+
+    <div class="container-btn-save">
+        <button (click)="save()" type="button" [disabled]="!formMeta.valid">Guardar</button>
+        <button (click)="next()" type="button">Siguiente</button>
+    </div>
+</form>
+
