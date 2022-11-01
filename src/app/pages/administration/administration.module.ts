@@ -11,6 +11,9 @@ import { AdministrationRoutingModule } from './administration-routing.module';
 import { MaterialModule } from 'src/app/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalPersonalComponent } from './components/modal-personal/modal-personal.component';
+import { ModalStateComponent } from './components/states/modal-state/modal-state.component';
+import { ModalSourceComponent } from './components/sources/modal-source/modal-source.component';
+import { ModalTypeComponent } from './components/types/modal-type/modal-type.component';
 
 
 
@@ -23,7 +26,10 @@ import { ModalPersonalComponent } from './components/modal-personal/modal-person
     OfficersComponent,
     AuditorsComponent,
     TypesComponent,
-    ModalPersonalComponent
+    ModalPersonalComponent,
+    ModalStateComponent,
+    ModalSourceComponent,
+    ModalTypeComponent
   ],
   imports: [
     CommonModule,

@@ -67,3 +67,9 @@
         }
     }
 }
+
+::ng-deep .mdl-noPadding{
+    .mat-dialog-container{
+        padding: 0;
+    }
+}

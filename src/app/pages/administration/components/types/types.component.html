@@ -1,9 +1,5 @@
 <div class="container-title">Gestión de Tipos</div>
-<div *ngIf="!showForm">
-    <!-- <div class="container-btn-right">
-        <button (click)="showForm = true;formType.reset();">Agregar</button>
-    </div> -->
-
+<div>
     <div class="container-responsible-table" [formGroup]="formType" #tbtypes>
         <table mat-table [dataSource]="dataSource" class="table-standart">
             <ng-container matColumnDef="code">
@@ -33,25 +29,8 @@
         </table>
     </div>
     <div class="container-btn-save">
-        <button>Añadir</button>
+        <button (click)="add()">Añadir</button>
         <button (click)="edit()" [disabled]="!editActive">Modificar</button>
         <button>Grabar</button>
     </div>
 </div>
-
-<form [formGroup]="formType" *ngIf="showForm" class="form-standart">
-    <mat-form-field appearance="outline">
-        <mat-label>Código</mat-label>
-        <input matInput placeholder="Placeholder" formControlName="code">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Descripción</mat-label>
-        <input matInput placeholder="Placeholder" formControlName="description">
-    </mat-form-field>
-
-    <div class="container-btn-save">
-        <button (click)="save()" type="button" [disabled]="!formType.valid">Guardar</button>
-        <button (click)="showForm = false" type="button">Atras</button>
-    </div>
-</form>

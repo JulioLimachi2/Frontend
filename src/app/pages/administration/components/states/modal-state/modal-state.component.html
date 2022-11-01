@@ -1,0 +1,17 @@
+<div class="container-title">Estados</div>
+<form [formGroup]="formState" class="form-standart f-state">
+    <mat-form-field appearance="outline">
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="code">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="name">
+    </mat-form-field>
+
+    <div class="container-btn-save">
+        <button (click)="save()" type="button" [disabled]="!formState.valid">Guardar</button>
+        <button type="button" mat-dialog-close>Cerrar</button>
+    </div>
+</form>

@@ -1,6 +1,8 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { ModalStateComponent } from './modal-state/modal-state.component';
 
 @Component({
   selector: 'app-states',
@@ -13,12 +15,11 @@ export class StatesComponent implements OnInit {
 
   displayedColumns: string[] = ['code', 'name'];
   indexSelectedRow: number;
-  showForm: boolean;
   formState: FormGroup;
   editActive :boolean;
   dataSource =  new MatTableDataSource<any>([]);
 
-  constructor(private builder: FormBuilder) { 
+  constructor(private builder: FormBuilder, public dialog: MatDialog) { 
     this.formState = this.builder.group({
       code: ['',Validators.required],
       name:['',Validators.required]
@@ -58,11 +59,6 @@ export class StatesComponent implements OnInit {
     ];
   }
 
-  save(){
-    this.dataSource.data.push(this.formState.value);
-    this.showForm = false;
-  }
-
   edit(){
     this.dataSource.data[this.indexSelectedRow] = this.formState.value;
     this.dataSource= new MatTableDataSource(this.dataSource.data)
@@ -76,6 +72,24 @@ export class StatesComponent implements OnInit {
     this.formState.patchValue({
       code: row.code,
       name: row.name
+    });
+  }
+
+  add(){
+    const dialogRef = this.dialog.open(ModalStateComponent, {
+      width: '500px',
+      panelClass:'mdl-noPadding'
+    });
+
+    dialogRef.afterClosed().subscribe(state => {
+      if(state){
+        this.formState.patchValue({
+          code: state.code,
+          name: state.name,
+        });
+        this.dataSource.data.push(this.formState.value);
+        this.dataSource = new MatTableDataSource(this.dataSource.data)
+      }
     });
   }
   

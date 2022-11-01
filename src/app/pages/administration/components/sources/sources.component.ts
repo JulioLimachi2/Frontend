@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { ModalSourceComponent } from './modal-source/modal-source.component';
 
 @Component({
   selector: 'app-sources',
@@ -13,12 +15,11 @@ export class SourcesComponent implements OnInit {
   indexSelectedRow: number;
   editActive: boolean;
   displayedColumns: string[] = ['code', 'description', 'corrective', 'upgrade'];
-  showForm: boolean;
   formSource: FormGroup;
 
   dataSource = new MatTableDataSource<any>([])
 
-  constructor(private builder: FormBuilder) {
+  constructor(private builder: FormBuilder, public dialog: MatDialog) {
     this.formSource = this.builder.group({
       code: ['', Validators.required],
       description: ['', Validators.required],
@@ -70,11 +71,6 @@ export class SourcesComponent implements OnInit {
     ];
   }
 
-  save() {
-    this.dataSource.data.push(this.formSource.value);
-    this.showForm = false;
-  }
-
   edit() {
     this.dataSource.data[this.indexSelectedRow] = this.formSource.value;
     this.dataSource = new MatTableDataSource(this.dataSource.data)
@@ -90,6 +86,26 @@ export class SourcesComponent implements OnInit {
       description: element.description,
       corrective: element.corrective,
       upgrade: element.upgrade,
+    });
+  }
+
+  add() {
+    const dialogRef = this.dialog.open(ModalSourceComponent, {
+      width: '500px',
+      panelClass:'mdl-noPadding'
+    });
+
+    dialogRef.afterClosed().subscribe(source => {
+      if (source) {
+        this.formSource.patchValue({
+          code: source.code,
+          description: source.description,
+          corrective: source.corrective,
+          upgrade: source.upgrade,
+        });
+        this.dataSource.data.push(this.formSource.value);
+        this.dataSource = new MatTableDataSource(this.dataSource.data)
+      }
     });
   }
 }
