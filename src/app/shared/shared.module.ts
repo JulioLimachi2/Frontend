@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { LayoutComponent } from './components/layout/layout.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
@@ -35,6 +35,9 @@ import { DatepickerMonthComponent } from './components/datepicker-month/datepick
     CardItemComponent,
     TableEditComponent,
     DatepickerMonthComponent
+  ],
+  providers:[
+    DatePipe
   ]
 })
 export class SharedModule { }

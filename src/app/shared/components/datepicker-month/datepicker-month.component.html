@@ -1,5 +1,5 @@
 <mat-form-field appearance="outline" class="dt-picker-month" [ngStyle]="{'max-width.px': width}">
-    <input matInput [matDatepicker]="pickerYear" [formControl]="formMonth" readonly>
-    <mat-datepicker-toggle matSuffix [for]="pickerYear"></mat-datepicker-toggle>
-    <mat-datepicker #pickerYear startView="year" (yearSelected)="true" (monthSelected)="selectedYear($event,pickerYear)"></mat-datepicker>
+    <input matInput [matDatepicker]="pickerMonth" [formControl]="formMonth" readonly>
+    <mat-datepicker-toggle matSuffix [for]="pickerMonth"></mat-datepicker-toggle>
+    <mat-datepicker #pickerMonth startView="year" (monthSelected)="selectedMonth($event,pickerMonth)"></mat-datepicker>
 </mat-form-field>

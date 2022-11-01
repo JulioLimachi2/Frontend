@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter } from '@angular/material-moment-adapter';
@@ -36,19 +37,16 @@ export class DatepickerMonthComponent implements OnInit {
   @Output() onGetValue: EventEmitter<any> = new EventEmitter();
   formMonth: FormControl;
 
-  constructor() { 
+  constructor(private datePipe: DatePipe) { 
     this.formMonth = new FormControl("");
   }
 
   ngOnInit(): void {
   }
 
-  selectedYear(date, datepicker: MatDatepicker<any>) {
-    console.log('new Date(date)',new Date(date));
-    const month = new Date(date).getMonth();
-    console.log('month',new Date(date).getMonth());
-    this.onGetValue.emit(month.toString());
-    this.formMonth.setValue('October');
+  selectedMonth(date, datepicker: MatDatepicker<any>) {
+    this.onGetValue.emit(this.datePipe.transform(date,'MMMM'));
+    this.formMonth.setValue(date);
     datepicker.close();
   }
 

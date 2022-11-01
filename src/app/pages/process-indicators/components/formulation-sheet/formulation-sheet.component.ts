@@ -122,7 +122,7 @@ export class FormulationSheetComponent implements OnInit {
   }
 
   nextTab(){
-    this.indexTab++;
+    this.indexTab = this.indexTab+1;
     const menu = this.menuFicha.find(x =>  x.index === this.indexTab);
     this.setTabs.add(menu.id);
     this.tabsCompleteds = [...this.setTabs];
