@@ -1,0 +1,17 @@
+<div class="container-title">Tipos</div>
+<form [formGroup]="formType" class="form-standart f-type">
+    <mat-form-field appearance="outline">
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="code">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Descripción</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="description">
+    </mat-form-field>
+
+    <div class="container-btn-save">
+        <button (click)="save()" type="button" [disabled]="!formType.valid">Guardar</button>
+        <button type="button" mat-dialog-close>Cerrar</button>
+    </div>
+</form>

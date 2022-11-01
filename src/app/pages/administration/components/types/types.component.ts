@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { ModalTypeComponent } from './modal-type/modal-type.component';
 
 @Component({
   selector: 'app-types',
@@ -14,12 +16,11 @@ export class TypesComponent implements OnInit {
   editActive: boolean;
   indexSource: number;
   displayedColumns: string[] = ['code', 'description'];
-  showForm: boolean;
   formType: FormGroup;
 
   dataSource = new MatTableDataSource<any>([]);
 
-  constructor(private builder: FormBuilder) {
+  constructor(private builder: FormBuilder, public dialog: MatDialog) {
     this.formType = this.builder.group({
       code: ['', Validators.required],
       description: ['', Validators.required]
@@ -47,11 +48,6 @@ export class TypesComponent implements OnInit {
     ];
   }
 
-  save() {
-    this.dataSource.data.push(this.formType.value);
-    this.showForm = false;
-  }
-
   edit() {
     this.dataSource.data[this.indexSelectedRow] = this.formType.value;
     this.dataSource = new MatTableDataSource(this.dataSource.data)
@@ -65,6 +61,24 @@ export class TypesComponent implements OnInit {
     this.formType.patchValue({
       code: element.code,
       description: element.description
+    });
+  }
+
+  add() {
+    const dialogRef = this.dialog.open(ModalTypeComponent, {
+      width: '500px',
+      panelClass: 'mdl-noPadding'
+    });
+
+    dialogRef.afterClosed().subscribe(type => {
+      if (type) {
+        this.formType.patchValue({
+          code: type.code,
+          description: type.description
+        });
+        this.dataSource.data.push(this.formType.value);
+        this.dataSource = new MatTableDataSource(this.dataSource.data)
+      }
     });
   }
 

@@ -1,0 +1,27 @@
+<div class="container-title">Fuentes</div>
+<form [formGroup]="formSource" class="form-standart f-source">
+    <mat-form-field appearance="outline">
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="code">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Descripción</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="description">
+    </mat-form-field>
+
+    <div class="cont-slide-tooggle">
+        <mat-slide-toggle [color]="'primary'" formControlName="corrective">
+            Correctiva
+        </mat-slide-toggle>
+
+        <mat-slide-toggle [color]="'primary'" formControlName="upgrade">
+            Oportunidad de Mejora
+        </mat-slide-toggle>
+    </div>
+
+    <div class="container-btn-save">
+        <button (click)="save()" type="button" [disabled]="!formSource.valid">Guardar</button>
+        <button type="button" mat-dialog-close>Cerrar</button>
+    </div>
+</form>

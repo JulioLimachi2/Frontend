@@ -1,9 +1,5 @@
 <div class="container-title">Gestión de Estados</div>
-<div *ngIf="!showForm">
-    <!-- <div class="container-btn-right">
-        <button (click)="showForm = true;formState.reset();">Agregar</button>
-    </div> -->
-
+<div>
     <div class="container-responsible-table" [formGroup]="formState" #tbstate>
         <table mat-table [dataSource]="dataSource" class="table-state" >
             <ng-container matColumnDef="code">
@@ -35,26 +31,10 @@
     </div>
 
     <div class="container-btn-save">
-        <button>Añadir</button>
+        <button (click)="add()">Añadir</button>
         <button (click)="edit()" [disabled]="!editActive">Modificar</button>
         <button>Grabar</button>
     </div>
 
 </div>
 
-<form [formGroup]="formState" *ngIf="showForm" class="form-standart">
-    <mat-form-field appearance="outline">
-        <mat-label>Código</mat-label>
-        <input matInput placeholder="Placeholder" formControlName="code">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Nombre</mat-label>
-        <input matInput placeholder="Placeholder" formControlName="name">
-    </mat-form-field>
-
-    <div class="container-btn-save">
-        <button (click)="save()" type="button" [disabled]="!formState.valid">Guardar</button>
-        <button (click)="showForm = false" type="button">Atras</button>
-    </div>
-</form>
