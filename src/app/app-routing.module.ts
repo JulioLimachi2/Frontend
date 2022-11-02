@@ -58,6 +58,26 @@ const routes: Routes = [
         loadChildren: () =>
           import('./pages/reports-indicators/reports-indicators.module').then((m) => m.ReportsIndicatorsModule),
       },
+      {
+        path: 'management-indicators',
+        loadChildren: () =>
+          import('./pages/management-indicators/management-indicators.module').then((m) => m.ManagementIndicatorsModule),
+      },
+      {
+        path: 'maintenance',
+        loadChildren: () =>
+          import('./pages/maintenance/maintenance.module').then((m) => m.MaintenanceModule),
+      },
+      {
+        path: 'administration-risk',
+        loadChildren: () =>
+          import('./pages/administration-risk/administration-risk.module').then((m) => m.AdministrationRiskModule),
+      },
+      {
+        path: 'process-risk',
+        loadChildren: () =>
+          import('./pages/process-risk/process-risk.module').then((m) => m.ProcessRiskModule),
+      }
     ]
   }
 ];

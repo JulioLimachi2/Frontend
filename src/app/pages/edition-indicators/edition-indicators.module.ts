@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RevisionSheetComponent } from './components/revision-sheet/revision-sheet.component';
 import { EditionIndicatorsRoutingModule } from './edition-indicators-routing.module';
+import { MaterialModule } from 'src/app/material/material.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -11,7 +13,9 @@ import { EditionIndicatorsRoutingModule } from './edition-indicators-routing.mod
   ],
   imports: [
     CommonModule,
-    EditionIndicatorsRoutingModule
+    EditionIndicatorsRoutingModule,
+    MaterialModule,
+    SharedModule
   ]
 })
 export class EditionIndicatorsModule { }

@@ -1,1 +1,66 @@
 <div class="container-title">Ficha de revisión</div>
+
+<mat-tab-group class="mat-tab-sunarp" *ngIf="!showForm">
+    <mat-tab label="INDICADORES">
+        <div class="container-items">
+            <app-card-item *ngFor="let item of dataCard" title="{{item.title}}" (click)="getModule()">
+            </app-card-item>
+        
+        </div>
+    </mat-tab>
+
+</mat-tab-group>
+
+<div class="container-ficha-revision" *ngIf="showForm">
+<div class="menu-process">
+    <div class="title-menu">INICIO DEL PROCESO</div>
+    <div *ngFor="let menu of menuFicha" class="menu" (click)="selectOption(menu)"
+        [ngClass]="{'menu-active':selectedIdOption === menu.id}">{{menu.name}}</div>
+
+
+</div>
+
+<div class=wrapper-tabs>
+    <div class="wrapper-tab">
+        <mat-tab-group class="mat-tab-sunarp" [(selectedIndex)]="indexTabProcess">
+            <mat-tab label="DATOS DEL INDICADOR">
+                <div class="cont-display">
+                    <app-dates-indicator class="form-tab" (onSave)="setIndicator($event)" (onNext)="nextTab()">
+                    </app-dates-indicator>
+
+                </div>
+            </mat-tab>
+            <mat-tab label="CONTROL DEL INDICADOR" *ngIf="tabsCompleteds.includes('02')">
+                <div class="cont-display">
+                    <app-medition-control class="form-tab" (onSave)="setMedition($event)" (onNext)="nextTab()">
+                    </app-medition-control>
+
+                </div>
+            </mat-tab>
+            <mat-tab label="REPORTE DE RESULTADOS" *ngIf="tabsCompleteds.includes('03')">
+                <div class="cont-display">
+                    <app-report-result class="form-tab" (onNext)="nextTab()" (onSave)="setReportsResult($event)"></app-report-result>
+                </div>
+            </mat-tab>
+            <mat-tab label="ANÁLISIS Y ACCIONES CORRECTIVAS" *ngIf="tabsCompleteds.includes('04')">
+                <div class="cont-display">
+                    <app-analysis-actions class="form-tab" (onNext)="nextTab()"></app-analysis-actions>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="REVISIÓN Y APROBACIÓN DEL INDICADOR" *ngIf="tabsCompleteds.includes('05')">
+                <div class="cont-display">
+                    <app-revision-approval class="form-tab"></app-revision-approval>
+                </div>
+            </mat-tab>
+
+        </mat-tab-group>
+    </div>
+
+    <div class="container-scheme">
+        <app-scheme [indicators]="formIndicator" [medition]="formMedition" [reportsResults]="formReportsResults"></app-scheme>
+    </div>
+
+</div>
+
+</div>

@@ -3,7 +3,7 @@
         "id": "1001",
         "data": [
             {
-                "title": "Administracion",
+                "title": "ADMINISTRACION",
                 "routes": [
                     {
                         "name": "Estados",
@@ -100,6 +100,15 @@
                 ]
             },
             {
+                "title": "GESTION DE INDICADORES",
+                "routes": [
+                    {
+                        "name": "Gestion",
+                        "url": "/management-indicators/"
+                    }
+                ]
+            },
+            {
                 "title": "REPORTES",
                 "routes": [
                     {
@@ -109,6 +118,74 @@
                     {
                         "name": "Formulación y revisión",
                         "url": "/reports-indicators/revision"
+                    }
+                ]
+            },
+            {
+                "title": "MANTENIMIENTO",
+                "routes": [
+                    {
+                        "name": "Usuario",
+                        "url": "/maintenance/user"
+                    },
+                    {
+                        "name": "Indicadores",
+                        "url": "/maintenance/indicators"
+                    },
+                    {
+                        "name": "Oficinas",
+                        "url": "/maintenance/offices"
+                    },
+                    {
+                        "name": "Áreas",
+                        "url": "/maintenance/areas"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "1003",
+        "data": [
+            {
+                "title": "ADMINISTRACION",
+                "routes": [
+                    {
+                        "name": "Probabilidad",
+                        "url": "/administration-risk/probability"
+                    },
+                    {
+                        "name": "Impacto",
+                        "url": "/administration-risk/impact"
+                    },
+                    {
+                        "name": "Nivel de riesgo",
+                        "url": "/administration-risk/risk"
+                    },
+                    {
+                        "name": "Efectividad",
+                        "url": "/administration-risk/effectiveness"
+                    },
+                    {
+                        "name": "Opción de tratamiento",
+                        "url": "/administration-risk/treatment"
+                    }
+                ]
+            },
+            {
+                "title": "PROCESOS",
+                "routes": [
+                    {
+                        "name": "Registro de riesgos",
+                        "url": "/process-risk/risk-register"
+                    },
+                    {
+                        "name": "Inventario de activos",
+                        "url": "/process-risk/asset-inventory"
+                    },
+                    {
+                        "name": "Tratamiento de riesgos",
+                        "url": "/process-risk/risk-treatment"
                     }
                 ]
             }

@@ -10,6 +10,7 @@ export class SchemeComponent implements OnInit {
   @Input() indicators: any = {};
   @Input() medition: any = {};
   @Input() metas:any = {};
+  @Input() reportsResults;
 
   constructor() { }
 

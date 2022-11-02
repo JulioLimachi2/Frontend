@@ -1,0 +1,20 @@
+<form [formGroup]="formAnalysis" class="form-standart analysis">
+    <div class="cont-month">
+        <div class="title-month">Escoja el mes</div>
+        <app-datepicker-month (onGetValue)="getMonth($event)"></app-datepicker-month>
+    </div>
+    <mat-form-field appearance="outline">
+        <mat-label>Analisis</mat-label>
+        <textarea matInput placeholder="Analisis" formControlName="analysis" cols="30" rows="10"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Acción Correctiva</mat-label>
+        <textarea matInput placeholder="Acción Correctiva" formControlName="actions" cols="30" rows="10"></textarea>
+    </mat-form-field>
+
+    <div class="container-btn-save">
+        <button (click)="save()" type="button">Guardar</button>
+        <button (click)="next()" type="button">Siguiente</button>
+    </div>
+</form>

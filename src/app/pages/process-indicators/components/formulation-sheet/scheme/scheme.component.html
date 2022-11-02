@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div class="metas" *ngIf="metas?.baseLine">
+    <div class="metas" *ngIf="metas?.baseLine || reportsResults">
         <div class="cont-gray div-100">METAS</div>
         <div style="display: flex;">
             <div class="meta-state">
@@ -96,7 +96,7 @@
         </div>
     </div>
 
-    <div class="organization" *ngIf="metas?.baseLine">
+    <div class="organization" *ngIf="metas?.baseLine || reportsResults">
         <div class="col01-organization">
             <div class="cont-gray header-medium"></div>
             <div class="cont-gray">Unidad de organización</div>

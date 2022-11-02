@@ -1,1 +1,12 @@
 <div class="container-title">Ficha de revisión</div>
+
+<mat-tab-group class="mat-tab-sunarp" *ngIf="!showForm">
+    <mat-tab label="INDICADORES">
+        <div class="container-items">
+            <app-card-item *ngFor="let item of dataCard" title="{{item.title}}" (click)="getModule()">
+            </app-card-item>
+        
+        </div>
+    </mat-tab>
+
+</mat-tab-group>

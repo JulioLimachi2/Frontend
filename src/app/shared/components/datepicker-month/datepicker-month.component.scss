@@ -1,3 +1,7 @@
 ::ng-deep .dt-picker-month{
     width: 100%;
+
+    input{
+        text-transform: capitalize;
+    }
 }

@@ -1,0 +1,45 @@
+.title-report-tb{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.sub-report-tb{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.container-report{
+    padding: 20px;
+    border: 1px solid #000000;
+}
+
+.frame{
+    border: 1px solid #cccce4;
+    padding: 20px;
+
+   
+}
+
+.container-tb-month{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.tb-months{
+    width: 100%;
+    max-width: 300px;
+    border-spacing: 0;
+    thead{
+        background-color: #cdddcd;
+       // border:1px solid black;
+    }
+    th, td {
+        border:1px solid black;
+      }
+}

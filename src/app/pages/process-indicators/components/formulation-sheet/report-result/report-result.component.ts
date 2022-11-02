@@ -23,12 +23,11 @@ export class ReportResultComponent implements OnInit {
   }
 
   getYear(year: string){
-   this.formReportResult.value.year = year;
+    this.formReportResult.controls['year'].setValue(year);
   }
 
   getMonth(month: string){
-    console.log('month',month);
-    this.formReportResult.value.month = month;
+    this.formReportResult.controls['month'].setValue(month);
   }
 
   save(){

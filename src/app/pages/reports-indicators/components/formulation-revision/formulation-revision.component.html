@@ -1,1 +1,26 @@
 <div class="container-title">Formulación y revisión</div>
+
+<mat-tab-group class="mat-tab-sunarp">
+    <mat-tab label="REPORTES">
+        <div class="container-form-pdfindicator">
+            <div class="frm-inputs-reports">
+                <div>
+                    <div>Escoja el mes</div>
+                    <app-datepicker-month (onGetValue)="getMonth($event)" [width]="'200px'"></app-datepicker-month>
+                </div>
+                <div>
+                    <div>Escoja el año</div>
+                    <app-datepicker-year (onGetValue)="getYear($event)" [width]="'200'"></app-datepicker-year>
+                </div>
+    
+                <div>
+                    <button class="btn-light-blue" [disabled]="!formRevision.valid" (click)="generate()">Generar</button>
+                </div>
+            </div>
+    
+        </div>
+
+
+    </mat-tab>
+
+</mat-tab-group>

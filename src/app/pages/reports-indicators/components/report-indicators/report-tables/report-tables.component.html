@@ -1,0 +1,27 @@
+<div class="container-report">
+    <div class="frame">
+        <div class="title-report-tb">Detalles del indicador</div>
+        <div class="sub-report-tb">{{dataReport.month}} {{dataReport.year}}</div>
+
+        <div class="container-tb-month">
+            <table class="tb-months">
+
+                <thead>
+                  <tr>
+                    <th>Mes</th>
+                    <th>Indicador</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let month of months">
+                    <th>{{month.name}}</th>
+                    <td>1.20%</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+
+
+
+    </div>
+</div>

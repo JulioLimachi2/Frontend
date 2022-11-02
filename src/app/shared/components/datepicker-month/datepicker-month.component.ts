@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, LOCALE_ID } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
@@ -29,11 +29,12 @@ export const MY_FORMATS = {
     {
       provide: MAT_DATE_FORMATS, useValue: MY_FORMATS
     },
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }
   ]
 })
 export class DatepickerMonthComponent implements OnInit {
 
-  @Input() width: string = '200';
+  @Input() width: string = 'initial';
   @Output() onGetValue: EventEmitter<any> = new EventEmitter();
   formMonth: FormControl;
 

@@ -12,6 +12,7 @@ import { MeditionControlComponent } from './components/formulation-sheet/meditio
 import { MetaIndicatorComponent } from './components/formulation-sheet/meta-indicator/meta-indicator.component';
 import { ReportResultComponent } from './components/formulation-sheet/report-result/report-result.component';
 import { RevisionApprovalComponent } from './components/formulation-sheet/revision-approval/revision-approval.component';
+import { AnalysisActionsComponent } from './components/revision-sheet/analysis-actions/analysis-actions.component';
 
 
 
@@ -25,6 +26,7 @@ import { RevisionApprovalComponent } from './components/formulation-sheet/revisi
     MetaIndicatorComponent,
     ReportResultComponent,
     RevisionApprovalComponent,
+    AnalysisActionsComponent,
 
   ],
   imports: [

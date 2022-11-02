@@ -1,4 +1,4 @@
-<mat-form-field appearance="outline" class="dt-picker-month" [ngStyle]="{'max-width.px': width}">
+<mat-form-field appearance="outline" class="dt-picker-month" [ngStyle]="{'max-width': width}">
     <input matInput [matDatepicker]="pickerMonth" [formControl]="formMonth" readonly>
     <mat-datepicker-toggle matSuffix [for]="pickerMonth"></mat-datepicker-toggle>
     <mat-datepicker #pickerMonth startView="year" (monthSelected)="selectedMonth($event,pickerMonth)"></mat-datepicker>
