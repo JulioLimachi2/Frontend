@@ -1,47 +1,33 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { MatTableDataSource } from "@angular/material/table";
+import { TableColumn } from 'src/app/core/models/TableColumn';
 @Component({
   selector: 'app-table-edit',
   templateUrl: './table-edit.component.html',
   styleUrls: ['./table-edit.component.css']
 })
-export class TableEditComponent {
-  @Input() tableHeader = [];
-  @Input() tableData = [];
-  @Input() title = 'Table';
-  @Input() name = 'Nombre';
-  result = [{id:1, Name: 'Per'}, {id:2, Name: 'Result'}]
-  addName = '';
-  
-  constructor() { }
+export class TableEditComponent implements OnInit {
 
-  onAddStudent() {
-    this.tableData.push({
-      studentId: 3,
-      studentName: "Jaya",
-      class: 1,
-      marks: ""
-    });
+
+  public _dataSource = new MatTableDataSource([]);
+  public displayedColumns: string[];
+  @Input() columns: TableColumn[];
+
+
+  @Input() set dataSource(data: any[]) {
+    this.setDataSource(data);
   }
 
-  onRemoveStubent(id: number) {
-    this.tableData = this.tableData.filter(res => res.studentId !== id);
+
+  ngOnInit(): void {
+    this.displayedColumns = this.columns.map((tableColumn: TableColumn) => tableColumn.caption);
+    console.log( " this.displayedColumns ",this.displayedColumns );
+    
   }
 
-  addCol() {
-    console.log(this.addName)
-    if (this.addName !== "") {
-      this.tableData.map(res => {
-        res[this.addName] = '';
-      });
-      this.tableHeader.push({
-        id: 4,
-        title: this.addName,
-        name: this.addName,
-        placeholder: `Enter the ${this.addName}`,
-        type: "number"
-      });
-    }
-  }
 
+  setDataSource(data: any) {
+    this._dataSource = new MatTableDataSource<any>(data);
+  }
 }

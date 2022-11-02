@@ -1,0 +1,16 @@
+.celda {
+    padding-left: 1rem;
+}
+
+.celda-color {
+    width: 120px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    height: 40px;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0 2px #000;
+}

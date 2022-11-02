@@ -85,11 +85,12 @@ export class FormulationSheetComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.myData = this.getDataSource();
+    this.myColumns = this.getColumns();
   }
 
-  getModule() {
-    console.log("entre");
 
+  getModule() {
     this.router.navigateByUrl("/process/file");
     this.showForm = !this.showForm;
   }
@@ -130,4 +131,27 @@ export class FormulationSheetComponent implements OnInit {
     this.selectedIdOption = menu.id;
   }
 
+  myData: any
+  myColumns: any;
+
+  getDataSource(): any[] {
+    return [
+      {color: '#FF0000', categoria: 'Mul Alto',categoria2: 'Mul Alto', valor:'5', description: 'Se presentó una o mas veces a la semana' },
+      { color: '#ff8000',categoria: 'Alto',categoria2: 'Mul Alto', valor:'4',description: 'Se presentó una o mas veces al año' },
+      { color: '#ffff00',categoria: 'Medio',categoria2: 'Mul Alto',valor:'3', description: 'Se presentó una vez al año' },
+      { color: '#B2D13F',categoria: 'Bajo',categoria2: 'Mul Alto', valor:'2',description: 'Ha sucedido una vez en la historia de la institución' },
+      { color: '#36FF33',categoria: 'Muy bajo',categoria2: 'Mul Alto',valor:'1', description: 'Nunca se ha presentado' },
+    ];
+  }
+
+
+  getColumns():  any[] {
+    return [
+      { caption: 'Categoría', field: 'categoria' },
+      { caption: 'Categoría 2', field: 'categoria2' },
+      { caption: 'Valor', field: 'valor' },
+      { caption: 'Descripcion', field: 'description' }
+    ];
+  };
+  
 }
