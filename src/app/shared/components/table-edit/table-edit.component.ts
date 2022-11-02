@@ -12,6 +12,7 @@ export class TableEditComponent implements OnInit {
 
   public _dataSource = new MatTableDataSource([]);
   public displayedColumns: string[];
+  @Input() state: boolean; 
   @Input() columns: TableColumn[];
 
 
@@ -22,7 +23,8 @@ export class TableEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.displayedColumns = this.columns.map((tableColumn: TableColumn) => tableColumn.caption);
-    console.log( " this.displayedColumns ",this.displayedColumns );
+    this.state && this.displayedColumns.splice(0, 0, 'state');
+    console.log( " this.displayedColumns ",this.displayedColumns);
     
   }
 

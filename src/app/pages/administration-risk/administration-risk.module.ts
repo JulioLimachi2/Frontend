@@ -6,6 +6,7 @@ import { RiskComponent } from './risk/risk.component';
 import { EffectivenessComponent } from './effectiveness/effectiveness.component';
 import { TreatmentComponent } from './treatment/treatment.component';
 import { AdministrationRiskRoutingModule } from './administration-risk-routing.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -19,7 +20,8 @@ import { AdministrationRiskRoutingModule } from './administration-risk-routing.m
   ],
   imports: [
     CommonModule,
-    AdministrationRiskRoutingModule
+    AdministrationRiskRoutingModule,
+    SharedModule
   ]
 })
 export class AdministrationRiskModule { }
