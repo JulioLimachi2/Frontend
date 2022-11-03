@@ -1,0 +1,74 @@
+<div class="container-responsible-table">
+    <table mat-table [dataSource]="dataSource" class="table-standart tbreturned">
+        <ng-container matColumnDef="period">
+            <th mat-header-cell *matHeaderCellDef> Periodo </th>
+            <td mat-cell *matCellDef="let element;"> 
+                <div>{{element.period}}</div> 
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="officeIndicator">
+            <th mat-header-cell *matHeaderCellDef> Oficina del Indicador </th>
+            <td mat-cell *matCellDef="let element;"> 
+                <div>{{element.officeIndicator}}</div> 
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="areaIndicator">
+            <th mat-header-cell *matHeaderCellDef> Area del Indicador </th>
+            <td mat-cell *matCellDef="let element;"> 
+                <div>{{element.areaIndicator}}</div> 
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Nombre del Indicador </th>
+            <td mat-cell *matCellDef="let element;"> 
+                <div>{{element.name}}</div> 
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="valorIndicator">
+            <th mat-header-cell *matHeaderCellDef> Valor del Indicador </th>
+            <td mat-cell *matCellDef="let element;"> 
+                <div>{{element.valorIndicator}}</div> 
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="metaIndicator">
+            <th mat-header-cell *matHeaderCellDef> Meta del Indicador </th>
+            <td mat-cell *matCellDef="let element;"> 
+                <div>{{element.metaIndicator}}</div> 
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="bossUO">
+            <th mat-header-cell *matHeaderCellDef> Jefe UO </th>
+            <td mat-cell *matCellDef="let element;"> 
+                <div> 
+                    <mat-checkbox [checked]="element.bossUO" [color]="'primary'" disabled="disabled"></mat-checkbox>
+                </div> 
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cca">
+            <th mat-header-cell *matHeaderCellDef> CCA </th>
+            <td mat-cell *matCellDef="let element;"> 
+                <div> 
+                    <mat-checkbox [checked]="element.cca" [color]="'primary'"></mat-checkbox>
+                </div> 
+            </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="noResults">
+            <td mat-footer-row *matFooterCellDef [colSpan]="displayedColumns.length">
+                No se encontraron resultados.
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index" (dblclick)="selectedRow(row,i)" [ngClass]="{'active-row-table': indexSelectedRow == i}"></tr>
+        <tr mat-footer-row [hidden]="dataSource.data.length > 0 || emptyResult" *matFooterRowDef="['noResults']"></tr>
+    </table>
+</div>

@@ -7,7 +7,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from 'src/app/material/material.module';
 import { DatesIndicatorComponent } from './components/formulation-sheet/dates-indicator/dates-indicator.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SchemeComponent } from './components/formulation-sheet/scheme/scheme.component';
 import { MeditionControlComponent } from './components/formulation-sheet/medition-control/medition-control.component';
 import { MetaIndicatorComponent } from './components/formulation-sheet/meta-indicator/meta-indicator.component';
 import { ReportResultComponent } from './components/formulation-sheet/report-result/report-result.component';
@@ -21,7 +20,6 @@ import { AnalysisActionsComponent } from './components/revision-sheet/analysis-a
     FormulationSheetComponent,
     RevisionSheetComponent,
     DatesIndicatorComponent,
-    SchemeComponent,
     MeditionControlComponent,
     MetaIndicatorComponent,
     ReportResultComponent,

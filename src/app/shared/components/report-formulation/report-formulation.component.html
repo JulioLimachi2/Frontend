@@ -11,7 +11,7 @@
             <div class="cont-gray">Fuente de datos</div>
         </div>
         <div class="col2-indicator">
-            <div class="cont-gray header">FICHA DE INDICADOR</div>
+            <div class="cont-gray header">{{reportsResults ? 'FICHA DE REPORTE DE INDICADOR' : 'FICHA DE INDICADOR'}} </div>
             <div class="cont-double">
                 <div class="cont-blue">{{indicators.name}}</div>
                 <div class="cont-gray">Código y versión del indicador</div>
@@ -27,7 +27,7 @@
         </div>
         <div class="col3-indicator">
             <div class="cont-gray header">
-                <div>Código: <strong>F-005-UPP-ZRIX</strong></div>
+                <div>Código: <strong>{{reportsResults ? ' F-006-UPP-ZRIX' : 'F-005-UPP-ZRIX'}}</strong></div>
                 <div>Versión: <strong>V.01</strong></div>
             </div>
             <div class="cont-blue">{{indicators.code}}</div>
@@ -96,7 +96,7 @@
         </div>
     </div>
 
-    <div class="organization" *ngIf="metas?.baseLine || reportsResults">
+    <div class="organization" *ngIf="indicators?.code && medition?.frequencyControl && metas?.baseLine && !reportsResults">
         <div class="col01-organization">
             <div class="cont-gray header-medium"></div>
             <div class="cont-gray">Unidad de organización</div>
@@ -130,6 +130,10 @@
             </div>
         </div>
 
+    </div>
+
+    <div class="metas" *ngIf="reportsResults">
+        <div class="cont-gray div-100">REPORTE DE RESULTADOS</div>
     </div>
 
 </div>

@@ -2,7 +2,7 @@
 
 <mat-tab-group class="mat-tab-sunarp">
     <mat-tab label="REPORTES">
-        <div class="container-form-pdfindicator">
+        <div style="display: flex;">
             <div class="frm-inputs-reports">
                 <div>
                     <div>Escoja el mes</div>
@@ -17,6 +17,13 @@
                     <button class="btn-light-blue" [disabled]="!formRevision.valid" (click)="generate()">Generar</button>
                 </div>
             </div>
+
+            <div *ngIf="showReport" class="container-reports-revision">
+                <app-report-formulation [indicators]="formIndicator" [medition]="formMedition" [metas]="formMeta"></app-report-formulation>
+
+                <app-report-formulation [indicators]="formIndicator" [medition]="formMedition" [metas]="formMeta" [reportsResults]="formRevision"></app-report-formulation>
+            </div>
+
     
         </div>
 

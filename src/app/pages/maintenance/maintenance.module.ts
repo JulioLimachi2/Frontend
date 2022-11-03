@@ -5,6 +5,8 @@ import { IndicatorComponent } from './components/indicator/indicator.component';
 import { OfficesComponent } from './components/offices/offices.component';
 import { AreasComponent } from './components/areas/areas.component';
 import { MaintenanceRoutingModule } from './maintenance-routing.module';
+import { MaterialModule } from 'src/app/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +19,9 @@ import { MaintenanceRoutingModule } from './maintenance-routing.module';
   ],
   imports: [
     CommonModule,
-    MaintenanceRoutingModule
+    MaintenanceRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class MaintenanceModule { }

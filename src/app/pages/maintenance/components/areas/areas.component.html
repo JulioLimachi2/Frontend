@@ -1,1 +1,35 @@
-<p>areas works!</p>
+<div class="container-title">REPORTE DE INDICADORES</div>
+
+<mat-tab-group class="mat-tab-sunarp">
+    <mat-tab label="AREA">
+        <div class="container-responsible-table">
+            <table mat-table [dataSource]="dataSource" class="table-standart tbpending">
+                <ng-container matColumnDef="code">
+                    <th mat-header-cell *matHeaderCellDef> Código </th>
+                    <td mat-cell *matCellDef="let element;"> 
+                        <div>{{element.code}}</div> 
+                    </td>
+                </ng-container>
+        
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Nombre del Área </th>
+                    <td mat-cell *matCellDef="let element;"> 
+                        <div>{{element.name}}</div> 
+                    </td>
+                </ng-container>
+        
+                <ng-container matColumnDef="state">
+                    <th mat-header-cell *matHeaderCellDef> Estado </th>
+                    <td mat-cell *matCellDef="let element;"> 
+                        <div>{{element.state ? 'ACTIVO' : 'NO ACTIVO'}}</div> 
+                    </td>
+                </ng-container>
+        
+        
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </mat-tab>
+
+</mat-tab-group>

@@ -11,28 +11,52 @@ export class FormulationRevisionComponent implements OnInit {
   formReport;
   formRevision: FormGroup;
   showReport: boolean = false;
+  formIndicator = {
+    "code": "asda",
+    "name": "asdasdas",
+    "finalidad": "sdas",
+    "proceso": "dsa",
+    "objetivo": "dasd",
+    "formula": "asd",
+    "unidad": "asdas",
+    "fuente": "dasdas"
+  };
+
+  formMedition = {
+    "responsibleMedition": "asdas",
+    "responsibleControl": "dasd",
+    "frequencyMedition": "asd",
+    "frequencyControl": "asdasd"
+  }
+
+  formMeta = {
+    "baseLine": "dasd",
+    "optimo": "asdas",
+    "tolerant": "dasd",
+    "deficient": "asdasdasd"
+  }
 
   constructor(private builder: FormBuilder) {
     this.formRevision = this.builder.group({
-      month:[,Validators.required],
-      year:[,Validators.required]
+      month: [, Validators.required],
+      year: [, Validators.required]
     })
-   }
+  }
 
   ngOnInit(): void {
   }
 
-  getMonth(month){
+  getMonth(month) {
     this.formRevision.controls['month'].setValue(month);
   }
 
-  getYear(year){
+  getYear(year) {
     this.formRevision.controls['year'].setValue(year);
   }
 
-  generate(){
-  this.formReport = this.formRevision.value;
-  this.showReport = true;
+  generate() {
+    this.formReport = this.formRevision.value;
+    this.showReport = true;
   }
 
 }
