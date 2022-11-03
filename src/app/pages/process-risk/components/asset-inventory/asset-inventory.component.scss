@@ -1,3 +1,120 @@
-:host{
+:host {
     width: 100%;
+}
+
+.dates-assets {
+    display        : flex;
+    flex-wrap      : wrap;
+    margin         : 20px 0;
+    justify-content: space-between;
+    font-size      : 12px;
+
+    .rows-assets {
+        border: 1px solid #44acab;
+        border-bottom: 0;
+    }
+
+    .row01-assets {
+        display: flex;
+
+        div:first-child {
+            padding    : 0 5px;
+            min-width  : 240px;
+            border     : 1px solid #44acab;
+            border-top : 0;
+            border-left: 0;
+            font-weight: 500;
+        }
+
+        div:last-child {
+            min-width: 300px;
+            border-bottom: 1px solid #44acab;
+        }
+    }
+
+    .row02-assets {
+        display: flex;
+
+        div:first-child {
+            min-width  : 240px;
+            padding    : 0 5px;
+            border     : 1px solid #44acab;
+            border-top : 0;
+            border-left: 0;
+            font-weight: 500;
+        }
+
+        div:last-child {
+            min-width: 300px;
+            border-bottom: 1px solid #44acab;
+        }
+    }
+
+    .row03-assets {
+        display: flex;
+
+        div:first-child {
+            min-width  : 240px;
+            padding    : 0 5px;
+            border     : 1px solid #44acab;
+            border-top : 0;
+            border-left: 0;
+            font-weight: 500;
+        }
+
+        div:last-child {
+            min-width: 300px;
+            border-bottom: 1px solid #44acab;
+        }
+    }
+
+    .user {
+        display        : flex;
+        justify-content: center;
+        padding        : 0 20px;
+    }
+}
+
+.tbasset-inventory{
+        width: 2000px;
+        .mat-table thead,[mat-header-row] {
+            background-color: #44acab;
+        }
+        th{
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            text-align: center;
+            padding: 0 10px;
+        }
+        th.mat-header-cell:first-of-type, th.mat-header-cell:last-of-type {
+            padding: 0 10px;
+        }
+        td.mat-cell:first-of-type, td.mat-cell:last-of-type {
+            padding: 0 10px;
+            text-align: center;
+            border: 1px solid #44acab;
+            border-top: 0;
+        }
+        td.mat-cell{
+            text-align: center;
+            padding: 0 10px;
+            border: 1px solid #44acab;
+            border-top: 0;
+        }
+}
+
+.cont-assets-btn{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    gap: 10px;
+    padding: 0 25px;
+    box-sizing: border-box;
+
+    .col-left-btn{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 }

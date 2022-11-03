@@ -4,6 +4,7 @@ import { RiskRegisteComponent } from './components/risk-registe/risk-registe.com
 import { AssetInventoryComponent } from './components/asset-inventory/asset-inventory.component';
 import { RiskTreatmentComponent } from './components/risk-treatment/risk-treatment.component';
 import { ProcessRiskRoutingModule } from './process-risk-routing.module';
+import { MaterialModule } from 'src/app/material/material.module';
 
 
 
@@ -15,7 +16,8 @@ import { ProcessRiskRoutingModule } from './process-risk-routing.module';
   ],
   imports: [
     CommonModule,
-    ProcessRiskRoutingModule
+    ProcessRiskRoutingModule,
+    MaterialModule
   ]
 })
 export class ProcessRiskModule { }

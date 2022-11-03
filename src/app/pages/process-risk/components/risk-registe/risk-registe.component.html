@@ -1,1 +1,75 @@
 <div class="container-title">Registro de Riesgos</div>
+
+<div class="dates-risk">
+  <div class="dates-organization">
+    <div class="col01-dates">
+      <div>UNIDAD DE ORGANIZACIÓN O FUNCIONAL</div>
+      <div>PROCESO:</div>
+    </div>
+    <div class="col02-dates">
+      <div>Unidad de Planeamiento, Presupuesto y Modernización</div>
+      <div>Gestión de Planteamiento, Presupuesto / Gestión de la Modernización</div>
+    </div>
+  </div>
+  <div class="user">
+    Ana Baenz: Jefe
+  </div>
+</div>
+
+<div class="title-tb">Identificacion</div>
+
+<div class="container-responsible-table cont-risk">
+  <table mat-table [dataSource]="dataSource" class="table-standart tbrisk-register">
+    <ng-container matColumnDef="origin">
+      <th mat-header-cell *matHeaderCellDef> Origen </th>
+      <td mat-cell *matCellDef="let element"> {{element.origin}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="subProcess">
+      <th mat-header-cell *matHeaderCellDef> Sub proceso </th>
+      <td mat-cell *matCellDef="let element"> {{element.subProcess}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="threatOpportunity">
+      <th mat-header-cell *matHeaderCellDef> Amenaza / Oportunidad </th>
+      <td mat-cell *matCellDef="let element"> {{element.threatOpportunity}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="vulnerabilityStrength">
+      <th mat-header-cell *matHeaderCellDef> Vulnerabilidad / Fortaleza </th>
+      <td mat-cell *matCellDef="let element"> {{element.vulnerabilityStrength}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="riskCode">
+      <th mat-header-cell *matHeaderCellDef> Código de Riesgo u Oportunidad </th>
+      <td mat-cell *matCellDef="let element"> {{element.riskCode}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nameRisk">
+      <th mat-header-cell *matHeaderCellDef> Nombre del Riesgo u Oportunidad </th>
+      <td mat-cell *matCellDef="let element"> {{element.nameRisk}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="noResults">
+      <td mat-footer-row *matFooterCellDef [colSpan]="displayedColumns.length">
+        No se encontraron resultados.
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-footer-row [hidden]="dataSource.data.length > 0 || emptyResult" *matFooterRowDef="['noResults']"></tr>
+  </table>
+</div>
+
+<div class="cont-risk-btn">
+  <div class="col-left-btn">
+    <button type="button" class="btn-light-blue">Anadir</button>
+    <button type="button" class="btn-light-blue">Modificar</button>
+    <button type="button" class="btn-light-blue">Eliminar</button>
+    <button type="button" class="btn-light-blue">Exportar</button>
+  </div>
+  <button type="button" class="btn-light-blue">Preaprobar</button>
+</div>
