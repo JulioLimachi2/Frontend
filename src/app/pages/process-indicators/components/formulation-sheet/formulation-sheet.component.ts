@@ -16,6 +16,7 @@ export class FormulationSheetComponent implements OnInit {
   tabsCompleteds = [];
   formIndicator;
   formMedition;
+  formReportsResult;
   formMeta;
   setTabs = new Set();
   data = [
@@ -120,6 +121,10 @@ export class FormulationSheetComponent implements OnInit {
 
   setMeta(form){
     this.formMeta = form;
+  }
+
+  setResultReports(form){
+    this.formReportsResult = form;
   }
 
   nextTab(){

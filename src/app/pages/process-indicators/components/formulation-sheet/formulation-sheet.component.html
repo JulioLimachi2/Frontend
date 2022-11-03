@@ -46,7 +46,7 @@
                     </mat-tab>
                     <mat-tab label="REPORTE DE RESULTADOS" *ngIf="tabsCompleteds.includes('04')">
                         <div class="cont-display">
-                            <app-report-result class="form-tab" (onNext)="nextTab()"></app-report-result>
+                            <app-report-result class="form-tab" (onNext)="nextTab()" (onSave)="setResultReports($event)"></app-report-result>
                         </div>
                     </mat-tab>
                     <mat-tab label="REVISIÓN Y APROBACIÓN DEL INDICADOR" *ngIf="tabsCompleteds.includes('05')">
@@ -60,7 +60,7 @@
             </div>
 
             <div class="container-scheme">
-                <app-scheme [indicators]="formIndicator" [medition]="formMedition" [metas]="formMeta"></app-scheme>
+                <app-report-formulation [indicators]="formIndicator" [medition]="formMedition" [metas]="formMeta" [reportsResults]="formReportsResult"></app-report-formulation>
             </div>
 
         </div>

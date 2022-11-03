@@ -11,6 +11,7 @@ import { SafePipe } from './pipes/safe.pipe';
 import { CardItemComponent } from './components/card-item/card-item.component';
 import { TableEditComponent } from './components/table-edit/table-edit.component';
 import { DatepickerMonthComponent } from './components/datepicker-month/datepicker-month.component';
+import { ReportFormulationComponent } from './components/report-formulation/report-formulation.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DatepickerMonthComponent } from './components/datepicker-month/datepick
     SafePipe,
     CardItemComponent,
     TableEditComponent,
-    DatepickerMonthComponent
+    DatepickerMonthComponent,
+    ReportFormulationComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { DatepickerMonthComponent } from './components/datepicker-month/datepick
     SafePipe,
     CardItemComponent,
     TableEditComponent,
-    DatepickerMonthComponent
+    DatepickerMonthComponent,
+    ReportFormulationComponent
   ],
   providers:[
     DatePipe
