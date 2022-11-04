@@ -13,19 +13,20 @@ export class TreatmentComponent implements OnInit {
   }
   getDataSource(): any[] {
     return [
-      {color: '#FF0000', categoria: '17 a mas',categoria2: 'Extremo' },
-      { color: '#ff8000',categoria: 'Entre 11 y 16',categoria2: 'Alto'},
-      { color: '#ffff00',categoria: 'Entre 5 y 10',categoria2: 'Medio' },
-      { color: '#B2D13F',categoria: 'Entre 3 y 4',categoria2: 'Ligero'},
-      { color: '#36FF33',categoria: 'Hasta 2',categoria2: 'Bajo'},
+      {color: '#FF0000', categoria: 'Extremo', description:'Mitigar Compartir o Evitar', description2: 'Aceptar' },
+      { color: '#ff8000',categoria: 'Alto', description:'Mitigar Compartir o Evitar',description2: 'Aceptar Incrementar o Compartir' },
+      { color: '#ffff00',categoria: 'Medio',description:'Aceptar Compartir o Mitigar', description2: 'Aceptar Incrementar o Compartir' },
+      { color: '#B2D13F',categoria: 'Ligero', description:'Aceptar Mitigar',description2: 'Incrementar o Compartir' },
+      { color: '#36FF33',categoria: ' bajo',description:'Aceptar', description2: 'Incrementar' },
     ];
   }
 
 
   getColumns():  any[] {
     return [
-      { caption: 'Nombre', field: 'categoria' },
-      { caption: 'Código', field: 'categoria2' },
+      { caption: 'Categoría', field: 'categoria' },
+      { caption: 'Opción de tratamiento Riesgo negativo', field: 'description' },
+      { caption: 'Opción de tratamiento Riesgo positivo', field: 'description2' }
     ];
   };
 }

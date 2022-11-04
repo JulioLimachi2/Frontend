@@ -5,7 +5,7 @@ import { TableColumn } from 'src/app/core/models/TableColumn';
 @Component({
   selector: 'app-table-edit',
   templateUrl: './table-edit.component.html',
-  styleUrls: ['./table-edit.component.css']
+  styleUrls: ['./table-edit.component.scss']
 })
 export class TableEditComponent implements OnInit {
 
