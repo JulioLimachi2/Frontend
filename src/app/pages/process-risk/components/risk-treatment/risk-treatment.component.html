@@ -20,41 +20,191 @@
     </div>
 </div>
 
-<div class="container-responsible-table cont-risk">
+<div class="container-responsible-table cont-risk" [formGroup]="formRiskTreatment" #tbriskTreatment>
     <table mat-table [dataSource]="dataSource" class="table-standart tbrisk-treatment">
 
         <ng-container matColumnDef="subProcess">
             <th mat-header-cell *matHeaderCellDef> Sub proceso </th>
-            <td mat-cell *matCellDef="let element"> {{element.subProcess}} </td>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.subProcess}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="subProcess">
+            </td>
         </ng-container>
-
-
 
         <ng-container matColumnDef="type">
             <th mat-header-cell *matHeaderCellDef> Tipo </th>
-            <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.type}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="type">
+            </td>
         </ng-container>
 
 
         <ng-container matColumnDef="riskCode">
             <th mat-header-cell *matHeaderCellDef> Código del Riesgo u Oportunidad </th>
-            <td mat-cell *matCellDef="let element"> {{element.riskCode}} </td>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.riskCode}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="riskCode">
+            </td>
         </ng-container>
 
         <ng-container matColumnDef="riskName">
             <th mat-header-cell *matHeaderCellDef> Nombre del Riesgo / Oportunidad </th>
-            <td mat-cell *matCellDef="let element"> {{element.riskName}} </td>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.riskName}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="riskName">
+            </td>
         </ng-container>
 
         <ng-container matColumnDef="riskValue">
             <th mat-header-cell *matHeaderCellDef> Valor de Riesgo Residual (Antes del tratamiento) </th>
-            <td mat-cell *matCellDef="let element"> {{element.riskValue}} </td>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.riskValue}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="riskValue">
+            </td>
         </ng-container>
 
-        <ng-container matColumnDef="residualRisk">
-            <th mat-header-cell *matHeaderCellDef> Riesgo Residual </th>
-            <td mat-cell *matCellDef="let element">
-                {{element.residualRisk ? 'Si' : 'No'}}
+        <ng-container matColumnDef="residualRiskBefore">
+            <th mat-header-cell *matHeaderCellDef> Riesgo Residual (Antes del Tratamiento) </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.residualRiskBefore ? 'Si' : 'No'}}</div>
+                <mat-checkbox *ngIf="editActive && indexSelectedRow === i" [checked]="element.residualRiskBefore" [color]="'primary'" formControlName="residualRiskBefore"></mat-checkbox>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="assetName">
+            <th mat-header-cell *matHeaderCellDef> Nombre del activo </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.assetName}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="assetName">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="referenceControlISO">
+            <th mat-header-cell *matHeaderCellDef> Control de referencia ISO 27001 </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.referenceControlISO}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="referenceControlISO">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="proposedControls">
+            <th mat-header-cell *matHeaderCellDef> Controles Propuestos </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.proposedControls}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="proposedControls">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="responsible">
+            <th mat-header-cell *matHeaderCellDef> Responsable </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.responsible}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="responsible">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="startDate">
+            <th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.startDate}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="startDate">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="endDate">
+            <th mat-header-cell *matHeaderCellDef> Fecha Fin </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.endDate}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="endDate">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="followUp">
+            <th mat-header-cell *matHeaderCellDef> Seguimiento </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.followUp}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="followUp">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="controlImplementationStatus">
+            <th mat-header-cell *matHeaderCellDef> Estado de implementación del control </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.controlImplementationStatus}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="controlImplementationStatus">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="determinationDefinitionResponsibleParty">
+            <th mat-header-cell *matHeaderCellDef> Determinación y definición de responsable(s) </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.determinationDefinitionResponsibleParty}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="determinationDefinitionResponsibleParty">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="frequencyExecution">
+            <th mat-header-cell *matHeaderCellDef> Frecuencia de ejecución y seguimiento </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.frequencyExecution}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="frequencyExecution">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="documentacionEvidencia">
+            <th mat-header-cell *matHeaderCellDef> Documentación o evidencia </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.documentacionEvidencia}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="documentacionEvidencia">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="preventiveNature">
+            <th mat-header-cell *matHeaderCellDef> Carácter preventivo </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.preventiveNature}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="preventiveNature">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="controlApplication">
+            <th mat-header-cell *matHeaderCellDef> Aplicación del control </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.controlApplication}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="controlApplication">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="effectivenessProposedControl">
+            <th mat-header-cell *matHeaderCellDef> Efectividad del control propuesto </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.effectivenessProposedControl}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="effectivenessProposedControl">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="valueResidualRisk">
+            <th mat-header-cell *matHeaderCellDef> Valor del riesgo residual (Después del tratamiento) </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.valueResidualRisk}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="valueResidualRisk">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="residualRiskAfter">
+            <th mat-header-cell *matHeaderCellDef> Riesgo Residual (Después del Tratamiento) </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.residualRiskAfter}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="residualRiskAfter">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="comment">
+            <th mat-header-cell *matHeaderCellDef> Comentario </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+                <div *ngIf="indexSelectedRow !== i">{{element.comment}} </div>
+                <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="comment">
             </td>
         </ng-container>
 
@@ -64,8 +214,22 @@
             </td>
         </ng-container>
 
+        <ng-container matColumnDef="header-row-first-group">
+            <th mat-header-cell *matHeaderCellDef [attr.colspan]="14"></th>
+          </ng-container>
+      
+          <ng-container matColumnDef="header-row-second-group">
+            <th mat-header-cell *matHeaderCellDef [attr.colspan]="5"> Criterios de efectividad de control </th>
+          </ng-container>
+      
+          <ng-container matColumnDef="header-row-third-group">
+            <th mat-header-cell *matHeaderCellDef [attr.colspan]="4"> </th>
+          </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['header-row-first-group','header-row-second-group','header-row-third-group']"></tr>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index" (dblclick)="selectedRow(i)"
+        [ngClass]="{'active-row-table': indexSelectedRow == i}"></tr>
         <tr mat-footer-row [hidden]="dataSource.data.length > 0 || emptyResult" *matFooterRowDef="['noResults']"></tr>
     </table>
 </div>
@@ -73,7 +237,7 @@
 <div class="cont-risk-btn">
     <div class="col-left-btn">
         <button type="button" class="btn-light-blue">Anadir</button>
-        <button type="button" class="btn-light-blue">Modificar</button>
+        <button type="button" class="btn-light-blue" [disabled]="indexSelectedRow ===null" (click)="edit()">Modificar</button>
         <button type="button" class="btn-light-blue">Eliminar</button>
     </div>
     <button type="button" class="btn-light-blue">Preaprobar</button>

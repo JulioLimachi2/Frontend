@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
@@ -8,10 +9,53 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class RiskTreatmentComponent implements OnInit {
 
-  displayedColumns: string[] = ['subProcess','type','riskCode', 'riskName', 'riskValue','residualRisk'];
+  displayedColumns: string[] = ['subProcess', 'type', 'riskCode', 'riskName', 'riskValue',
+    'residualRiskBefore', 'assetName', 'referenceControlISO', 'proposedControls',
+    'responsible', 'startDate', 'endDate', 'followUp', 'controlImplementationStatus',
+    'determinationDefinitionResponsibleParty', 'frequencyExecution', 'documentacionEvidencia',
+    'preventiveNature', 'controlApplication', 'effectivenessProposedControl', 'valueResidualRisk',
+    'residualRiskAfter', 'comment'];
+  formRiskTreatment: FormGroup;
   dataSource = new MatTableDataSource([]);
+  indexSelectedRow: number = null;
+  editActive: boolean;
+  @ViewChild('tbriskTreatment', { static: false }) tbRiskTreatment: ElementRef;
 
-  constructor() { }
+  constructor(private builder: FormBuilder) {
+    this.formRiskTreatment = this.builder.group({
+      subProcess: [],
+      type: [],
+      riskCode: [],
+      riskName: [],
+      riskValue: [],
+      residualRiskBefore: [],
+      assetName: [],
+      referenceControlISO: [],
+      proposedControls: [],
+      responsible: [],
+      startDate: [],
+      endDate: [],
+      followUp: [],
+      controlImplementationStatus: [],
+      determinationDefinitionResponsibleParty: [],
+      frequencyExecution: [],
+      documentacionEvidencia: [],
+      preventiveNature: [],
+      controlApplication: [],
+      effectivenessProposedControl: [],
+      valueResidualRisk: [],
+      residualRiskAfter: [],
+      comment: [],
+    })
+  }
+
+  @HostListener('document:click', ['$event'])
+  clickout(event) {
+    if (!this.tbRiskTreatment?.nativeElement?.contains(event.target)) {
+      this.indexSelectedRow = null;
+      this.editActive = false;
+    }
+  }
 
   ngOnInit(): void {
     this.dataSource.data = [
@@ -21,9 +65,63 @@ export class RiskTreatmentComponent implements OnInit {
         riskCode: 'O-UPPM-SGC-01',
         riskName: 'Mejora en el registro de información para el seguimiento del POI y del Presupuesto por centro de costos mediante la coordinación constante entre UA, URH y UPPM para el seguimiento de la ejecución',
         riskValue: '16',
-        residualRisk: false
+        residualRiskBefore: false,
+        assetName: '',
+        referenceControlISO: '',
+        proposedControls: '',
+        responsible: '',
+        startDate: '',
+        endDate: '',
+        followUp: '',
+        controlImplementationStatus: '',
+        determinationDefinitionResponsibleParty: '',
+        frequencyExecution: '',
+        documentacionEvidencia: '',
+        preventiveNature: '',
+        controlApplication: '',
+        effectivenessProposedControl: '',
+        valueResidualRisk: '',
+        residualRiskAfter: '',
+        comment: ''
       }
     ];
+  }
+
+  selectedRow(index: number) {
+    this.indexSelectedRow = index;
+    this.formRiskTreatment.patchValue({
+      subProcess: this.dataSource.data[index].subProcess,
+      type: this.dataSource.data[index].type,
+      riskCode: this.dataSource.data[index].riskCode,
+      riskName: this.dataSource.data[index].riskName,
+      riskValue: this.dataSource.data[index].riskValue,
+      residualRiskBefore: this.dataSource.data[index].residualRiskBefore,
+      assetName: this.dataSource.data[index].assetName,
+      referenceControlISO: this.dataSource.data[index].referenceControlISO,
+      proposedControls: this.dataSource.data[index].proposedControls,
+      responsible: this.dataSource.data[index].responsible,
+      startDate: this.dataSource.data[index].startDate,
+      endDate: this.dataSource.data[index].endDate,
+      followUp: this.dataSource.data[index].followUp,
+      controlImplementationStatus: this.dataSource.data[index].controlImplementationStatus,
+      determinationDefinitionResponsibleParty: this.dataSource.data[index].determinationDefinitionResponsibleParty,
+      frequencyExecution: this.dataSource.data[index].frequencyExecution,
+      documentacionEvidencia: this.dataSource.data[index].documentacionEvidencia,
+      preventiveNature: this.dataSource.data[index].preventiveNature,
+      controlApplication: this.dataSource.data[index].controlApplication,
+      effectivenessProposedControl: this.dataSource.data[index].effectivenessProposedControl,
+      valueResidualRisk: this.dataSource.data[index].valueResidualRisk,
+      residualRiskAfter: this.dataSource.data[index].residualRiskAfter,
+      comment: this.dataSource.data[index].comment
+    });
+    this.editActive = true;
+  }
+
+  edit() {
+    this.dataSource.data[this.indexSelectedRow] = this.formRiskTreatment.value;
+    this.dataSource = new MatTableDataSource(this.dataSource.data);
+    this.indexSelectedRow = null;
+    this.editActive = false;
   }
 
 }

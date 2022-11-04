@@ -5,6 +5,7 @@ import { AssetInventoryComponent } from './components/asset-inventory/asset-inve
 import { RiskTreatmentComponent } from './components/risk-treatment/risk-treatment.component';
 import { ProcessRiskRoutingModule } from './process-risk-routing.module';
 import { MaterialModule } from 'src/app/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import { MaterialModule } from 'src/app/material/material.module';
   imports: [
     CommonModule,
     ProcessRiskRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class ProcessRiskModule { }

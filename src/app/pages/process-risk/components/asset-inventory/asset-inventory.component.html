@@ -20,58 +20,88 @@
     </div>
 </div>
 
-<div class="container-responsible-table">
+<div class="container-responsible-table" [formGroup]="formAssetInventory" #tbassetInventory>
     <table mat-table [dataSource]="dataSource" class="table-standart tbasset-inventory">
       <ng-container matColumnDef="subProcess">
         <th mat-header-cell *matHeaderCellDef> Sub proceso </th>
-        <td mat-cell *matCellDef="let element"> {{element.subProcess}} </td>
+        <td mat-cell *matCellDef="let element;let i = index"> 
+          <div *ngIf="indexSelectedRow !== i">{{element.subProcess}} </div> 
+          <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="subProcess">
+        </td>
       </ng-container>
   
       <ng-container matColumnDef="codeAsset">
         <th mat-header-cell *matHeaderCellDef> Código del activo </th>
-        <td mat-cell *matCellDef="let element"> {{element.codeAsset}} </td>
+        <td mat-cell *matCellDef="let element;let i = index"> 
+          <div *ngIf="indexSelectedRow !== i">{{element.codeAsset}} </div> 
+          <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="codeAsset">
+        </td>
       </ng-container>
   
   
       <ng-container matColumnDef="nameAsset">
         <th mat-header-cell *matHeaderCellDef> Nombre del Activo </th>
-        <td mat-cell *matCellDef="let element"> {{element.nameAsset}} </td>
+        <td mat-cell *matCellDef="let element;let i = index"> 
+          <div *ngIf="indexSelectedRow !== i">{{element.nameAsset}} </div> 
+          <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="nameAsset">
+        </td>
       </ng-container>
   
   
       <ng-container matColumnDef="descriptionAsset">
         <th mat-header-cell *matHeaderCellDef> Descripción del Activo </th>
-        <td mat-cell *matCellDef="let element"> {{element.descriptionAsset}} </td>
+        <td mat-cell *matCellDef="let element;let i = index"> 
+          <div *ngIf="indexSelectedRow !== i">{{element.descriptionAsset}} </div> 
+          <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="descriptionAsset">
+        </td>
       </ng-container>
   
       <ng-container matColumnDef="typeAsset1">
         <th mat-header-cell *matHeaderCellDef> Tipo de Activo </th>
-        <td mat-cell *matCellDef="let element"> {{element.typeAsset1}} </td>
+        <td mat-cell *matCellDef="let element;let i = index"> 
+          <div *ngIf="indexSelectedRow !== i">{{element.typeAsset1}} </div> 
+          <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="typeAsset1">
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="typeAsset2">
         <th mat-header-cell *matHeaderCellDef> Tipo de Activo </th>
-        <td mat-cell *matCellDef="let element"> {{element.typeAsset2}} </td>
+        <td mat-cell *matCellDef="let element;let i = index"> 
+          <div *ngIf="indexSelectedRow !== i">{{element.typeAsset2}} </div> 
+          <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="typeAsset2">
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="typeAsset3">
         <th mat-header-cell *matHeaderCellDef> Tipo de Activo </th>
-        <td mat-cell *matCellDef="let element"> {{element.typeAsset3}} </td>
+        <td mat-cell *matCellDef="let element;let i = index"> 
+          <div *ngIf="indexSelectedRow !== i">{{element.typeAsset3}} </div> 
+          <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="typeAsset3">
+        </td>
       </ng-container>
  
       <ng-container matColumnDef="typeAsset4">
         <th mat-header-cell *matHeaderCellDef> Tipo de Activo </th>
-        <td mat-cell *matCellDef="let element"> {{element.typeAsset4}} </td>
+        <td mat-cell *matCellDef="let element;let i = index"> 
+          <div *ngIf="indexSelectedRow !== i">{{element.typeAsset4}} </div> 
+          <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="typeAsset4">
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="specificLocation">
         <th mat-header-cell *matHeaderCellDef> Ubicación especifica </th>
-        <td mat-cell *matCellDef="let element"> {{element.specificLocation}} </td>
+        <td mat-cell *matCellDef="let element;let i = index"> 
+          <div *ngIf="indexSelectedRow !== i">{{element.specificLocation}} </div> 
+          <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="specificLocation">
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="assetValuation">
         <th mat-header-cell *matHeaderCellDef> Valoración del Activo </th>
-        <td mat-cell *matCellDef="let element"> {{element.assetValuation}} </td>
+        <td mat-cell *matCellDef="let element;let i = index"> 
+          <div *ngIf="indexSelectedRow !== i">{{element.assetValuation}} </div> 
+          <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="assetValuation">
+        </td>
       </ng-container>
   
       <ng-container matColumnDef="noResults">
@@ -81,7 +111,7 @@
       </ng-container>
   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index" (dblclick)="selectedRow(i)" [ngClass]="{'active-row-table': indexSelectedRow == i}"></tr>
       <tr mat-footer-row [hidden]="dataSource.data.length > 0 || emptyResult" *matFooterRowDef="['noResults']"></tr>
     </table>
   </div>
@@ -89,7 +119,7 @@
   <div class="cont-assets-btn">
     <div class="col-left-btn">
       <button type="button" class="btn-light-blue">Anadir</button>
-      <button type="button" class="btn-light-blue">Modificar</button>
+      <button type="button" class="btn-light-blue" [disabled]="indexSelectedRow ===null" (click)="edit()">Modificar</button>
       <button type="button" class="btn-light-blue">Eliminar</button>
     </div>
     <button type="button" class="btn-light-blue">Enviar</button>

@@ -84,4 +84,8 @@
         background-color: #44acab;
         color: #ffffff;
     }
+
+    &:disabled{
+        pointer-events: none;
+    }
 }
