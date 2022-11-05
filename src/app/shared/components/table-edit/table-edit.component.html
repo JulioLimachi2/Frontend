@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="_dataSource">
+<table mat-table [dataSource]="_dataSource" class="edit-tb" #tbedit>
 	<ng-container [matColumnDef]="'state'">
 		<ng-container>
 			<th mat-header-cell *matHeaderCellDef class="celda">
@@ -30,7 +30,5 @@
 		</td>
 	</ng-container>
 	<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-	<tr mat-row *matRowDef="let row; columns: displayedColumns;">
-
-	</tr>
+	<tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index" (dblclick)="selectedRow(i)" [ngClass]="{'active-row-table': indexSelectedRow == i}"></tr>
 </table>

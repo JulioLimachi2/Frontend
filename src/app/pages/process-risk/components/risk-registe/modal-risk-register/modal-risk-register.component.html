@@ -1,0 +1,140 @@
+<div class="container-title">Registro de Riesgos</div>
+<form [formGroup]="formRiskRegister" class="form-standart frm-modal" mat-dialog-content>
+    <mat-form-field appearance="outline">
+        <mat-label>Origen</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="origin">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Sub proceso</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="subProcess">
+    </mat-form-field>
+
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Sub proceso</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="asset">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Amenaza/ Oportunidad</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="threatOpportunity">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Vulnerabilidad/ Fortaleza</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="vulnerabilityStrength">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Código del Riesgo u oportunidad</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="riskCode">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre del Riesgo u Oportunidad</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="nameRisk">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Efecto</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="effect">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Probabilidad</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="probability">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>C</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="activeInformationC">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>I</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="activeInformationI">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>D</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="activeInformationD">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Valor CID</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="valueCid">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Impacto</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="impact">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Valor del Riesgo Inherente</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="riskValue">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nivel de Riesgo Inherente</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="levelRisk">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Controles Existentes</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="existingControls">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Determinación y definición de responsable(s)</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="responsibleDetermination">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Frecuencia de ejecución y seguimiento</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="frequencyExecution">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Documentación o evidencia</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="documentationOrEvidence">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Carácter preventivo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="preventiveCharacter">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Aplicación del control</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="applicationControl">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Efectividad del control</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="controlEffectiveness">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Valor del Riesgo Residual(Antes del Tratamiento)</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="residualRiskValue">
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Riesgo Residual (Antes del Tratamiento)</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="residualrisk">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Opción de Tratamiento</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="treatmentOption">
+    </mat-form-field>
+
+</form>
+
+
+<div class="container-btn-save" mat-dialog-actions>
+    <button (click)="save()" type="button" [disabled]="!formRiskRegister.valid">Guardar</button>
+    <button type="button" mat-dialog-close>Cerrar</button>
+</div>

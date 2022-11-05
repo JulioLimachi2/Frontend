@@ -1,0 +1,61 @@
+<div class="container-title">Inventario de Activos</div>
+<form [formGroup]="formAssetInventory" class="form-standart frm-modal" mat-dialog-content>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Sub proceso</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="subProcess">
+    </mat-form-field>
+
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Código del activo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="codeAsset">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre del Activo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="nameAsset">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Descripción del Activo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="descriptionAsset">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Tipo de Activo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="typeAsset">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Categoría de Activo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="assetClass">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Propietario del Activo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="ownerAsset">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Clasificación de la Información</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="classificationInformation">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Ubicación específica</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="specificLocation">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Valoración del Activo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="assetValuation">
+    </mat-form-field>
+
+</form>
+
+
+<div class="container-btn-save" mat-dialog-actions>
+    <button (click)="save()" type="button" [disabled]="!formAssetInventory.valid">Guardar</button>
+    <button type="button" mat-dialog-close>Cerrar</button>
+</div>

@@ -1,0 +1,132 @@
+<div class="container-title">Tratamiento de Riesgos</div>
+<form [formGroup]="formRiskTreatment" class="form-standart frm-modal" mat-dialog-content>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Sub proceso</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="subProcess">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+        <mat-label>Tipo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="type">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Código del Riesgo u Oportunidad</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="riskCode">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre del Riesgo u Oportunidad</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="riskName">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Valor de Riesgo residual (antes del tratamiento)</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="riskValue">
+    </mat-form-field>
+
+    <div class="cont-slide-tooggle residual-toogle">
+        <mat-slide-toggle [color]="'primary'" formControlName="residualRiskBefore">
+            Riesgo Residual (Antes del Tratamiento)
+        </mat-slide-toggle>
+    </div>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre del activo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="assetName">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Control de referencia ISO 27001</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="referenceControlISO">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Controles Propuestos</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="proposedControls">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Responsable</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="responsible">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fecha de Inicio</mat-label>
+        <input matInput [matDatepicker]="pickerStart" formControlName="startDate" readonly>
+        <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+        <mat-datepicker #pickerStart></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fecha Fin</mat-label>
+        <input matInput [matDatepicker]="pickerEnd" formControlName="endDate" readonly>
+        <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+        <mat-datepicker #pickerEnd></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Seguimiento</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="followUp">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Estado de implementación del control</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="controlImplementationStatus">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Determinación y definición de responsable(s) </mat-label>
+        <input matInput placeholder="Placeholder" formControlName="determinationDefinitionResponsibleParty">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Frecuencia de ejecución y seguimiento</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="frequencyExecution">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Documentación o evidencia</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="documentacionEvidencia">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Carácter preventivo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="preventiveNature">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Aplicación del control</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="controlApplication">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Efectividad del control propuesto</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="effectivenessProposedControl">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Valor del riesgo residual (Después del tratamiento)</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="valueResidualRisk">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Riesgo Residual (Después del Tratamiento)</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="residualRiskAfter">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Comentario</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="comment">
+    </mat-form-field>
+
+</form>
+
+
+<div class="container-btn-save" mat-dialog-actions>
+    <button (click)="save()" type="button" [disabled]="!formRiskTreatment.valid">Guardar</button>
+    <button type="button" mat-dialog-close>Cerrar</button>
+</div>

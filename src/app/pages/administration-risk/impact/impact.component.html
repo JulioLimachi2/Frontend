@@ -1,9 +1,9 @@
 <div class="container-title">Gestión de responsables</div>
-<app-table-edit [dataSource]="getDataSource()" [columns]="getColumns()" [state]="true">
-
+<app-table-edit [dataSource]="dataSource" [columns]="getColumns()" [state]="true"
+                [reset]="reset" (onSelectRow)="getrow($event)">
 </app-table-edit>
 <div class="container-btn-save">
-    <button>Añadir</button>
-    <button>Modificar</button>
+    <button (click)="add()">Añadir</button>
+    <button (click)="add(indexSelected)" [disabled]="indexSelected === null">Modificar</button>
     <button>Grabar</button>
 </div>

@@ -6,6 +6,9 @@ import { RiskTreatmentComponent } from './components/risk-treatment/risk-treatme
 import { ProcessRiskRoutingModule } from './process-risk-routing.module';
 import { MaterialModule } from 'src/app/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModalRiskRegisterComponent } from './components/risk-registe/modal-risk-register/modal-risk-register.component';
+import { ModalAssetInventoryComponent } from './components/asset-inventory/modal-asset-inventory/modal-asset-inventory.component';
+import { ModalRiskTreatmentComponent } from './components/risk-treatment/modal-risk-treatment/modal-risk-treatment.component';
 
 
 
@@ -13,7 +16,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     RiskRegisteComponent,
     AssetInventoryComponent,
-    RiskTreatmentComponent
+    RiskTreatmentComponent,
+    ModalRiskRegisterComponent,
+    ModalAssetInventoryComponent,
+    ModalRiskTreatmentComponent
   ],
   imports: [
     CommonModule,

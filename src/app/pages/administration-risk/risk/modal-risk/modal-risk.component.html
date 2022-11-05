@@ -1,0 +1,21 @@
+<div class="container-title">Nivel de riesgo</div>
+<form [formGroup]="formRisk" class="form-standart frm-modal" mat-dialog-content>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Codigo</mat-label>
+        <mat-select formControlName="categoria2">
+            <mat-option *ngFor="let categoria of dataCategoria" [value]="categoria.name">{{categoria.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="categoria">
+    </mat-form-field>
+</form>
+
+
+<div class="container-btn-save" mat-dialog-actions>
+    <button (click)="save()" type="button" [disabled]="!formRisk.valid">Guardar</button>
+    <button type="button" mat-dialog-close>Cerrar</button>
+</div>

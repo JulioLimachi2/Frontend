@@ -21,3 +21,10 @@
         height: 18px;
     }
 }
+
+.edit-tb{
+    .mat-row:hover {
+        background: whitesmoke;
+        cursor: pointer;
+    }
+}

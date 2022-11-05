@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { ModalAssetInventoryComponent } from './modal-asset-inventory/modal-asset-inventory.component';
 
 @Component({
   selector: 'app-asset-inventory',
@@ -9,23 +11,24 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class AssetInventoryComponent implements OnInit {
 
-  displayedColumns: string[] = ['subProcess', 'codeAsset', 'nameAsset', 'descriptionAsset', 'typeAsset1', 'typeAsset2', 'typeAsset3', 'typeAsset4', 'specificLocation', 'assetValuation'];
+  displayedColumns: string[] = ['subProcess', 'codeAsset', 'nameAsset', 'descriptionAsset', 'typeAsset', 'assetClass', 'ownerAsset', 'classificationInformation', 'specificLocation', 'assetValuation'];
   dataSource = new MatTableDataSource([]);
   indexSelectedRow: number = null;
   editActive: boolean;
   formAssetInventory: FormGroup;
   @ViewChild('tbassetInventory', { static: false }) tbAssetInventory: ElementRef;
 
-  constructor(private builder: FormBuilder) {
+  constructor(private builder: FormBuilder,
+    public dialog: MatDialog) {
     this.formAssetInventory = this.builder.group({
       subProcess: [],
       codeAsset: [],
       nameAsset: [],
       descriptionAsset: [],
-      typeAsset1: [],
-      typeAsset2: [],
-      typeAsset3: [],
-      typeAsset4: [],
+      typeAsset: [],
+      assetClass: [],
+      ownerAsset: [],
+      classificationInformation: [],
       specificLocation: [],
       assetValuation: [],
     });
@@ -46,10 +49,10 @@ export class AssetInventoryComponent implements OnInit {
         codeAsset: 'Gestion de Planeamiento y Presupuesto',
         nameAsset: 'No cubrir la integridad de los gastos',
         descriptionAsset: 'Documentación publica proporcionada por oficial y que se presenta a través del sistema',
-        typeAsset1: 'Información',
-        typeAsset2: 'Electrónica e empresa',
-        typeAsset3: 'Jefe de Unidad Registral',
-        typeAsset4: 'Confidencial',
+        typeAsset: 'Información',
+        assetClass: 'Electrónica e Impresa',
+        ownerAsset: 'Jefe de Unidad Registral',
+        classificationInformation: 'Confidencial',
         specificLocation: 'Electrónica SIP Sistema de Consulta, Impresa: Escritorio del Asistente Escritorio del Registrador',
         assetValuation: 'Ate'
       },
@@ -58,10 +61,10 @@ export class AssetInventoryComponent implements OnInit {
         codeAsset: '',
         nameAsset: '',
         descriptionAsset: '',
-        typeAsset1: '',
-        typeAsset2: '',
-        typeAsset3: '',
-        typeAsset4: '',
+        typeAsset: '',
+        assetClass: '',
+        ownerAsset: '',
+        classificationInformation: '',
         specificLocation: '',
         assetValuation: ''
       }
@@ -75,10 +78,10 @@ export class AssetInventoryComponent implements OnInit {
       codeAsset: this.dataSource.data[index].codeAsset,
       nameAsset: this.dataSource.data[index].nameAsset,
       descriptionAsset: this.dataSource.data[index].descriptionAsset,
-      typeAsset1: this.dataSource.data[index].typeAsset1,
-      typeAsset2: this.dataSource.data[index].typeAsset2,
-      typeAsset3: this.dataSource.data[index].typeAsset3,
-      typeAsset4: this.dataSource.data[index].typeAsset4,
+      typeAsset: this.dataSource.data[index].typeAsset,
+      assetClass: this.dataSource.data[index].assetClass,
+      ownerAsset: this.dataSource.data[index].ownerAsset,
+      classificationInformation: this.dataSource.data[index].classificationInformation,
       specificLocation: this.dataSource.data[index].specificLocation,
       assetValuation: this.dataSource.data[index].assetValuation
     })
@@ -90,5 +93,19 @@ export class AssetInventoryComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.dataSource.data);
     this.indexSelectedRow = null;
     this.editActive = false;
+  }
+
+  add(): void {
+    const dialogRef = this.dialog.open(ModalAssetInventoryComponent, {
+      width: '800px',
+      panelClass:'mdl-noPadding',
+    });
+
+    dialogRef.afterClosed().subscribe(assetInventory => {
+      if(assetInventory){
+        this.dataSource.data.push(assetInventory);
+        this.dataSource = new MatTableDataSource(this.dataSource.data);
+      }
+    });
   }
 }

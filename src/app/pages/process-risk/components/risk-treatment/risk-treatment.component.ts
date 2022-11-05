@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { ModalRiskTreatmentComponent } from './modal-risk-treatment/modal-risk-treatment.component';
 
 @Component({
   selector: 'app-risk-treatment',
@@ -20,8 +22,9 @@ export class RiskTreatmentComponent implements OnInit {
   indexSelectedRow: number = null;
   editActive: boolean;
   @ViewChild('tbriskTreatment', { static: false }) tbRiskTreatment: ElementRef;
-
-  constructor(private builder: FormBuilder) {
+  
+  constructor(private builder: FormBuilder,
+    public dialog: MatDialog) {
     this.formRiskTreatment = this.builder.group({
       subProcess: [],
       type: [],
@@ -114,14 +117,29 @@ export class RiskTreatmentComponent implements OnInit {
       residualRiskAfter: this.dataSource.data[index].residualRiskAfter,
       comment: this.dataSource.data[index].comment
     });
-    this.editActive = true;
   }
 
-  edit() {
-    this.dataSource.data[this.indexSelectedRow] = this.formRiskTreatment.value;
-    this.dataSource = new MatTableDataSource(this.dataSource.data);
-    this.indexSelectedRow = null;
-    this.editActive = false;
+
+  openModalTreatment(index?: number): void {
+    index !==null && (this.indexSelectedRow = index);
+    const data = index !==null && this.dataSource.data[index];
+    const dialogRef = this.dialog.open(ModalRiskTreatmentComponent, {
+      width: '1000px',
+      panelClass:'mdl-noPadding',
+      data: {treatment:data,index:this.indexSelectedRow}
+    });
+
+    dialogRef.afterClosed().subscribe(riskTreatment => {
+      if(riskTreatment?.new){
+        this.dataSource.data.push(riskTreatment.new);
+        this.dataSource = new MatTableDataSource(this.dataSource.data);
+      }
+      if(riskTreatment?.edit){
+        this.dataSource.data[riskTreatment.index] = riskTreatment.edit;
+        this.dataSource = new MatTableDataSource(this.dataSource.data);
+        this.indexSelectedRow = null;
+      }
+    });
   }
 
 }

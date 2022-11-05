@@ -1,0 +1,33 @@
+<div class="container-title">Inpacto</div>
+<form [formGroup]="formImpact" class="form-standart frm-modal" mat-dialog-content>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Categoria</mat-label>
+        <mat-select formControlName="categoria">
+            <mat-option *ngFor="let categoria of dataCategoria" [value]="categoria.name">{{categoria.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Valor</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="valor">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Negativo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="negativo">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Positivo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="positivo">
+    </mat-form-field>
+
+
+</form>
+
+
+<div class="container-btn-save" mat-dialog-actions>
+    <button (click)="save()" type="button" [disabled]="!formImpact.valid">Guardar</button>
+    <button type="button" mat-dialog-close>Cerrar</button>
+</div>

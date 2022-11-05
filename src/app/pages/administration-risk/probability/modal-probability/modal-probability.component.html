@@ -1,0 +1,28 @@
+<div class="container-title">Probabilidad</div>
+<form [formGroup]="formProbability" class="form-standart frm-modal" mat-dialog-content>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Categoria</mat-label>
+        <mat-select formControlName="categoria">
+            <mat-option *ngFor="let categoria of dataCategoria" [value]="categoria.name">{{categoria.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Valor</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="valor">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Descripción</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="description">
+    </mat-form-field>
+
+
+</form>
+
+
+<div class="container-btn-save" mat-dialog-actions>
+    <button (click)="save()" type="button" [disabled]="!formProbability.valid">Guardar</button>
+    <button type="button" mat-dialog-close>Cerrar</button>
+</div>

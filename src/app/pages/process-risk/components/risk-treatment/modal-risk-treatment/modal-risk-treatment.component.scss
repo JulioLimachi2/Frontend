@@ -1,0 +1,14 @@
+.frm-modal{
+    display: flex !important;
+    margin: 0;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.residual-toogle{
+    max-width: 300px;
+    align-items: center;
+    .mat-slide-toggle{
+        padding-bottom: 1.34375em;
+    }
+}

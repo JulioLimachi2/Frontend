@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { ModalRiskRegisterComponent } from './modal-risk-register/modal-risk-register.component';
 
 @Component({
   selector: 'app-risk-registe',
@@ -20,7 +22,7 @@ export class RiskRegisteComponent implements OnInit {
   editActive: boolean;
   @ViewChild('tbriskRegister', { static: false }) tbRiskRegister: ElementRef;
 
-  constructor(private builder: FormBuilder) {
+  constructor(private builder: FormBuilder, public dialog: MatDialog) {
     this.formRiskRegister = this.builder.group({
       origin: [],
       subProcess: [],
@@ -158,6 +160,20 @@ export class RiskRegisteComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.dataSource.data);
     this.indexSelectedRow = null;
     this.editActive = false;
+  }
+
+  add(): void {
+    const dialogRef = this.dialog.open(ModalRiskRegisterComponent, {
+      width: '1000px',
+      panelClass:'mdl-noPadding',
+    });
+
+    dialogRef.afterClosed().subscribe(riskRegister => {
+      if(riskRegister){
+        this.dataSource.data.push(riskRegister);
+        this.dataSource = new MatTableDataSource(this.dataSource.data);
+      }
+    });
   }
 
 }

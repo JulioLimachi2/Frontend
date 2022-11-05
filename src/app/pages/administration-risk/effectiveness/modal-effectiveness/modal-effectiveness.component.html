@@ -1,0 +1,26 @@
+<div class="container-title">Efectividad</div>
+<form [formGroup]="formEffectiveness" class="form-standart frm-modal" mat-dialog-content>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Codigo</mat-label>
+        <mat-select formControlName="categoria">
+            <mat-option *ngFor="let categoria of dataCategoria" [value]="categoria.name">{{categoria.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Opción de tratamiento Riesgo negativo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="description">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Opción de tratamiento Riesgo positivo</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="description2">
+    </mat-form-field>
+</form>
+
+
+<div class="container-btn-save" mat-dialog-actions>
+    <button (click)="save()" type="button" [disabled]="!formEffectiveness.valid">Guardar</button>
+    <button type="button" mat-dialog-close>Cerrar</button>
+</div>
