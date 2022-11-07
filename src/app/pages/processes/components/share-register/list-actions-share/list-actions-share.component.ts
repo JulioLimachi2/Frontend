@@ -14,6 +14,7 @@ export class ListActionsShareComponent implements OnInit {
   @Output() onSelectRow: EventEmitter<any> = new EventEmitter();
   displayedColumns: string[] = ['type', 'correlative', 'year', 'coordinator','area','state','source', 'requirement', 'dateIssue', 'descriptionNC', 'reasonNonApproval', 'dateShipment', 'responsibleUO','return'];
   @Output() onNext: EventEmitter<boolean> = new EventEmitter();
+  @Output() onNextDisabled: EventEmitter<boolean> = new EventEmitter();
   dataSource = new MatTableDataSource<any>([]);
   yearFilter: string;
   dataShare = [
@@ -149,6 +150,7 @@ export class ListActionsShareComponent implements OnInit {
         this.dataShare.push(date.share);
         this.dataSource.data = this.dataShare;
         this.dataSource = new MatTableDataSource(this.dataSource.data);
+        this.onNextDisabled.emit(false);
       }
       if (date?.index >=0) {
         const authorizationIndex = this.dataShare.findIndex((x: any) => x.id === date.share.id);

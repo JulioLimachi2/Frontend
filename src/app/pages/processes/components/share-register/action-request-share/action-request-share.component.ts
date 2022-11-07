@@ -14,6 +14,7 @@ export class ActionRequestShareComponent implements OnInit {
   @Output() onSave: EventEmitter<boolean> = new EventEmitter();
   dateYear: string;
   changeCountYear: number = 0;
+  @Input() nextDisabled: boolean = true;
   formActionRequestShare: FormGroup;
   @Output() onNext: EventEmitter<boolean> = new EventEmitter();
   fonts = [
@@ -79,7 +80,9 @@ export class ActionRequestShareComponent implements OnInit {
         this.changeCountYear++;
         this.dateYear = null;
       }
-
+      if(changes['nextDisabled']?.currentValue){
+        this.nextDisabled = changes['nextDisabled'].currentValue;
+      }
     }
   }
 

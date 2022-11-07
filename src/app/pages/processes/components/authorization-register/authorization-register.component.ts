@@ -12,6 +12,8 @@ export class AuthorizationRegisterComponent implements OnInit {
   totalTabs = [];
   listAuthorization:any = [];
   changecount: number = 0;
+  nextDisabled: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -43,6 +45,11 @@ export class AuthorizationRegisterComponent implements OnInit {
       this.changecount ++;
       this.listAuthorization = null;
     }
+  }
+
+  onNextdisabled(status){
+    this.changecount ++;
+    this.nextDisabled = status;
   }
 
 }

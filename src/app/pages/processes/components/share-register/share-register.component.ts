@@ -12,6 +12,7 @@ export class ShareRegisterComponent implements OnInit {
   totalTabs = [];
   listShare:any = [];
   changecount: number = 0;
+  nextDisabled: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
@@ -43,5 +44,10 @@ export class ShareRegisterComponent implements OnInit {
       this.changecount ++;
       this.listShare = null;
     }
+  }
+
+  onNextdisabled(status){
+    this.changecount ++;
+    this.nextDisabled = status;
   }
 }

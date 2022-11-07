@@ -13,6 +13,7 @@ export class ActionRequestAuthorizationComponent implements OnInit, OnChanges {
   @Input() changeCount: string;
   @Output() onSave: EventEmitter<boolean> = new EventEmitter();
   dateYear: string;
+  @Input() nextDisabled: boolean = true;
   changeCountYear: number = 0;
   formActionRequestAuthorization: FormGroup;
   @Output() onNext: EventEmitter<boolean> = new EventEmitter();
@@ -91,7 +92,9 @@ export class ActionRequestAuthorizationComponent implements OnInit, OnChanges {
         this.changeCountYear++;
         this.dateYear = null;
       }
-
+      if(changes['nextDisabled']?.currentValue){
+        this.nextDisabled = changes['nextDisabled'].currentValue;
+      }
     }
   }
 

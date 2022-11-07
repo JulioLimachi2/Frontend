@@ -15,6 +15,7 @@ export class ListActionsAuthorizationComponent implements OnInit {
   changeCountYear: number = 0;
   @Output() onSelectRow: EventEmitter<any> = new EventEmitter();
   @Output() onNext: EventEmitter<boolean> = new EventEmitter();
+  @Output() onNextDisabled: EventEmitter<boolean> = new EventEmitter();
   displayedColumns: string[] = ['type', 'correlative', 'year', 'coordinator','area','state','source', 'requirement', 'state', 'dateIssue', 'descriptionNC', 'reasonNonApproval', 'dateShipment', 'responsibleUO','return'];
   areas = [
     {
@@ -185,6 +186,7 @@ export class ListActionsAuthorizationComponent implements OnInit {
         this.dataActions.push(authorization.authorization);
         this.dataSource.data = this.dataActions;
         this.dataSource = new MatTableDataSource(this.dataSource.data);
+        this.onNextDisabled.emit(false);
       }
       if (authorization?.index >=0) {
         const authorizationIndex = this.dataActions.findIndex((x: any) => x.id === authorization.authorization.id);

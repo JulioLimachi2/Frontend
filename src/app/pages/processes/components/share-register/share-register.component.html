@@ -2,7 +2,9 @@
 <mat-tab-group class="mat-tab-sunarp" [(selectedIndex)]="indexTab" (selectedTabChange)="onTabChanged($event)">
     <mat-tab label="Listado de Acciones">
         <div class="cont-p">
-            <app-list-actions-share (onNext)="changeTab($event)" (onSelectRow)="getRow($event)"></app-list-actions-share>
+            <app-list-actions-share (onNext)="changeTab($event)" 
+                                    (onSelectRow)="getRow($event)"
+                                    (onNextDisabled)="onNextdisabled($event)"></app-list-actions-share>
         </div>
     </mat-tab>
     <mat-tab label="Solicitud de Acción">
@@ -10,7 +12,8 @@
             <app-action-request-share (onNext)="changeTab($event)"
             [listShare]="listShare"
             [changeCount]="changecount"
-            (onSave)="saveShare($event)" 
+            (onSave)="saveShare($event)"
+            [nextDisabled]="nextDisabled" 
             ></app-action-request-share>
         </div>
     </mat-tab>
