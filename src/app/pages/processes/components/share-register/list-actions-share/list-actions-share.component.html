@@ -1,11 +1,12 @@
 <div class="cont-buscar">
     <div class="lable-cont">Buscar</div>
-    <app-datepicker-year (onGetValue)="getYear($event)" [width]="'200'"></app-datepicker-year>
+    <app-datepicker-year (onGetValue)="getYear($event)" [width]="'200'" [dateYear]="dateYear"
+    [changeCount]="changeCountYear"></app-datepicker-year>
     <button (click)="search()" type="button" class="btn-search">Buscar</button>
 </div>
 
 <div class="container-responsible-table">
-    <table mat-table [dataSource]="dataSource" class="table-standart">
+    <table mat-table [dataSource]="dataSource" class="table-standart la-share">
         <ng-container matColumnDef="type">
             <th mat-header-cell *matHeaderCellDef> Tipo </th>
             <td mat-cell *matCellDef="let element"> {{element.type}} </td>
@@ -33,6 +34,53 @@
             <td mat-cell *matCellDef="let element"> {{element.area}} </td>
         </ng-container>
 
+        <ng-container matColumnDef="source">
+            <th mat-header-cell *matHeaderCellDef> Fuente </th>
+            <td mat-cell *matCellDef="let element"> {{element.source}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="requirement">
+            <th mat-header-cell *matHeaderCellDef> Requisito </th>
+            <td mat-cell *matCellDef="let element"> {{element.requirement}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateIssue">
+            <th mat-header-cell *matHeaderCellDef> Fecha de Emisión </th>
+            <td mat-cell *matCellDef="let element"> {{element.dateIssue | date: 'dd/MM/yyyy'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="descriptionNC">
+            <th mat-header-cell *matHeaderCellDef> Descripción NC </th>
+            <td mat-cell *matCellDef="let element"> {{element.descriptionNC}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="reasonNonApproval">
+            <th mat-header-cell *matHeaderCellDef> Motivo no aprobación </th>
+            <td mat-cell *matCellDef="let element"> {{element.reasonNonApproval}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateShipment">
+            <th mat-header-cell *matHeaderCellDef> Fecha de envío </th>
+            <td mat-cell *matCellDef="let element"> {{element.dateShipment | date: 'dd/MM/yyyy'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="responsibleUO">
+            <th mat-header-cell *matHeaderCellDef> Responsable UO </th>
+            <td mat-cell *matCellDef="let element"> {{element.responsibleUO}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="return">
+            <th mat-header-cell *matHeaderCellDef>Devolver </th>
+            <td mat-cell *matCellDef="let element"> 
+                <mat-checkbox [checked]="element.return" [color]="'primary'" [disabled]="true"></mat-checkbox>
+            </td>
+        </ng-container>
+
         <ng-container matColumnDef="noResults">
             <td mat-footer-row *matFooterCellDef [colSpan]="displayedColumns.length">
                 No se encontraron resultados.
@@ -40,7 +88,7 @@
         </ng-container>
     
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index" (dblclick)="selectedRow(i)"></tr>
         <tr mat-footer-row [hidden]="dataSource.data.length > 0 || emptyResult" *matFooterRowDef="['noResults']"></tr>
     </table>
 </div>

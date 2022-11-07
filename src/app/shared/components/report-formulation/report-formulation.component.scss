@@ -11,12 +11,19 @@
 .cont-gray {
     background-color: #dcdcdc;
     padding         : 5px;
+    border-bottom: 1px solid #000000;
 }
 
 .cont-blue {
     background-color: #ffffff;
     color           : #2b7cc4;
     padding         : 5px;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+
+.cont-blue:first-child {
+  border-top: 0;
 }
 
 .cont-double {
@@ -26,6 +33,7 @@
 
 .indicators {
     display: flex;
+    border: 1px solid #000000;
 
     .header {
         display        : flex;
@@ -34,6 +42,7 @@
         height         : 40px;
         justify-content: center;
         padding        : 10px 5px;
+        border-bottom: 1px solid #000000;
 
         div {
             width: 100%;
@@ -42,9 +51,11 @@
 
     .col1-indicator{
         width: 100%;
+        border-right: 1px solid #000000;
     }
     .col2-indicator{
         width: 100%;
+        border-right: 1px solid #000000;
     }
     .col3-indicator{
         width: 100%;
@@ -157,4 +168,36 @@
     div:last-child{
         min-height: 50px;
     }
+}
+
+.not-border-top{
+    border-top: 0;
+}
+
+.not-border-bottom{
+    border-bottom: 0;
+}
+
+.not-border-right{
+    border-right: 0;
+}
+
+.not-border-left{
+    border-left: 0;
+}
+
+.border-top{
+    border-top: 1px solid #000000;
+}
+
+.border-bottom{
+    border-bottom: 1px solid #000000;
+}
+
+.border-right{
+    border-right: 1px solid #000000;
+}
+
+.border-left{
+    border-left: 1px solid #000000;
 }

@@ -1,14 +1,15 @@
 <div class="container-title">Registro de Hallazgos</div>
-
-<mat-tab-group class="mat-tab-sunarp">
+ 
+<mat-tab-group class="mat-tab-sunarp" [(selectedIndex)]="tabIndex" (selectedTabChange)="onTabChanged($event)">
     <mat-tab label="Listado de Acciones">
         <div class="cont-p">
-            <app-list-actions ></app-list-actions>
+            <app-list-actions (onSelectRow)="getRow($event)"></app-list-actions>
         </div>
     </mat-tab>
     <mat-tab label="Solicitud de Acción">
         <div class="cont-p">
-            <app-action-request></app-action-request>
+            <app-action-request [listAction]="listAction" [changeCount]="changecount" 
+                                (onSave)="saveAction($event)"></app-action-request>
         </div>
     </mat-tab>
 </mat-tab-group>

@@ -6,25 +6,26 @@
             <input matInput formControlName="correlative" type="number">
         </mat-form-field>
 
-        <app-datepicker-year (onGetValue)="getYear($event)" [width]="'100'"></app-datepicker-year>
+        <app-datepicker-year (onGetValue)="getYear($event)" [width]="'100'" [dateYear]="dateYear"
+            [changeCount]="changeCountYear"></app-datepicker-year>
     </div>
 
 
     <mat-form-field appearance="outline">
         <mat-label>Fuente</mat-label>
-        <mat-select formControlName="font">
-          <mat-option *ngFor="let font of fonts" [value]="font.id">{{font.name}}</mat-option>
+        <mat-select formControlName="source">
+            <mat-option *ngFor="let font of fonts" [value]="font.name">{{font.name}}</mat-option>
         </mat-select>
-      </mat-form-field>
+    </mat-form-field>
 
-      <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline">
         <mat-label>Tipo</mat-label>
         <mat-select formControlName="type">
-          <mat-option *ngFor="let type of types" [value]="type.id">{{type.name}}</mat-option>
+            <mat-option *ngFor="let type of types" [value]="type.name">{{type.name}}</mat-option>
         </mat-select>
-      </mat-form-field>
+    </mat-form-field>
 
-      <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline">
         <mat-label>Requerimiento ISO 9001</mat-label>
         <input matInput placeholder="Requerimiento" formControlName="requirement">
     </mat-form-field>
@@ -41,7 +42,7 @@
 
     <mat-form-field appearance="outline">
         <mat-label>Fecha de Emisión</mat-label>
-        <input matInput [matDatepicker]="pickerEmision" formControlName="date">
+        <input matInput [matDatepicker]="pickerEmision" formControlName="dateIssue">
         <mat-datepicker-toggle matSuffix [for]="pickerEmision"></mat-datepicker-toggle>
         <mat-datepicker #pickerEmision></mat-datepicker>
     </mat-form-field>
@@ -53,7 +54,8 @@
 
     <mat-form-field appearance="outline" style="max-width: 100%">
         <mat-label>Motivo de la no Aprobación</mat-label>
-        <textarea matInput placeholder="Motivo de la no Aprobación" formControlName="reasonNonApproval" rows="5"></textarea>
+        <textarea matInput placeholder="Motivo de la no Aprobación" formControlName="reasonNonApproval"
+            rows="5"></textarea>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
@@ -71,17 +73,17 @@
     <mat-form-field appearance="outline">
         <mat-label>Responsable UO</mat-label>
         <mat-select formControlName="responsibleUO">
-          <mat-option *ngFor="let responsible of responsibles" [value]="responsible.id">{{responsible.name}}</mat-option>
+            <mat-option *ngFor="let responsible of responsibles" [value]="responsible.name">{{responsible.name}}
+            </mat-option>
         </mat-select>
-      </mat-form-field>
+    </mat-form-field>
 
     <div class="container-btn-save ac-request-actions">
         <button (click)="save()" type="button" [disabled]="!formActionRequestShare.valid">Enviar</button>
-        <mat-checkbox  formControlName="return" [labelPosition]="'before'" [color]="'primary'">Devolver</mat-checkbox>
+        <mat-checkbox formControlName="return" [labelPosition]="'before'" [color]="'primary'">Devolver</mat-checkbox>
     </div>
 
     <div class="container-btn-save">
         <button (click)="next()" type="button" [disabled]="!formActionRequestShare.valid">Siguiente</button>
     </div>
 </form>
-
