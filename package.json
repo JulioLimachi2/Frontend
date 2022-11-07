@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "SIG",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~11.2.14",
     "@angular/router": "~11.2.14",
     "moment": "^2.29.4",
+    "netlify-cli": "^12.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
