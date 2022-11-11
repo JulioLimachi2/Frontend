@@ -1,0 +1,16 @@
+[
+    {
+        "id":"20",
+        "name": "admin",
+        "user": "admin",
+        "password":"admin",
+        "roles": ["Editor"]
+    },
+    {
+        "id":"21",
+        "name": "Luis Perez",
+        "user": "luis",
+        "password":"luis123",
+        "roles": ["Lectura"]
+    }
+]

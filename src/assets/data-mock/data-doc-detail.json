@@ -1,0 +1,357 @@
+[
+    {
+        "id":"199",
+        "title": "Política del Sistema Integrado de Gestión",
+        "docs": []
+    },
+    {
+        "id":"200",
+        "title": "Alcance",
+        "docs": []
+    },
+    {
+        "id":"201",
+        "title": "Objetivos del SGC",
+        "docs": []
+    },
+    {
+        "id": "202",
+        "title": "Registro de Planificación y Seguimiento del Sistema de Gestión de la Calidad",
+        "docs": []
+    },
+    {
+        "id": "203",
+        "title": "Información Documentada General",
+        "docs": []
+    },
+    {
+        "id": "204",
+        "title": "Procedimientos",
+        "docs": []
+    },
+    {
+        "id": "205",
+        "title": "Instructivos",
+        "docs": []
+    },
+    {
+        "id": "206",
+        "title": "Fichas Técnicas de Procesos/Procedimientos",
+        "docs": []
+    },
+    {
+        "id": "207",
+        "title": "Formatos",
+        "docs": []
+    },
+    {
+        "id": "208",
+        "title": "Otros",
+        "docs": []
+    },
+    {
+        "id": "209",
+        "title": "Gestión de Comunicaciones e Imagen Institucional",
+        "docs": []
+    },
+    {
+        "id": "210",
+        "title": "Gestión de la Modernización",
+        "docs": []
+    },
+    {
+        "id": "211",
+        "title": "Gestión de Inversiones",
+        "docs": []
+    },
+    {
+        "id": "212",
+        "title": "Publicidad Registral",
+        "docs": []
+    },
+    {
+        "id": "213",
+        "title": "Inscripción Registral",
+        "docs": []
+    },
+    {
+        "id": "214",
+        "title": "Gestión Documental y Atención al Ciudadano",
+        "docs": []
+    },
+    {
+        "id": "215",
+        "title": "Asesoría Jurídica",
+        "docs": []
+    },
+    {
+        "id": "216",
+        "title": "Gestión de Tecnologías de la Información",
+        "docs": []
+    },
+    {
+        "id": "217",
+        "title": "Gestión de los Recursos Humanos",
+        "docs": []
+    },
+    {
+        "id": "218",
+        "title": "Gestión Logística",
+        "docs": []
+    },
+    {
+        "id": "219",
+        "title": "Alcance",
+        "docs": []
+    },
+    {
+        "id": "220",
+        "title": "Objetivos del SGAS",
+        "docs": []
+    },
+    {
+        "id": "221",
+        "title": "Registro de Planificación y Seguimiento del Sistema de Gestión Antisoborno",
+        "docs": []
+    },
+    {
+        "id": "222",
+        "title": "Información Documentada General",
+        "docs": []
+    },
+    {
+        "id": "223",
+        "title": "Procedimientos",
+        "docs": []
+    },
+    {
+        "id": "224",
+        "title": "Instructivos",
+        "docs": []
+    },
+    {
+        "id": "225",
+        "title": "Planes",
+        "docs": []
+    },
+    {
+        "id": "226",
+        "title": "Fichas Técnicas de Procesos/Procedimientos",
+        "docs": []
+    },
+    {
+        "id": "227",
+        "title": "Formatos",
+        "docs": []
+    },
+    {
+        "id": "228",
+        "title": "Otros (Se debe permitir adicionar nuevos términos: Guía, Protocolo, Lineamiento, entre otros que se generen en el futuro)",
+        "docs": []
+    },
+    {
+        "id": "229",
+        "title": "Gestión de Comunicaciones e Imagen Institucional",
+        "docs": []
+    },
+    {
+        "id": "230",
+        "title": "Publicidad Registral",
+        "docs": []
+    },
+    {
+        "id": "231",
+        "title": "Inscripción Registral",
+        "docs": []
+    },
+    {
+        "id": "232",
+        "title": "Gestión Documental y Atención al Ciudadano",
+        "docs": []
+    },
+    {
+        "id": "233",
+        "title": "Asesoría Jurídica",
+        "docs": []
+    },
+    {
+        "id": "234",
+        "title": "Gestión de Tecnologías de la Información y Comunicación",
+        "docs": []
+    },
+    {
+        "id": "235",
+        "title": "Gestión de los Recursos Humanos",
+        "docs": []
+    },
+    {
+        "id": "236",
+        "title": "Gestión Contable y Financiera",
+        "docs": []
+    },
+    {
+        "id": "237",
+        "title": "Gestión Logística",
+        "docs": []
+    },
+    {
+        "id": "238",
+        "title": "Alcance",
+        "docs": []
+    },
+    {
+        "id": "239",
+        "title": "Objetivos del SGSI",
+        "docs": []
+    },
+    {
+        "id": "240",
+        "title": "Registro de Planificación y Seguimiento del Sistema de Gestión de Seguridad de la Información",
+        "docs": []
+    },
+    {
+        "id": "241",
+        "title": "Información Documentada General",
+        "docs": []
+    },
+    {
+        "id": "242",
+        "title": "Procedimientos",
+        "docs": []
+    },
+    {
+        "id": "243",
+        "title": "Instructivos",
+        "docs": []
+    },
+    {
+        "id": "244",
+        "title": "Planes",
+        "docs": []
+    },
+    {
+        "id": "245",
+        "title": "Fichas Técnicas de Procesos/Procedimientos",
+        "docs": []
+    },
+    {
+        "id": "246",
+        "title": "Formatos",
+        "docs": []
+    },
+    {
+        "id": "247",
+        "title": "Otros (Se debe permitir adicionar nuevos términos: Guía, Protocolo, Lineamiento, entre otros que se generen en el futuro)",
+        "docs": []
+    },
+    {
+        "id": "248",
+        "title": "Gestión de la Modernización",
+        "docs": []
+    },
+    {
+        "id": "249",
+        "title": "Publicidad Registral",
+        "docs": []
+    },
+    {
+        "id": "250",
+        "title": "Inscripción Registral",
+        "docs": []
+    },
+    {
+        "id": "251",
+        "title": "Gestión de Tecnologías de la Información",
+        "docs": []
+    },
+    {
+        "id": "252",
+        "title": "Gestión de los Recursos Humanos",
+        "docs": []
+    },
+    {
+        "id": "253",
+        "title": "Gestión Logística",
+        "docs": []
+    },
+    {
+        "id": "254",
+        "title": "Alcance",
+        "docs": []
+    },
+    {
+        "id": "255",
+        "title": "Objetivos del SGCN",
+        "docs": []
+    },
+    {
+        "id": "256",
+        "title": "Registro de Planificación y Seguimiento del Sistema de  Gestión de Continuidad de Negocio",
+        "docs": []
+    },
+    {
+        "id": "257",
+        "title": "Información Documentada General",
+        "docs": []
+    },
+    {
+        "id": "258",
+        "title": "Procedimientos",
+        "docs": []
+    },
+    {
+        "id": "259",
+        "title": "Instructivos",
+        "docs": []
+    },
+    {
+        "id": "260",
+        "title": "Planes",
+        "docs": []
+    },
+    {
+        "id": "261",
+        "title": "Fichas Técnicas de Procesos/Procedimientos",
+        "docs": []
+    },
+    {
+        "id": "262",
+        "title": "Formatos",
+        "docs": []
+    },
+    {
+        "id": "263",
+        "title": "Otros (Se debe permitir adicionar nuevos términos: Guía, Protocolo, Lineamiento, entre otros que se generen en el futuro)",
+        "docs": []
+    },
+    {
+        "id": "264",
+        "title": "Gestión de la Modernización",
+        "docs": []
+    },
+    {
+        "id": "265",
+        "title": "Publicidad Registral",
+        "docs": []
+    },
+    {
+        "id": "266",
+        "title": "Inscripción Registral",
+        "docs": []
+    },
+    {
+        "id": "267",
+        "title": "Gestión de Tecnologías de la Información y Comunicación",
+        "docs": []
+    },
+    {
+        "id": "268",
+        "title": "Gestión de los Recursos Humanos",
+        "docs": []
+    },
+    {
+        "id": "269",
+        "title": "Gestión Logística",
+        "docs": []
+    }
+]

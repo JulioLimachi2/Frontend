@@ -1,0 +1,438 @@
+[
+    {
+        "id":1,
+        "name":"0. Política del Sistema Integrado de Gestión",
+        "docId":"199",
+        "children": []
+    },
+    {
+        "id":2,
+        "name":"1. Sistema Integrado de Gestión",
+        "children":[
+            {
+                "name":"1.1. Sistema de Gestión de la Calidad",
+                "children":[
+                    {
+                        "name":"Alcance",
+                        "docId":"200",
+                        "children": []
+                    },
+                    {
+                        "name":"Objetivos del SGC",
+                        "docId":"201",
+                        "children": []
+                    },
+                    {
+                        "name":"Registro de Planificación y Seguimiento del Sistema de Gestión de la Calidad",
+                        "docId":"202",
+                        "children": []
+                    },
+                    {
+                        "name":"Información  Documentada del Sistema de Gestión de Calidad",
+                        "children": [
+                            {
+                                "name":"Información Documentada General",
+                                "docId":"203"
+                            },
+                            {
+                                "name":"Información Documentada Específica",
+                                "children": [
+                                    {
+                                        "name":"Procesos de Gestión",
+                                        "children": [
+                                            {
+                                                "name":"Gestión de Planeamiento y Presupuesto",
+                                                "children": [
+                                                    {
+                                                        "name":"Procedimientos",
+                                                        "docId":"204"
+                                                    },
+                                                    {
+                                                        "name":"Instructivos",
+                                                        "docId":"205"
+                                                    },
+                                                    {
+                                                        "name":"Fichas Técnicas de Procesos/Procedimientos",
+                                                        "docId":"206"
+                                                    },
+                                                    {
+                                                        "name":"Formatos",
+                                                        "docId":"207"
+                                                    },
+                                                    {
+                                                        "name":"Otros",
+                                                        "docId":"208"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name":"Gestión de Comunicaciones e Imagen Institucional",
+                                                "docId":"209"
+                                            },
+                                            {
+                                                "name":"Gestión de la Modernización",
+                                                "docId":"210"
+                                            },
+                                            {
+                                                "name":"Gestión de Inversiones",
+                                                "docId":"211"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name":"Procesos Principales",
+                                        "children": [
+                                            {
+                                                "name":"Publicidad Registral",
+                                                "docId":"212"
+                                            },
+                                            {
+                                                "name":"Inscripción Registral",
+                                                "docId":"213"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name":"Procesos de Soporte",
+                                        "children": [
+                                            {
+                                                "name":"Gestión Documental y Atención al Ciudadano",
+                                                "docId":"214"
+                                            },
+                                            {
+                                                "name":"Asesoría Jurídica",
+                                                "docId":"215"
+                                            },
+                                            {
+                                                "name":"Gestión de Tecnologías de la Información",
+                                                "docId":"216"
+                                            },
+                                            {
+                                                "name":"Gestión de los Recursos Humanos",
+                                                "docId":"217"
+                                            },
+                                            {
+                                                "name":"Gestión Logística",
+                                                "docId":"218"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name":"1.2. Sistema de Gestión Antisoborno",
+                "children": [
+                    {
+                        "name":"Alcance",
+                        "docId":"219"
+                    },
+                    {
+                        "name":"Objetivos del SGAS",
+                        "docId":"220"
+                    },
+                    {
+                        "name":"Registro de Planificación y Seguimiento del Sistema de Gestión Antisoborno",
+                        "docId":"221"
+                    },
+                    {
+                        "name":"Información  Documentada del Sistema de Gestión Antisoborno",
+                        "children": [
+                            {
+                                "name":"Información Documentada General",
+                                "docId":"222"
+                            },
+                            {
+                                "name":"Información Documentada Específica",
+                                "children": [
+                                    {
+                                        "name":"Procesos de Gestión",
+                                        "children": [
+                                            {
+                                                "name":"Gestión de Planeamiento y Presupuesto",
+                                                "children": [
+                                                    {
+                                                        "name":"Procedimientos",
+                                                        "docId":"223"
+                                                    },
+                                                    {
+                                                        "name":"Instructivos",
+                                                        "docId":"224"
+                                                    },
+                                                    {
+                                                        "name":"Planes",
+                                                        "docId":"225"
+                                                    },
+                                                    {
+                                                        "name":"Fichas Técnicas de Procesos/Procedimientos",
+                                                        "docId":"226"
+                                                    },
+                                                    {
+                                                        "name":"Formatos",
+                                                        "docId":"227"
+                                                    },
+                                                    {
+                                                        "name":"Otros (Se debe permitir adicionar nuevos términos: Guía, Protocolo, Lineamiento, entre otros que se generen en el futuro)",
+                                                        "docId":"228"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name":"Gestión de Comunicaciones ",
+                                                "docId":"229"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name":"Procesos Principales",
+                                        "children": [
+                                            {
+                                                "name":"Publicidad Registral",
+                                                "docId":"230"
+                                            },
+                                            {
+                                                "name":"Inscripción Registral",
+                                                "docId":"231"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name":"Procesos de Soporte",
+                                        "children": [
+                                            {
+                                                "name":"Gestión Documental y Atención al Ciudadano",
+                                                "docId":"232"
+                                            },
+                                            {
+                                                "name":"Asesoría Jurídica",
+                                                "docId":"233"
+                                            },
+                                            {
+                                                "name":"Gestión de Tecnologías de la Información",
+                                                "docId":"234"
+                                            },
+                                            {
+                                                "name":"Gestión de los Recursos Humanos",
+                                                "docId":"235"
+                                            },
+                                            {
+                                                "name":"Gestión Contable y Financiera",
+                                                "docId":"236"
+                                            },
+                                            {
+                                                "name":"Gestión Logística",
+                                                "docId":"237"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name":"1.3. Sistema de Gestión de Seguridad de la Información",
+                "autorizathion": true,
+                "children": [
+                    {
+                        "name":"Alcance",
+                        "docId":"238"
+                    },
+                    {
+                        "name":"Objetivos del SGSI",
+                        "docId":"239"
+                    },
+                    {
+                        "name":"Registro de Planificación y Seguimiento del Sistema de Gestión de Seguridad de la Información",
+                        "docId":"240"
+                    },
+                    {
+                        "name":"Información  Documentada del Sistema de Gestión de Seguridad de la Información",
+                        "children": [
+                            {
+                                "name":"Información Documentada General",
+                                "docId":"241"
+                            },
+                            {
+                                "name":"Información Documentada Específica",
+                                "children": [
+                                    {
+                                        "name":"Procesos de Gestión",
+                                        "children": [
+                                            {
+                                                "name":"Gestión de Comunicaciones e Imagen Institucional",
+                                                "children": [
+                                                    {
+                                                        "name":"Procedimientos",
+                                                        "docId":"242"
+                                                    },
+                                                    {
+                                                        "name":"Instructivos",
+                                                        "docId":"243"
+                                                    },
+                                                    {
+                                                        "name":"Planes",
+                                                        "docId":"244"
+                                                    },
+                                                    {
+                                                        "name":"Fichas Técnicas de Procesos/Procedimientos",
+                                                        "docId":"245"
+                                                    },
+                                                    {
+                                                        "name":"Formatos",
+                                                        "docId":"246"
+                                                    },
+                                                    {
+                                                        "name":"Otros (Se debe permitir adicionar nuevos términos: Guía, Protocolo, Lineamiento, entre otros que se generen en el futuro)",
+                                                        "docId":"247"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name":"Gestión de la Modernización",
+                                                "docId":"248"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name":"Procesos Principales",
+                                        "children": [
+                                            {
+                                                "name":"Publicidad Registral",
+                                                "docId":"249"
+                                            },
+                                            {
+                                                "name":"Inscripción Registral",
+                                                "docId":"250"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name":"Procesos de Soporte",
+                                        "children": [
+                                            {
+                                                "name":"Gestión de Tecnologías de la Información",
+                                                "docId":"251"
+                                            },
+                                            {
+                                                "name":"Gestión de los Recursos Humanos",
+                                                "docId":"252"
+                                            },
+                                            {
+                                                "name":"Gestión Logística",
+                                                "docId":"253"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name":"1.4. Sistema de Gestión de Continuidad de Negocio",
+                "children": [
+                    {
+                        "name":"Alcance",
+                        "docId":"254"
+                    },
+                    {
+                        "name":"Objetivos del SGCN",
+                        "docId":"255"
+                    },
+                    {
+                        "name":"Registro de Planificación y Seguimiento del Sistema de  Gestión de Continuidad de Negocio",
+                        "docId":"256"
+                    },
+                    {
+                        "name":"Información  Documentada del Sistema de  Gestión de Continuidad de Negocio",
+                        "children": [
+                            {
+                                "name":"Información Documentada General",
+                                "docId":"257"
+                            },
+                            {
+                                "name":"Información Documentada Específica",
+                                "children": [
+                                    {
+                                        "name":"Procesos de Gestión",
+                                        "children": [
+                                            {
+                                                "name":"Gestión de Comunicaciones e Imagen Institucional",
+                                                "children": [
+                                                    {
+                                                        "name":"Procedimientos",
+                                                        "docId":"258"
+                                                    },
+                                                    {
+                                                        "name":"Instructivos",
+                                                        "docId":"259"
+                                                    },
+                                                    {
+                                                        "name":"Planes",
+                                                        "docId":"260"
+                                                    },
+                                                    {
+                                                        "name":"Fichas Técnicas de Procesos/Procedimientos",
+                                                        "docId":"261"
+                                                    },
+                                                    {
+                                                        "name":"Formatos",
+                                                        "docId":"262"
+                                                    },
+                                                    {
+                                                        "name":"Otros (Se debe permitir adicionar nuevos términos: Guía, Protocolo, Lineamiento, entre otros que se generen en el futuro)",
+                                                        "docId":"263"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name":"Gestión de la Modernización",
+                                                "docId":"264"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name":"Procesos Principales",
+                                        "children": [
+                                            {
+                                                "name":"Publicidad Registral",
+                                                "docId":"265"
+                                            },
+                                            {
+                                                "name":"Inscripción Registral",
+                                                "docId":"266"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name":"Procesos de Soporte",
+                                        "children": [
+                                            {
+                                                "name":"Gestión de Tecnologías de la Información y Comunicación",
+                                                "docId":"267"
+                                            },
+                                            {
+                                                "name":"Gestión de los Recursos Humanos",
+                                                "docId":"268"
+                                            },
+                                            {
+                                                "name":"Gestión Logística",
+                                                "docId":"269"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

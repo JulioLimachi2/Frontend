@@ -8,63 +8,6 @@ import { OptionsService } from 'src/app/core/services/options.service';
 import { ModalLoginComponent } from '../modal-login/modal-login.component';
 import { ModalMsgComponent } from '../modal-msg/modal-msg.component';
 
-const TREE_DATA = [
-  {
-    name: 'ISO 9001',
-    children: [
-      { name: 'Jerarquía ISO 9001', children: [{ id: 'iso9001-01', name: 'Documento', autorization: false, url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }] },
-      { name: 'Jerarquía ISO 9001', children: [{ id: 'iso9001-02', name: 'Documento', autorization: false, url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }] }
-    ],
-  },
-  {
-    name: 'ISO 22301',
-    children: [
-      {
-        name: 'Jerarquía ISO 22301',
-        children: [{ id: 'iso22301-01', name: 'Documento', autorization: false, url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }],
-      },
-      {
-        name: 'Jerarquía ISO 22301',
-        children: [{ id: 'iso22301-02', name: 'Documento', autorization: false, url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }],
-      },
-    ],
-  },
-  {
-    name: 'ISO 27001',
-    children: [
-      {
-        name: 'Jerarquía ISO 27001',
-        children: [{ id: 'iso27001-01', name: 'Documento', autorization: false, url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }],
-      },
-      {
-        name: 'Jerarquía ISO 27001',
-        children: [{ id: 'iso27001-02', name: 'Documento', autorization: false, url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }],
-      },
-    ],
-  },
-  {
-    name: 'ISO 37001',
-    children: [
-      {
-        name: 'Jerarquía ISO 37001',
-        children: [{ id: 'iso37001-01', name: 'Documento', autorization: false, url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }],
-      },
-      {
-        name: 'Jerarquía ISO 37001',
-        children: [{ id: 'iso37001-02', name: 'Documento', autorization: false, url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }],
-      },
-    ],
-  },
-  {
-    name: 'Documentos Generales',
-    children: [
-      {
-        name: 'Jerarquía documentaria',
-        children: [{ id: 'doc01', name: 'Documento General', autorization: true, urlrouting: '/generalDocuments', url: 'https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf' }],
-      }
-    ],
-  },
-];
 
 @Component({
   selector: 'app-layout',
@@ -87,7 +30,6 @@ export class LayoutComponent implements OnInit {
     private router: Router,
     private navservice: DatanavService,
     private serviceoption: OptionsService) {
-    this.dataSource.data = TREE_DATA;
     /*detecter movimiento del router y si se navega por options 
     ocultar el navegador izquierdo*/
     router.events.subscribe((val: any) => {
@@ -95,9 +37,13 @@ export class LayoutComponent implements OnInit {
       if (url) {
         if (url.startsWith("/options")) {
           this.openedDrawner = false;
-        }else{
-          this.openedDrawner = true;
         }
+        if (url.startsWith("/documented-information")) {
+          this.openedDrawner = false;
+        }
+        //else{
+        //   this.openedDrawner = true;
+        // }
       }
     });
   }
@@ -166,8 +112,8 @@ export class LayoutComponent implements OnInit {
  del navegador*/
   SelectedOption(id) {
     if (id === '100') {
-      this.openedDrawner = true;
-      this.router.navigateByUrl("");
+      this.openedDrawner = false;
+      this.router.navigateByUrl("/documented-information");
       this.datanav = [];
     }
     if (parseInt(id) > 1000) {
@@ -197,8 +143,6 @@ export class LayoutComponent implements OnInit {
     if (this.userLog) {
       this.router.navigateByUrl("/options");
       this.openedDrawner = false;
-    } else {
-      this.openedDrawner = true;
     }
   }
 
@@ -207,8 +151,9 @@ export class LayoutComponent implements OnInit {
     localStorage.removeItem('userlog');
     localStorage.removeItem('navuser');
     this.userLog = null;
-    this.openedDrawner = true;
+    this.openedDrawner = false;
     this.datanav = [];
-    this.router.navigateByUrl("");
+    this.router.navigateByUrl("/documented-information");
+    window.location.reload();
   }
 }

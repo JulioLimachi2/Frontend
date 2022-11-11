@@ -1,0 +1,34 @@
+<div class="container-responsible-table" #tbdocdetail>
+    <table mat-table [dataSource]="dataSource" class="table-standart tbdoc-detail">
+        <ng-container matColumnDef="generalProcedures">
+            <th mat-header-cell *matHeaderCellDef> <div class="th-doc">{{document?.title}}</div> </th>
+            <td mat-cell *matCellDef="let element;"> 
+                <div class="cont-doc-row">
+                    <div class="cont-icon-pdf"><img src="assets/images/ic-pdf-img.png" alt="icon-pdf"></div>
+                    <div class="content-row">
+                        <div class="title-row-doc"><b>{{element.title}}</b></div>
+                        <div class="body-row-doc">
+                            <div class="detail-doc"><b>CÓDIGO:</b> <div>{{element.details.code}}</div></div>
+                            <div class="detail-doc"><b>VERS:</b> <div>{{element.details.version}}</div></div>
+                            <div class="detail-doc"><b>APROB:</b> <div>{{element.details.approved}}</div></div>
+                            <div class="detail-doc"><b>FECHA:</b> <div>{{element.details.date}}</div></div>
+                            <div class="detail-doc"><b>N° PAG:</b> <div>{{element.details.pageNumber}}</div></div>
+                        </div>
+                    </div>
+                
+                </div> 
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="noResults">
+            <td mat-footer-row *matFooterCellDef [colSpan]="displayedColumns.length">
+                No se encontraron resultados.
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index" (dblclick)="selectedRow(i)" [ngClass]="{'active-row-table': indexSelectedRow == i}"></tr>
+        <tr mat-footer-row [hidden]="dataSource.data.length > 0 || emptyResult" *matFooterRowDef="['noResults']"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5]" aria-label="Select page of users"></mat-paginator>
+</div>

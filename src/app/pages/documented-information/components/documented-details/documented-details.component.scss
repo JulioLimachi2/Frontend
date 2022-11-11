@@ -1,0 +1,51 @@
+:host {
+    width: 100%;
+}
+
+.tbdoc-detail {
+    width: 1100px;
+
+    .th-doc {
+        font-size  : 25px;
+        color      : #000000;
+        font-weight: 500;
+    }
+}
+
+.cont-doc-row {
+    display: flex;
+    gap    : 10px;
+    margin : 20px 0;
+
+    .cont-icon-pdf {
+        img {
+            width : 20px;
+            height: 20px;
+        }
+    }
+
+    .title-row-doc {
+        display: flex;
+        gap    : 5px;
+    }
+
+    .body-row-doc {
+        display  : flex;
+        flex-wrap: wrap;
+        gap      : 5px;
+
+        .detail-doc {
+            display: flex;
+
+            div {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1100px) {
+    .tbdoc-detail {
+        width: 100%;
+    }
+}

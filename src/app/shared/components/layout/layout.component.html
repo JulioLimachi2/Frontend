@@ -12,7 +12,7 @@
                 </div>
                 <div class="cont-info">
                     <div>Rol:</div>
-                    <div>{{userLog.rol}}</div>
+                    <div>{{userLog.roles}}</div>
                 </div>
                 <!-- <div class="sub-options-log" *ngIf="showSubmenuLog" (click)="logout()">
                     <div>Cerrar Sesión</div>
@@ -39,7 +39,7 @@
         <!-- <a mat-list-item routerLink="/generalDocuments" [queryParams]="{ section: 'menu' }">
             Documentos Generales
         </a> -->
-        <div class="container-nav-routes" *ngIf="datanav.length">
+        <div class="container-nav-routes" *ngIf="datanav?.length">
             <div *ngFor="let nav of datanav">
                 <div class="title-option-nav">{{nav.title}}</div>
                 <div class="routes-options">
@@ -51,17 +51,17 @@
                 </div>
             </div>
         </div>
-        <div *ngIf="!datanav.length">
+        <!-- <div *ngIf="!datanav.length">
             <div class="title-sidenav">INFORMACIÓN DOCUMENTARIA</div>
             <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
 
                 <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle [ngClass]="{'active-tree': idTreeNode === node.id}">
-                    <!-- <div *ngIf="!node.url && !node.autorization">{{node.name}}</div> -->
+   
                     <div  (click)="goToDocument(node)" class="op-tree-node">
                         <div><img src="assets/images/ic-pdf-img.png" alt="icon-pdf"></div>
                         {{node.name}}
                     </div>
-                    <!-- <a *ngIf="node.url" href="{{node.url}}" target="_blank">{{node.name}}</a> -->
+    
                 </mat-tree-node>
 
                 <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodeToggle style="cursor: pointer;">
@@ -78,7 +78,7 @@
                     </div>
                 </mat-nested-tree-node>
             </mat-tree>
-        </div>
+        </div> -->
     </mat-drawer>
 
     <div class="matdrawner-sidenav-content">

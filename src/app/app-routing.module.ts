@@ -77,6 +77,11 @@ const routes: Routes = [
         path: 'process-risk',
         loadChildren: () =>
           import('./pages/process-risk/process-risk.module').then((m) => m.ProcessRiskModule),
+      },
+      {
+        path: 'documented-information',
+        loadChildren: () =>
+          import('./pages/documented-information/documented-information.module').then((m) => m.DocumentedInformationModule),
       }
     ]
   }

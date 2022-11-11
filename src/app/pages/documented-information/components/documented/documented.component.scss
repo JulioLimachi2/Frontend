@@ -1,0 +1,88 @@
+:host{
+    width: 100%;
+}
+
+.container-tree-document{
+    display: flex;
+    justify-content: center;
+
+    .container-tree{
+        width: 100%;
+        max-width: 1400px;
+        margin-bottom: 100px;
+    }
+}
+
+.tree-document-invisible {
+    display: none;
+}
+
+.tree-document-invisible {
+    display: none;
+}
+
+.tree-document ul,
+.tree-document li {
+    margin-top     : 0;
+    margin-bottom  : 0;
+    list-style-type: none;
+}
+
+/*
+   * This padding sets alignment of the nested nodes.
+   */
+.tree-document .mat-nested-tree-node div[role=group] {
+    padding-left: 40px;
+}
+
+/*
+   * Padding for leaf nodes.
+   * Leaf nodes need to have padding so as to align with other non-leaf nodes
+   * under the same parent.
+   */
+.tree-document div[role=group]>.mat-tree-node {
+    padding-left: 40px;
+}
+
+.tree-document ul,
+.tree-document li {
+    margin-top     : 0;
+    margin-bottom  : 0;
+    list-style-type: none;
+}
+
+/*
+   * This padding sets alignment of the nested nodes.
+   */
+.tree-document .mat-nested-tree-node div[role=group] {
+    padding-left: 40px;
+}
+
+/*
+   * Padding for leaf nodes.
+   * Leaf nodes need to have padding so as to align with other non-leaf nodes
+   * under the same parent.
+   */
+.tree-document div[role=group]>.mat-tree-node {
+    padding-left: 40px;
+}
+
+.mat-tree-node:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.op-tree-node {
+    display    : flex;
+    align-items: center;
+    gap        : 10px;
+    cursor: pointer;
+
+    img {
+        width : 20px;
+        height: 20px;
+    }
+}
+
+.dlp-none{
+    display: none;
+}
