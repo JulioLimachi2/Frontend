@@ -1,20 +1,23 @@
 <div class="container-tree-document">
     <div class="container-tree">
-        <div class="title-sidenav">INFORMACIÓN DOCUMENTARIA</div>
+        <div class="header-mat-tree">
+            <div class="title-sidenav">INFORMACIÓN DOCUMENTARIA</div>
+            <button (click)="edit()" class="btn-edit-doc" *ngIf="userLog?.roles.includes('Editor')">Editar</button>
+        </div>
         <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="tree-document">
-    
-            <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle [ngClass]="{'active-tree': idTreeNode === node.id}">
-    
+
+            <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle
+                [ngClass]="{'active-tree': idTreeNode === node.id}">
+
                 <div (click)="goToDocument(node)" class="op-tree-node">
                     <!-- <div><img src="assets/images/ic-pdf-img.png" alt="icon-pdf"></div> -->
                     {{node.name}}
                 </div>
-    
+
             </mat-tree-node>
-    
-            <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild"
-             matTreeNodeToggle style="cursor: pointer;"
-             [ngClass]="{'dlp-none': node?.autorizathion && !userLog}">
+
+            <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodeToggle style="cursor: pointer;"
+                [ngClass]="{'dlp-none': node?.autorizathion && !userLog}">
                 <div class="mat-tree-node">
                     <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
                         <mat-icon class="mat-icon-rtl-mirror">

@@ -77,12 +77,95 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
           "date": "15/03/2022",
           "pageNumber": "15"
         }
+      },
+      {
+        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+        "details": {
+          "code": "IN-005-JEF-ZRIX",
+          "version": "01",
+          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+          "date": "15/03/2022",
+          "pageNumber": "15"
+        }
+      },
+      {
+        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+        "details": {
+          "code": "IN-005-JEF-ZRIX",
+          "version": "01",
+          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+          "date": "15/03/2022",
+          "pageNumber": "15"
+        }
+      },
+      {
+        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+        "details": {
+          "code": "IN-005-JEF-ZRIX",
+          "version": "01",
+          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+          "date": "15/03/2022",
+          "pageNumber": "15"
+        }
+      },
+      {
+        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+        "details": {
+          "code": "IN-005-JEF-ZRIX",
+          "version": "01",
+          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+          "date": "15/03/2022",
+          "pageNumber": "15"
+        }
+      },
+      {
+        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+        "details": {
+          "code": "IN-005-JEF-ZRIX",
+          "version": "01",
+          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+          "date": "15/03/2022",
+          "pageNumber": "15"
+        }
+      },
+      {
+        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+        "details": {
+          "code": "IN-005-JEF-ZRIX",
+          "version": "01",
+          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+          "date": "15/03/2022",
+          "pageNumber": "15"
+        }
+      },
+      {
+        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+        "details": {
+          "code": "IN-005-JEF-ZRIX",
+          "version": "01",
+          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+          "date": "15/03/2022",
+          "pageNumber": "15"
+        }
+      },
+      {
+        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+        "details": {
+          "code": "IN-005-JEF-ZRIX",
+          "version": "01",
+          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+          "date": "15/03/2022",
+          "pageNumber": "15"
+        }
       }
     ]
   }
 
   selectedRow(index: number){
-
+    const a = document.createElement("a");
+    a.href = "https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf";
+    a.target = "_blank";
+    a.click();
   }
 
   getDocData(id: string){

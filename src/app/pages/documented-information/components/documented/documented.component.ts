@@ -1,8 +1,10 @@
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { Router } from '@angular/router';
 import { TreeSystemService } from 'src/app/core/services/tree-system.service';
+import { ModalEditDocsComponent } from '../modal-edit-docs/modal-edit-docs.component';
 
 @Component({
   selector: 'app-documented',
@@ -16,12 +18,13 @@ export class DocumentedComponent implements OnInit {
   userLog;
 
   constructor(private treesystemservice: TreeSystemService,
-              private router: Router) { }
+              private router: Router,
+              public dialog: MatDialog) { }
 
   hasChild = (_: number, node: any) => !!node.children && node.children.length > 0;
 
   ngOnInit(): void {
-    this.userLog = localStorage.getItem('userlog');
+    this.userLog = JSON.parse(localStorage.getItem('userlog'));
     this.getTree();
   }
 
@@ -40,4 +43,18 @@ export class DocumentedComponent implements OnInit {
   see(node){
     console.log(node);
   }
+
+  edit(){
+    const dialogRef = this.dialog.open(ModalEditDocsComponent, {
+      width: '38%',
+      data: this.dataSource.data
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        
+      }
+    });
+  }
+
 }

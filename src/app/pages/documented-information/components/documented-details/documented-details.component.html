@@ -1,4 +1,4 @@
-<div class="container-responsible-table" #tbdocdetail>
+<div class="container-responsible-table tb-doc-cont" #tbdocdetail>
     <table mat-table [dataSource]="dataSource" class="table-standart tbdoc-detail">
         <ng-container matColumnDef="generalProcedures">
             <th mat-header-cell *matHeaderCellDef> <div class="th-doc">{{document?.title}}</div> </th>
@@ -30,5 +30,5 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index" (dblclick)="selectedRow(i)" [ngClass]="{'active-row-table': indexSelectedRow == i}"></tr>
         <tr mat-footer-row [hidden]="dataSource.data.length > 0 || emptyResult" *matFooterRowDef="['noResults']"></tr>
     </table>
-    <mat-paginator [pageSizeOptions]="[5]" aria-label="Select page of users"></mat-paginator>
 </div>
+<mat-paginator [pageSizeOptions]="[5,10]" aria-label="Select page of documents" style="padding-bottom: 50px;"></mat-paginator>
