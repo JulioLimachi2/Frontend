@@ -9,7 +9,7 @@
             <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle
                 [ngClass]="{'active-tree': idTreeNode === node.id}">
 
-                <div (click)="goToDocument(node)" class="op-tree-node">
+                <div (click)="goToDocument(node)" class="op-tree-node" [ngStyle]="{'margin-left': node?.children?.length ? '0' : '40px'}">
                     <!-- <div><img src="assets/images/ic-pdf-img.png" alt="icon-pdf"></div> -->
                     {{node.name}}
                 </div>
