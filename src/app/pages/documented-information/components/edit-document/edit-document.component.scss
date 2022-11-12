@@ -2,7 +2,7 @@
     width: 100%;
 }
 
-.link-download {
+::ng-deep .link-download {
     color          : #95a4c5;
     text-decoration: underline;
 }

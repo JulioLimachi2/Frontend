@@ -25,6 +25,15 @@
             </td>
         </ng-container>
 
+        <ng-container matColumnDef="download">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element;"> 
+                <button mat-icon-button aria-label="boton descargar archivo" (click)="download()">
+                    <mat-icon>file_download</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
         <ng-container matColumnDef="noResults">
             <td mat-footer-row *matFooterCellDef [colSpan]="displayedColumns.length">
                 No se encontraron resultados.
@@ -32,7 +41,7 @@
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index" (dblclick)="selectedRow(i)" [ngClass]="{'active-row-table': indexSelectedRow == i}"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index"></tr>
         <tr mat-footer-row [hidden]="dataSource.data.length > 0 || emptyResult" *matFooterRowDef="['noResults']"></tr>
     </table>
 </div>

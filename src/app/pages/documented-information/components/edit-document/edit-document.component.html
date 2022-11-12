@@ -1,54 +1,17 @@
 <div class="cont-actions-edit-doc">
     <button (click)="back()" class="btn-new-doc">Atras</button>
-    <button class="btn-new-doc" (click)="newDoc()">Crear Nuevo Documento</button>
+    <button class="btn-new-doc" (click)="ModalDoc()">Crear Nuevo Documento</button>
+    <button class="btn-new-doc" (click)="mut()">Subir archivo</button>
 </div>
 
-
-<div class="container-responsible-table">
-    <table mat-table [dataSource]="dataSource" class="table-standart tbedit-doc">
-        <ng-container matColumnDef="code">
-            <th mat-header-cell *matHeaderCellDef> Código </th>
-            <td mat-cell *matCellDef="let element;"> 
-               {{element.code}} 
-            </td>
-        </ng-container>
-
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Nombre del documento </th>
-            <td mat-cell *matCellDef="let element;"> 
-               {{element.name}} 
-            </td>
-        </ng-container>
-
-        <ng-container matColumnDef="date">
-            <th mat-header-cell *matHeaderCellDef> Fecha </th>
-            <td mat-cell *matCellDef="let element;"> 
-               {{element.date}} 
-            </td>
-        </ng-container>
-
-        <ng-container matColumnDef="responsible">
-            <th mat-header-cell *matHeaderCellDef> Responsable </th>
-            <td mat-cell *matCellDef="let element;"> 
-               {{element.responsible}} 
-            </td>
-        </ng-container>
-
-        <ng-container matColumnDef="seedoc">
-            <th mat-header-cell *matHeaderCellDef> Ver documento </th>
-            <td mat-cell *matCellDef="let element;"> 
-               <div class="link-download">DESCARGAR</div>
-            </td>
-        </ng-container>
-
-        <ng-container matColumnDef="noResults">
-            <td mat-footer-row *matFooterCellDef [colSpan]="displayedColumns.length">
-                No se encontraron resultados.
-            </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index" (dblclick)="selectedRow(i)"></tr>
-        <tr mat-footer-row [hidden]="dataSource.data.length > 0 || emptyResult" *matFooterRowDef="['noResults']"></tr>
-    </table>
-</div>
+<mat-tab-group class="mat-tab-sunarp" [(selectedIndex)]="indexTab">
+    <mat-tab label="Documento 1">
+      <app-document-one [newData]="dataDoc1" (onEdit)="ModalDoc($event)" [editData]="dataEditDoc1"></app-document-one>
+    </mat-tab>
+    <mat-tab label="Documento 2">
+      <app-document-two [newData]="dataDoc2" (onEdit)="ModalDoc($event)" [editData]="dataEditDoc2"></app-document-two>
+    </mat-tab>
+    <mat-tab label="Documento 3">
+      <app-document-three [newData]="dataDoc3" (onEdit)="ModalDoc($event)" [editData]="dataEditDoc3"></app-document-three>
+    </mat-tab>
+</mat-tab-group>

@@ -13,7 +13,7 @@ import { TreeSystemService } from 'src/app/core/services/tree-system.service';
 })
 export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
 
-  displayedColumns: string[] = ['generalProcedures'];
+  displayedColumns: string[] = ['generalProcedures','download'];
   dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -156,7 +156,7 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
     ]
   }
 
-  selectedRow(index: number){
+  download(){
     const a = document.createElement("a");
     a.href = "https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf";
     a.target = "_blank";

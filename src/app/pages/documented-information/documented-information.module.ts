@@ -6,6 +6,11 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { DocumentedDetailsComponent } from './components/documented-details/documented-details.component';
 import { ModalEditDocsComponent } from './components/modal-edit-docs/modal-edit-docs.component';
 import { EditDocumentComponent } from './components/edit-document/edit-document.component';
+import { DocumentOneComponent } from './components/edit-document/document-one/document-one.component';
+import { DocumentTwoComponent } from './components/edit-document/document-two/document-two.component';
+import { DocumentThreeComponent } from './components/edit-document/document-three/document-three.component';
+import { ModalDocumentComponent } from './components/modal-document/modal-document.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,12 +19,18 @@ import { EditDocumentComponent } from './components/edit-document/edit-document.
     DocumentedComponent,
     DocumentedDetailsComponent,
     ModalEditDocsComponent,
-    EditDocumentComponent
+    EditDocumentComponent,
+    DocumentOneComponent,
+    DocumentTwoComponent,
+    DocumentThreeComponent,
+    ModalDocumentComponent
   ],
   imports: [
     CommonModule,
     DocumentedInformationRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule 
   ]
 })
 export class DocumentedInformationModule { }
