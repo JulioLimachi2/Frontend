@@ -1,4 +1,8 @@
-<button class="btn-new-doc" (click)="newDoc()">Crear Nuevo Documento</button>
+<div class="cont-actions-edit-doc">
+    <button (click)="back()" class="btn-new-doc">Atras</button>
+    <button class="btn-new-doc" (click)="newDoc()">Crear Nuevo Documento</button>
+</div>
+
 
 <div class="container-responsible-table">
     <table mat-table [dataSource]="dataSource" class="table-standart tbedit-doc">

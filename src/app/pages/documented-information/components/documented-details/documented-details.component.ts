@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -21,7 +22,8 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
 
   constructor(private treesystemservice: TreeSystemService,
               private router: ActivatedRoute,
-              private route: Router) { }
+              private route: Router,
+              private _location: Location) { }
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
@@ -170,6 +172,10 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
 
   goEdit(){
     this.route.navigateByUrl("documented-information/edit");
+  }
+
+  back(){
+    this._location.back();
   }
 
 }

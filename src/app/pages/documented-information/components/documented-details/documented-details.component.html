@@ -1,4 +1,8 @@
-<button (click)="goEdit()" class="btn-edit-doc" *ngIf="userLog?.roles.includes('Editor')">Editar</button>
+<div class="cont-actions-detail-doc">
+    <button (click)="back()" class="btn-edit-doc">Atras</button>
+    <button (click)="goEdit()" class="btn-edit-doc" *ngIf="userLog?.roles.includes('Editor')">Editar</button>
+</div>
+
 <div class="container-responsible-table tb-doc-cont" #tbdocdetail>
     <table mat-table [dataSource]="dataSource" class="table-standart tbdoc-detail">
         <ng-container matColumnDef="generalProcedures">

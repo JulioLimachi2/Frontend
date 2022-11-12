@@ -58,6 +58,12 @@
     cursor: pointer;
 }
 
+.cont-actions-detail-doc{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 @media (min-width: 1100px) {
     .tbdoc-detail {
         width: 100%;

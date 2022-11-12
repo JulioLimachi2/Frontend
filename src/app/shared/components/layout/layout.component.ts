@@ -23,6 +23,7 @@ export class LayoutComponent implements OnInit {
   openedDrawner: boolean = true;
   showSubmenuLog: boolean;
   idTreeNode: String;
+  currentUrl: string;
 
   datanav = [];
 
@@ -34,6 +35,7 @@ export class LayoutComponent implements OnInit {
     ocultar el navegador izquierdo*/
     router.events.subscribe((val: any) => {
       const { url } = val;
+      this.currentUrl = url;
       if (url) {
         if (url.startsWith("/options")) {
           this.openedDrawner = false;
@@ -153,7 +155,11 @@ export class LayoutComponent implements OnInit {
     this.userLog = null;
     this.openedDrawner = false;
     this.datanav = [];
-    this.router.navigateByUrl("/documented-information");
-    window.location.reload();
+    if(this.currentUrl !== '/documented-information/edit'){
+      window.location.reload();
+      this.router.navigateByUrl("/documented-information");
+    }else{
+      this.router.navigateByUrl("/documented-information");
+    }
   }
 }

@@ -7,6 +7,12 @@
     text-decoration: underline;
 }
 
+.cont-actions-edit-doc{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 .btn-new-doc{
     background-color: #58babb;
     color: #ffffff;

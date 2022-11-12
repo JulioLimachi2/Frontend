@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
@@ -13,7 +14,8 @@ export class EditDocumentComponent implements OnInit {
   displayedColumns: string[] = ['code','name','date','responsible','seedoc'];
   dataSource = new MatTableDataSource();
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+    private _location: Location) { }
 
   ngOnInit(): void {
     this.dataSource.data = [
@@ -42,5 +44,9 @@ export class EditDocumentComponent implements OnInit {
         
       }
     });
+  }
+
+  back(){
+    this._location.back();
   }
 }
