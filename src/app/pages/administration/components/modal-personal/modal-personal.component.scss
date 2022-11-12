@@ -1,12 +1,13 @@
+@import '_variables';
 .p-20 {
     padding: 20px;
 }
 
 .icon-close{
-    background-color: red;
+    background-color: $error;
     width: fit-content;
     padding: 2px 12px;
-    color: #ffffff;
+    color: $white;
     position: absolute;
     top: 0;
     right: 10px;
@@ -34,8 +35,8 @@
 
         button {
             padding         : 5px 30px;
-            border          : 1px solid #44acab;
-            background-color: #ffffff;
+            border          : 1px solid $tamarama;
+            background-color: $white;
             cursor          : pointer;
 
             &:hover {

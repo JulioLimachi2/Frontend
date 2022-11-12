@@ -1,3 +1,4 @@
+@import '_variables';
 :host {
     width: 100%;
 }
@@ -42,16 +43,16 @@
         box-sizing      : border-box;
         font-size       : 12px;
         text-align      : center;
-        border          : 2px solid #000000;
+        border          : 2px solid $black;
         border-bottom   : 0;
 
         &:hover {
-            background-color: #f3ac04;
+            background-color: $warn;
         }
     }
 
     .menu-active{
-        background-color: #f3ac04;
+        background-color: $warn;
     }
 
     .menu:first-child {
@@ -59,7 +60,7 @@
     }
 
     .menu:last-child {
-        border-bottom: 2px solid #000000;
+        border-bottom: 2px solid $black;
     }
 
 }

@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import '_variables';
 html,
 body {
     height: 100%;
@@ -12,8 +12,8 @@ body {
 
 .container-title {
     font-size       : 20px;
-    background-color: #3D4B49;
-    color           : #ffffff;
+    background-color: $secondary;
+    color           : $white;
     width           : 100%;
     padding         : 10px 30px;
     box-sizing      : border-box;
@@ -27,8 +27,8 @@ body {
 
     button {
         border          : none;
-        background-color: #2c3f3e;
-        color           : #ffffff;
+        background-color: $secondary;
+        color           : $white;
         padding         : 5px 25px;
         border-radius   : 5px;
         cursor          : pointer;
@@ -44,8 +44,8 @@ body {
 
     button {
         border          : none;
-        background-color: #3D4B49;
-        color           : #ffffff;
+        background-color: $secondary;
+        color           : $white;
         padding         : 10px 25px;
         border-radius   : 5px;
         cursor          : pointer;
@@ -88,7 +88,7 @@ body {
     }
     
     .mat-tab-label{
-        border: 3px solid #44acab;
+        border: 3px solid $tamarama;
         border-bottom: 0;
         border-radius: 5px 5px 0 0;
         height: 30px;
@@ -96,8 +96,8 @@ body {
     }
 
     .mat-tab-label-active{
-        background-color: #44acab;
-        color: #ffffff;
+        background-color: $tamarama;
+        color: $white;
     }
 
     .mat-tab-disabled {
@@ -109,11 +109,11 @@ body {
     }
 
     .mat-tab-header {
-        border-bottom: 3px solid #44acab;
+        border-bottom: 3px solid $tamarama;
     }
 
     .mat-tab-body.mat-tab-body-active{
-        border: 3px solid #44acab;
+        border: 3px solid $tamarama;
         border-top: 0;
     }
 }
@@ -160,7 +160,7 @@ body {
     display      : flex;
     flex-wrap    : wrap;
     align-items  : center;
-    border       : 1px solid #44acab;
+    border       : 1px solid $tamarama;
     margin-bottom: 20px;
     width        : 100%;
     max-width    : 400px;
@@ -183,8 +183,8 @@ body {
 
     .btn-search {
         padding         : 5px 20px;
-        background-color: #ffffff;
-        border          : 1px solid #44acab;
+        background-color: $white;
+        border          : 1px solid $tamarama;
         cursor          : pointer;
     }
 }
