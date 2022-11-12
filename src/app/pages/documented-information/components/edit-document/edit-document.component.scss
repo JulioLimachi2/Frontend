@@ -1,0 +1,35 @@
+:host {
+    width: 100%;
+}
+
+.link-download {
+    color          : #95a4c5;
+    text-decoration: underline;
+}
+
+.btn-new-doc{
+    background-color: #58babb;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+::ng-deep .tbedit-doc {
+
+    .mat-table thead,
+    [mat-header-row] {
+        background-color: #8fc04f;
+    }
+
+    th {
+        color: #ffffff;
+        font-size: 14px;
+        text-align: center !important;
+    }
+
+    th.mat-header-cell:first-of-type, th.mat-header-cell:last-of-type{
+        padding: 0;
+    }
+}

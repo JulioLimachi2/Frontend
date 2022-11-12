@@ -49,6 +49,15 @@
     }
 }
 
+.btn-edit-doc{
+    background-color: #58babb;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 @media (min-width: 1100px) {
     .tbdoc-detail {
         width: 100%;

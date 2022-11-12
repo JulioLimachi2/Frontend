@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TreeSystemService } from 'src/app/core/services/tree-system.service';
 
 @Component({
@@ -17,9 +17,11 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   document;
+  userLog;
 
   constructor(private treesystemservice: TreeSystemService,
-              private router: ActivatedRoute) { }
+              private router: ActivatedRoute,
+              private route: Router) { }
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
@@ -45,6 +47,7 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
 
   ngOnInit(): void {
     const iddoc = this.router.snapshot.paramMap.get('iddoc');
+    this.userLog = JSON.parse(localStorage.getItem('userlog'));
     console.log('iddoc',iddoc);
     this.getDocData(iddoc);
     this.dataSource.data = [
@@ -147,16 +150,6 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
           "date": "15/03/2022",
           "pageNumber": "15"
         }
-      },
-      {
-        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
-        "details": {
-          "code": "IN-005-JEF-ZRIX",
-          "version": "01",
-          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
-          "date": "15/03/2022",
-          "pageNumber": "15"
-        }
       }
     ]
   }
@@ -173,6 +166,10 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
       console.log('doc',doc);
       this.document = doc[0];
     });
+  }
+
+  goEdit(){
+    this.route.navigateByUrl("documented-information/edit");
   }
 
 }

@@ -2,7 +2,6 @@
     <div class="container-tree">
         <div class="header-mat-tree">
             <div class="title-sidenav">INFORMACIÓN DOCUMENTARIA</div>
-            <button (click)="edit()" class="btn-edit-doc" *ngIf="userLog?.roles.includes('Editor')">Editar</button>
         </div>
         <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="tree-document">
 

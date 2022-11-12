@@ -5,6 +5,7 @@ import { DocumentedInformationRoutingModule } from './documented-information-rou
 import { MaterialModule } from 'src/app/material/material.module';
 import { DocumentedDetailsComponent } from './components/documented-details/documented-details.component';
 import { ModalEditDocsComponent } from './components/modal-edit-docs/modal-edit-docs.component';
+import { EditDocumentComponent } from './components/edit-document/edit-document.component';
 
 
 
@@ -12,7 +13,8 @@ import { ModalEditDocsComponent } from './components/modal-edit-docs/modal-edit-
   declarations: [
     DocumentedComponent,
     DocumentedDetailsComponent,
-    ModalEditDocsComponent
+    ModalEditDocsComponent,
+    EditDocumentComponent
   ],
   imports: [
     CommonModule,
