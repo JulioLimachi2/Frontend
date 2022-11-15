@@ -1,19 +1,14 @@
 <div class="modal-login">
     <div class="layer-1">
-        <div class="layer-2">
-            <div class="title">LOGIN</div>
+            <div class="cont-logo"><img src="assets/images/Sunarp-Logo.png" alt="logo-sunarp"></div>
             <form class="cont-mff" autocomplete="off" [formGroup]="formLogin">
-                <mat-form-field appearance="fill">
-                    <mat-label>Usuario</mat-label>
-                    <input matInput placeholder="Usuario" formControlName="user">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Clave</mat-label>
-                    <input matInput placeholder="Clave" type="password" formControlName="password">
-                </mat-form-field>
+                <input type="text" placeholder="Usuario" formControlName="user">
+                <input type="text" placeholder="Clave" type="password" formControlName="password">
+                <button class="btn-ingresar" (click)="ingresar()" [disabled]="!formLogin.valid">Ingresar</button>
             </form>
-            <button class="btn-ingresar" (click)="ingresar()" [disabled]="!formLogin.valid">Ingresar</button>
-            <div class="forgot-password-text">¿Olvido su contraseña?</div>
-        </div>
+            
+            <div class="forgot-password-text">
+                <div>¿Olvido su contraseña?</div>
+            </div>
     </div>
 </div>

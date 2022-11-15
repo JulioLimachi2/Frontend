@@ -1,15 +1,53 @@
-:host{
+:host {
     width: 100%;
 }
 
-.container-tree-document{
-    display: flex;
+.container-tree-document {
+    display        : flex;
     justify-content: center;
 
-    .container-tree{
-        width: 100%;
-        max-width: 1400px;
-        margin-bottom: 100px;
+    .mat-tree{
+        display: grid;
+    }
+
+    .container-tree {
+        width        : 100%;
+        max-width: 967px;
+        margin: 50px 0 100px 0;
+    }
+
+    .mat-tree-node{
+        background: #F4F4F4;
+        font-size: 18px;
+        color: #000000;
+        &:hover{
+            background: #E3E3E3;
+            border-radius: 10px;
+        }
+    }
+
+    .mat-nested-tree-node{
+        border-radius: 10px;
+        overflow: hidden;
+    }
+}
+
+.tree-hidden-children{
+    background: #F4F4F4;
+    border-radius: 10px;
+}
+
+.cont-sidenav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+    align-items: center;
+
+    div {
+        font-weight: 700;
+        font-size  : 22px;
+        line-height: 20px;
+        color      : #52B8C3;
     }
 }
 
@@ -33,6 +71,7 @@
    */
 .tree-document .mat-nested-tree-node div[role=group] {
     padding-left: 40px;
+    background: #F4F4F4;
 }
 
 /*
@@ -55,7 +94,7 @@
    * This padding sets alignment of the nested nodes.
    */
 .tree-document .mat-nested-tree-node div[role=group] {
-    padding-left: 40px;
+    padding: 0 40px;
 }
 
 /*
@@ -64,7 +103,7 @@
    * under the same parent.
    */
 .tree-document div[role=group]>.mat-tree-node {
-    padding-left: 40px;
+    padding: 0 40px;
 }
 
 .mat-tree-node:hover {
@@ -75,7 +114,7 @@
     display    : flex;
     align-items: center;
     gap        : 10px;
-    cursor: pointer;
+    cursor     : pointer;
 
     img {
         width : 20px;
@@ -83,13 +122,13 @@
     }
 }
 
-.dlp-none{
+.dlp-none {
     display: none;
 }
 
-.header-mat-tree{
-    display: flex;
-    flex-wrap: wrap;
+.header-mat-tree {
+    display        : flex;
+    flex-wrap      : wrap;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom  : 10px;
 }

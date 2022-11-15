@@ -1,12 +1,15 @@
 <div class="container-tree-document">
     <div class="container-tree">
         <div class="header-mat-tree">
-            <div class="title-sidenav">INFORMACIÓN DOCUMENTARIA</div>
+            <div class="cont-sidenav">
+                <img src="assets/images/icon-folder.png" alt="icono folder">
+                <div>INFORMACIÓN DOCUMENTARIA</div>
+            </div>
         </div>
         <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="tree-document">
 
             <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle
-                [ngClass]="{'active-tree': idTreeNode === node.id}">
+                [ngClass]="{'active-tree': idTreeNode === node.id}" class="tree-hidden-children">
 
                 <div (click)="goToDocument(node)" class="op-tree-node" [ngStyle]="{'margin-left': node?.children?.length ? '0' : '40px'}">
                     <!-- <div><img src="assets/images/ic-pdf-img.png" alt="icon-pdf"></div> -->
@@ -15,13 +18,14 @@
 
             </mat-tree-node>
 
-            <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodeToggle style="cursor: pointer;"
+            <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodeToggle style="cursor: pointer;margin-top: 14px;"
                 [ngClass]="{'dlp-none': node?.autorizathion && !userLog}">
                 <div class="mat-tree-node">
                     <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
-                        <mat-icon class="mat-icon-rtl-mirror">
+                        <img [src]="treeControl.isExpanded(node) ? 'assets/images/row-down.png' : 'assets/images/row-right.png'" alt="">
+                        <!-- <mat-icon class="mat-icon-rtl-mirror">
                             {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-                        </mat-icon>
+                        </mat-icon> -->
                     </button>
                     {{node.name}}
                 </div>
