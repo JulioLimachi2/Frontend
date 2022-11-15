@@ -1,6 +1,7 @@
+@import '_variables';
 .toolbar {
     width           : 100%;
-    background-color: #8cc434;
+    background-color: $primary;
 
     .color-toolbar {
         display        : flex;
@@ -11,7 +12,7 @@
         gap            : 15px;
 
         .title-toolbar {
-            color      : #ffffff;
+            color      : $white;
             font-weight: 700;
             font-size  : 25px;
             cursor     : pointer;
@@ -57,7 +58,7 @@
     padding  : 20px;
 
     .title-sidenav {
-        color        : #5bbdbf;
+        color        : $tamarama;
         font-weight  : 600;
         margin-bottom: 10px;
         margin-top   : 20px;
@@ -65,7 +66,7 @@
 
     a {
         text-decoration: none;
-        color          : #000000;
+        color          : $black;
     }
 }
 
@@ -85,9 +86,9 @@
 }
 
 .cont-user-log {
-    background-color: #ffffff;
+    background-color: $white;
     border-radius   : 5px;
-    color           : #58babb;
+    color           : $tamarama;
     padding         : 10px 20px;
     position        : relative;
     cursor          : pointer;

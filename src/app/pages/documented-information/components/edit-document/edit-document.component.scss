@@ -1,3 +1,4 @@
+@import '_variables';
 :host {
     width: 100%;
 }
@@ -14,8 +15,8 @@
 }
 
 .btn-new-doc{
-    background-color: #58babb;
-    color: #ffffff;
+    background-color: $tamarama;
+    color: $white;
     border: none;
     padding: 10px 20px;
     border-radius: 2px;
@@ -26,11 +27,11 @@
 
     .mat-table thead,
     [mat-header-row] {
-        background-color: #8fc04f;
+        background-color: $primary;
     }
 
     th {
-        color: #ffffff;
+        color:  $white;
         font-size: 14px;
         text-align: center !important;
     }

@@ -1,3 +1,4 @@
+@import '_variables';
 :host {
     width: 100%;
 }
@@ -7,14 +8,14 @@
 
     .th-doc {
         font-size  : 25px;
-        color      : #000000;
+        color      : $black;
         font-weight: 500;
     }
 }
 
 .tb-doc-cont{
     min-height: 866px;
-    background-color: #ffffff;
+    background-color: $white;
 }
 
 .cont-doc-row {
@@ -50,8 +51,8 @@
 }
 
 .btn-edit-doc{
-    background-color: #58babb;
-    color: #ffffff;
+    background-color: $tamarama;
+    color: $white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
