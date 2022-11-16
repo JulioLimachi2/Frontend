@@ -12,7 +12,7 @@ export class DocumentThreeComponent implements OnInit, OnChanges {
   @Input() newData;
   @Input() editData;
   @Output() onEdit: EventEmitter<any> = new EventEmitter();
-  displayedColumns: string[] = ['code','name','date','responsible','seedoc','actions'];
+  displayedColumns: string[] = ['documentName','numberResolution','date','actions'];
   dataSource = new MatTableDataSource();
 
   constructor(public dialog: MatDialog) { }
@@ -29,11 +29,10 @@ export class DocumentThreeComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.dataSource.data = [
       {
-        code: 'NTP-ISOIEC 27003-2014',
-        name: 'Técnicas de seguridad. Sistemas de gestión de seguridad de la información. Requisitos',
-        date: 'Thu Nov 20 2014 16:42:49 GMT-0500 (hora estándar de Perú)',
-        responsible: 'Coordinación Generales del Sistema Integrado de Gestión',
-        seedoc: true
+        id:'NTP-ISOIEC-3',
+        documentName: 'Presupuesto inicial de apertura año fiscal 2022',
+        numberResolution: 'Resolución N° 210-2021 - SUNARP/SN',
+        date : 'Wed Dec 29 2021 12:29:32 GMT-0500 (hora estándar de Perú)'
       }
     ]
   }
@@ -48,7 +47,7 @@ export class DocumentThreeComponent implements OnInit, OnChanges {
   }
 
   refreshDocument(){
-    const indexdoc = this.dataSource.data.findIndex((x: any) => x.code === this.editData.data.code);
+    const indexdoc = this.dataSource.data.findIndex((x: any) => x.id === this.editData.data.id);
     if(this.editData.changeId){
       this.dataSource.data.splice(indexdoc,1);
     }else{

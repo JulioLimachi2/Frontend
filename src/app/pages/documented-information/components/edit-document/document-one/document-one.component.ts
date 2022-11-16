@@ -12,7 +12,7 @@ export class DocumentOneComponent implements OnInit, OnChanges {
   @Input() newData;
   @Input() editData;
   @Output() onEdit: EventEmitter<any> = new EventEmitter();
-  displayedColumns: string[] = ['code','name','date','responsible','seedoc','actions'];
+  displayedColumns: string[] = ['documentName','code','version','resolution','dateApproval','applicableSystems','actions'];
   dataSource = new MatTableDataSource();
 
   constructor(public dialog: MatDialog) { }
@@ -28,11 +28,13 @@ export class DocumentOneComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.dataSource.data = [
       {
-        code: 'NTP-ISOIEC 27001-2014',
-        name: 'Técnicas de seguridad. Sistemas de gestión de seguridad de la información. Requisitos',
-        date: 'Thu Nov 20 2014 16:42:49 GMT-0500 (hora estándar de Perú)',
-        responsible: 'Coordinación Generales del Sistema Integrado de Gestión',
-        seedoc: true
+        id:'NTP-ISOIEC-1',
+        documentName: 'PROCEDIMIENTO DE EVALUACIÓN DE LA IDENTIFICACIÓN VISUAL DE LAS OFICINAS',
+        code: 'PR-001-UCII-ZRIX',
+        version: '3',
+        resolution: 'RES. JEF. N°509-2022-SUNARP-ZRN°IX/JEF',
+        dateApproval: '01/08/2022',
+        applicableSystems : 'SGC SGAS'
       }
     ]
   }
@@ -47,7 +49,9 @@ export class DocumentOneComponent implements OnInit, OnChanges {
   }
 
   refreshDocument(){
-    const indexdoc = this.dataSource.data.findIndex((x: any) => x.code === this.editData.data.code);
+    console.log('this.editData',this.editData);
+    const indexdoc = this.dataSource.data.findIndex((x: any) => x.id === this.editData.data.id);
+    console.log('indexdoc',indexdoc);
     if(this.editData.changeId){
       this.dataSource.data.splice(indexdoc,1);
     }else{

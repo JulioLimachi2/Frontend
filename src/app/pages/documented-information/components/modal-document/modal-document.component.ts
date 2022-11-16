@@ -13,21 +13,27 @@ export class ModalDocumentComponent implements OnInit {
   documents = [
     {
       id: 1,
-      name: "Documento 1"
+      name: "Documentos Generales y Específicos"
     },
     {
       id: 2,
-      name: "Documento 2"
+      name: " Documentos Internos "
     },
     {
       id: 3,
-      name: "Documento 3"
+      name: "Documentos Externos"
     }
   ];
 
-  documentSelected: number;
+  documentSelected = 1;
 
   formDocument: FormGroup;
+  dataGeneralDoc;
+  dataInternalDoc;
+  dataExternalDoc;
+  changeTypeDoc: boolean = false
+  currentTab: number;
+  currentData;
 
   constructor(private builder: FormBuilder,
     public dialogRef: MatDialogRef<ModalDocumentComponent>,
@@ -42,28 +48,38 @@ export class ModalDocumentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.data && this.setEdit(this.data);
+    this.data.dataForm && this.setEdit(this.data);
+    this.currentTab = this.data.tab + 1;
+    this.documentSelected = this.data.tab + 1;
+    this.currentData = this.data.dataForm;
   }
 
-  save() {
-    if (this.data) {
-      this.dialogRef.close({ documentEdit: this.formDocument.value, currentIdDoc: this.data.idDoc, newIdDoc: this.documentSelected });
+  save(dataForm) {
+    if (this.data.dataForm) {
+      this.dialogRef.close({documentEdit:dataForm.document, currentIdDoc:this.currentTab, newIdDoc: this.documentSelected, beforeData:this.currentData });
     } else {
       this.formDocument.controls['code'].setValue(`NTP-ISOIEC-${uniqid()}`);
-      this.dialogRef.close({ document: this.formDocument.value, idDoc: this.documentSelected });
+      this.dialogRef.close({ document: dataForm.document, idDoc: this.documentSelected });
     }
 
   }
 
+  docsChange(){
+    this.changeTypeDoc = true;
+    console.log('this.documentSelected',this.documentSelected);
+  }
+
   setEdit(data) {
-    this.formDocument.patchValue({
-      code: data.document.code,
-      name: data.document.name,
-      date: new Date(data.document.date),
-      responsible: data.document.responsible,
-      seedoc: data.document.seedoc,
-    });
-    this.documentSelected = this.data.idDoc;
+    if((data.tab + 1) === 1){
+       this.dataGeneralDoc = data.dataForm.document;
+    }
+    if((data.tab + 1) === 2){
+      this.dataInternalDoc = data.dataForm.document;
+    }
+    if((data.tab + 1) === 3){
+      this.dataExternalDoc = data.dataForm.document;
+    }
+   
   }
 
   uploadFile(event) {
@@ -72,6 +88,11 @@ export class ModalDocumentComponent implements OnInit {
       let file = event.target.files[0];
       console.log('file', file);
     }
+  }
+
+  getTitleModal(){
+    const document = this.documents.find(x => x.id === this.documentSelected);
+    return document.name
   }
 
 }

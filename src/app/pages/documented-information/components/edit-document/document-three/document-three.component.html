@@ -1,16 +1,16 @@
 <div class="container-responsible-table">
     <table mat-table [dataSource]="dataSource" class="table-standart tbedit-doc">
-        <ng-container matColumnDef="code">
-            <th mat-header-cell *matHeaderCellDef> Código </th>
+        <ng-container matColumnDef="documentName">
+            <th mat-header-cell *matHeaderCellDef> Nombre del documento  </th>
             <td mat-cell *matCellDef="let element;"> 
-               {{element.code}} 
+               {{element.documentName}} 
             </td>
         </ng-container>
 
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Nombre del documento </th>
+        <ng-container matColumnDef="numberResolution">
+            <th mat-header-cell *matHeaderCellDef> N° de Resolución u otro </th>
             <td mat-cell *matCellDef="let element;"> 
-               {{element.name}} 
+               {{element.numberResolution}} 
             </td>
         </ng-container>
 
@@ -18,20 +18,6 @@
             <th mat-header-cell *matHeaderCellDef> Fecha </th>
             <td mat-cell *matCellDef="let element;"> 
                 {{element.date | date : 'dd/MM/yyyy'}} 
-            </td>
-        </ng-container>
-
-        <ng-container matColumnDef="responsible">
-            <th mat-header-cell *matHeaderCellDef> Responsable </th>
-            <td mat-cell *matCellDef="let element;"> 
-               {{element.responsible}} 
-            </td>
-        </ng-container>
-
-        <ng-container matColumnDef="seedoc">
-            <th mat-header-cell *matHeaderCellDef> Ver documento </th>
-            <td mat-cell *matCellDef="let element;"> 
-               <div class="link-download">DESCARGAR</div>
             </td>
         </ng-container>
 

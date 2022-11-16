@@ -11,6 +11,9 @@ import { DocumentTwoComponent } from './components/edit-document/document-two/do
 import { DocumentThreeComponent } from './components/edit-document/document-three/document-three.component';
 import { ModalDocumentComponent } from './components/modal-document/modal-document.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GeneralDocumentsComponent } from './components/modal-document/general-documents/general-documents.component';
+import { InternalDocumentsComponent } from './components/modal-document/internal-documents/internal-documents.component';
+import { ExternalDocumentsComponent } from './components/modal-document/external-documents/external-documents.component';
 
 
 
@@ -23,7 +26,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DocumentOneComponent,
     DocumentTwoComponent,
     DocumentThreeComponent,
-    ModalDocumentComponent
+    ModalDocumentComponent,
+    GeneralDocumentsComponent,
+    InternalDocumentsComponent,
+    ExternalDocumentsComponent
   ],
   imports: [
     CommonModule,

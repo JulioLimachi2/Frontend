@@ -5,13 +5,16 @@
 </div>
 
 <mat-tab-group class="mat-tab-sunarp" [(selectedIndex)]="indexTab">
-    <mat-tab label="Documento 1">
+    <mat-tab label="Documentos Generales y Específicos ">
       <app-document-one [newData]="dataDoc1" (onEdit)="ModalDoc($event)" [editData]="dataEditDoc1"></app-document-one>
     </mat-tab>
-    <mat-tab label="Documento 2">
+    <mat-tab label=" Documentos Internos">
       <app-document-two [newData]="dataDoc2" (onEdit)="ModalDoc($event)" [editData]="dataEditDoc2"></app-document-two>
     </mat-tab>
-    <mat-tab label="Documento 3">
+    <mat-tab label="Documentos Externos">
       <app-document-three [newData]="dataDoc3" (onEdit)="ModalDoc($event)" [editData]="dataEditDoc3"></app-document-three>
+    </mat-tab>
+    <mat-tab label="Actas">
+      
     </mat-tab>
 </mat-tab-group>

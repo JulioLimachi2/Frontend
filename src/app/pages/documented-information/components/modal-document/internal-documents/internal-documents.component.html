@@ -1,0 +1,24 @@
+<form [formGroup]="formInternalDocument" class="form-standart frm-modal-document" mat-dialog-content>
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre de Documento</mat-label>
+        <input matInput placeholder="Nombre de Documento" formControlName="documentName">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>N° de Resolución u otro</mat-label>
+        <input matInput placeholder="Codigo" formControlName="numberResolution">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fecha </mat-label>
+        <input matInput [matDatepicker]="pickerDate" formControlName="date" readonly>
+        <mat-datepicker-toggle matSuffix [for]="pickerDate"></mat-datepicker-toggle>
+        <mat-datepicker #pickerDate></mat-datepicker>
+    </mat-form-field>
+
+</form>
+
+<div class="container-btn-save" mat-dialog-actions>
+    <button (click)="save()" type="button" [disabled]="!formInternalDocument.valid">Guardar</button>
+    <button type="button" mat-dialog-close>Cerrar</button>
+</div>

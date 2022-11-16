@@ -1,0 +1,39 @@
+<form [formGroup]="formGeneralDocument" class="form-standart frm-modal-document" mat-dialog-content>
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre de Documento</mat-label>
+        <input matInput placeholder="Nombre de Documento" formControlName="documentName">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Codigo" formControlName="code">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Versión</mat-label>
+        <input matInput placeholder="Versión" formControlName="version">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Resolución con que se aprueba</mat-label>
+        <input matInput placeholder="Resolución con que se aprueba" formControlName="resolution">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fecha de aprobación</mat-label>
+        <input matInput [matDatepicker]="pickerDateApproval" formControlName="dateApproval" readonly>
+        <mat-datepicker-toggle matSuffix [for]="pickerDateApproval"></mat-datepicker-toggle>
+        <mat-datepicker #pickerDateApproval></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Sistemas Aplicables</mat-label>
+        <input matInput placeholder="Sistemas Aplicables" formControlName="applicableSystems">
+    </mat-form-field>
+
+</form>
+
+<div class="container-btn-save" mat-dialog-actions>
+    <button (click)="save()" type="button" [disabled]="!formGeneralDocument.valid">Guardar</button>
+    <button type="button" mat-dialog-close>Cerrar</button>
+</div>

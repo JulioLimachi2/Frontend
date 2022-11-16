@@ -58,7 +58,7 @@ export class EditDocumentComponent implements OnInit {
   ModalDoc(datadoc?) {
     const dialogRef = this.dialog.open(ModalDocumentComponent, {
       width: '38%',
-      data: datadoc
+      data: {dataForm:datadoc, tab: this.indexTab}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -69,9 +69,9 @@ export class EditDocumentComponent implements OnInit {
             result.currentIdDoc === 2 && (this.dataEditDoc2 = { data: result.documentEdit, changeId: false });
             result.currentIdDoc === 3 && (this.dataEditDoc3 = { data: result.documentEdit, changeId: false });
           } else {
-            result.currentIdDoc === 1 && (this.dataEditDoc1 = { data: result.documentEdit, changeId: true });
-            result.currentIdDoc === 2 && (this.dataEditDoc2 = { data: result.documentEdit, changeId: true });
-            result.currentIdDoc === 3 && (this.dataEditDoc3 = { data: result.documentEdit, changeId: true });
+            result.currentIdDoc === 1 && (this.dataEditDoc1 = { data: result.beforeData.document, changeId: true });
+            result.currentIdDoc === 2 && (this.dataEditDoc2 = { data: result.beforeData.document, changeId: true });
+            result.currentIdDoc === 3 && (this.dataEditDoc3 = { data: result.beforeData.document, changeId: true });
 
             result.newIdDoc === 1 && (this.dataDoc1 = result.documentEdit);
             result.newIdDoc === 2 && (this.dataDoc2 = result.documentEdit);

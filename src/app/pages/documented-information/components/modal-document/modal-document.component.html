@@ -1,4 +1,26 @@
-<div class="container-title">Documento</div>
+<div class="container-title">{{getTitleModal()}}</div>
+<mat-form-field appearance="outline"class="mff-typedoc">
+    <mat-label>Tipo de Documento</mat-label>
+    <mat-select [(ngModel)]="documentSelected" (ngModelChange)="docsChange()">
+        <mat-option *ngFor="let document of documents" [value]="document.id">{{document.name}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+
+<app-general-documents *ngIf="documentSelected === 1" 
+                       [dataGeneralDoc]="dataGeneralDoc"
+                       (onSave)="save($event)"
+                       [changeTypeDoc]="changeTypeDoc">
+</app-general-documents>
+<app-internal-documents *ngIf="documentSelected === 2" 
+                        [dataInternalDoc]="dataInternalDoc"
+                        (onSave)="save($event)">
+</app-internal-documents>
+<app-external-documents *ngIf="documentSelected === 3" 
+                        [dataExternalDoc]="dataExternalDoc"
+                        (onSave)="save($event)">
+</app-external-documents>
+<!-- <div class="container-title">Documento</div>
 <form [formGroup]="formDocument" class="form-standart frm-modal-document" mat-dialog-content>
 
     <mat-form-field appearance="outline">
@@ -39,4 +61,4 @@
 <div class="container-btn-save" mat-dialog-actions>
     <button (click)="save()" type="button" [disabled]="!formDocument.valid">Guardar</button>
     <button type="button" mat-dialog-close>Cerrar</button>
-</div>
+</div> -->
