@@ -1,26 +1,34 @@
 <div class="toolbar">
     <div class="color-toolbar">
-        <div class="title-toolbar" (click)="goInicio()">SISTEMA INTEGRADO DE GESTIÓN</div>
+        <div class="title-toolbar">
+            <div class="lg-menu"><img src="assets/images/menu.png" alt="menu-icon"></div>
+            <div class="content-title">
+                <img src="assets/images/Sunarp-Logo.png" alt="logo sunarp" (click)="goInicio()">
+                <div (click)="goInicio()">SISTEMA INTEGRADO DE GESTIÓN</div>
+            </div>
+
+        </div>
         <div class="cont-log" *ngIf="!userLog">
             <button (click)="openLogin()">Login</button>
         </div>
         <div class="cont-init-session" *ngIf="userLog">
             <div class="cont-user-log" (click)="showSubmenuLog = true">
+                <img src="assets/images/user.png" alt="icono usuario">
                 <div class="cont-info">
-                    <div>Usuario:</div>
-                    <div>{{userLog.user}}</div>
+                    <div>
+                        {{userLog.user}}
+                    </div>
+                    <div>
+                        {{userLog.roles}}
+                    </div>
                 </div>
-                <div class="cont-info">
-                    <div>Rol:</div>
-                    <div>{{userLog.roles}}</div>
-                </div>
+
                 <!-- <div class="sub-options-log" *ngIf="showSubmenuLog" (click)="logout()">
                     <div>Cerrar Sesión</div>
                 </div> -->
             </div>
             <div (click)="logout()">
-                <mat-icon matTooltip="Cerrar Sesión"
-                aria-label="Boton para Cerrar Sesión">logout</mat-icon>
+                <mat-icon matTooltip="Cerrar Sesión" aria-label="Boton para Cerrar Sesión">logout</mat-icon>
             </div>
         </div>
 

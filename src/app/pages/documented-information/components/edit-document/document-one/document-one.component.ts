@@ -49,9 +49,7 @@ export class DocumentOneComponent implements OnInit, OnChanges {
   }
 
   refreshDocument(){
-    console.log('this.editData',this.editData);
     const indexdoc = this.dataSource.data.findIndex((x: any) => x.id === this.editData.data.id);
-    console.log('indexdoc',indexdoc);
     if(this.editData.changeId){
       this.dataSource.data.splice(indexdoc,1);
     }else{
