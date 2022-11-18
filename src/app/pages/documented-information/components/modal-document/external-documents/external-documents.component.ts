@@ -20,6 +20,7 @@ export class ExternalDocumentsComponent implements OnInit {
       documentName: [,Validators.required],
       numberResolution: [,Validators.required],
       date:[,Validators.required],
+      archive: []
     });
    }
 
@@ -41,8 +42,18 @@ export class ExternalDocumentsComponent implements OnInit {
       id: this.dataExternalDoc.id,
       documentName: this.dataExternalDoc.documentName,
       numberResolution: this.dataExternalDoc.numberResolution,
-      date : new Date(this.dataExternalDoc.date)
+      date : new Date(this.dataExternalDoc.date),
+      archive : this.dataExternalDoc.archive,
     });
+  }
+
+  uploadFile(event) {
+    if (event) {
+      let reader = new FileReader();
+      let file = event.target.files[0];
+      this.formExternalDocument.controls['archive'].setValue(file);
+      console.log('file', file);
+    }
   }
   
 

@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GeneralDocumentsComponent } from './components/modal-document/general-documents/general-documents.component';
 import { InternalDocumentsComponent } from './components/modal-document/internal-documents/internal-documents.component';
 import { ExternalDocumentsComponent } from './components/modal-document/external-documents/external-documents.component';
+import { ActasComponent } from './components/edit-document/actas/actas.component';
+import { ActasFormComponent } from './components/modal-document/actas-form/actas-form.component';
 
 
 
@@ -29,7 +31,9 @@ import { ExternalDocumentsComponent } from './components/modal-document/external
     ModalDocumentComponent,
     GeneralDocumentsComponent,
     InternalDocumentsComponent,
-    ExternalDocumentsComponent
+    ExternalDocumentsComponent,
+    ActasComponent,
+    ActasFormComponent
   ],
   imports: [
     CommonModule,

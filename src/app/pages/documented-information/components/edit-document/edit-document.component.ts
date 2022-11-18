@@ -19,9 +19,11 @@ export class EditDocumentComponent implements OnInit {
   dataDoc1;
   dataDoc2;
   dataDoc3;
+  dataActa;
   dataEditDoc1;
   dataEditDoc2;
   dataEditDoc3;
+  dataEditActa;
 
   constructor(public dialog: MatDialog,
     private _location: Location,
@@ -58,6 +60,7 @@ export class EditDocumentComponent implements OnInit {
   ModalDoc(datadoc?) {
     const dialogRef = this.dialog.open(ModalDocumentComponent, {
       width: '38%',
+      height: '638px',
       data: {dataForm:datadoc, tab: this.indexTab}
     });
 
@@ -68,14 +71,17 @@ export class EditDocumentComponent implements OnInit {
             result.currentIdDoc === 1 && (this.dataEditDoc1 = { data: result.documentEdit, changeId: false });
             result.currentIdDoc === 2 && (this.dataEditDoc2 = { data: result.documentEdit, changeId: false });
             result.currentIdDoc === 3 && (this.dataEditDoc3 = { data: result.documentEdit, changeId: false });
+            result.currentIdDoc === 4 && (this.dataEditActa = { data: result.documentEdit, changeId: false });
           } else {
             result.currentIdDoc === 1 && (this.dataEditDoc1 = { data: result.beforeData.document, changeId: true });
             result.currentIdDoc === 2 && (this.dataEditDoc2 = { data: result.beforeData.document, changeId: true });
             result.currentIdDoc === 3 && (this.dataEditDoc3 = { data: result.beforeData.document, changeId: true });
+            result.currentIdDoc === 4 && (this.dataEditActa = { data: result.beforeData.document, changeId: true });
 
             result.newIdDoc === 1 && (this.dataDoc1 = result.documentEdit);
             result.newIdDoc === 2 && (this.dataDoc2 = result.documentEdit);
             result.newIdDoc === 3 && (this.dataDoc3 = result.documentEdit);
+            result.newIdDoc === 4 && (this.dataActa = result.documentEdit);
             this.indexTab = result.newIdDoc - 1;
           }
         }
@@ -84,6 +90,7 @@ export class EditDocumentComponent implements OnInit {
           result.idDoc === 1 && (this.dataDoc1 = result.document);
           result.idDoc === 2 && (this.dataDoc2 = result.document);
           result.idDoc === 3 && (this.dataDoc3 = result.document);
+          result.idDoc === 4 && (this.dataActa = result.document);
         }
 
       }

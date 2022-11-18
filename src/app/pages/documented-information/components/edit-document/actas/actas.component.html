@@ -1,27 +1,27 @@
 <div class="container-responsible-table">
     <table mat-table [dataSource]="dataSource" class="table-standart tbedit-doc">
-        <ng-container matColumnDef="documentName">
-            <th mat-header-cell *matHeaderCellDef> Nombre del documento  </th>
+        <ng-container matColumnDef="managementSystem">
+            <th mat-header-cell *matHeaderCellDef> Sistema de Gestión aplicable  </th>
             <td mat-cell *matCellDef="let element;"> 
-               {{element.documentName}} 
+               {{element.managementSystem}} 
             </td>
         </ng-container>
 
-        <ng-container matColumnDef="numberResolution">
-            <th mat-header-cell *matHeaderCellDef> N° de Resolución u otro </th>
+        <ng-container matColumnDef="typeMeeting">
+            <th mat-header-cell *matHeaderCellDef> Tipo de Reunión </th>
             <td mat-cell *matCellDef="let element;"> 
-               {{element.numberResolution}} 
+               {{element.typeMeeting}} 
             </td>
         </ng-container>
 
-        <ng-container matColumnDef="date">
-            <th mat-header-cell *matHeaderCellDef> Fecha </th>
+        <ng-container matColumnDef="actaNumber">
+            <th mat-header-cell *matHeaderCellDef> N° de Acta </th>
             <td mat-cell *matCellDef="let element;"> 
-                {{element.date | date : 'dd/MM/yyyy'}} 
+                {{element.actaNumber}} 
             </td>
         </ng-container>
 
-        <ng-container matColumnDef="archive">
+        <ng-container matColumnDef="seeDoc">
             <th mat-header-cell *matHeaderCellDef> Ver documento </th>
             <td mat-cell *matCellDef="let element;"> 
                 <button mat-icon-button aria-label="boton descargar archivo"

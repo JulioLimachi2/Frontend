@@ -20,6 +20,7 @@ export class InternalDocumentsComponent implements OnInit {
       documentName: [, Validators.required],
       numberResolution: [, Validators.required],
       date: [, Validators.required],
+      archive: []
     });
   }
 
@@ -42,7 +43,17 @@ export class InternalDocumentsComponent implements OnInit {
       id: this.dataInternalDoc.id,
       documentName: this.dataInternalDoc.documentName,
       numberResolution: this.dataInternalDoc.numberResolution,
-      date : new Date(this.dataInternalDoc.date)
+      date : new Date(this.dataInternalDoc.date),
+      archive: this.dataInternalDoc.archive
     });
+  }
+
+  uploadFile(event) {
+    if (event) {
+      let reader = new FileReader();
+      let file = event.target.files[0];
+      this.formInternalDocument.controls['archive'].setValue(file);
+      console.log('file', file);
+    }
   }
 }

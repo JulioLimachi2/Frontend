@@ -22,6 +22,10 @@ export class ModalDocumentComponent implements OnInit {
     {
       id: 3,
       name: "Documentos Externos"
+    },
+    {
+      id: 4,
+      name: "Actas"
     }
   ];
 
@@ -31,6 +35,7 @@ export class ModalDocumentComponent implements OnInit {
   dataGeneralDoc;
   dataInternalDoc;
   dataExternalDoc;
+  dataActas;
   changeTypeDoc: boolean = false
   currentTab: number;
   currentData;
@@ -79,16 +84,12 @@ export class ModalDocumentComponent implements OnInit {
     if((data.tab + 1) === 3){
       this.dataExternalDoc = data.dataForm.document;
     }
+    if((data.tab + 1) === 4){
+      this.dataActas = data.dataForm.document;
+    }
    
   }
 
-  uploadFile(event) {
-    if (event) {
-      let reader = new FileReader();
-      let file = event.target.files[0];
-      console.log('file', file);
-    }
-  }
 
   getTitleModal(){
     const document = this.documents.find(x => x.id === this.documentSelected);

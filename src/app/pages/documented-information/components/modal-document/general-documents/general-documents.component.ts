@@ -23,7 +23,8 @@ export class GeneralDocumentsComponent implements OnInit {
       version:[,Validators.required],
       resolution:[,Validators.required],
       dateApproval: [,Validators.required],
-      applicableSystems : [,Validators.required]
+      applicableSystems : [,Validators.required],
+      archive: []
     });
   }
 
@@ -50,7 +51,17 @@ export class GeneralDocumentsComponent implements OnInit {
       resolution: this.dataGeneralDoc.resolution,
       dateApproval: new Date(this.dataGeneralDoc.dateApproval),
       applicableSystems : this.dataGeneralDoc.applicableSystems,
+      archive: this.dataGeneralDoc.archive
     });
+  }
+
+  uploadFile(event) {
+    if (event) {
+      let reader = new FileReader();
+      let file = event.target.files[0];
+      this.formGeneralDocument.controls['archive'].setValue(file);
+      console.log('file', file);
+    }
   }
 
 }

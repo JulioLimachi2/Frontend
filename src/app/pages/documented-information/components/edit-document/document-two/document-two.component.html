@@ -21,6 +21,18 @@
             </td>
         </ng-container>
 
+        <ng-container matColumnDef="archive">
+            <th mat-header-cell *matHeaderCellDef> Ver documento </th>
+            <td mat-cell *matCellDef="let element;"> 
+                <button mat-icon-button aria-label="boton descargar archivo"
+                        (click)="downloadArchive()"
+                        *ngIf="element.archive"
+                        style="color: #ec141c;">
+                    <mat-icon>picture_as_pdf</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef> Acciones </th>
             <td mat-cell *matCellDef="let element;"> 

@@ -1,23 +1,23 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-document-one',
-  templateUrl: './document-one.component.html',
-  styleUrls: ['./document-one.component.scss']
+  selector: 'app-actas',
+  templateUrl: './actas.component.html',
+  styleUrls: ['./actas.component.scss']
 })
-export class DocumentOneComponent implements OnInit, OnChanges {
+export class ActasComponent implements OnInit, OnChanges {
 
   @Input() newData;
   @Input() editData;
   @Output() onEdit: EventEmitter<any> = new EventEmitter();
-  displayedColumns: string[] = ['documentName','code','version','resolution','dateApproval','applicableSystems','archive','actions'];
+  displayedColumns: string[] = ['managementSystem','typeMeeting','actaNumber','seeDoc','actions'];
   dataSource = new MatTableDataSource();
 
-  constructor(public dialog: MatDialog) { }
+  constructor() { }
+
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes.newData){
+     if(changes.newData){
       this.setNewData(this.newData);
     }
     if(changes.editData){
@@ -28,13 +28,10 @@ export class DocumentOneComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.dataSource.data = [
       {
-        id:'NTP-ISOIEC-1',
-        documentName: 'PROCEDIMIENTO DE EVALUACIÓN DE LA IDENTIFICACIÓN VISUAL DE LAS OFICINAS',
-        code: 'PR-001-UCII-ZRIX',
-        version: '3',
-        resolution: 'RES. JEF. N°509-2022-SUNARP-ZRN°IX/JEF',
-        dateApproval: '01/08/2022',
-        applicableSystems : 'SGC SGAS',
+        id: 'act-01',
+        managementSystem:'SGC-SGAS',
+        typeMeeting: 'Cómite de sig',
+        actaNumber: '1',
         archive: []
       }
     ]
@@ -49,6 +46,10 @@ export class DocumentOneComponent implements OnInit, OnChanges {
     this.onEdit.emit({document: document});
   }
 
+  downloadArchive(){
+
+  }
+
   refreshDocument(){
     const indexdoc = this.dataSource.data.findIndex((x: any) => x.id === this.editData.data.id);
     if(this.editData.changeId){
@@ -57,10 +58,6 @@ export class DocumentOneComponent implements OnInit, OnChanges {
       this.dataSource.data[indexdoc] = this.editData.data;
     }
     this.dataSource = new MatTableDataSource(this.dataSource.data);
-  }
-
-  downloadArchive(){
-    
   }
 
 }

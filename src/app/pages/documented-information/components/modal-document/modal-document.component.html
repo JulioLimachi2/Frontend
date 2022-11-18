@@ -20,6 +20,10 @@
                         [dataExternalDoc]="dataExternalDoc"
                         (onSave)="save($event)">
 </app-external-documents>
+<app-actas-form *ngIf="documentSelected === 4"
+                [dataActas]="dataActas"
+                (onSave)="save($event)">
+</app-actas-form>
 <!-- <div class="container-title">Documento</div>
 <form [formGroup]="formDocument" class="form-standart frm-modal-document" mat-dialog-content>
 

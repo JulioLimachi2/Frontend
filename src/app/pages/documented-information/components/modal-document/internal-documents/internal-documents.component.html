@@ -16,6 +16,15 @@
         <mat-datepicker #pickerDate></mat-datepicker>
     </mat-form-field>
 
+    <div class="cont-download" (click)="inptDownload.click()">
+        <div class="content">
+            <mat-icon>file_download</mat-icon>
+            <div>Subir Archivo</div>
+        </div>
+    </div>
+
+    <input type="file" #inptDownload style="display: none" (change)="uploadFile($event)">
+
 </form>
 
 <div class="container-btn-save" mat-dialog-actions>

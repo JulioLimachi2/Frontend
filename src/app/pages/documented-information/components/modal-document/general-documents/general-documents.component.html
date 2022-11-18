@@ -1,4 +1,4 @@
-<form [formGroup]="formGeneralDocument" class="form-standart frm-modal-document" mat-dialog-content>
+<form [formGroup]="formGeneralDocument" class="form-standart frm-modal-document">
     <mat-form-field appearance="outline">
         <mat-label>Nombre de Documento</mat-label>
         <input matInput placeholder="Nombre de Documento" formControlName="documentName">
@@ -31,9 +31,18 @@
         <input matInput placeholder="Sistemas Aplicables" formControlName="applicableSystems">
     </mat-form-field>
 
+    <div class="cont-download" (click)="inptDownload.click()">
+        <div class="content">
+            <mat-icon>file_download</mat-icon>
+            <div>Subir Archivo</div>
+        </div>
+    </div>
+
+    <input type="file" #inptDownload style="display: none" (change)="uploadFile($event)">
+
 </form>
 
-<div class="container-btn-save" mat-dialog-actions>
+<div class="container-btn-save">
     <button (click)="save()" type="button" [disabled]="!formGeneralDocument.valid">Guardar</button>
     <button type="button" mat-dialog-close>Cerrar</button>
 </div>
