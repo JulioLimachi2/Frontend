@@ -4,17 +4,17 @@
 </div>
 
 <div class="body-mut">
-  <div class="frame" *ngFor="let doc of docs">
-    <input type="text" class="inpt-frame" [value]="doc.name" [readonly]="true">
+  <div class="frame" *ngFor="let tree of trees">
+    <input type="text" class="inpt-frame" [value]="tree.name" [readonly]="true">
     <div class="cont-icons">
-       <mat-icon>play_arrow</mat-icon>
+       <mat-icon (click)="goSubnivel(tree)">play_arrow</mat-icon>
        <mat-icon>pan_tool_alt</mat-icon>
        <mat-icon>delete</mat-icon>
     </div>
   </div>
 </div>
 
-<div class="cont-btn-mut">
+<div class="container-btn-save">
   <button mat-dialog-close>Salir</button>
   <button>Registrar</button>
 </div>

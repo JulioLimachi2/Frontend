@@ -61,35 +61,3 @@
         }
     }
 }
-
-.cont-btn-mut {
-    width          : 100%;
-    display        : flex;
-    flex-wrap      : wrap;
-    justify-content: center;
-    padding-bottom : 2%;
-
-    button {
-        width          : 101px;
-        height         : 48px;
-        box-shadow     : 0 1px 2px rgb(15 86 179 / 20%), 0 2px 4px rgb(15 86 179 / 20%);
-        border-radius  : 8px;
-        color          : #fafafc;
-        display        : flex;
-        flex-direction : row;
-        align-items    : center;
-        border         : none;
-        outline        : none;
-        justify-content: center;
-        margin         : 2%;
-        cursor         : pointer;
-    }
-
-    button:first-child {
-        background-color: #ff3b3b;
-    }
-
-    button:last-child {
-        background-color: #0063f7;
-    }
-}

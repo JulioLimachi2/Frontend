@@ -96,7 +96,8 @@ export class LayoutComponent implements OnInit {
   /*metodo para mostrar modal login y loguearse*/
   openLogin() {
     const dialogRef = this.dialog.open(ModalLoginComponent, {
-      width: '676px',
+      width: '476px',
+      height: '500px',
       panelClass: 'mdl-login'
     });
 

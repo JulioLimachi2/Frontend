@@ -2,7 +2,7 @@
     <div class="container-tree">
         <div class="header-mat-tree">
             <div class="cont-sidenav">
-                <img src="assets/images/icon-folder.png" alt="icono folder">
+                <img src="assets/images/ic-folder.png" alt="icono folder">
                 <div>INFORMACIÓN DOCUMENTARIA</div>
             </div>
         </div>
@@ -10,9 +10,11 @@
 
             <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle
                 [ngClass]="{'active-tree': idTreeNode === node.id}" class="tree-hidden-children">
-
-                <div (click)="goToDocument(node)" class="op-tree-node" [ngStyle]="{'margin-left': node?.children?.length ? '0' : '40px'}">
-                    <!-- <div><img src="assets/images/ic-pdf-img.png" alt="icon-pdf"></div> -->
+                <button mat-icon-button matTreeNodeToggle>
+                    <img [src]="'assets/images/row-right.png'" alt="">
+                </button>
+                
+                <div (click)="goToDocument(node)" class="op-tree-node">
                     {{node.name}}
                 </div>
 

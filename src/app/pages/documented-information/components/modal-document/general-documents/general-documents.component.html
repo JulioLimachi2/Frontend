@@ -4,15 +4,17 @@
         <input matInput placeholder="Nombre de Documento" formControlName="documentName">
     </mat-form-field>
 
-    <mat-form-field appearance="outline">
-        <mat-label>Código</mat-label>
-        <input matInput placeholder="Codigo" formControlName="code">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Versión</mat-label>
-        <input matInput placeholder="Versión" formControlName="version">
-    </mat-form-field>
+    <div class="colum-code-ver">
+        <mat-form-field appearance="outline">
+            <mat-label>Código</mat-label>
+            <input matInput placeholder="Codigo" formControlName="code">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Versión</mat-label>
+            <input matInput placeholder="Versión" formControlName="version">
+        </mat-form-field>
+    </div>
 
     <mat-form-field appearance="outline">
         <mat-label>Resolución con que se aprueba</mat-label>

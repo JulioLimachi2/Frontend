@@ -3,116 +3,170 @@
         "id":1,
         "name":"0. Política del Sistema Integrado de Gestión",
         "docId":"199",
+        "parent": 0,
         "children": []
     },
     {
         "id":2,
         "name":"1. Sistema Integrado de Gestión",
+        "parent": 0,
         "children":[
             {
+                "id":4,
                 "name":"1.1. Sistema de Gestión de la Calidad",
+                "parent": 2,
                 "children":[
                     {
+                        "id": 8,
                         "name":"Alcance",
                         "docId":"200",
+                        "parent": 4,
                         "children": []
                     },
                     {
+                        "id": 9,
                         "name":"Objetivos del SGC",
                         "docId":"201",
+                        "parent": 4,
                         "children": []
                     },
                     {
+                        "id": 10,
                         "name":"Registro de Planificación y Seguimiento del Sistema de Gestión de la Calidad",
                         "docId":"202",
+                        "parent": 4,
                         "children": []
                     },
                     {
+                        "id": 11,
                         "name":"Información  Documentada del Sistema de Gestión de Calidad",
+                        "parent": 4,
                         "children": [
                             {
+                                "id": 24,
                                 "name":"Información Documentada General",
+                                "parent": 11,
                                 "docId":"203"
                             },
                             {
+                                "id": 25,
                                 "name":"Información Documentada Específica",
+                                "parent": 11,
                                 "children": [
                                     {
+                                        "id": 32,
                                         "name":"Procesos de Gestión",
+                                        "parent": 25,
                                         "children": [
                                             {
+                                                "id": 44,
                                                 "name":"Gestión de Planeamiento y Presupuesto",
+                                                "parent": 32,
                                                 "children": [
                                                     {
+                                                        "id": 79,
                                                         "name":"Procedimientos",
+                                                        "parent": 44,
                                                         "docId":"204"
                                                     },
                                                     {
+                                                        "id": 80,
                                                         "name":"Instructivos",
+                                                        "parent": 44,
                                                         "docId":"205"
                                                     },
                                                     {
+                                                        "id": 81,
                                                         "name":"Fichas Técnicas de Procesos/Procedimientos",
+                                                        "parent": 44,
                                                         "docId":"206"
                                                     },
                                                     {
+                                                        "id": 82,
                                                         "name":"Formatos",
+                                                        "parent": 44,
                                                         "docId":"207"
                                                     },
                                                     {
+                                                        "id": 83,
                                                         "name":"Otros",
+                                                        "parent": 44,
                                                         "docId":"208"
                                                     }
                                                 ]
                                             },
                                             {
+                                                "id": 45,
                                                 "name":"Gestión de Comunicaciones e Imagen Institucional",
+                                                "parent": 32,
                                                 "docId":"209"
                                             },
                                             {
+                                                "id": 46,
                                                 "name":"Gestión de la Modernización",
+                                                "parent": 32,
                                                 "docId":"210"
                                             },
                                             {
+                                                "id": 47,
                                                 "name":"Gestión de Inversiones",
+                                                "parent": 32,
                                                 "docId":"211"
                                             }
                                         ]
                                     },
                                     {
+                                        "id": 33,
                                         "name":"Procesos Principales",
+                                        "parent": 25,
                                         "children": [
                                             {
+                                                "id": 48,
                                                 "name":"Publicidad Registral",
+                                                "parent": 33,
                                                 "docId":"212"
                                             },
                                             {
+                                                "id": 49,
                                                 "name":"Inscripción Registral",
+                                                "parent": 33,
                                                 "docId":"213"
                                             }
                                         ]
                                     },
                                     {
+                                        "id": 34,
                                         "name":"Procesos de Soporte",
+                                        "parent": 25,
                                         "children": [
                                             {
+                                                "id": 50,
                                                 "name":"Gestión Documental y Atención al Ciudadano",
+                                                "parent": 34,
                                                 "docId":"214"
                                             },
                                             {
+                                                "id": 51,
                                                 "name":"Asesoría Jurídica",
+                                                "parent": 34,
                                                 "docId":"215"
                                             },
                                             {
+                                                "id": 52,
                                                 "name":"Gestión de Tecnologías de la Información",
+                                                "parent": 34,
                                                 "docId":"216"
                                             },
                                             {
+                                                "id": 53,
                                                 "name":"Gestión de los Recursos Humanos",
+                                                "parent": 34,
                                                 "docId":"217"
                                             },
                                             {
+                                                "id": 54,
                                                 "name":"Gestión Logística",
+                                                "parent": 34,
                                                 "docId":"218"
                                             }
                                         ]
@@ -124,106 +178,158 @@
                 ]
             },
             {
+                "id":5,
                 "name":"1.2. Sistema de Gestión Antisoborno",
+                "parent": 2,
                 "children": [
                     {
+                        "id": 12,
                         "name":"Alcance",
+                        "parent": 5,
                         "docId":"219"
                     },
                     {
+                        "id": 13,
                         "name":"Objetivos del SGAS",
+                        "parent": 5,
                         "docId":"220"
                     },
                     {
+                        "id": 14,
                         "name":"Registro de Planificación y Seguimiento del Sistema de Gestión Antisoborno",
+                        "parent": 5,
                         "docId":"221"
                     },
                     {
+                        "id": 15,
                         "name":"Información  Documentada del Sistema de Gestión Antisoborno",
+                        "parent": 5,
                         "children": [
                             {
+                                "id": 26,
                                 "name":"Información Documentada General",
+                                "parent": 15,
                                 "docId":"222"
                             },
                             {
+                                "id": 27,
                                 "name":"Información Documentada Específica",
+                                "parent": 15,
                                 "children": [
                                     {
+                                        "id": 35,
                                         "name":"Procesos de Gestión",
+                                        "parent": 27,
                                         "children": [
                                             {
+                                                "id": 55,
                                                 "name":"Gestión de Planeamiento y Presupuesto",
+                                                "parent": 35,
                                                 "children": [
                                                     {
+                                                        "id": 84,
                                                         "name":"Procedimientos",
+                                                        "parent": 55,
                                                         "docId":"223"
                                                     },
                                                     {
+                                                        "id": 85,
                                                         "name":"Instructivos",
+                                                        "parent": 55,
                                                         "docId":"224"
                                                     },
                                                     {
+                                                        "id": 86,
                                                         "name":"Planes",
+                                                        "parent": 55,
                                                         "docId":"225"
                                                     },
                                                     {
+                                                        "id": 87,
                                                         "name":"Fichas Técnicas de Procesos/Procedimientos",
+                                                        "parent": 55,
                                                         "docId":"226"
                                                     },
                                                     {
+                                                        "id": 88,
                                                         "name":"Formatos",
+                                                        "parent": 55,
                                                         "docId":"227"
                                                     },
                                                     {
+                                                        "id": 89,
                                                         "name":"Otros (Se debe permitir adicionar nuevos términos: Guía, Protocolo, Lineamiento, entre otros que se generen en el futuro)",
+                                                        "parent": 55,
                                                         "docId":"228"
                                                     }
                                                 ]
                                             },
                                             {
+                                                "id": 56,
                                                 "name":"Gestión de Comunicaciones ",
+                                                "parent": 35,
                                                 "docId":"229"
                                             }
                                         ]
                                     },
                                     {
+                                        "id": 36,
                                         "name":"Procesos Principales",
+                                        "parent": 27,
                                         "children": [
                                             {
+                                                "id": 57,
                                                 "name":"Publicidad Registral",
+                                                "parent": 36,
                                                 "docId":"230"
                                             },
                                             {
+                                                "id": 58,
                                                 "name":"Inscripción Registral",
+                                                "parent": 36,
                                                 "docId":"231"
                                             }
                                         ]
                                     },
                                     {
+                                        "id": 37,
                                         "name":"Procesos de Soporte",
+                                        "parent": 27,
                                         "children": [
                                             {
+                                                "id": 59,
                                                 "name":"Gestión Documental y Atención al Ciudadano",
+                                                "parent": 37,
                                                 "docId":"232"
                                             },
                                             {
+                                                "id": 60,
                                                 "name":"Asesoría Jurídica",
+                                                "parent": 37,
                                                 "docId":"233"
                                             },
                                             {
+                                                "id": 61,
                                                 "name":"Gestión de Tecnologías de la Información",
+                                                "parent": 37,
                                                 "docId":"234"
                                             },
                                             {
+                                                "id": 62,
                                                 "name":"Gestión de los Recursos Humanos",
+                                                "parent": 37,
                                                 "docId":"235"
                                             },
                                             {
+                                                "id": 63,
                                                 "name":"Gestión Contable y Financiera",
+                                                "parent": 37,
                                                 "docId":"236"
                                             },
                                             {
+                                                "id": 64,
                                                 "name":"Gestión Logística",
+                                                "parent": 37,
                                                 "docId":"237"
                                             }
                                         ]
@@ -235,95 +341,141 @@
                 ]
             },
             {
+                "id":6,
                 "name":"1.3. Sistema de Gestión de Seguridad de la Información",
                 "autorizathion": true,
+                "parent": 2,
                 "children": [
                     {
+                        "id": 16,
                         "name":"Alcance",
+                        "parent": 6,
                         "docId":"238"
                     },
                     {
+                        "id": 17,
                         "name":"Objetivos del SGSI",
+                        "parent": 6,
                         "docId":"239"
                     },
                     {
+                        "id": 18,
                         "name":"Registro de Planificación y Seguimiento del Sistema de Gestión de Seguridad de la Información",
+                        "parent": 6,
                         "docId":"240"
                     },
                     {
+                        "id": 19,
                         "name":"Información  Documentada del Sistema de Gestión de Seguridad de la Información",
+                        "parent": 6,
                         "children": [
                             {
+                                "id": 28,
                                 "name":"Información Documentada General",
+                                "parent": 19,
                                 "docId":"241"
                             },
                             {
+                                "id": 29,
                                 "name":"Información Documentada Específica",
+                                "parent": 19,
                                 "children": [
                                     {
+                                        "id": 38,
                                         "name":"Procesos de Gestión",
+                                        "parent": 29,
                                         "children": [
                                             {
+                                                "id": 65,
                                                 "name":"Gestión de Comunicaciones e Imagen Institucional",
+                                                "parent": 38,
                                                 "children": [
                                                     {
+                                                        "id": 90,
                                                         "name":"Procedimientos",
+                                                        "parent": 65,
                                                         "docId":"242"
                                                     },
                                                     {
+                                                        "id": 91,
                                                         "name":"Instructivos",
+                                                        "parent": 65,
                                                         "docId":"243"
                                                     },
                                                     {
+                                                        "id": 92,
                                                         "name":"Planes",
+                                                        "parent": 65,
                                                         "docId":"244"
                                                     },
                                                     {
+                                                        "id": 93,
                                                         "name":"Fichas Técnicas de Procesos/Procedimientos",
+                                                        "parent": 65,
                                                         "docId":"245"
                                                     },
                                                     {
+                                                        "id": 94,
                                                         "name":"Formatos",
+                                                        "parent": 65,
                                                         "docId":"246"
                                                     },
                                                     {
+                                                        "id": 95,
                                                         "name":"Otros (Se debe permitir adicionar nuevos términos: Guía, Protocolo, Lineamiento, entre otros que se generen en el futuro)",
+                                                        "parent": 65,
                                                         "docId":"247"
                                                     }
                                                 ]
                                             },
                                             {
+                                                "id": 66,
                                                 "name":"Gestión de la Modernización",
+                                                "parent": 38,
                                                 "docId":"248"
                                             }
                                         ]
                                     },
                                     {
+                                        "id": 39,
                                         "name":"Procesos Principales",
+                                        "parent": 29,
                                         "children": [
                                             {
+                                                "id": 67,
                                                 "name":"Publicidad Registral",
+                                                "parent": 39,
                                                 "docId":"249"
                                             },
                                             {
+                                                "id": 68,
                                                 "name":"Inscripción Registral",
+                                                "parent": 39,
                                                 "docId":"250"
                                             }
                                         ]
                                     },
                                     {
+                                        "id": 40,
                                         "name":"Procesos de Soporte",
+                                        "parent": 29,
                                         "children": [
                                             {
+                                                "id": 69,
                                                 "name":"Gestión de Tecnologías de la Información",
+                                                "parent": 40,
                                                 "docId":"251"
                                             },
                                             {
+                                                "id": 70,
                                                 "name":"Gestión de los Recursos Humanos",
+                                                "parent": 40,
                                                 "docId":"252"
                                             },
                                             {
+                                                "id": 71,
                                                 "name":"Gestión Logística",
+                                                "parent": 40,
                                                 "docId":"253"
                                             }
                                         ]
@@ -335,94 +487,140 @@
                 ]
             },
             {
+                "id":7,
                 "name":"1.4. Sistema de Gestión de Continuidad de Negocio",
+                "parent": 2,
                 "children": [
                     {
+                        "id": 20,
                         "name":"Alcance",
+                        "parent": 7,
                         "docId":"254"
                     },
                     {
+                        "id": 21,
                         "name":"Objetivos del SGCN",
+                        "parent": 7,
                         "docId":"255"
                     },
                     {
+                        "id": 22,
                         "name":"Registro de Planificación y Seguimiento del Sistema de  Gestión de Continuidad de Negocio",
+                        "parent": 7,
                         "docId":"256"
                     },
                     {
+                        "id": 23,
                         "name":"Información  Documentada del Sistema de  Gestión de Continuidad de Negocio",
+                        "parent": 7,
                         "children": [
                             {
+                                "id": 30,
                                 "name":"Información Documentada General",
+                                "parent": 23,
                                 "docId":"257"
                             },
                             {
+                                "id": 31,
                                 "name":"Información Documentada Específica",
+                                "parent": 23,
                                 "children": [
                                     {
+                                        "id": 41,
                                         "name":"Procesos de Gestión",
+                                        "parent": 31,
                                         "children": [
                                             {
+                                                "id": 72,
                                                 "name":"Gestión de Comunicaciones e Imagen Institucional",
+                                                "parent": 41,
                                                 "children": [
                                                     {
+                                                        "id": 96,
                                                         "name":"Procedimientos",
+                                                        "parent": 72,
                                                         "docId":"258"
                                                     },
                                                     {
+                                                        "id": 97,
                                                         "name":"Instructivos",
+                                                        "parent": 72,
                                                         "docId":"259"
                                                     },
                                                     {
+                                                        "id": 98,
                                                         "name":"Planes",
+                                                        "parent": 72,
                                                         "docId":"260"
                                                     },
                                                     {
+                                                        "id": 99,
                                                         "name":"Fichas Técnicas de Procesos/Procedimientos",
+                                                        "parent": 72,
                                                         "docId":"261"
                                                     },
                                                     {
+                                                        "id": 100,
                                                         "name":"Formatos",
+                                                        "parent": 72,
                                                         "docId":"262"
                                                     },
                                                     {
+                                                        "id": 101,
                                                         "name":"Otros (Se debe permitir adicionar nuevos términos: Guía, Protocolo, Lineamiento, entre otros que se generen en el futuro)",
+                                                        "parent": 72,
                                                         "docId":"263"
                                                     }
                                                 ]
                                             },
                                             {
+                                                "id": 73,
                                                 "name":"Gestión de la Modernización",
+                                                "parent": 41,
                                                 "docId":"264"
                                             }
                                         ]
                                     },
                                     {
+                                        "id": 42,
                                         "name":"Procesos Principales",
+                                        "parent": 31,
                                         "children": [
                                             {
+                                                "id": 74,
                                                 "name":"Publicidad Registral",
+                                                "parent": 42,
                                                 "docId":"265"
                                             },
                                             {
+                                                "id": 75,
                                                 "name":"Inscripción Registral",
+                                                "parent": 42,
                                                 "docId":"266"
                                             }
                                         ]
                                     },
                                     {
+                                        "id": 43,
                                         "name":"Procesos de Soporte",
+                                        "parent": 31,
                                         "children": [
                                             {
+                                                "id": 76,
                                                 "name":"Gestión de Tecnologías de la Información y Comunicación",
+                                                "parent": 43,
                                                 "docId":"267"
                                             },
                                             {
+                                                "id": 77,
                                                 "name":"Gestión de los Recursos Humanos",
+                                                "parent": 43,
                                                 "docId":"268"
                                             },
                                             {
+                                                "id": 78,
                                                 "name":"Gestión Logística",
+                                                "parent": 43,
                                                 "docId":"269"
                                             }
                                         ]

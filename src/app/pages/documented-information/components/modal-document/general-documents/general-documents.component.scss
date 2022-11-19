@@ -1,7 +1,22 @@
 .frm-modal-document {
     margin-top: 0;
-    padding: 0;
+    padding   : 0;
     mat-form-field {
         max-width: initial;
+    }
+
+    .colum-code-ver {
+        display     : flex;
+        flex-wrap: wrap;
+        width       : 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .frm-modal-document {    
+        .colum-code-ver {
+            flex-wrap: initial;
+            gap         : 10px;
+        }
     }
 }
