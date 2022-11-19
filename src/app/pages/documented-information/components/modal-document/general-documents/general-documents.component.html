@@ -16,17 +16,19 @@
         </mat-form-field>
     </div>
 
-    <mat-form-field appearance="outline">
-        <mat-label>Resolución con que se aprueba</mat-label>
-        <input matInput placeholder="Resolución con que se aprueba" formControlName="resolution">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Fecha de aprobación</mat-label>
-        <input matInput [matDatepicker]="pickerDateApproval" formControlName="dateApproval" readonly>
-        <mat-datepicker-toggle matSuffix [for]="pickerDateApproval"></mat-datepicker-toggle>
-        <mat-datepicker #pickerDateApproval></mat-datepicker>
-    </mat-form-field>
+    <div class="colum-code-ver">
+        <mat-form-field appearance="outline">
+            <mat-label>Resolución con que se aprueba</mat-label>
+            <input matInput placeholder="Resolución con que se aprueba" formControlName="resolution">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Fecha de aprobación</mat-label>
+            <input matInput [matDatepicker]="pickerDateApproval" formControlName="dateApproval" readonly>
+            <mat-datepicker-toggle matSuffix [for]="pickerDateApproval"></mat-datepicker-toggle>
+            <mat-datepicker #pickerDateApproval></mat-datepicker>
+        </mat-form-field>
+    </div>
 
     <mat-form-field appearance="outline">
         <mat-label>Sistemas Aplicables</mat-label>
