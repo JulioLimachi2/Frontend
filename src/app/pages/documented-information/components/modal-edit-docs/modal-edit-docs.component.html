@@ -7,7 +7,7 @@
   <div class="frame" *ngFor="let tree of trees">
     <input type="text" class="inpt-frame" [value]="tree.name" [readonly]="true">
     <div class="cont-icons">
-       <mat-icon (click)="goSubnivel(tree)">play_arrow</mat-icon>
+       <mat-icon (click)="goSubnivel(tree)" *ngIf="tree?.children?.length">play_arrow</mat-icon>
        <mat-icon>pan_tool_alt</mat-icon>
        <mat-icon>delete</mat-icon>
     </div>
@@ -15,6 +15,7 @@
 </div>
 
 <div class="container-btn-save">
+  <button [disabled]="nivel === 1" (click)="back()">Atras</button>
   <button mat-dialog-close>Salir</button>
   <button>Registrar</button>
 </div>
