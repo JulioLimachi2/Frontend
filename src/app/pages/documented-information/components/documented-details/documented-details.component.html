@@ -9,7 +9,7 @@
             <th mat-header-cell *matHeaderCellDef> <div class="th-doc">{{document?.title}}</div> </th>
             <td mat-cell *matCellDef="let element;"> 
                 <div class="cont-doc-row">
-                    <div class="cont-icon-pdf"><img src="assets/images/ic-pdf-img.png" alt="icon-pdf"></div>
+                    <div class="cont-icon-pdf"><img src="assets/images/pdf.png" alt="icon-pdf"></div>
                     <div class="content-row">
                         <div class="title-row-doc"><b>{{element.title}}</b></div>
                         <div class="body-row-doc">
@@ -29,7 +29,7 @@
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let element;"> 
                 <button mat-icon-button aria-label="boton descargar archivo" (click)="download()">
-                    <mat-icon>download</mat-icon>
+                    <img src="assets/images/icon-download.png" alt="icono descargar">
                 </button>
             </td>
         </ng-container>

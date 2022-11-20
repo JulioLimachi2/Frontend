@@ -61,6 +61,7 @@ export class EditDocumentComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalDocumentComponent, {
       width: '38%',
       height: '638px',
+      panelClass: 'mdl-noPadding',
       data: {dataForm:datadoc, tab: this.indexTab}
     });
 

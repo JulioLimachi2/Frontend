@@ -1,8 +1,10 @@
 .modal-login {
     background-color: #8cc434;
-    padding         : 5px;
+    height          : 100%;
+    box-sizing      : border-box;
 
     .layer-1 {
+        height          : 100%;
         background-color: #ffffff;
         border-radius   : 15px;
     }
@@ -10,29 +12,30 @@
     .cont-logo {
         width     : 100%;
         text-align: center;
-        padding   : 40px 0 30px 0;
+        padding   : 36px 0 40px 0;
 
         img {
-            height: 100px;
+            width: 231px;
+            height: 130px;
         }
     }
 
     .cont-mff {
         width     : 100%;
-        padding   : 0 46px 10px 45px;
+        padding   : 0 63px 10px 63px;
         box-sizing: border-box;
         display   : flex;
         flex-wrap : wrap;
-        gap       : 22px;
+        gap       : 21px;
 
         input {
             width        : 100%;
-            height       : 48px;
+            height       : 44px;
             border-radius: 10px;
             background   : #EFEFEF;
             border       : none;
-            font-size    : 24px;
-            text-indent  : 45px;
+            font-size    : 16px;
+            text-indent  : 8px;
             box-sizing   : border-box;
             color        : #8D8D8D;
 
@@ -42,19 +45,19 @@
 
             &::placeholder {
                 color    : #8D8D8D;
-                font-size: 24px;
+                font-size: 16px;
             }
         }
     }
 
     .btn-ingresar {
         width           : 100%;
-        height          : 48px;
+        height          : 44px;
         border-radius   : 10px;
         color           : #ffffff;
         font-weight     : 500;
         background-color: #8cc434;
-        font-size       : 24px;
+        font-size       : 16px;
         border          : none;
         padding         : 5px 0;
         cursor          : pointer;
@@ -62,9 +65,9 @@
 
     .forgot-password-text {
         color          : #656565;
-        padding        : 37px 0 48px;
+        padding        : 22px 0 0px;
         text-align     : center;
-        font-size      : 23px;
+        font-size      : 16px;
         display        : flex;
         justify-content: center;
 
