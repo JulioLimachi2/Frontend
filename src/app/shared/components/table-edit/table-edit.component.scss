@@ -1,3 +1,4 @@
+@import '_variables';
 .celda {
     padding-left: 1rem;
 }
@@ -23,8 +24,16 @@
 }
 
 .edit-tb{
+    width: 100%;
+    margin-top: 10px;
     .mat-row:hover {
         background: whitesmoke;
         cursor: pointer;
+    }
+    tr.mat-header-row {
+        background-color: $blue;
+    }
+    .mat-header-cell {
+        color: $white;
     }
 }
