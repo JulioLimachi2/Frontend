@@ -118,6 +118,48 @@ body {
     }
 }
 
+.mat-tab-sunarp-edit{
+    margin-top: 25px;
+
+    .mat-tab-labels{
+        gap: 5px;
+    }
+    
+    .mat-tab-label{
+        border: 3px solid $gray;
+        border-bottom: 0;
+        border-radius: 5px 5px 0 0;
+        height: 50px;
+        opacity: 1;
+        color: $gray-dark;
+        background-color: $gray;
+    }
+
+    .mat-tab-label-active{
+        background-color: $gray;
+        color: $success;
+    }
+
+    .mat-tab-disabled {
+        opacity: 0.5;
+    }
+
+    .mat-ink-bar{
+       // display: none;
+       background-color: $success !important;
+       height: 4px;
+    }
+
+    .mat-tab-header {
+        border-bottom: 3px solid transparent;
+    }
+
+    .mat-tab-body.mat-tab-body-active{
+        border: 3px solid transparent;
+        border-top: 0;
+    }
+}
+
 .cont-p{
     padding: 15px;
 }

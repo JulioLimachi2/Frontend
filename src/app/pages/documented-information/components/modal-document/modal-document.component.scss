@@ -1,3 +1,4 @@
+@import '_variables';
 .frm-modal-document {
     margin-top: 10px;
 
@@ -44,4 +45,18 @@
             font-size : 16px;
         }
     }
+}
+
+::ng-deep .btn-mdl-doc{
+    margin: 20px 0 10px 0 !important;
+    gap: 61px;
+    button{
+        border-radius: 10px;
+        font-size: 14px;
+        width: 116px;
+        height: 43px;
+    }
+   button:first-child{
+     background-color: $warn;
+   }
 }

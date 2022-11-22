@@ -46,7 +46,8 @@ export class EditDocumentComponent implements OnInit {
 
   mut() {
     const dialogRef = this.dialog.open(ModalEditDocsComponent, {
-      width: '38%',
+      width: '650px',
+      panelClass: 'mdl-e-doc',
       data: this.docs
     });
 
@@ -61,7 +62,7 @@ export class EditDocumentComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalDocumentComponent, {
       width: '38%',
       height: '638px',
-      panelClass: 'mdl-noPadding',
+      panelClass: 'mdl-doc',
       data: {dataForm:datadoc, tab: this.indexTab}
     });
 

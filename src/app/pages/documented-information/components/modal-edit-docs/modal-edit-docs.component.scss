@@ -1,3 +1,4 @@
+@import '_variables';
 .header-mut {
     width          : 100%;
     display        : flex;
@@ -6,8 +7,14 @@
     p {
         font-style : normal;
         font-weight: 700;
-        font-size  : 20px;
+        font-size  : 22px;
         cursor     : pointer;
+    }
+
+    img{
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
     }
 }
 
@@ -60,4 +67,17 @@
             }
         }
     }
+}
+
+.btn-mdl-e-doc{
+    gap: 61px;
+    button{
+        border-radius: 10px;
+        font-size: 14px;
+        width: 116px;
+        height: 43px;
+    }
+   button:last-child{
+    background-color: $warn;
+  }
 }

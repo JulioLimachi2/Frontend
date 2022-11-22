@@ -1,10 +1,23 @@
 <div class="cont-actions-edit-doc">
-    <button (click)="back()" class="btn-new-doc">Atras</button>
-    <button class="btn-new-doc" (click)="ModalDoc()">Crear Nuevo Documento</button>
-    <button class="btn-new-doc" (click)="mut()">Crear Nodo</button>
-</div>
+    <button (click)="back()" class="btn-back-doc">Atras</button>
+    <div class="col-2-edit-doc">
+      <button class="btn-new-doc" (click)="ModalDoc()">
+        <div class="content-btn">
+          <img src="assets/images/new-doc.png" alt="icono nuevo documento">
+           Crear Nuevo Documento
+        </div>
+      </button>
+      <button class="btn-upload-doc" (click)="mut()">
+        <div class="content-btn">
+          <img src="assets/images/upload-doc.png" alt="">
+          Crear Nodo
+        </div>
+        </button>
+        </div>
+    </div>
 
-<mat-tab-group class="mat-tab-sunarp" [(selectedIndex)]="indexTab">
+
+<mat-tab-group class="mat-tab-sunarp-edit" [(selectedIndex)]="indexTab">
     <mat-tab label="Documentos Generales y Específicos ">
       <app-document-one [newData]="dataDoc1" (onEdit)="ModalDoc($event)" [editData]="dataEditDoc1"></app-document-one>
     </mat-tab>

@@ -1,6 +1,9 @@
 <div class="cont-actions-detail-doc">
-    <button (click)="back()" class="btn-edit-doc">Atras</button>
-    <button (click)="goEdit()" class="btn-edit-doc" *ngIf="userLog?.roles.includes('Editor')">Editar</button>
+    <button (click)="back()" class="btn-back-doc">Atras</button>
+    <button (click)="goEdit()" class="btn-edit-doc" *ngIf="userLog?.roles.includes('Editor')">
+        <img src="assets/images/editar.png" alt="icono editar">
+        Editar
+    </button>
 </div>
 
 <div class="container-responsible-table tb-doc-cont" #tbdocdetail>
