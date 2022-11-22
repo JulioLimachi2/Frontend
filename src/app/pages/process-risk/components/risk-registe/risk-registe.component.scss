@@ -1,3 +1,4 @@
+@import '_variables';
 :host {
     width: 100%;
 }
@@ -32,7 +33,7 @@
 }
 
 .title-tb{
-    background-color: #44acab;
+    background-color: $blue;
     color: #ffffff;
     padding: 3px 0;
     display: flex;
@@ -42,7 +43,7 @@
 .tbrisk-register{
     width: 3000px;
     .mat-table thead,[mat-header-row] {
-        background-color: #44acab;
+        background-color: $blue;
     }
     th{
         color: #ffffff;

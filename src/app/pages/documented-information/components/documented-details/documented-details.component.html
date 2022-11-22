@@ -1,5 +1,10 @@
 <div class="cont-actions-detail-doc">
-    <button (click)="back()" class="btn-back-doc">Atras</button>
+    <button (click)="back()" class="btn-back-doc">
+        <div>
+          <img src="assets/images/back.png" alt="icono atras">
+          Atras
+        </div>
+      </button>
     <button (click)="goEdit()" class="btn-edit-doc" *ngIf="userLog?.roles.includes('Editor')">
         <img src="assets/images/editar.png" alt="icono editar">
         Editar

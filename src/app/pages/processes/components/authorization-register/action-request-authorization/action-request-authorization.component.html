@@ -80,10 +80,10 @@
       </mat-form-field>
 
     <div class="container-btn-save ac-request-actions">
-        <button (click)="save()" type="button" [disabled]="!formActionRequestAuthorization.valid">Enviar</button>
+        <button (click)="save()" type="button" [disabled]="!formActionRequestAuthorization.valid" class="btn-blue-dark">Enviar</button>
         <mat-checkbox  formControlName="return" [color]="'primary'" [labelPosition]="'before'">Devolver</mat-checkbox>
     </div>
     <div class="container-btn-save">
-        <button (click)="next()" type="button" [disabled]="nextDisabled">Siguiente</button>
+        <button (click)="next()" type="button" [disabled]="nextDisabled" class="btn-warm">Siguiente</button>
     </div>
 </form>

@@ -3,7 +3,7 @@
                 [reset]="reset" (onSelectRow)="getrow($event)">
 </app-table-edit>
 <div class="container-btn-save">
-    <button (click)="add()">Añadir</button>
-    <button (click)="add(indexSelected)" [disabled]="indexSelected === null">Modificar</button>
-    <button>Grabar</button>
+    <button (click)="add()" class="btn-blue-dark">Añadir</button>
+    <button (click)="add(indexSelected)" [disabled]="indexSelected === null" class="btn-blue-dark">Modificar</button>
+    <button class="btn-warm">Grabar</button>
 </div>

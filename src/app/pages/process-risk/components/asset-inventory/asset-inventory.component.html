@@ -119,9 +119,9 @@
 
   <div class="cont-assets-btn">
     <div class="col-left-btn">
-      <button type="button" class="btn-light-blue" (click)="add()">Anadir</button>
-      <button type="button" class="btn-light-blue" [disabled]="indexSelectedRow ===null" (click)="edit()">Modificar</button>
-      <button type="button" class="btn-light-blue">Eliminar</button>
+      <button type="button" (click)="add()" class="btn-warm">Anadir</button>
+      <button type="button" [disabled]="indexSelectedRow ===null" (click)="edit()" class="btn-blue-dark">Modificar</button>
+      <button type="button" class="btn-blue-dark">Eliminar</button>
     </div>
-    <button type="button" class="btn-light-blue">Enviar</button>
+    <button type="button" class="btn-warm">Enviar</button>
   </div>

@@ -79,11 +79,11 @@
     </mat-form-field>
 
     <div class="container-btn-save ac-request-actions">
-        <button (click)="save()" type="button" [disabled]="!formActionRequestShare.valid">Enviar</button>
+        <button (click)="save()" type="button" [disabled]="!formActionRequestShare.valid" class="btn-blue-dark">Enviar</button>
         <mat-checkbox formControlName="return" [labelPosition]="'before'" [color]="'primary'">Devolver</mat-checkbox>
     </div>
 
     <div class="container-btn-save">
-        <button (click)="next()" type="button" [disabled]="nextDisabled">Siguiente</button>
+        <button (click)="next()" type="button" [disabled]="nextDisabled" class="btn-warm">Siguiente</button>
     </div>
 </form>

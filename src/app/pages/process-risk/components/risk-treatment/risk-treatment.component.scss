@@ -11,7 +11,7 @@
     font-size      : 12px;
 
     .rows-risk {
-        border: 1px solid $tamarama;
+        border: 1px solid $blue;
         border-bottom: 0;
     }
 
@@ -21,7 +21,7 @@
         div:first-child {
             padding    : 0 5px;
             min-width  : 240px;
-            border     : 1px solid $tamarama;
+            border     : 1px solid $blue;
             border-top : 0;
             border-left: 0;
             font-weight: 500;
@@ -29,7 +29,7 @@
 
         div:last-child {
             width: 100%;
-            border-bottom: 1px solid $tamarama;
+            border-bottom: 1px solid $blue;
         }
     }
 
@@ -39,7 +39,7 @@
         div:first-child {
             min-width  : 240px;
             padding    : 0 5px;
-            border     : 1px solid $tamarama;
+            border     : 1px solid $blue;
             border-top : 0;
             border-left: 0;
             font-weight: 500;
@@ -47,7 +47,7 @@
 
         div:last-child {
             width: 100%;
-            border-bottom: 1px solid $tamarama;
+            border-bottom: 1px solid $blue;
         }
     }
 
@@ -57,7 +57,7 @@
         div:first-child {
             min-width  : 240px;
             padding    : 0 5px;
-            border     : 1px solid $tamarama;
+            border     : 1px solid $blue;
             border-top : 0;
             border-left: 0;
             font-weight: 500;
@@ -65,7 +65,7 @@
 
         div:last-child {
             width: 100%;
-            border-bottom: 1px solid $tamarama;
+            border-bottom: 1px solid $blue;
         }
     }
 
@@ -79,7 +79,7 @@
 .tbrisk-treatment{
     width: 3000px;
     .mat-table thead,[mat-header-row] {
-        background-color: $tamarama;
+        background-color: $blue;
     }
     th{
         color: $white;
@@ -93,13 +93,13 @@
     td.mat-cell:first-of-type, td.mat-cell:last-of-type {
         padding: 0 10px;
         text-align: center;
-        border: 1px solid $tamarama;
+        border: 1px solid $blue;
         border-top: 0;
     }
     td.mat-cell{
         text-align: center;
         padding: 0 10px;
-        border: 1px solid $tamarama;
+        border: 1px solid $blue;
         border-top: 0;
         position: relative;
     }

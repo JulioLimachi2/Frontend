@@ -21,7 +21,7 @@
             </mat-form-field>
         
             <div class="container-btn-save">
-                <button (click)="save()" type="button" [disabled]="!formUser.valid">Guardar</button>
+                <button (click)="save()" type="button" [disabled]="!formUser.valid" class="btn-warm">Guardar</button>
             </div>
         </form>
         
@@ -61,7 +61,7 @@
             </table>
         </div>
         <div class="container-btn-save">
-            <button (click)="add()" type="button" [disabled]="indexSelectedRow === null">Añadir</button>
+            <button (click)="add()" type="button" [disabled]="indexSelectedRow === null" class="btn-warm">Añadir</button>
         </div>
     </div>
 

@@ -280,11 +280,11 @@
 
 <div class="cont-risk-btn">
   <div class="col-left-btn">
-    <button type="button" class="btn-light-blue" (click)="add()">Anadir</button>
-    <button type="button" class="btn-light-blue" [disabled]="indexSelectedRow ===null"
-      (click)="edit()">Modificar</button>
-    <button type="button" class="btn-light-blue">Eliminar</button>
-    <button type="button" class="btn-light-blue">Exportar</button>
+    <button type="button" (click)="add()" class="btn-warm">Anadir</button>
+    <button type="button" [disabled]="indexSelectedRow ===null"
+      (click)="edit()" class="btn-blue-dark">Modificar</button>
+    <button type="button" class="btn-blue-dark">Eliminar</button>
+    <button type="button" class="btn-blue-dark">Exportar</button>
   </div>
-  <button type="button" class="btn-light-blue">Preaprobar</button>
+  <button type="button" class="btn-warm">Preaprobar</button>
 </div>

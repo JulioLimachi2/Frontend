@@ -35,7 +35,6 @@
 
         button {
             padding         : 5px 30px;
-            border          : 1px solid $tamarama;
             background-color: $white;
             cursor          : pointer;
 
@@ -99,11 +98,4 @@
         }
     }
 
-    .form-personal {
-        .container-btn-personal {
-            button {
-                padding: 5px 35px;
-            }
-        }
-    }
 }

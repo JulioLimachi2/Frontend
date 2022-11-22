@@ -1,3 +1,4 @@
+@import '_variables';
 :host {
     width: 100%;
 }
@@ -10,7 +11,7 @@
     font-size      : 12px;
 
     .rows-assets {
-        border: 1px solid #44acab;
+        border: 1px solid $blue;
         border-bottom: 0;
     }
 
@@ -78,7 +79,7 @@
 .tbasset-inventory{
         width: 2000px;
         .mat-table thead,[mat-header-row] {
-            background-color: #44acab;
+            background-color: $blue;
         }
         th{
             color: #ffffff;
@@ -92,13 +93,13 @@
         td.mat-cell:first-of-type, td.mat-cell:last-of-type {
             padding: 0 10px;
             text-align: center;
-            border: 1px solid #44acab;
+            border: 1px solid $blue;
             border-top: 0;
         }
         td.mat-cell{
             text-align: center;
             padding: 0 10px;
-            border: 1px solid #44acab;
+            border: 1px solid $blue;
             border-top: 0;
         }
 }

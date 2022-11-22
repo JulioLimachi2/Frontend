@@ -50,14 +50,14 @@
     }
 }
 
-.btn-back-doc{
-    background-color: $tamarama;
-    color: $white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+// .btn-back-doc{
+//     background-color: $tamarama;
+//     color: $white;
+//     border: none;
+//     padding: 10px 20px;
+//     border-radius: 5px;
+//     cursor: pointer;
+// }
 
 .btn-edit-doc{
   width: 104px;
@@ -73,6 +73,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: space-between;
 }
 
 @media (min-width: 1100px) {

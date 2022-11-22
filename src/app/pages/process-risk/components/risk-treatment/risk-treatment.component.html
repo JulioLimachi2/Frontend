@@ -212,9 +212,9 @@
 
 <div class="cont-risk-btn">
     <div class="col-left-btn">
-        <button type="button" class="btn-light-blue" (click)="openModalTreatment()">Anadir</button>
-        <button type="button" class="btn-light-blue" [disabled]="indexSelectedRow ===null" (click)="openModalTreatment(indexSelectedRow)">Modificar</button>
-        <button type="button" class="btn-light-blue">Eliminar</button>
+        <button type="button" (click)="openModalTreatment()" class="btn-warm">Anadir</button>
+        <button type="button" [disabled]="indexSelectedRow ===null" (click)="openModalTreatment(indexSelectedRow)" class="btn-blue-dark">Modificar</button>
+        <button type="button" class="btn-blue-dark">Eliminar</button>
     </div>
-    <button type="button" class="btn-light-blue">Preaprobar</button>
+    <button type="button" class="btn-warm">Preaprobar</button>
 </div>

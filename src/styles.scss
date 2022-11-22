@@ -12,7 +12,7 @@ body {
 
 .container-title {
     font-size       : 20px;
-    background-color: $secondary;
+    background-color: $blue;
     color           : $white;
     width           : 100%;
     padding         : 10px 30px;
@@ -68,6 +68,10 @@ body {
         width    : 100%;
         max-width: 300px;
     }
+
+    .mat-form-field-wrapper {
+        padding-bottom: 10px;
+    }
 }
 
 .mat-elevation-z8 {
@@ -80,45 +84,45 @@ body {
     gap: 25px;
 }
 
-.mat-tab-sunarp{
-    margin-top: 25px;
+// .mat-tab-sunarp{
+//     margin-top: 25px;
 
-    .mat-tab-labels{
-        gap: 5px;
-    }
+//     .mat-tab-labels{
+//         gap: 5px;
+//     }
     
-    .mat-tab-label{
-        border: 3px solid $tamarama;
-        border-bottom: 0;
-        border-radius: 5px 5px 0 0;
-        height: 30px;
-        opacity: 1;
-    }
+//     .mat-tab-label{
+//         border: 3px solid $tamarama;
+//         border-bottom: 0;
+//         border-radius: 5px 5px 0 0;
+//         height: 30px;
+//         opacity: 1;
+//     }
 
-    .mat-tab-label-active{
-        background-color: $tamarama;
-        color: $white;
-    }
+//     .mat-tab-label-active{
+//         background-color: $tamarama;
+//         color: $white;
+//     }
 
-    .mat-tab-disabled {
-        opacity: 0.5;
-    }
+//     .mat-tab-disabled {
+//         opacity: 0.5;
+//     }
 
-    .mat-ink-bar{
-        display: none;
-    }
+//     .mat-ink-bar{
+//         display: none;
+//     }
 
-    .mat-tab-header {
-        border-bottom: 3px solid $tamarama;
-    }
+//     .mat-tab-header {
+//         border-bottom: 3px solid $tamarama;
+//     }
 
-    .mat-tab-body.mat-tab-body-active{
-        border: 3px solid $tamarama;
-        border-top: 0;
-    }
-}
+//     .mat-tab-body.mat-tab-body-active{
+//         border: 3px solid $tamarama;
+//         border-top: 0;
+//     }
+// }
 
-.mat-tab-sunarp-edit{
+.mat-tab-sunarp{
     margin-top: 25px;
 
     .mat-tab-labels{
@@ -175,6 +179,12 @@ body {
             background: whitesmoke;
             cursor: pointer;
         }
+        tr.mat-header-row {
+            background-color: $blue;      
+        }
+        .mat-header-cell{
+            color: $white;
+        }
     }
 }
 
@@ -228,5 +238,54 @@ body {
         background-color: $white;
         border          : 1px solid $tamarama;
         cursor          : pointer;
+    }
+}
+
+.btn-back-doc{
+    background-color: transparent;
+    color: $blue;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    div{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        align-items: center;
+    }
+}
+
+.btn-warm{
+    border-radius: 10px !important;
+    font-size: 14px;
+    height: 43px;
+    color: $white;
+    font-weight: 700;
+    background-color: $warn !important;
+    border: none;
+    padding: 0 25px;
+    cursor: pointer;
+
+    &:disabled{
+        opacity: 0.5;
+    }
+}
+
+.btn-blue-dark{
+    border-radius: 10px !important;
+    font-size: 14px;
+    height: 43px;
+    color: $white;
+    font-weight: 700;
+    background-color: $blue !important;
+    border: none;
+    padding: 0 25px;
+    cursor: pointer;
+
+    &:disabled{
+        opacity: 0.5;
     }
 }
