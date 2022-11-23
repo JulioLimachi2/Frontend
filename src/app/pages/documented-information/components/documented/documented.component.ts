@@ -29,15 +29,21 @@ export class DocumentedComponent implements OnInit {
   }
 
   getTree(){
-    this.treesystemservice.getTreeData().subscribe(tree =>{
-      console.log('tree',tree);
-      this.dataSource.data = tree as any;
-      this.treeControl.expand(tree[1]);
-    });
+    // this.treesystemservice.getTreeData().subscribe(tree =>{
+    //   console.log('tree',tree);
+    //   this.dataSource.data = tree as any;
+    //   this.treeControl.expand(tree[1]);
+    // });
+    this.treesystemservice.getTreeNode().subscribe(node => {
+      console.log('node',node);
+      this.dataSource.data = node as any;
+      this.treeControl.expand(node[0]);
+    })
   }
 
   goToDocument(node){
-    this.router.navigate(['documented-information/detail',node.docId]);
+    console.log('node',node);
+    this.router.navigate(['documented-information/detail',199]);
   }
 
   see(node){

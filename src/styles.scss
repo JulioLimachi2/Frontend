@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import '_variables';
+
+@font-face {
+    font-family: "NunitoSans-Regular";
+    src: url("assets/fonts/NunitoSans-Regular.ttf");
+}
 html,
 body {
     height: 100%;
@@ -7,7 +12,7 @@ body {
 
 body {
     margin     : 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: "NunitoSans-Regular";
 }
 
 .container-title {
@@ -49,6 +54,7 @@ body {
         padding         : 10px 25px;
         border-radius   : 5px;
         cursor          : pointer;
+        font-family: "NunitoSans-Regular";
     }
 
     button:disabled {
@@ -250,6 +256,7 @@ body {
     cursor: pointer;
     font-size: 14px;
     font-weight: 700;
+    font-family: "NunitoSans-Regular";
     div{
         display: flex;
         flex-wrap: wrap;
@@ -279,7 +286,6 @@ body {
     font-size: 14px;
     height: 43px;
     color: $white;
-    font-weight: 700;
     background-color: $blue !important;
     border: none;
     padding: 0 25px;

@@ -35,7 +35,7 @@ export class EditDocumentComponent implements OnInit {
   }
 
   getTree() {
-    this.treesystemservice.getTreeData().subscribe(tree => {
+    this.treesystemservice.getTreeNode().subscribe(tree => {
       this.docs = tree as any;
     });
   }
