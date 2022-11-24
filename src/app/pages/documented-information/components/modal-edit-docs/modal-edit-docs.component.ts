@@ -70,6 +70,7 @@ export class ModalEditDocsComponent implements OnInit {
 
       this.treesystemservice.newTreeNode(request).subscribe(res =>{
        console.log('new node',res);
+       this.refreshNode();
       });
     }
    
@@ -79,6 +80,18 @@ export class ModalEditDocsComponent implements OnInit {
     console.log('nodeId',nodeId);
     this.treesystemservice.deleteTreeNode(nodeId).subscribe(res =>{
       console.log('delete',res);
+      this.refreshNode();
+    });
+  }
+
+  refreshNode(){
+    this.niveles = [];
+    this.treesystemservice.getTreeNode().subscribe(tree =>{
+      this.trees = tree;
+      this.niveles.push(tree);
+      this.parentNumber = tree[0]?.parent;
+      this.newNode = false;
+      this.nivel = 1;
     });
   }
 }
