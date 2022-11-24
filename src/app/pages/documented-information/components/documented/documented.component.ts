@@ -9,7 +9,8 @@ import { ModalEditDocsComponent } from '../modal-edit-docs/modal-edit-docs.compo
 @Component({
   selector: 'app-documented',
   templateUrl: './documented.component.html',
-  styleUrls: ['./documented.component.scss']
+  styleUrls: ['./documented.component.scss'],
+  providers:[TreeSystemService],
 })
 export class DocumentedComponent implements OnInit {
 

@@ -21,16 +21,16 @@ export class TreeSystemService {
     )
   }
 
-  getTreeNode(){
-    return this.http.get(`${environment.urlSunarp}/treenode/`);
+  getTreeNode():any{
+    return this.http.get('api/treenode/');
   }
 
   newTreeNode(requestNode){
-    return this.http.post(`${environment.urlSunarp}/treenode/`,requestNode);
+    return this.http.post(`api/treenode/`,requestNode);
   }
 
   deleteTreeNode(idNode: number){
-    return this.http.delete(`${environment.urlSunarp}/treenode/${idNode}`);
+    return this.http.delete(`api/treenode/${idNode}`);
   }
 
 }
