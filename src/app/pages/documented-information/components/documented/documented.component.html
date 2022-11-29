@@ -5,6 +5,13 @@
                 <img src="assets/images/ic-folder.png" alt="icono folder">
                 <div>INFORMACIÓN DOCUMENTARIA</div>
             </div>
+
+            <button class="btn-warm" (click)="mut()">
+                <div class="div-btn">
+                  <img src="assets/images/upload-doc.png" alt="">
+                  Crear Nodo
+                </div>
+            </button>
         </div>
         <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="tree-document">
 

@@ -33,4 +33,8 @@ export class TreeSystemService {
     return this.http.delete(`api/treenode/${idNode}`);
   }
 
+  getdetailTree(nodeId: number){
+    return this.http.get(`apidetail/treefile?nodeId=${nodeId}`);
+  }
+
 }

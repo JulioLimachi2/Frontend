@@ -1,10 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatTableDataSource } from '@angular/material/table';
-import { TreeSystemService } from 'src/app/core/services/tree-system.service';
 import { ModalDocumentComponent } from '../modal-document/modal-document.component';
-import { ModalEditDocsComponent } from '../modal-edit-docs/modal-edit-docs.component';
 
 @Component({
   selector: 'app-edit-document',
@@ -15,7 +12,6 @@ export class EditDocumentComponent implements OnInit {
 
 
   indexTab: number = 0;
-  docs = [];
   dataDoc1;
   dataDoc2;
   dataDoc3;
@@ -26,37 +22,17 @@ export class EditDocumentComponent implements OnInit {
   dataEditActa;
 
   constructor(public dialog: MatDialog,
-    private _location: Location,
-    private treesystemservice: TreeSystemService) { }
+    private _location: Location) { }
 
   ngOnInit(): void {
-    this.getTree();
     console.log(new Date());
   }
 
-  getTree() {
-    this.treesystemservice.getTreeNode().subscribe(tree => {
-      this.docs = tree as any;
-    });
-  }
 
   selectedRow(index: number) {
 
   }
 
-  mut() {
-    const dialogRef = this.dialog.open(ModalEditDocsComponent, {
-      width: '650px',
-      panelClass: 'mdl-e-doc',
-      data: this.docs
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-
-      }
-    });
-  }
 
   ModalDoc(datadoc?) {
     const dialogRef = this.dialog.open(ModalDocumentComponent, {

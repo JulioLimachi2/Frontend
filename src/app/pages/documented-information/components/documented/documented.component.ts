@@ -38,7 +38,7 @@ export class DocumentedComponent implements OnInit {
     this.treesystemservice.getTreeNode().subscribe(node => {
       console.log('node',node);
       this.dataSource.data = node as any;
-      this.treeControl.expand(node[0]);
+      this.treeControl.expand(node[1]);
     })
   }
 
@@ -64,4 +64,17 @@ export class DocumentedComponent implements OnInit {
     });
   }
 
+  mut() {
+    const dialogRef = this.dialog.open(ModalEditDocsComponent, {
+      width: '650px',
+      panelClass: 'mdl-e-doc',
+      data: this.dataSource.data
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+
+      }
+    });
+  }
 }

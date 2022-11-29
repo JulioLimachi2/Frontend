@@ -51,6 +51,9 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
     const iddoc = this.router.snapshot.paramMap.get('iddoc');
     this.userLog = JSON.parse(localStorage.getItem('userlog'));
     console.log('iddoc',iddoc);
+    this.treesystemservice.getdetailTree(9).subscribe(res=>{
+      console.log('detail',res);
+    });
     this.getDocData(iddoc);
     this.dataSource.data = [
       {
