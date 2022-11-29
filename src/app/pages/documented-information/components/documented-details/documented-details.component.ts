@@ -51,9 +51,6 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
     const iddoc = this.router.snapshot.paramMap.get('iddoc');
     this.userLog = JSON.parse(localStorage.getItem('userlog'));
     console.log('iddoc',iddoc);
-    this.treesystemservice.getdetailTree(9).subscribe(res=>{
-      console.log('detail',res);
-    });
     this.getDocData(iddoc);
     this.dataSource.data = [
       {
@@ -160,10 +157,17 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
   }
 
   download(){
-    const a = document.createElement("a");
-    a.href = "https://scr.sunarp.gob.pe/repositorio/publicaciones/compendios-registrales/libro%20comentarios.pdf";
-    a.target = "_blank";
-    a.click();
+    this.treesystemservice.getdetailTree(3).subscribe(res=>{      
+      const blob = new Blob([res], { type: 'application/pdf' });
+      const fileURL = URL.createObjectURL(blob);
+      const downloadLink = document.createElement('a');
+      downloadLink.href = fileURL;
+      downloadLink.setAttribute('download', 'Microservices.pdf');
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+    },(e: any) => {
+      console.error(e);
+    });
   }
 
   getDocData(id: string){

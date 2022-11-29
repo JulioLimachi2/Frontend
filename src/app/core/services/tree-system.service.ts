@@ -34,7 +34,7 @@ export class TreeSystemService {
   }
 
   getdetailTree(nodeId: number){
-    return this.http.get(`apidetail/treefile?nodeId=${nodeId}`);
+    return this.http.get(`api/treefile/${nodeId}/file`,{responseType: 'blob'});
   }
 
 }

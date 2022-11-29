@@ -1,16 +1,9 @@
   [
     {
       "context": ["/api"],
-      "target": "http://172.20.190.241:8091",
-      "secure": false,
-      "logLevel" : "debug",
-      "pathRewrite": {"^/api" : ""}
-    },
-    {
-      "context": ["/apidetail"],
       "target": "http://172.20.190.241:8550",
       "secure": false,
       "logLevel" : "debug",
-      "pathRewrite": {"^/apidetail" : ""}
+      "pathRewrite": {"^/api" : ""}
     }
   ]
