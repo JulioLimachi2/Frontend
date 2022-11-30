@@ -14,6 +14,7 @@ export class ModalEditDocsComponent implements OnInit {
   nivel: number = 1;
   newNode: boolean = false;
   parentNumber: number;
+  title: string='Documentos';
 
   constructor(public dialogRef: MatDialogRef<ModalEditDocsComponent>,
     @Inject(MAT_DIALOG_DATA) public docs: any,
@@ -29,6 +30,7 @@ export class ModalEditDocsComponent implements OnInit {
 
   goSubnivel(tree){
     console.log(tree);
+      this.title=tree.name;
       console.log('siguiente');
       this.newNode = false;
       this.parentNumber = tree.id;
@@ -41,8 +43,10 @@ export class ModalEditDocsComponent implements OnInit {
 
   back(){
     console.log('retroceso');
+    this.title='';
     this.newNode = false;
     const index = this.nivel - 2;
+    console.log( " this.trees",this.trees);
     this.trees = this.niveles[index];
     this.niveles.splice(this.nivel - 1,1);
     this.nivel = this.nivel - 1;
@@ -81,6 +85,9 @@ export class ModalEditDocsComponent implements OnInit {
    
   }
 
+  update(tree: any){
+    console.log("tree update",tree);
+  }
   delete(nodeId: number){
     console.log('nodeId',nodeId);
     this.treesystemservice.deleteTreeNode(nodeId).subscribe(res =>{

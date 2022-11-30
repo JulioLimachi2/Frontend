@@ -1,15 +1,18 @@
 <div class="header-mut">
-    <p>Nuevos-Documentos</p>
+
+    <div style="margin-bottom: 10px;">
+      <button (click)="back()" class="btn-back-node" [disabled]="nivel === 1">
+        <div>
+          <img src="assets/images/back.png" alt="icono atras">
+          Atras
+        </div>
+      </button>
+    </div>
     <img src="assets/images/close-icon.png" alt="icono cerrar" mat-dialog-close>
 </div>
 
-<div style="margin-bottom: 10px;">
-  <button (click)="back()" class="btn-back-node" [disabled]="nivel === 1">
-    <div>
-      <img src="assets/images/back.png" alt="icono atras">
-      Atras
-    </div>
-  </button>
+<div style="margin-bottom: 10px; text-align: center;">
+  <p>{{title}}</p>
 </div>
 
 <div class="body-mut">
@@ -17,7 +20,7 @@
     <input type="text" class="inpt-frame" [value]="i + '.' + ' ' + tree.name" [readonly]="true">
     <div class="cont-icons">
       <img src="assets/images/play-ic.png" alt="icono play" (click)="goSubnivel(tree)" [ngClass]="{'active-children': tree?.children?.length}">
-      <img src="assets/images/pencil-ic.png" alt="icono editar">
+      <img src="assets/images/pencil-ic.png" alt="icono editar" (click)="update(tree)">
       <img src="assets/images/trash-ic.png" alt="icono eliminar" (click)="delete(tree.id)">
     </div>
   </div>
