@@ -68,3 +68,39 @@
      background-color: $warn;
    }
 }
+
+::ng-deep .cont-uploaded-file{
+    background: rgba(0, 173, 170, 0.45);
+    border-radius: 10px;
+    width: 100%;
+    
+    .header-doc{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 9px;
+        padding-top: 30px;
+        div{
+            width: 100%;
+            color: $white;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 20px;
+            text-align: center;
+        }
+    }
+
+    .footer-file{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 21px 11px;
+        color: $white;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 15px;
+        img{
+            cursor: pointer;
+            filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(5%) hue-rotate(340deg) brightness(101%) contrast(105%);
+        }
+    }
+}

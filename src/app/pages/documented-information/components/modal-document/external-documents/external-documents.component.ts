@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FilesService } from 'src/app/core/services/files.service';
 import uniqid from 'uniqid';
 
 @Component({
@@ -13,8 +14,11 @@ export class ExternalDocumentsComponent implements OnInit {
   @Output() onSave: EventEmitter<any> = new EventEmitter();
   formExternalDocument: FormGroup;
   numberTab: number = 3;
+  file: File;
+  sizeConvert: string;
 
-  constructor(private builder: FormBuilder) {
+  constructor(private builder: FormBuilder,
+              private serviceFile: FilesService) {
     this.formExternalDocument = this.builder.group({
       id: [],
       documentName: [,Validators.required],
@@ -49,12 +53,16 @@ export class ExternalDocumentsComponent implements OnInit {
 
   uploadFile(event) {
     if (event) {
-      let reader = new FileReader();
-      let file = event.target.files[0];
-      this.formExternalDocument.controls['archive'].setValue(file);
-      console.log('file', file);
+      this.file = event.target.files[0];
+      this.sizeConvert = this.serviceFile.formatBytes(this.file.size);
+      this.formExternalDocument.controls['archive'].setValue(this.file);
+      console.log('file', this.file);
     }
   }
   
+  deleteFile(){
+    this.file = null;
+    this.formExternalDocument.controls['archive'].setValue([]);
+  }
 
 }

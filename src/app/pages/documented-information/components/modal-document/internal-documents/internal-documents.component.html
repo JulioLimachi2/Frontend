@@ -16,14 +16,25 @@
         <mat-datepicker #pickerDate></mat-datepicker>
     </mat-form-field>
 
-    <div class="cont-download" (click)="inptDownload.click()">
+    <div class="cont-download" (click)="inptDownload.click()" *ngIf="!file">
         <div class="content">
             <img src="assets/images/upload-file.png" alt="icono subir archivo">
             <div>Subir Archivo</div>
         </div>
     </div>
 
-    <input type="file" #inptDownload style="display: none" (change)="uploadFile($event)">
+    <div *ngIf="file" class="cont-uploaded-file">
+        <div class="header-doc">
+           <img src="assets/images/doc-ic.png" alt="icono documento">
+           <div>{{file.name}}</div>
+        </div>
+        <div class="footer-file">
+           <div>Peso: {{sizeConvert}}</div>
+           <div><img src="assets/images/trash-ic.png" alt="icono eliminar" (click)="deleteFile()"></div>
+        </div>
+    </div>
+
+    <input type="file" #inptDownload style="display: none" (change)="uploadFile($event)" accept="application/pdf">
 
 </form>
 

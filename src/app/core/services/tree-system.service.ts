@@ -26,11 +26,11 @@ export class TreeSystemService {
   }
 
   newTreeNode(requestNode){
-    return this.http.post(`api/treenode/`,requestNode);
+    return this.http.post(`api/treenode/`,requestNode,{responseType: 'text'});
   }
 
   deleteTreeNode(idNode: number){
-    return this.http.delete(`api/treenode/${idNode}`);
+    return this.http.delete(`api/treenode/${idNode}`,{responseType: 'text'});
   }
 
   getdetailTree(nodeId: number){

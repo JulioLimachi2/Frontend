@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FilesService } from 'src/app/core/services/files.service';
 import uniqid from 'uniqid';
 
 @Component({
@@ -13,8 +14,11 @@ export class ActasFormComponent implements OnInit {
   @Output() onSave: EventEmitter<any> = new EventEmitter();
   formActas: FormGroup;
   numberTab: number = 4;
+  file: File;
+  sizeConvert: string;
 
-  constructor(private builder: FormBuilder) { 
+  constructor(private builder: FormBuilder,
+              private serviceFile: FilesService) { 
     this.formActas = this.builder.group({
       id: [],
       managementSystem:[,Validators.required],
@@ -50,11 +54,16 @@ export class ActasFormComponent implements OnInit {
 
   uploadFile(event) {
     if (event) {
-      let reader = new FileReader();
-      let file = event.target.files[0];
-      this.formActas.controls['archive'].setValue(file);
-      console.log('file', file);
+      this.file = event.target.files[0];
+      this.sizeConvert = this.serviceFile.formatBytes(this.file.size);
+      this.formActas.controls['archive'].setValue(this.file);
+      console.log('file', this.file);
     }
+  }
+
+  deleteFile(){
+    this.file = null;
+    this.formActas.controls['archive'].setValue([]);
   }
 
 }

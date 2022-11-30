@@ -29,16 +29,14 @@ export class ModalEditDocsComponent implements OnInit {
 
   goSubnivel(tree){
     console.log(tree);
-    if(tree?.children?.length){
       console.log('siguiente');
       this.newNode = false;
       this.parentNumber = tree.id;
-      this.trees = tree.children;
-      this.niveles.push(tree.children);
+      this.trees = tree.children ?? [];
+      this.niveles.push(tree.children ?? []);
       this.nivel = this.niveles.length;
       console.log('niveles',this.niveles);
       console.log('nivel',this.nivel);
-    }
   }
 
   back(){
@@ -60,10 +58,17 @@ export class ModalEditDocsComponent implements OnInit {
 
   save(){
     const nodeName = document.getElementById('inptnode') as HTMLInputElement;
+    let request;
     if(nodeName.value !== ''){
-      const request = {
-        "name": nodeName.value,
-        "parent": this.parentNumber
+      if(this.nivel === 1 && this.trees.length){
+        request = {
+          "name": nodeName.value
+        }
+      }else{
+        request = {
+          "name": nodeName.value,
+          "parent": this.parentNumber
+        }
       }
   
       console.log('request',request);
