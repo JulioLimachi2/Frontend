@@ -31,7 +31,7 @@ export class TreeSystemService {
 
 
   updateTreeNode(idNode: number,name: string){
-    return this.http.put(`api/treenode/${idNode}`, name);
+    return this.http.post(`api/treenode/${idNode}`, { "name":name }, {responseType: 'text'});
   }
 
   deleteTreeNode(idNode: number){

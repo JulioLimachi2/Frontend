@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TreeSystemService } from 'src/app/core/services/tree-system.service';
 
@@ -14,7 +14,24 @@ export class ModalEditDocsComponent implements OnInit {
   nivel: number = 1;
   newNode: boolean = false;
   parentNumber: number;
+  indexSelected: number;
   title: string='Documentos';
+  inputNode: HTMLInputElement;
+  updateStatus: boolean;
+  eventInputTraget;
+
+  @HostListener('document:click',['$event'])
+  clickOut(event){
+    if(this.indexSelected >= 0){
+      if(this.eventInputTraget !== event.target){
+        this.trees[this.indexSelected]?.name ? this.inputNode.value = `${this.indexSelected}. ${this.trees[this.indexSelected].name}` : null;
+        this.inputNode.onfocus;
+        this.eventInputTraget = null;
+        this.updateStatus = false; 
+      }      
+    }
+    
+  }
 
   constructor(public dialogRef: MatDialogRef<ModalEditDocsComponent>,
     @Inject(MAT_DIALOG_DATA) public docs: any,
@@ -26,6 +43,12 @@ export class ModalEditDocsComponent implements OnInit {
     this.niveles.push(this.docs);
     this.parentNumber = this.docs[0]?.parent;
     console.log('niveles',this.niveles);
+  }
+
+  clickInpt(event){
+    if(this.indexSelected >=0){
+      this.eventInputTraget = event.target;
+    }
   }
 
   goSubnivel(tree){
@@ -43,13 +66,13 @@ export class ModalEditDocsComponent implements OnInit {
 
   back(){
     console.log('retroceso');
-    this.title='';
     this.newNode = false;
     const index = this.nivel - 2;
     console.log( " this.trees",this.trees);
     this.trees = this.niveles[index];
     this.niveles.splice(this.nivel - 1,1);
     this.nivel = this.nivel - 1;
+    this.title= this.nivel === 1 ? 'Documentos' : this.niveles[this.niveles.length - 1].name;
   }
 
   register(){
@@ -85,11 +108,41 @@ export class ModalEditDocsComponent implements OnInit {
    
   }
 
-  update(tree: any){
-    console.log("tree update",tree);
+  update(index: number){
+    console.log("tree update",this.trees[index]);
+    this.indexSelected >= 0 && this.resetFocusInput();
+    setTimeout(() => {
+      this.indexSelected = index;
+      this.inputNode = document.getElementById(`node${index}`) as HTMLInputElement;
+      this.inputNode.focus();
+      this.inputNode.value = '';
+      this.inputNode.value = this.trees[this.indexSelected].name;
+      this.inputNode.readOnly = false;
+      this.updateStatus = true;
+    }, 0);
   }
+
+  resetFocusInput(){
+    if(this.indexSelected){
+      this.inputNode.readOnly = true;
+      this.trees[this.indexSelected]?.name ? this.inputNode.value = `${this.indexSelected}. ${this.trees[this.indexSelected].name}` : null;
+    }
+  }
+
+  confirmUpdate(index : number){
+    if(this.updateStatus){
+      const idnode = this.trees[index].id;
+      this.treesystemservice.updateTreeNode(idnode,this.inputNode.value).subscribe(res =>{
+        console.log('res update',res);
+        this.indexSelected = null;
+        this.inputNode.readOnly = true;
+        this.refreshNode();
+        this.updateStatus = false;
+      });
+    }
+  }
+
   delete(nodeId: number){
-    console.log('nodeId',nodeId);
     this.treesystemservice.deleteTreeNode(nodeId).subscribe(res =>{
       console.log('delete',res);
       this.refreshNode();

@@ -89,8 +89,16 @@
     cursor: pointer;
     line-height: 18px;
 
+    div{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        align-items: center;
+    }
+    
     img{
-        margin-right: 6px;
+        width: 12px;
+        height: 10px;
         filter: brightness(0) saturate(100%) invert(57%) sepia(0%) saturate(1210%) hue-rotate(244deg) brightness(93%) contrast(90%);
     }
 

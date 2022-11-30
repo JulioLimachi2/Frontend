@@ -17,10 +17,11 @@
 
 <div class="body-mut">
   <div class="frame" *ngFor="let tree of trees;let i = index">
-    <input type="text" class="inpt-frame" [value]="i + '.' + ' ' + tree.name" [readonly]="true">
+    <input type="text" class="inpt-frame" [value]="i + '.' + ' ' + tree.name" [readonly]="true" 
+           [id]="'node'+i" (keyup.enter)="confirmUpdate(i)" (click)="clickInpt($event)">
     <div class="cont-icons">
       <img src="assets/images/play-ic.png" alt="icono play" (click)="goSubnivel(tree)" [ngClass]="{'active-children': tree?.children?.length}">
-      <img src="assets/images/pencil-ic.png" alt="icono editar" (click)="update(tree)">
+      <img src="assets/images/pencil-ic.png" alt="icono editar" (click)="update(i)">
       <img src="assets/images/trash-ic.png" alt="icono eliminar" (click)="delete(tree.id)">
     </div>
   </div>
