@@ -12,6 +12,7 @@ export class DocumentOneComponent implements OnInit, OnChanges {
   @Input() newData;
   @Input() editData;
   @Output() onEdit: EventEmitter<any> = new EventEmitter();
+  @Input() dataTable = [];
   displayedColumns: string[] = ['documentName','code','version','resolution','dateApproval','applicableSystems','archive','actions'];
   dataSource = new MatTableDataSource();
 
@@ -23,21 +24,13 @@ export class DocumentOneComponent implements OnInit, OnChanges {
     if(changes.editData){
       this.editData && this.refreshDocument();
     }
+    if(changes.dataTable){
+      this.dataSource.data = changes.dataTable.currentValue;
+    }
   }
 
   ngOnInit(): void {
-    this.dataSource.data = [
-      {
-        id:'NTP-ISOIEC-1',
-        documentName: 'PROCEDIMIENTO DE EVALUACIÓN DE LA IDENTIFICACIÓN VISUAL DE LAS OFICINAS',
-        code: 'PR-001-UCII-ZRIX',
-        version: '3',
-        resolution: 'RES. JEF. N°509-2022-SUNARP-ZRN°IX/JEF',
-        dateApproval: '01/08/2022',
-        applicableSystems : 'SGC SGAS',
-        archive: []
-      }
-    ]
+    //this.dataSource.data = this.dataTable;
   }
 
   setNewData(data){

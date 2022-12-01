@@ -10,6 +10,7 @@ export class ActasComponent implements OnInit, OnChanges {
 
   @Input() newData;
   @Input() editData;
+  @Input() dataTable = [];
   @Output() onEdit: EventEmitter<any> = new EventEmitter();
   displayedColumns: string[] = ['managementSystem','typeMeeting','actaNumber','seeDoc','actions'];
   dataSource = new MatTableDataSource();
@@ -23,18 +24,21 @@ export class ActasComponent implements OnInit, OnChanges {
     if(changes.editData){
       this.editData && this.refreshDocument();
     }
+    if(changes.dataTable){
+      this.dataSource.data = changes.dataTable.currentValue;
+    }
   }
 
   ngOnInit(): void {
-    this.dataSource.data = [
-      {
-        id: 'act-01',
-        managementSystem:'SGC-SGAS',
-        typeMeeting: 'Cómite de sig',
-        actaNumber: '1',
-        archive: []
-      }
-    ]
+    // this.dataSource.data = [
+    //   {
+    //     id: 'act-01',
+    //     managementSystem:'SGC-SGAS',
+    //     typeMeeting: 'Cómite de sig',
+    //     actaNumber: '1',
+    //     archive: []
+    //   }
+    // ]
   }
 
   setNewData(data){

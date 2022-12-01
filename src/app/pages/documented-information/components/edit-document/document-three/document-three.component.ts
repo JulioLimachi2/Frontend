@@ -10,6 +10,7 @@ export class DocumentThreeComponent implements OnInit, OnChanges {
 
   @Input() newData;
   @Input() editData;
+  @Input() dataTable = [];
   @Output() onEdit: EventEmitter<any> = new EventEmitter();
   displayedColumns: string[] = ['documentName','numberResolution','date','archive','actions'];
   dataSource = new MatTableDataSource();
@@ -23,18 +24,21 @@ export class DocumentThreeComponent implements OnInit, OnChanges {
     if(changes.editData){
       this.editData && this.refreshDocument();
     }
+    if(changes.dataTable){
+      this.dataSource.data = changes.dataTable.currentValue;
+    }
   }
 
   ngOnInit(): void {
-    this.dataSource.data = [
-      {
-        id:'NTP-ISOIEC-3',
-        documentName: 'Presupuesto inicial de apertura año fiscal 2022',
-        numberResolution: 'Resolución N° 210-2021 - SUNARP/SN',
-        date : 'Wed Dec 29 2021 12:29:32 GMT-0500 (hora estándar de Perú)',
-        archive:[]
-      }
-    ]
+    // this.dataSource.data = [
+    //   {
+    //     id:'NTP-ISOIEC-3',
+    //     documentName: 'Presupuesto inicial de apertura año fiscal 2022',
+    //     numberResolution: 'Resolución N° 210-2021 - SUNARP/SN',
+    //     date : 'Wed Dec 29 2021 12:29:32 GMT-0500 (hora estándar de Perú)',
+    //     archive:[]
+    //   }
+    // ]
   }
 
   setNewData(data){

@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { TreeSystemService } from 'src/app/core/services/tree-system.service';
 import { ModalDocumentComponent } from '../modal-document/modal-document.component';
 
 @Component({
@@ -20,12 +21,22 @@ export class EditDocumentComponent implements OnInit {
   dataEditDoc2;
   dataEditDoc3;
   dataEditActa;
+  listDoc = [];
+  datasourceGE = [];
+  datasourceIE = [];
+  datasourceAC = [];
 
   constructor(public dialog: MatDialog,
+    private treesystemservice: TreeSystemService,
     private _location: Location) { }
 
   ngOnInit(): void {
     console.log(new Date());
+    const lista= this.treesystemservice.getTreeNodeList(9).subscribe( (res)=>{
+      console.log("lista",JSON.parse(res));
+      this.listDoc = JSON.parse(res);
+      this.datasourceGE = this.filterTipoDoc(JSON.parse(res),'GE');
+     });
   }
 
 
@@ -79,5 +90,25 @@ export class EditDocumentComponent implements OnInit {
 
   back() {
     this._location.back();
+  }
+
+  filterTipoDoc(lista:Array<[]>,type){
+    const fil = lista.filter((list: any) => {
+      return list.tipo == type;
+    });
+    console.log('fil',fil);
+    return fil
+  }
+
+  onChangeTab(event){
+    if(event.index === 0){
+      this.datasourceGE = this.filterTipoDoc(this.listDoc,'GE');
+    }
+    if(event.index === 1 || event.index === 2){
+      this.datasourceIE = this.filterTipoDoc(this.listDoc,'IE');
+    }
+    if(event.index === 3){
+      this.datasourceAC = this.filterTipoDoc(this.listDoc,'AC');
+    }
   }
 }
