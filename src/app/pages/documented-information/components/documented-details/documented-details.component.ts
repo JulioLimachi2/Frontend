@@ -51,7 +51,11 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
     const iddoc = this.router.snapshot.paramMap.get('iddoc');
     this.userLog = JSON.parse(localStorage.getItem('userlog'));
     console.log('iddoc',iddoc);
-    this.getDocData(iddoc);
+   const lista= this.treesystemservice.getTreeNodeList(9).subscribe( (res)=>{
+    console.log("lista",res);
+   });
+ 
+   
     this.dataSource.data = [
       {
         "title": "PROCED. GEST. DE DOCUMENTOS DE SOPORTE A LOS PROCESOS.PDF",
@@ -170,7 +174,7 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
     });
   }
 
-  getDocData(id: string){
+  getDocData(id: number){
     this.treesystemservice.getDocbyId(id).subscribe(doc => {
       console.log('doc',doc);
       this.document = doc[0];

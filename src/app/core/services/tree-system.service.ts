@@ -15,7 +15,7 @@ export class TreeSystemService {
     return this.http.get("assets/data-mock/data-tree-system.json");
   }
 
-  getDocbyId(id:string): Observable<any> {
+  getDocbyId(id:number): Observable<any> {
     return this.http.get('assets/data-mock/data-doc-detail.json').pipe(
       map((items: any) => items.filter((item: any) => item.id === id))
     )
@@ -23,6 +23,10 @@ export class TreeSystemService {
 
   getTreeNode():any{
     return this.http.get('api/treenode/');
+  }
+
+  getTreeNodeList(idNode: number){
+    return this.http.get(`api/treefile/?nodeId=${idNode}`,  {responseType: 'text'});
   }
 
   newTreeNode(requestNode){
