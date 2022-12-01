@@ -72,7 +72,15 @@ export class ModalEditDocsComponent implements OnInit {
     this.trees = this.niveles[index];
     this.niveles.splice(this.nivel - 1,1);
     this.nivel = this.nivel - 1;
-    this.title= this.nivel === 1 ? 'Documentos' : this.niveles[this.niveles.length - 1].name;
+    const abuscar =  this.niveles[this.niveles.length - 2];
+    if(abuscar){
+      const nodoPadre = abuscar.filter(x => {
+        return x.id === this.niveles[this.niveles.length - 1][0].parent;
+      });
+      this.title= nodoPadre[0].name;
+    }else{
+      this.title= 'Documentos';
+    }
   }
 
   register(){
