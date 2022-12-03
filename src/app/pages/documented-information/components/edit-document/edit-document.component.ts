@@ -1,6 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
+import { TreeFileService } from 'src/app/core/services/tree-file.service';
 import { TreeSystemService } from 'src/app/core/services/tree-system.service';
 import { ModalDocumentComponent } from '../modal-document/modal-document.component';
 
@@ -25,18 +27,19 @@ export class EditDocumentComponent implements OnInit {
   datasourceGE = [];
   datasourceIE = [];
   datasourceAC = [];
+  idNodo: string;
 
   constructor(public dialog: MatDialog,
     private treesystemservice: TreeSystemService,
-    private _location: Location) { }
+    private _location: Location,
+    private router: ActivatedRoute,
+    private servicetreeFile: TreeFileService) { }
 
   ngOnInit(): void {
     console.log(new Date());
-    const lista= this.treesystemservice.getTreeNodeList(9).subscribe( (res)=>{
-      console.log("lista",JSON.parse(res));
-      this.listDoc = JSON.parse(res);
-      this.datasourceGE = this.filterTipoDoc(JSON.parse(res),'GE');
-     });
+    this.idNodo = this.router.snapshot.paramMap.get('idnodo');
+    console.log('idNodo edit doc',this.idNodo);
+    this.getListNode(parseInt(this.idNodo));
   }
 
 
@@ -44,8 +47,17 @@ export class EditDocumentComponent implements OnInit {
 
   }
 
+  getListNode(idNodo:number){
+    this.treesystemservice.getTreeNodeList(idNodo).subscribe( (res)=>{
+      console.log("lista",JSON.parse(res));
+      this.listDoc = JSON.parse(res);
+      this.onIndexChange(this.indexTab);
+    });
+  }
+
 
   ModalDoc(datadoc?) {
+    console.log('datadoc',datadoc);
     const dialogRef = this.dialog.open(ModalDocumentComponent, {
       width: '38%',
       height: '638px',
@@ -56,30 +68,32 @@ export class EditDocumentComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         if (result.documentEdit) {
-          if (result.currentIdDoc === result.newIdDoc) {
-            result.currentIdDoc === 1 && (this.dataEditDoc1 = { data: result.documentEdit, changeId: false });
-            result.currentIdDoc === 2 && (this.dataEditDoc2 = { data: result.documentEdit, changeId: false });
-            result.currentIdDoc === 3 && (this.dataEditDoc3 = { data: result.documentEdit, changeId: false });
-            result.currentIdDoc === 4 && (this.dataEditActa = { data: result.documentEdit, changeId: false });
-          } else {
-            result.currentIdDoc === 1 && (this.dataEditDoc1 = { data: result.beforeData.document, changeId: true });
-            result.currentIdDoc === 2 && (this.dataEditDoc2 = { data: result.beforeData.document, changeId: true });
-            result.currentIdDoc === 3 && (this.dataEditDoc3 = { data: result.beforeData.document, changeId: true });
-            result.currentIdDoc === 4 && (this.dataEditActa = { data: result.beforeData.document, changeId: true });
+          console.log('editar doc',result);
+          // if (result.currentIdDoc === result.newIdDoc) {
+          //   result.currentIdDoc === 1 && (this.dataEditDoc1 = { data: result.documentEdit, changeId: false });
+          //   result.currentIdDoc === 2 && (this.dataEditDoc2 = { data: result.documentEdit, changeId: false });
+          //   result.currentIdDoc === 3 && (this.dataEditDoc3 = { data: result.documentEdit, changeId: false });
+          //   result.currentIdDoc === 4 && (this.dataEditActa = { data: result.documentEdit, changeId: false });
+          // } else {
+          //   result.currentIdDoc === 1 && (this.dataEditDoc1 = { data: result.beforeData.document, changeId: true });
+          //   result.currentIdDoc === 2 && (this.dataEditDoc2 = { data: result.beforeData.document, changeId: true });
+          //   result.currentIdDoc === 3 && (this.dataEditDoc3 = { data: result.beforeData.document, changeId: true });
+          //   result.currentIdDoc === 4 && (this.dataEditActa = { data: result.beforeData.document, changeId: true });
 
-            result.newIdDoc === 1 && (this.dataDoc1 = result.documentEdit);
-            result.newIdDoc === 2 && (this.dataDoc2 = result.documentEdit);
-            result.newIdDoc === 3 && (this.dataDoc3 = result.documentEdit);
-            result.newIdDoc === 4 && (this.dataActa = result.documentEdit);
-            this.indexTab = result.newIdDoc - 1;
-          }
+          //   result.newIdDoc === 1 && (this.dataDoc1 = result.documentEdit);
+          //   result.newIdDoc === 2 && (this.dataDoc2 = result.documentEdit);
+          //   result.newIdDoc === 3 && (this.dataDoc3 = result.documentEdit);
+          //   result.newIdDoc === 4 && (this.dataActa = result.documentEdit);
+          //   this.indexTab = result.newIdDoc - 1;
+          // }
         }
         if (result.document) {
+          console.log('result guardar',result);      
           this.indexTab = result.idDoc - 1;
-          result.idDoc === 1 && (this.dataDoc1 = result.document);
-          result.idDoc === 2 && (this.dataDoc2 = result.document);
-          result.idDoc === 3 && (this.dataDoc3 = result.document);
-          result.idDoc === 4 && (this.dataActa = result.document);
+          result.idDoc === 1 && this.setCreateEspe(result.document,this.idNodo);
+          // result.idDoc === 2 && (this.dataDoc2 = result.document);
+          result.idDoc === 3 && this.setCreateExte(result.document,this.idNodo);
+          result.idDoc === 4 && this.setCreateActa(result.document,this.idNodo);//(this.dataActa = result.document);
         }
 
       }
@@ -87,6 +101,26 @@ export class EditDocumentComponent implements OnInit {
   }
 
 
+  setCreateActa(request:object,idNodo:string){
+    this.servicetreeFile.createActa(request,idNodo).subscribe(resp => {
+      console.log('resul', resp);
+      this.getListNode(parseInt(this.idNodo));
+    })
+  }
+
+  setCreateExte(request:object,idNodo:string){
+    this.servicetreeFile.createExte(request,idNodo).subscribe(resp => {
+      console.log('resul', resp);
+      this.getListNode(parseInt(this.idNodo));
+    })
+  }
+
+  setCreateEspe(request:object,idNodo:string){
+    this.servicetreeFile.createEspe(request,idNodo).subscribe(resp => {
+      console.log('resul', resp);
+      this.getListNode(parseInt(this.idNodo));
+    })
+  }
 
   back() {
     this._location.back();
@@ -101,13 +135,17 @@ export class EditDocumentComponent implements OnInit {
   }
 
   onChangeTab(event){
-    if(event.index === 0){
+    this.onIndexChange(event.index);
+  }
+
+  onIndexChange(index: number){
+    if(index === 0){
       this.datasourceGE = this.filterTipoDoc(this.listDoc,'GE');
     }
-    if(event.index === 1 || event.index === 2){
+    if(/*index === 1 ||*/ index === 2){
       this.datasourceIE = this.filterTipoDoc(this.listDoc,'IE');
     }
-    if(event.index === 3){
+    if(index === 3){
       this.datasourceAC = this.filterTipoDoc(this.listDoc,'AC');
     }
   }

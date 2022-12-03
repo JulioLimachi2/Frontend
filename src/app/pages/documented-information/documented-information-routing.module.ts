@@ -10,11 +10,11 @@ const routes: Routes = [
     component: DocumentedComponent,
   },
   {
-    path: 'detail/:iddoc',
+    path: 'detail/:idnodo',
     component: DocumentedDetailsComponent,
   },
   {
-    path: 'edit',
+    path: 'edit/:idnodo',
     component: EditDocumentComponent,
   },
 ];

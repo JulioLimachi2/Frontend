@@ -22,7 +22,9 @@ export class ActasFormComponent implements OnInit {
     this.formActas = this.builder.group({
       id: [],
       managementSystem:[,Validators.required],
+      idNodo:[],
       typeMeeting: [,Validators.required],
+      nameFile:[,Validators.required],
       actaNumber: [,Validators.required],
       archive: []
     });
@@ -45,10 +47,11 @@ export class ActasFormComponent implements OnInit {
   setForm() {
     this.formActas.patchValue({
       id: this.dataActas.id,
-      managementSystem: this.dataActas.managementSystem,
-      typeMeeting: this.dataActas.typeMeeting,
-      actaNumber: this.dataActas.actaNumber,
-      archive: this.dataActas.archive,
+      managementSystem: this.dataActas.tpDocuActa.codigoSistemaAplicable,
+      typeMeeting: this.dataActas.tpDocuActa.tipoReunion,
+      actaNumber: this.dataActas.tpDocuActa.numeroActa,
+      archive: this.dataActas.tpDocuActa.file,
+      nameFile: this.dataActas.nombreArchivo
     });
   }
 

@@ -19,6 +19,7 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
   @ViewChild(MatSort) sort: MatSort;
   document;
   userLog;
+  idNodo: string;
 
   constructor(private treesystemservice: TreeSystemService,
               private router: ActivatedRoute,
@@ -48,9 +49,8 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
   };
 
   ngOnInit(): void {
-    const iddoc = this.router.snapshot.paramMap.get('iddoc');
+    this.idNodo = this.router.snapshot.paramMap.get('idnodo');
     this.userLog = JSON.parse(localStorage.getItem('userlog'));
-    console.log('iddoc',iddoc);
  
    
     this.dataSource.data = [
@@ -180,6 +180,7 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
 
   goEdit(){
     this.route.navigateByUrl("documented-information/edit");
+    this.route.navigate(['documented-information/edit',this.idNodo]);
   }
 
   back(){

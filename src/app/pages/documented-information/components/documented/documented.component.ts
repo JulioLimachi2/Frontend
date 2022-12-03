@@ -44,7 +44,7 @@ export class DocumentedComponent implements OnInit {
 
   goToDocument(node){
     console.log('node',node);
-    this.router.navigate(['documented-information/detail',199]);
+    this.router.navigate(['documented-information/detail',node.id]);
   }
 
   see(node){

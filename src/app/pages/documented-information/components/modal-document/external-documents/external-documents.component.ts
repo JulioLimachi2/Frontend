@@ -1,7 +1,7 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FilesService } from 'src/app/core/services/files.service';
-import uniqid from 'uniqid';
 
 @Component({
   selector: 'app-external-documents',
@@ -18,13 +18,15 @@ export class ExternalDocumentsComponent implements OnInit {
   sizeConvert: string;
 
   constructor(private builder: FormBuilder,
-              private serviceFile: FilesService) {
+              private serviceFile: FilesService,
+              private datePipe: DatePipe) {
     this.formExternalDocument = this.builder.group({
       id: [],
       documentName: [,Validators.required],
       numberResolution: [,Validators.required],
       date:[,Validators.required],
-      archive: []
+      archive: [],
+      typeDoc: ['Externo']
     });
    }
 
@@ -36,7 +38,8 @@ export class ExternalDocumentsComponent implements OnInit {
     if(this.dataExternalDoc){
       this.onSave.emit({document: this.formExternalDocument.value, currentIdDoc: this.numberTab});
     }else{
-      this.formExternalDocument.controls['id'].setValue(uniqid());
+      const dateFormat = this.datePipe.transform(this.formExternalDocument.value.date,'yyyy-MM-dd')
+      this.formExternalDocument.controls['date'].setValue(dateFormat);
       this.onSave.emit({document: this.formExternalDocument.value, currentIdDoc: this.numberTab});
     }
   }
@@ -44,10 +47,10 @@ export class ExternalDocumentsComponent implements OnInit {
   setForm() {
     this.formExternalDocument.patchValue({
       id: this.dataExternalDoc.id,
-      documentName: this.dataExternalDoc.documentName,
-      numberResolution: this.dataExternalDoc.numberResolution,
-      date : new Date(this.dataExternalDoc.date),
-      archive : this.dataExternalDoc.archive,
+      documentName: this.dataExternalDoc.nombreArchivo,
+      numberResolution: this.dataExternalDoc.tpDocuInteExte.numeroResolucion,
+      date : new Date(this.dataExternalDoc.tpDocuInteExte.fechaDocumento),
+      archive : this.dataExternalDoc.file,
     });
   }
 

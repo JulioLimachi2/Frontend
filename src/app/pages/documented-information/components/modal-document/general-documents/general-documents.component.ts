@@ -1,7 +1,7 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FilesService } from 'src/app/core/services/files.service';
-import uniqid from 'uniqid';
 
 @Component({
   selector: 'app-general-documents',
@@ -19,7 +19,8 @@ export class GeneralDocumentsComponent implements OnInit {
   sizeConvert: string;
 
   constructor(private builder: FormBuilder,
-              private serviceFile: FilesService) { 
+              private serviceFile: FilesService,
+              private datePipe: DatePipe) { 
     this.formGeneralDocument = this.builder.group({
       id: [],
       documentName: [,Validators.required],
@@ -28,7 +29,8 @@ export class GeneralDocumentsComponent implements OnInit {
       resolution:[,Validators.required],
       dateApproval: [,Validators.required],
       applicableSystems : [,Validators.required],
-      archive: []
+      archive: [],
+      typeDoc:['Tipo 1']
     });
   }
 
@@ -41,7 +43,8 @@ export class GeneralDocumentsComponent implements OnInit {
     if(this.dataGeneralDoc){
       this.onSave.emit({document: this.formGeneralDocument.value, currentIdDoc: this.numberTab});
     }else{
-      this.formGeneralDocument.controls['id'].setValue(uniqid());
+      const dateFormat = this.datePipe.transform(this.formGeneralDocument.value.dateApproval,'yyyy-MM-dd')
+      this.formGeneralDocument.controls['dateApproval'].setValue(dateFormat);
       this.onSave.emit({document: this.formGeneralDocument.value, currentIdDoc: this.numberTab});
     }
   }
@@ -49,13 +52,14 @@ export class GeneralDocumentsComponent implements OnInit {
   setForm(){
     this.formGeneralDocument.patchValue({
       id: this.dataGeneralDoc.id,
-      documentName: this.dataGeneralDoc.documentName,
-      code: this.dataGeneralDoc.code,
-      version: this.dataGeneralDoc.version,
-      resolution: this.dataGeneralDoc.resolution,
-      dateApproval: new Date(this.dataGeneralDoc.dateApproval),
-      applicableSystems : this.dataGeneralDoc.applicableSystems,
-      archive: this.dataGeneralDoc.archive
+      documentName: this.dataGeneralDoc.nombreArchivo,
+      code: this.dataGeneralDoc.tpDocuGeneEspe.codigoDocumento,
+      version: this.dataGeneralDoc.tpDocuGeneEspe.versionDocumento,
+      resolution: this.dataGeneralDoc.tpDocuGeneEspe.codigoResolucion,
+      dateApproval: new Date(this.dataGeneralDoc.tpDocuGeneEspe.fechaAprobacion),
+      applicableSystems : this.dataGeneralDoc.tpDocuGeneEspe.codigoSistemaAplicable,
+      archive: this.dataGeneralDoc.file,
+      typeDoc: this.dataGeneralDoc.tpDocuGeneEspe.tipoDocumento
     });
   }
 
