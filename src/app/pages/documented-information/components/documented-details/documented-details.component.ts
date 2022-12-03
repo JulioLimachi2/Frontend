@@ -20,6 +20,7 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
   document;
   userLog;
   idNodo: string;
+  docIdselected: number;
 
   constructor(private treesystemservice: TreeSystemService,
               private router: ActivatedRoute,
@@ -51,121 +52,131 @@ export class DocumentedDetailsComponent implements OnInit, AfterViewInit  {
   ngOnInit(): void {
     this.idNodo = this.router.snapshot.paramMap.get('idnodo');
     this.userLog = JSON.parse(localStorage.getItem('userlog'));
- 
+    this.getListNode(parseInt(this.idNodo));
    
     this.dataSource.data = [
-      {
-        "title": "PROCED. GEST. DE DOCUMENTOS DE SOPORTE A LOS PROCESOS.PDF",
-        "details": {
-          "code": "PR-003-UPMM-ZRIX",
-          "version": "04",
-          "approved": "RES. JEF. N°702-2022-SUNARP-ZRN°IX/JEF",
-          "date": "11/10/2022",
-          "pageNumber": "29"
-        }
-      },
-      {
-        "title": "PROC. PARA EL CONTROL DE SALIDAS NO CONFORMES Y RETROCESOS DEL SGC.PDF",
-        "details": {
-          "code": "PR-02-JEF-ZRIX",
-          "version": "11",
-          "approved": "RESOLUCION JEFATURAL N°440-2022-SUNARP-ZRN°IX/JEF",
-          "date": "26/06/2022",
-          "pageNumber": "55"
-        }
-      },
-      {
-        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
-        "details": {
-          "code": "IN-005-JEF-ZRIX",
-          "version": "01",
-          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
-          "date": "15/03/2022",
-          "pageNumber": "15"
-        }
-      },
-      {
-        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
-        "details": {
-          "code": "IN-005-JEF-ZRIX",
-          "version": "01",
-          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
-          "date": "15/03/2022",
-          "pageNumber": "15"
-        }
-      },
-      {
-        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
-        "details": {
-          "code": "IN-005-JEF-ZRIX",
-          "version": "01",
-          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
-          "date": "15/03/2022",
-          "pageNumber": "15"
-        }
-      },
-      {
-        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
-        "details": {
-          "code": "IN-005-JEF-ZRIX",
-          "version": "01",
-          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
-          "date": "15/03/2022",
-          "pageNumber": "15"
-        }
-      },
-      {
-        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
-        "details": {
-          "code": "IN-005-JEF-ZRIX",
-          "version": "01",
-          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
-          "date": "15/03/2022",
-          "pageNumber": "15"
-        }
-      },
-      {
-        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
-        "details": {
-          "code": "IN-005-JEF-ZRIX",
-          "version": "01",
-          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
-          "date": "15/03/2022",
-          "pageNumber": "15"
-        }
-      },
-      {
-        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
-        "details": {
-          "code": "IN-005-JEF-ZRIX",
-          "version": "01",
-          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
-          "date": "15/03/2022",
-          "pageNumber": "15"
-        }
-      },
-      {
-        "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
-        "details": {
-          "code": "IN-005-JEF-ZRIX",
-          "version": "01",
-          "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
-          "date": "15/03/2022",
-          "pageNumber": "15"
-        }
-      }
+      // {
+      //   "title": "PROCED. GEST. DE DOCUMENTOS DE SOPORTE A LOS PROCESOS.PDF",
+      //   "details": {
+      //     "code": "PR-003-UPMM-ZRIX",
+      //     "version": "04",
+      //     "approved": "RES. JEF. N°702-2022-SUNARP-ZRN°IX/JEF",
+      //     "date": "11/10/2022",
+      //     "pageNumber": "29"
+      //   }
+      // },
+      // {
+      //   "title": "PROC. PARA EL CONTROL DE SALIDAS NO CONFORMES Y RETROCESOS DEL SGC.PDF",
+      //   "details": {
+      //     "code": "PR-02-JEF-ZRIX",
+      //     "version": "11",
+      //     "approved": "RESOLUCION JEFATURAL N°440-2022-SUNARP-ZRN°IX/JEF",
+      //     "date": "26/06/2022",
+      //     "pageNumber": "55"
+      //   }
+      // },
+      // {
+      //   "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+      //   "details": {
+      //     "code": "IN-005-JEF-ZRIX",
+      //     "version": "01",
+      //     "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+      //     "date": "15/03/2022",
+      //     "pageNumber": "15"
+      //   }
+      // },
+      // {
+      //   "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+      //   "details": {
+      //     "code": "IN-005-JEF-ZRIX",
+      //     "version": "01",
+      //     "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+      //     "date": "15/03/2022",
+      //     "pageNumber": "15"
+      //   }
+      // },
+      // {
+      //   "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+      //   "details": {
+      //     "code": "IN-005-JEF-ZRIX",
+      //     "version": "01",
+      //     "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+      //     "date": "15/03/2022",
+      //     "pageNumber": "15"
+      //   }
+      // },
+      // {
+      //   "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+      //   "details": {
+      //     "code": "IN-005-JEF-ZRIX",
+      //     "version": "01",
+      //     "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+      //     "date": "15/03/2022",
+      //     "pageNumber": "15"
+      //   }
+      // },
+      // {
+      //   "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+      //   "details": {
+      //     "code": "IN-005-JEF-ZRIX",
+      //     "version": "01",
+      //     "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+      //     "date": "15/03/2022",
+      //     "pageNumber": "15"
+      //   }
+      // },
+      // {
+      //   "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+      //   "details": {
+      //     "code": "IN-005-JEF-ZRIX",
+      //     "version": "01",
+      //     "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+      //     "date": "15/03/2022",
+      //     "pageNumber": "15"
+      //   }
+      // },
+      // {
+      //   "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+      //   "details": {
+      //     "code": "IN-005-JEF-ZRIX",
+      //     "version": "01",
+      //     "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+      //     "date": "15/03/2022",
+      //     "pageNumber": "15"
+      //   }
+      // },
+      // {
+      //   "title": "INST. DE EVAL. Y TRATA. DE RIESGOS Y OPORTUNIDADES DEL SGC.PDF",
+      //   "details": {
+      //     "code": "IN-005-JEF-ZRIX",
+      //     "version": "01",
+      //     "approved": "RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF",
+      //     "date": "15/03/2022",
+      //     "pageNumber": "15"
+      //   }
+      // }
     ]
   }
 
-  download(){
-    this.treesystemservice.getdetailTree(3).subscribe(res=>{      
+  getListNode(idNodo:number){
+    this.treesystemservice.getTreeNodeList(idNodo).subscribe( (res)=>{
+      console.log("lista",JSON.parse(res));
+      this.dataSource.data = JSON.parse(res);
+    });
+  }
+
+  download(doc){
+    console.log('doc',doc);
+    this.docIdselected = doc.id;
+    this.treesystemservice.getdetailTree(doc.id).subscribe(res=>{      
       const blob = new Blob([res], { type: 'application/pdf' });
       const fileURL = URL.createObjectURL(blob);
       const downloadLink = document.createElement('a');
       downloadLink.href = fileURL;
-      downloadLink.setAttribute('download', 'Microservices.pdf');
+      downloadLink.setAttribute('download', `${doc.nombreArchivo}.pdf`);
       document.body.appendChild(downloadLink);
       downloadLink.click();
+      this.docIdselected = null;
     },(e: any) => {
       console.error(e);
     });

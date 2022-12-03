@@ -19,13 +19,13 @@
                 <div class="cont-doc-row">
                     <div class="cont-icon-pdf"><img src="assets/images/pdf.png" alt="icon-pdf"></div>
                     <div class="content-row">
-                        <div class="title-row-doc"><b>{{element.title}}</b></div>
+                        <div class="title-row-doc"><b>{{element.nombreArchivo}}</b></div>
                         <div class="body-row-doc">
-                            <div class="detail-doc"><b>CÓDIGO:</b> <div>{{element.details.code}}</div></div>
-                            <div class="detail-doc"><b>VERS:</b> <div>{{element.details.version}}</div></div>
-                            <div class="detail-doc"><b>APROB:</b> <div>{{element.details.approved}}</div></div>
-                            <div class="detail-doc"><b>FECHA:</b> <div>{{element.details.date}}</div></div>
-                            <div class="detail-doc"><b>N° PAG:</b> <div>{{element.details.pageNumber}}</div></div>
+                            <div class="detail-doc"><b>CÓDIGO:</b> <div>IN-005-JEF-ZRIX</div></div>
+                            <div class="detail-doc"><b>VERS:</b> <div>01</div></div>
+                            <div class="detail-doc"><b>APROB:</b> <div>RES. JEF. N°166-2022-SUNARP-ZRN°IX/JEF</div></div>
+                            <div class="detail-doc"><b>FECHA:</b> <div>15/03/2022</div></div>
+                            <div class="detail-doc"><b>N° PAG:</b> <div>10</div></div>
                         </div>
                     </div>
                 
@@ -35,8 +35,11 @@
 
         <ng-container matColumnDef="download">
             <th mat-header-cell *matHeaderCellDef></th>
-            <td mat-cell *matCellDef="let element;"> 
-                <button mat-icon-button aria-label="boton descargar archivo" (click)="download()">
+            <td mat-cell *matCellDef="let element" class="td-action-doc-detail">
+                <mat-spinner *ngIf="docIdselected === element.id"></mat-spinner> 
+                <button mat-icon-button aria-label="boton descargar archivo"
+                        (click)="download(element)"
+                        *ngIf="docIdselected === element.id ? false : true">
                     <img src="assets/images/icon-download.png" alt="icono descargar">
                 </button>
             </td>

@@ -11,6 +11,10 @@
         color      : $black;
         font-weight: 500;
     }
+
+    td.mat-cell:last-of-type{
+        padding: 10px;
+    }
 }
 
 .tb-doc-cont{
@@ -33,6 +37,7 @@
     .title-row-doc {
         display: flex;
         gap    : 5px;
+        text-transform: uppercase;
     }
 
     .body-row-doc {
@@ -50,14 +55,6 @@
     }
 }
 
-// .btn-back-doc{
-//     background-color: $tamarama;
-//     color: $white;
-//     border: none;
-//     padding: 10px 20px;
-//     border-radius: 5px;
-//     cursor: pointer;
-// }
 
 .btn-edit-doc{
   width: 104px;
@@ -74,6 +71,28 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
+}
+
+.showSpinner{
+    display: none;
+}
+
+.showbtnDownload{
+    display: none;
+}
+
+::ng-deep .td-action-doc-detail{
+    mat-spinner{
+        width: 40px !important;
+        height: 40px !important;
+    }
+    .mat-progress-spinner svg{
+        width: 40px !important;
+        height: 40px !important;
+    }
+    .mat-progress-spinner circle, .mat-spinner circle {
+        stroke: $warn;
+    }
 }
 
 @media (min-width: 1100px) {
