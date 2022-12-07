@@ -15,7 +15,9 @@ export class ModalTypeComponent implements OnInit {
     private builder: FormBuilder) { 
     this.formType = this.builder.group({
       code: ['', Validators.required],
-      description: ['', Validators.required]
+      name: ['', Validators.required],
+      flagReqIso: ["false"],
+      label: [""]
     })
   }
 

@@ -22,6 +22,7 @@ export type ButtonType =
 export class ModalMsgComponent implements OnInit {
 
   @Input() type: ButtonType = 'success';
+  @Input() confirm: boolean = false;
   private prefixClass = 'modal-msg';
 
   getClasses(): string {

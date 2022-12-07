@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { StateService } from 'src/app/core/services/administration/state.service';
 import { ModalStateComponent } from './modal-state/modal-state.component';
 
 @Component({
@@ -13,13 +14,14 @@ export class StatesComponent implements OnInit {
 
   @ViewChild('tbstate', {static: false}) tbstate: ElementRef;
 
-  displayedColumns: string[] = ['code', 'name'];
+  displayedColumns: string[] = ['code', 'name','actions'];
   indexSelectedRow: number;
   formState: FormGroup;
   editActive :boolean;
   dataSource =  new MatTableDataSource<any>([]);
 
-  constructor(private builder: FormBuilder, public dialog: MatDialog) { 
+  constructor(private builder: FormBuilder, public dialog: MatDialog,
+              private servicestate: StateService) { 
     this.formState = this.builder.group({
       code: ['',Validators.required],
       name:['',Validators.required]
@@ -35,35 +37,16 @@ export class StatesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataSource.data = [
-      {
-        code:'01',
-        name:'generado'
-      },
-      {
-        code:'02',
-        name:'autorizado'
-      },
-      {
-        code:'03',
-        name:'devuelto'
-      },
-      {
-        code:'04',
-        name:'pendiente'
-      },
-      {
-        code:'05',
-        name:'implementado'
-      }
-    ];
+    this.getState();
   }
 
   edit(){
-    this.dataSource.data[this.indexSelectedRow] = this.formState.value;
-    this.dataSource= new MatTableDataSource(this.dataSource.data)
-    this.indexSelectedRow = null;
-    this.editActive = false;
+    const idstate = this.dataSource.data[this.indexSelectedRow].id;
+    this.servicestate.updateState(this.formState.value,idstate).subscribe(res => {
+      this.indexSelectedRow = null;
+      this.editActive = false;
+      this.getState();
+    }); 
   }
 
   selectedRow(row,index:number){
@@ -87,11 +70,23 @@ export class StatesComponent implements OnInit {
           code: state.code,
           name: state.name,
         });
-        this.dataSource.data.push(this.formState.value);
-        this.dataSource = new MatTableDataSource(this.dataSource.data)
+        this.servicestate.createState(this.formState.value).subscribe(res => {
+          this.getState();
+        });
       }
     });
   }
+
+  getState(){
+    this.servicestate.getState().subscribe(state =>{
+      this.dataSource.data = state as any;
+    })
+  }
   
+  delete(state){
+    this.servicestate.deleteState(state.id).subscribe(res =>{
+      this.getState();
+    })
+  }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { TipoAccionService } from 'src/app/core/services/administration/tipo-accion.service';
 import { ModalTypeComponent } from './modal-type/modal-type.component';
 
 @Component({
@@ -15,15 +16,18 @@ export class TypesComponent implements OnInit {
   indexSelectedRow: number;
   editActive: boolean;
   indexSource: number;
-  displayedColumns: string[] = ['code', 'description'];
+  displayedColumns: string[] = ['code', 'description','actions'];
   formType: FormGroup;
 
   dataSource = new MatTableDataSource<any>([]);
 
-  constructor(private builder: FormBuilder, public dialog: MatDialog) {
+  constructor(private builder: FormBuilder, public dialog: MatDialog,
+              private typeservice: TipoAccionService) {
     this.formType = this.builder.group({
       code: ['', Validators.required],
-      description: ['', Validators.required]
+      name: ['', Validators.required],
+      flagReqIso: ["false"],
+      label: [""]
     })
   }
 
@@ -36,23 +40,16 @@ export class TypesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataSource.data = [
-      {
-        code: '1',
-        description: 'Correctiva'
-      },
-      {
-        code: '2',
-        description: 'Oportunidad de mejora'
-      }
-    ];
+    this.getTipos();
   }
 
   edit() {
-    this.dataSource.data[this.indexSelectedRow] = this.formType.value;
-    this.dataSource = new MatTableDataSource(this.dataSource.data)
-    this.indexSelectedRow = null;
-    this.editActive = false;
+    const idtype = this.dataSource.data[this.indexSelectedRow].id;
+    this.typeservice.updateTipo(this.formType.value,idtype).subscribe(res => {
+      this.indexSelectedRow = null;
+      this.editActive = false;
+      this.getTipos();
+    });
   }
 
   selectedRow(element, index: number) {
@@ -60,7 +57,7 @@ export class TypesComponent implements OnInit {
     this.editActive = true;
     this.formType.patchValue({
       code: element.code,
-      description: element.description
+      name: element.name
     });
   }
 
@@ -74,12 +71,25 @@ export class TypesComponent implements OnInit {
       if (type) {
         this.formType.patchValue({
           code: type.code,
-          description: type.description
+          name: type.name
         });
-        this.dataSource.data.push(this.formType.value);
-        this.dataSource = new MatTableDataSource(this.dataSource.data)
+        this.typeservice.createTipo(this.formType.value).subscribe(res => {
+          this.getTipos();
+        })
       }
     });
+  }
+
+  getTipos(){
+    this.typeservice.getTipo().subscribe(tipos => {
+      this.dataSource.data = tipos as any
+    })
+  }
+
+  delete(state){
+    this.typeservice.deleteTipo(state.id).subscribe(res =>{
+      this.getTipos();
+    })
   }
 
 }

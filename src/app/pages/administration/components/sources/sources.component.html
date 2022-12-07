@@ -12,7 +12,7 @@
             <ng-container matColumnDef="description">
                 <th mat-header-cell *matHeaderCellDef> Descripción </th>
                 <td mat-cell *matCellDef="let element; let i = index"> 
-                    <div *ngIf="indexSelectedRow !== i">{{element.description}} </div>
+                    <div *ngIf="indexSelectedRow !== i">{{element.name}} </div>
                     <input class="inpt-row" *ngIf="editActive && indexSelectedRow === i" type="text" formControlName="description">
                 </td>
             </ng-container>
@@ -30,6 +30,15 @@
                 <td mat-cell *matCellDef="let element; let i = index" style="text-align: center;">
                     <mat-checkbox *ngIf="indexSelectedRow !== i" [checked]="element.upgrade" [color]="'primary'" disabled="disabled"></mat-checkbox>
                     <mat-checkbox *ngIf="editActive && indexSelectedRow === i" [checked]="element.upgrade" [color]="'primary'" formControlName="upgrade"></mat-checkbox>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef>  </th>
+                <td mat-cell *matCellDef="let element"> 
+                    <div style="text-align: center;">
+                        <img src="assets/images/trash-ic.png" alt="icono eliminar" (click)="delete(element)">
+                    </div> 
                 </td>
             </ng-container>
     
